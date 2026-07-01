@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Fish {
+  id                  Int       @id @default(autoincrement())
+  commonName          String    @unique @map("common_name") @db.VarChar(100)
+  scientificName      String?   @map("scientific_name") @db.VarChar(100)
+  family              String?   @db.VarChar(50)
+  description         String?   @db.Text
+  isEventFish         Boolean   @default(false) @map("is_event_fish")
+  isMonster           Boolean   @default(false) @map("is_monster")
+
+  // Weights (stored in kg)
+  weightYoungMin      Decimal?  @map("weight_young_min")
+  weightYoungMax      Decimal?  @map("weight_young_max")
+  weightCommonMin     Decimal?  @map("weight_common_min")
+  weightCommonMax     Decimal?  @map("weight_common_max")
+  weightTrophyMin     Decimal?  @map("weight_trophy_min")
+  weightUniqueMin     Decimal?  @map("weight_unique_min")
+  weightUniqueMax     Decimal?  @map("weight_unique_max")
+  monsterTargetWeight Decimal?  @map("monster_target_weight")
+
+  // Financials (base rates)
+  creditsPerKgCommon  Decimal?  @map("credits_per_kg_common")
+  creditsPerKgTrophy  Decimal?  @map("credits_per_kg_trophy")
+  creditsPerKgUnique  Decimal?  @map("credits_per_kg_unique")
+
+  xpCurveNotes        String?   @map("xp_curve_notes") @db.Text
+  farmingMetaTier     String?   @map("farming_meta_tier") @db.VarChar(10)
+  notesFarming        String?   @map("notes_farming") @db.Text
+  dataVersion         String?   @map("data_version") @db.VarChar(20)
+  lastVerified        DateTime? @map("last_verified") @db.Date
+
+  locations           FishLocation[]
+  bitingPreference    BitingPreference?
+
+  @@map("fish")
+}
+
+model Location {
+  id           Int    @id @default(autoincrement())
+  name         String @unique @db.VarChar(100)
+  region       String @db.VarChar(50)
+  waterwayType String @map("waterway_type") @db.VarChar(50)
+  unlockLevel  Int    @map("unlock_level")
+
+  fish         FishLocation[]
+
+  @@map("locations")
+}
+
+model FishLocation {
+  fishId         Int      @map("fish_id")
+  locationId     Int      @map("location_id")
+  specificSpot   String   @map("specific_spot") @db.VarChar(100)
+  classesPresent String[] @map("classes_present") @db.VarChar(50)
+
+  fish           Fish     @relation(fields: [fishId], references: [id])
+  location       Location @relation(fields: [locationId], references: [id])
+
+  @@id([fishId, locationId, specificSpot])
+  @@map("fish_locations")
+}
+
+model BitingPreference {
+  fishId              Int      @id @map("fish_id")
+  preferredBaits      String[] @map("preferred_baits")
+  preferredLures      String[] @map("preferred_lures")
+  // Flagged as disputed/soft heuristic in documentation
+  preferredLureColors String[] @map("preferred_lure_colors")
+  hookSizeMin         String?  @map("hook_size_min") @db.VarChar(10)
+  hookSizeMax         String?  @map("hook_size_max") @db.VarChar(10)
+  depthZone           String?  @map("depth_zone") @db.VarChar(20)
+  sunnyPeakTimes      String?  @map("sunny_peak_times") @db.Text
+  cloudyPeakTimes     String?  @map("cloudy_peak_times") @db.Text
+  rainyPeakTimes      String?  @map("rainy_peak_times") @db.Text
+
+  fish                Fish     @relation(fields: [fishId], references: [id])
+
+  @@map("biting_preferences")
+}

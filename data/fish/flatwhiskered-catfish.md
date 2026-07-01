@@ -1,0 +1,9 @@
+# Flatwhiskered Catfish
+
+## How to catch
+
+How to catch **a unique Flatwhiskered Catfish**? You can catch this fish either with **bait** or **lures**.
+
+If you prefer to use natural baits, then the best way to catch Flatwhiskered Catfish would be to use **Large Minnows** on a size #7/0 hook.
+
+If you are more into artificial lures, you should go for some **Crayfish**. The most successful lure is **White/Yellow/Black X-Series Bass Jig 56 g, #6/0**.

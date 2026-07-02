@@ -26,15 +26,15 @@ services:
       timeout: 5s
       retries: 10
 
-  # One-shot: push the Prisma schema before the app starts, then exit. Uses the
-  # builder stage, which has the Prisma CLI (the slim runtime image does not).
+  # One-shot: apply committed migrations before the app starts, then exit. Uses
+  # the builder stage, which has the Prisma CLI (the slim runtime image does not).
   init:
     build:
       context: .
       target: builder
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-user}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-fishing_planet}?schema=public
-    command: ["pnpm", "exec", "prisma", "db", "push", "--accept-data-loss"]
+    command: ["pnpm", "exec", "prisma", "migrate", "deploy"]
     restart: "no"
     depends_on:
       db:

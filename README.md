@@ -72,9 +72,9 @@ docker build -t fishing-planet-api .
 docker run -p 8080:8080 -e DATABASE_URL=postgresql://… fishing-planet-api
 ```
 
-Or bring up the whole stack with Compose. An `init` service pushes the Prisma
-schema (using the builder image, which has the CLI) before the API starts, so a
-single command is self-contained:
+Or bring up the whole stack with Compose. An `init` service applies the Prisma
+migrations (`prisma migrate deploy`, using the builder image, which has the CLI)
+before the API starts, so a single command is self-contained:
 
 ```bash
 docker compose up -d --build       # Postgres → schema push (init) → API on :8080

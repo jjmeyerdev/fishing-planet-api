@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, pageParams, buildWhere, orClientError } from './helpers.js'
+import { readJson, pick, intParam, pageParams, buildWhere, sortOrder, orClientError } from './helpers.js'
 import type { FilterSpec } from './helpers.js'
 
 const FIELDS = ['name', 'region', 'waterwayType', 'unlockLevel'] as const
@@ -13,13 +13,16 @@ const FILTERS: FilterSpec[] = [
   { param: 'unlockLevel', field: 'unlockLevel', kind: 'int' },
 ]
 
+const SORTABLE = ['id', 'name', 'region', 'waterwayType', 'unlockLevel']
+
 export const locations = new Hono()
 
 locations.get('/', async (c) => {
   const { limit, offset } = pageParams(c)
   const where = buildWhere(c, FILTERS) as Prisma.LocationWhereInput
+  const orderBy = (sortOrder(c, SORTABLE) ?? { id: 'asc' }) as Prisma.LocationOrderByWithRelationInput
   const [data, total] = await Promise.all([
-    prisma.location.findMany({ where, orderBy: { id: 'asc' }, skip: offset, take: limit }),
+    prisma.location.findMany({ where, orderBy, skip: offset, take: limit }),
     prisma.location.count({ where }),
   ])
   return c.json({ data, total, limit, offset })

@@ -94,6 +94,22 @@ export function buildWhere(c: Context, filters: readonly FilterSpec[]): Record<s
   return where
 }
 
+// Parse ?sort=&order= against a per-route whitelist, returning a Prisma
+// `orderBy`, or undefined so the caller keeps its default order. `order`
+// defaults to asc; an unknown sort field or a bad order value is a 400.
+export function sortOrder(c: Context, sortable: readonly string[]): Record<string, 'asc' | 'desc'> | undefined {
+  const field = c.req.query('sort')
+  if (!field) return undefined
+  if (!sortable.includes(field)) {
+    throw new HTTPException(400, { message: `Invalid sort field: ${field}` })
+  }
+  const order = c.req.query('order') ?? 'asc'
+  if (order !== 'asc' && order !== 'desc') {
+    throw new HTTPException(400, { message: "order must be 'asc' or 'desc'" })
+  }
+  return { [field]: order }
+}
+
 const DEFAULT_LIMIT = 50
 const MAX_LIMIT = 100
 

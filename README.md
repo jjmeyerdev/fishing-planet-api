@@ -167,6 +167,21 @@ filter returns `400`.
 
 Example: `GET /api/fish?q=bass&isMonster=true&limit=10`.
 
+### Sorting
+
+`list` endpoints accept `?sort=<field>&order=asc|desc` (`order` defaults to
+`asc`). Without `sort`, each endpoint keeps its default order. `sort` must name a
+whitelisted column, and `order` must be `asc`/`desc`, else `400`.
+
+| Endpoint | Sortable fields | Default |
+| --- | --- | --- |
+| `/api/fish` | `id`, `commonName`, `family`, `creditsPerKgUnique`, `monsterTargetWeight` | `id` asc |
+| `/api/locations` | `id`, `name`, `region`, `waterwayType`, `unlockLevel` | `id` asc |
+| `/api/biting-preferences` | `fishId`, `depthZone` | `fishId` asc |
+| `/api/fish-locations` | `fishId`, `locationId`, `specificSpot` | `fishId`, `locationId` asc |
+
+Example: `GET /api/fish?sort=commonName&order=desc`.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, coding conventions, and the pull request flow.

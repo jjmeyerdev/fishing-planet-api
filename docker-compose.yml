@@ -43,5 +43,30 @@ services:
       retries: 5
       start_period: 5s
 
+  # Smoke test that runs only once the app reports healthy. Not started by a
+  # normal `up` (test profile). Run it and get its exit code with:
+  #   docker compose --profile test up --build --abort-on-container-exit --exit-code-from test
+  test:
+    image: node:22-alpine
+    profiles: ["test"]
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      BASE_URL: http://app:8080
+    command:
+      - node
+      - -e
+      - |-
+        (async () => {
+          const base = process.env.BASE_URL
+          for (const path of ['/health', '/']) {
+            const r = await fetch(base + path)
+            if (r.status !== 200) throw new Error(`$${path} -> $${r.status}`)
+            console.log(`ok $${path} -> 200`)
+          }
+          console.log('smoke tests passed')
+        })().catch((e) => { console.error('FAIL', e.message); process.exit(1) })
+
 volumes:
   pgdata:

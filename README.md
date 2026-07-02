@@ -202,6 +202,15 @@ sends one) that appears as `requestId` in the logs for correlation. Liveness/
 readiness probes aren't logged. `LOG_SILENT=1` silences output (used by the test
 suite).
 
+### Metrics
+
+`GET /metrics` exposes Prometheus metrics: `http_requests_total` and
+`http_request_duration_seconds` (labeled by `method`, the matched **route
+pattern** — e.g. `/api/fish/:id` — and `status`), plus default Node
+process/runtime metrics (heap, GC, event-loop lag, CPU). It's public and outside
+`/api` (no auth or rate limit), so restrict it at the network layer in
+production. Probes and the scrape itself aren't counted.
+
 ### Rate limiting
 
 All `/api/*` endpoints are rate limited per client IP — by default **100 requests

@@ -6,6 +6,7 @@ import { docs } from './docs.js'
 import { rateLimit } from './rateLimit.js'
 import { apiKeyAuth } from './auth.js'
 import { log, requestLogger, type LogEnv } from './logger.js'
+import { registry, metricsMiddleware } from './metrics.js'
 import { isConnectionError } from './routes/helpers.js'
 import { routes } from './routes/index.js'
 
@@ -16,6 +17,7 @@ const API_KEYS = (process.env.API_KEYS ?? '').split(',').map((k) => k.trim()).fi
 export const app = new Hono<LogEnv>()
 
 app.use('*', requestLogger())
+app.use('*', metricsMiddleware())
 app.use('*', cors())
 
 // Rate limit the data API only — liveness/readiness probes and /docs are exempt.
@@ -42,6 +44,12 @@ app.get('/ready', async (c) => {
 
 // Swagger UI at /docs, raw spec at /openapi.yaml.
 app.route('/', docs)
+
+// Prometheus scrape endpoint (public; not under /api, so no auth/rate limit).
+app.get('/metrics', async (c) => {
+  c.header('content-type', registry.contentType)
+  return c.body(await registry.metrics())
+})
 
 app.route('/api', routes)
 

@@ -1,0 +1,24 @@
+name: Smoke
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  # End-to-end: build the image, bring up Postgres + migrations, and run a
+  # /api/fish CRUD round-trip through the compose network. High published ports
+  # avoid clashing with anything on the runner; the test reaches the app over
+  # the compose network regardless.
+  smoke:
+    runs-on: ubuntu-latest
+    env:
+      APP_PORT: 18080
+      DB_PORT: 15432
+    steps:
+      - uses: actions/checkout@v7
+
+      - run: docker compose --profile test run --build --rm test
+
+      - if: always()
+        run: docker compose --profile test down -v

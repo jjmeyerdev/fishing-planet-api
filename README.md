@@ -193,6 +193,14 @@ var — when it's empty, auth is **disabled** (writes open), so set it in any re
 deployment. The Compose stack sets `local-dev-key` by default. `/health`,
 `/ready`, and `/docs` are always public.
 
+### Graceful shutdown
+
+On `SIGTERM`/`SIGINT` the server stops accepting connections, lets in-flight
+requests finish, closes the Prisma pool, then exits `0` — logging `shutdown
+initiated`/`shutdown complete`. A backstop (`SHUTDOWN_TIMEOUT_MS`, default `10s`)
+forces exit if draining stalls. The Compose stack sets `stop_grace_period: 15s`
+so Docker gives that drain room before escalating to `SIGKILL`.
+
 ### Logging
 
 The server emits **structured JSON logs** (one line per request and per error) to

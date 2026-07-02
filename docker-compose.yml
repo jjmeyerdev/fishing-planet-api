@@ -63,6 +63,9 @@ services:
 
   app:
     build: .
+    # Give the app's own drain (SHUTDOWN_TIMEOUT_MS, default 10s) room before
+    # Docker escalates SIGTERM to SIGKILL.
+    stop_grace_period: 15s
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-user}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-fishing_planet}?schema=public
       PORT: 8080

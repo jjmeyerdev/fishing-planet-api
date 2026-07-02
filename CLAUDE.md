@@ -108,6 +108,11 @@ connection timeouts) so an unreachable DB fails fast instead of hanging.
 `src/docs.ts` serves Swagger UI at `/docs` (CDN assets) and the raw
 `openapi.yaml` at `/openapi.yaml` (read relative to the module, so it resolves
 under both `tsx` and the compiled build; the Dockerfile copies it into the image).
+`src/index.ts` (the entry) traps `SIGTERM`/`SIGINT` and drains gracefully:
+`server.close()` (finish in-flight) → `prisma.$disconnect()` → exit, with a
+`SHUTDOWN_TIMEOUT_MS` backstop. Signal handlers live here, not in `app.ts`, so
+tests (which import `app`) don't register them.
+
 `src/logger.ts` provides `log()` (one JSON line to stdout; `LOG_SILENT` mutes it,
 set by `pnpm test`) and `requestLogger()`, which assigns/echoes an `X-Request-Id`
 (stored on the context as `requestId`, typed via `LogEnv`) and logs one line per

@@ -27,6 +27,7 @@ The server starts at <http://localhost:8080> (override with `PORT`).
 - `pnpm build` — generate the Prisma client and compile to `dist/`
 - `pnpm start` — run the compiled server
 - `pnpm typecheck` — type-check without emitting
+- `pnpm test` — run the Vitest suite (`pnpm test:watch` to watch)
 - `pnpm db:push` — push the Prisma schema to the database (no migration files)
 - `pnpm db:migrate` — create and apply a dev migration
 - `pnpm db:generate` — regenerate the Prisma client

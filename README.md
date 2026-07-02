@@ -1,5 +1,7 @@
 # fishing-planet-api
 
+[![CI](https://github.com/jjmeyerdev/fishing-planet-api/actions/workflows/ci.yml/badge.svg)](https://github.com/jjmeyerdev/fishing-planet-api/actions/workflows/ci.yml)
+
 A [Hono](https://hono.dev) API on Node.js + TypeScript, backed by PostgreSQL via [Prisma 7](https://www.prisma.io) (driver adapter `@prisma/adapter-pg`).
 
 ## Requirements

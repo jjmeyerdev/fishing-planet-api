@@ -15,7 +15,8 @@ pnpm install            # runs `prisma generate` via postinstall
 pnpm dev                # tsx watch, hot-reload dev server
 pnpm build              # prisma generate + tsc → dist/
 pnpm start              # node dist/index.js
-pnpm typecheck          # tsc --noEmit
+pnpm typecheck          # type-check src + tests (no emit)
+pnpm test               # run the Vitest suite (pnpm test:watch to watch)
 pnpm db:push            # push schema to DB (no migration files)
 pnpm db:migrate         # create + apply a dev migration
 pnpm db:generate        # regenerate the Prisma client
@@ -25,8 +26,9 @@ pnpm seed:biting        # seed biting_preferences from every data/fish/*.md
 pnpm seed:biting data/fish/x.md   # seed a single fish file
 ```
 
-There is no test runner or linter configured; `pnpm typecheck` is the only
-static check. The server listens on `PORT` (default **8080**).
+The static checks are `pnpm typecheck` (types, including `tests/`) and `pnpm test`
+(the Vitest suite); no linter is configured. The server listens on `PORT`
+(default **8080**).
 
 ## Prisma 7 configuration (non-obvious)
 

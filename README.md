@@ -90,7 +90,7 @@ docker compose --profile seed up --build seed
 To run the smoke-test service, which waits for the app to report healthy:
 
 ```bash
-docker compose --profile test up --build --abort-on-container-exit --exit-code-from test
+docker compose --profile test run --build --rm test
 ```
 
 Credentials default to the `.env.example` values; override `POSTGRES_USER`,

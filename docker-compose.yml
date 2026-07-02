@@ -81,8 +81,12 @@ services:
       start_period: 5s
 
   # Smoke test that runs only once the app reports healthy. Not started by a
-  # normal `up` (test profile). Run it and get its exit code with:
-  #   docker compose --profile test up --build --abort-on-container-exit --exit-code-from test
+  # normal `up` (test profile). Exercises the DB via a /api/fish CRUD round-trip
+  # (self-cleaning, so it needs no seed and is rerun-safe). Run it — the exit
+  # code is the test's — with:
+  #   docker compose --profile test run --build --rm test
+  # (Use `run`, not `up --abort-on-container-exit`: the one-shot init container
+  # exits 0 early, which would abort the stack out from under the test.)
   test:
     image: node:22-alpine
     profiles: ["test"]
@@ -97,12 +101,23 @@ services:
       - |-
         (async () => {
           const base = process.env.BASE_URL
-          for (const path of ['/health', '/']) {
-            const r = await fetch(base + path)
-            if (r.status !== 200) throw new Error(`$${path} -> $${r.status}`)
-            console.log(`ok $${path} -> 200`)
-          }
-          console.log('smoke tests passed')
+          const name = 'Smoke Test Fish'
+          let r = await fetch(base + '/health')
+          if (r.status !== 200) throw new Error('health ' + r.status)
+          r = await fetch(base + '/api/fish')
+          if (r.status !== 200) throw new Error('list ' + r.status)
+          const list = await r.json()
+          if (!Array.isArray(list)) throw new Error('list is not an array')
+          const stale = list.find((f) => f.commonName === name)
+          if (stale) await fetch(base + '/api/fish/' + stale.id, { method: 'DELETE' })
+          r = await fetch(base + '/api/fish', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ commonName: name }) })
+          if (r.status !== 201) throw new Error('create ' + r.status)
+          const created = await r.json()
+          r = await fetch(base + '/api/fish/' + created.id)
+          if (r.status !== 200) throw new Error('get ' + r.status)
+          r = await fetch(base + '/api/fish/' + created.id, { method: 'DELETE' })
+          if (r.status !== 204) throw new Error('delete ' + r.status)
+          console.log('smoke tests passed: health + /api/fish CRUD round-trip (' + list.length + ' fish listed)')
         })().catch((e) => { console.error('FAIL', e.message); process.exit(1) })
 
 volumes:

@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, orNotFound } from './helpers.js'
+import { readJson, pick, intParam, orClientError } from './helpers.js'
 
 // Keyed one-to-one on fishId.
 const CREATE_FIELDS = [
@@ -27,16 +27,16 @@ bitingPreferences.get('/:fishId', async (c) => {
 
 bitingPreferences.post('/', async (c) => {
   const body = await readJson(c)
-  const created = await prisma.bitingPreference.create({
+  const created = await orClientError(prisma.bitingPreference.create({
     data: pick<Prisma.BitingPreferenceUncheckedCreateInput>(body, CREATE_FIELDS),
-  })
+  }))
   return c.json(created, 201)
 })
 
 bitingPreferences.patch('/:fishId', async (c) => {
   const fishId = intParam(c, 'fishId')
   const body = await readJson(c)
-  const updated = await orNotFound(prisma.bitingPreference.update({
+  const updated = await orClientError(prisma.bitingPreference.update({
     where: { fishId },
     data: pick<Prisma.BitingPreferenceUncheckedUpdateInput>(body, UPDATE_FIELDS),
   }))
@@ -45,6 +45,6 @@ bitingPreferences.patch('/:fishId', async (c) => {
 
 bitingPreferences.delete('/:fishId', async (c) => {
   const fishId = intParam(c, 'fishId')
-  await orNotFound(prisma.bitingPreference.delete({ where: { fishId } }))
+  await orClientError(prisma.bitingPreference.delete({ where: { fishId } }))
   return c.body(null, 204)
 })

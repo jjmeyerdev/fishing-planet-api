@@ -53,12 +53,41 @@ export function intQuery(c: Context, name: string): number | undefined {
   return value
 }
 
-// Run a Prisma write, translating a missing-row P2025 into a 404.
-export async function orNotFound<T>(op: Promise<T>): Promise<T> {
+// Extract a Prisma known-request-error code (e.g. 'P2002') if present.
+function prismaCode(e: unknown): string | undefined {
+  if (typeof e === 'object' && e !== null && 'code' in e) {
+    const code = (e as { code?: unknown }).code
+    if (typeof code === 'string') return code
+  }
+  return undefined
+}
+
+// Prisma throws PrismaClientValidationError (no error code) when the input data
+// is missing a required field or has the wrong type.
+function isValidationError(e: unknown): boolean {
+  return (
+    typeof e === 'object' &&
+    e !== null &&
+    (e as { name?: unknown }).name === 'PrismaClientValidationError'
+  )
+}
+
+// Run a Prisma write, translating its expected failures into client 4xx errors
+// instead of a blanket 500:
+//   P2025 missing row            -> 404
+//   P2002 unique violation       -> 409
+//   P2003 foreign-key violation  -> 400 (references a row that doesn't exist)
+//   invalid/missing input fields -> 400
+// Anything else propagates and surfaces as a 500.
+export async function orClientError<T>(op: Promise<T>): Promise<T> {
   try {
     return await op
   } catch (e) {
     if (isNotFound(e)) throw new HTTPException(404, { message: 'Not found' })
+    const code = prismaCode(e)
+    if (code === 'P2002') throw new HTTPException(409, { message: 'Already exists' })
+    if (code === 'P2003') throw new HTTPException(400, { message: 'Invalid reference' })
+    if (isValidationError(e)) throw new HTTPException(400, { message: 'Invalid request body' })
     throw e
   }
 }

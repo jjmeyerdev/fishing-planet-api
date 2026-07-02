@@ -136,6 +136,11 @@ returned as a generic `500` (so internal Prisma messages aren't leaked):
   → `409`, `P2003` foreign key → `400`, and a `PrismaClientValidationError`
   (missing/mistyped field) → `400`. `isNotFound(e)` (the `P2025` check) backs it.
 
+The API is described by a hand-maintained `openapi.yaml` (OpenAPI 3.0) at the
+repo root — update it when routes, params, or schemas change, and lint with
+`npx @redocly/cli lint openapi.yaml` (config in `redocly.yaml` waives rules that
+don't fit: no auth, meta endpoints without 4xx, the 3.0 nullable-`$ref` idiom).
+
 `fish-locations` is the exception to id-in-path CRUD: because its PK is composite,
 `PATCH`/`DELETE` identify the row via `?fishId=&locationId=&specificSpot=` query
 params (see `keyFromQuery`), and `GET` filters by optional `fishId`/`locationId`.

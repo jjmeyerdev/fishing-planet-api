@@ -184,6 +184,17 @@ whitelisted column, and `order` must be `asc`/`desc`, else `400`.
 
 Example: `GET /api/fish?sort=commonName&order=desc`.
 
+## API specification
+
+The full API — every endpoint, query param, request/response schema, and error
+status — is described in [`openapi.yaml`](openapi.yaml) (OpenAPI 3.0). Load it
+into Swagger Editor, Postman, or a client generator. It's hand-maintained, so
+keep it in sync when routes change; lint it with:
+
+```bash
+npx @redocly/cli lint openapi.yaml
+```
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, coding conventions, and the pull request flow.

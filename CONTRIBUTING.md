@@ -14,7 +14,7 @@ the conventions the codebase relies on, and how changes get merged.
 ```bash
 pnpm install                # runs prisma generate via postinstall
 cp .env.example .env        # then set DATABASE_URL
-pnpm db:push                # create tables from the Prisma schema
+pnpm db:migrate             # apply migrations to create the schema
 pnpm seed                   # (optional) load data/locations/*.md
 pnpm seed:biting            # (optional) load data/fish/*.md
 pnpm dev                    # hot-reload dev server on PORT (default 8080)
@@ -22,7 +22,8 @@ pnpm dev                    # hot-reload dev server on PORT (default 8080)
 
 ## Before you open a PR
 
-Both checks are enforced by CI and must pass before a pull request can merge:
+CI runs both of these on every push and pull request, and they must pass before a
+pull request can merge:
 
 ```bash
 pnpm typecheck              # tsc --noEmit
@@ -51,8 +52,8 @@ These are load-bearing; see `CLAUDE.md` for the full rationale.
 
 ## Branch and PR flow
 
-`main` is protected: changes land through a pull request with a passing `test`
-check.
+`main` is protected: changes land through a pull request with passing `test` and
+`smoke` checks.
 
 1. Branch off `main` (`git switch -c my-change`).
 2. Commit focused changes with a clear message.

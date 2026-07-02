@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import type { Context } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { pick, isNotFound } from './helpers.js'
+import { readJson, pick, isNotFound } from './helpers.js'
 
 // Composite primary key: (fishId, locationId, specificSpot).
 const CREATE_FIELDS = ['fishId', 'locationId', 'specificSpot', 'classesPresent'] as const
@@ -29,7 +29,7 @@ fishLocations.get('/', async (c) => {
 })
 
 fishLocations.post('/', async (c) => {
-  const body = await c.req.json<Record<string, unknown>>()
+  const body = await readJson(c)
   const created = await prisma.fishLocation.create({
     data: pick<Prisma.FishLocationUncheckedCreateInput>(body, CREATE_FIELDS),
   })
@@ -40,7 +40,7 @@ fishLocations.post('/', async (c) => {
 fishLocations.patch('/', async (c) => {
   const key = keyFromQuery(c)
   if (!key) return c.json({ error: 'fishId, locationId and specificSpot query params are required' }, 400)
-  const body = await c.req.json<Record<string, unknown>>()
+  const body = await readJson(c)
   try {
     const updated = await prisma.fishLocation.update({
       where: { fishId_locationId_specificSpot: key },

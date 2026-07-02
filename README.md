@@ -106,3 +106,7 @@ The `fish_locations` join has a composite key `(fishId, locationId, specificSpot
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, coding conventions, and the pull request flow.
+
+## License
+
+[MIT](LICENSE) © Josh Meyer

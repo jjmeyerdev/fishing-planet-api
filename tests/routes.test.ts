@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { Hono } from 'hono'
+import { HTTPException } from 'hono/http-exception'
 import { rateLimit } from '../src/rateLimit.js'
 import { apiKeyAuth } from '../src/auth.js'
 import { log, requestLogger, type LogEnv } from '../src/logger.js'
@@ -525,6 +526,41 @@ describe('structured logging', () => {
     expect(spy).not.toHaveBeenCalled()
     spy.mockRestore()
     vi.unstubAllEnvs()
+  })
+
+  it('does not emit a request line when the handler errored (onError logs it)', async () => {
+    vi.stubEnv('LOG_SILENT', '')
+    const spy = vi.spyOn(console, 'log').mockImplementation(() => {})
+    const a = new Hono<LogEnv>()
+    a.use('*', requestLogger())
+    a.get('/boom', () => { throw new HTTPException(400, { message: 'bad' }) })
+    a.onError((e, c) => c.json({ error: (e as Error).message }, 400))
+    await a.request('/boom')
+    const requestLines = spy.mock.calls.filter((call) => String(call[0]).includes('"msg":"request"'))
+    expect(requestLines).toHaveLength(0)
+    spy.mockRestore()
+    vi.unstubAllEnvs()
+  })
+})
+
+describe('metrics', () => {
+  it('GET /metrics exposes Prometheus text incl. default process/runtime metrics', async () => {
+    const res = await app.request('/metrics')
+    expect(res.status).toBe(200)
+    expect(res.headers.get('content-type')).toContain('text/plain')
+    const body = await res.text()
+    expect(body).toContain('http_requests_total')
+    expect(body).toContain('http_request_duration_seconds')
+    expect(body).toContain('nodejs_') // default runtime metrics collected
+    expect(body).toContain('process_cpu')
+  })
+
+  it('records a request labeled by the matched route pattern', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    await app.request('/api/fish')
+    const body = await (await app.request('/metrics')).text()
+    expect(body).toContain('route="/api/fish"')
   })
 })
 

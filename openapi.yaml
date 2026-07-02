@@ -82,6 +82,18 @@ paths:
                 properties:
                   status: { type: string, example: unavailable }
 
+  /metrics:
+    get:
+      summary: Prometheus metrics
+      operationId: getMetrics
+      tags: [meta]
+      responses:
+        '200':
+          description: Metrics in Prometheus text exposition format
+          content:
+            text/plain:
+              schema: { type: string }
+
   /api/fish:
     get:
       summary: List fish

@@ -321,3 +321,39 @@ describe('list filtering', () => {
     expect(prisma.fish.findMany).toHaveBeenCalledWith(expect.objectContaining({ where: {}, take: 5 }))
   })
 })
+
+describe('list sorting', () => {
+  it('defaults to id asc when no sort is given', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    await app.request('/api/fish')
+    expect(prisma.fish.findMany).toHaveBeenCalledWith(expect.objectContaining({ orderBy: { id: 'asc' } }))
+  })
+
+  it('sorts by a whitelisted field and direction', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    const res = await app.request('/api/fish?sort=commonName&order=desc')
+    expect(res.status).toBe(200)
+    expect(prisma.fish.findMany).toHaveBeenCalledWith(expect.objectContaining({ orderBy: { commonName: 'desc' } }))
+  })
+
+  it('defaults order to asc when only sort is given', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    await app.request('/api/fish?sort=family')
+    expect(prisma.fish.findMany).toHaveBeenCalledWith(expect.objectContaining({ orderBy: { family: 'asc' } }))
+  })
+
+  it('rejects a non-whitelisted sort field with 400', async () => {
+    const res = await app.request('/api/fish?sort=description')
+    expect(res.status).toBe(400)
+    expect(prisma.fish.findMany).not.toHaveBeenCalled()
+  })
+
+  it('rejects an invalid order value with 400', async () => {
+    const res = await app.request('/api/fish?sort=commonName&order=sideways')
+    expect(res.status).toBe(400)
+    expect(prisma.fish.findMany).not.toHaveBeenCalled()
+  })
+})

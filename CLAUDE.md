@@ -120,6 +120,10 @@ error into a generic `500` (so internal Prisma messages aren't leaked):
   whitelist (`string`/`search`/`int`/`boolean`; `search` is a case-insensitive
   `contains`). Unknown params are ignored so filters coexist with pagination;
   a bad int/boolean is `400`. The same `where` feeds `findMany` and `count`.
+- `sortOrder(c, SORTABLE)` — parse `?sort=&order=` against a per-route
+  `SORTABLE` whitelist into a Prisma `orderBy`, or `undefined` so the route
+  keeps its default order. `order` defaults to asc; an unknown field or bad
+  order value is `400`.
 - `orClientError(op)` — run a Prisma write, translating its expected failures
   into 4xx instead of a blanket 500: `P2025` missing row → `404`, `P2002` unique
   → `409`, `P2003` foreign key → `400`, and a `PrismaClientValidationError`

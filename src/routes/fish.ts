@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, pageParams, buildWhere, orClientError } from './helpers.js'
+import { readJson, pick, intParam, pageParams, buildWhere, sortOrder, orClientError } from './helpers.js'
 import type { FilterSpec } from './helpers.js'
 
 const FIELDS = [
@@ -19,13 +19,16 @@ const FILTERS: FilterSpec[] = [
   { param: 'isEventFish', field: 'isEventFish', kind: 'boolean' },
 ]
 
+const SORTABLE = ['id', 'commonName', 'family', 'creditsPerKgUnique', 'monsterTargetWeight']
+
 export const fish = new Hono()
 
 fish.get('/', async (c) => {
   const { limit, offset } = pageParams(c)
   const where = buildWhere(c, FILTERS) as Prisma.FishWhereInput
+  const orderBy = (sortOrder(c, SORTABLE) ?? { id: 'asc' }) as Prisma.FishOrderByWithRelationInput
   const [data, total] = await Promise.all([
-    prisma.fish.findMany({ where, orderBy: { id: 'asc' }, skip: offset, take: limit }),
+    prisma.fish.findMany({ where, orderBy, skip: offset, take: limit }),
     prisma.fish.count({ where }),
   ])
   return c.json({ data, total, limit, offset })

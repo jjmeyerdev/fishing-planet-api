@@ -1,0 +1,708 @@
+openapi: 3.0.3
+info:
+  title: fishing-planet-api
+  version: 0.1.0
+  description: >
+    REST API exposing Fishing Planet game data — fish, locations, their
+    many-to-many presence, and per-fish biting preferences. List endpoints
+    support pagination, filtering, and sorting and return a
+    `{ data, total, limit, offset }` envelope.
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: http://localhost:8080
+    description: Local (override the port with PORT)
+
+paths:
+  /:
+    get:
+      summary: Service info
+      operationId: getRoot
+      tags: [meta]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name: { type: string }
+                  status: { type: string }
+  /health:
+    get:
+      summary: Liveness probe (does not touch the DB)
+      operationId: getHealth
+      tags: [meta]
+      responses:
+        '200':
+          description: Process is up
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: healthy }
+  /ready:
+    get:
+      summary: Readiness probe (pings the DB)
+      operationId: getReady
+      tags: [meta]
+      responses:
+        '200':
+          description: DB reachable
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ready }
+        '503':
+          description: DB unreachable
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: unavailable }
+
+  /api/fish:
+    get:
+      summary: List fish
+      operationId: listFish
+      tags: [fish]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on commonName
+          schema: { type: string }
+        - name: family
+          in: query
+          schema: { type: string }
+        - name: isMonster
+          in: query
+          schema: { type: boolean }
+        - name: isEventFish
+          in: query
+          schema: { type: boolean }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, commonName, family, creditsPerKgUnique, monsterTargetWeight]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of fish
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Fish' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a fish
+      operationId: createFish
+      tags: [fish]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/FishCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Fish' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/fish/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a fish (includes its biting preference)
+      operationId: getFish
+      tags: [fish]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Fish'
+                  - type: object
+                    properties:
+                      bitingPreference:
+                        nullable: true
+                        allOf: [ { $ref: '#/components/schemas/BitingPreference' } ]
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a fish
+      operationId: updateFish
+      tags: [fish]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/FishUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Fish' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a fish
+      operationId: deleteFish
+      tags: [fish]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/locations:
+    get:
+      summary: List locations
+      operationId: listLocations
+      tags: [locations]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on name
+          schema: { type: string }
+        - name: region
+          in: query
+          schema: { type: string }
+        - name: waterwayType
+          in: query
+          schema: { type: string }
+        - name: unlockLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, name, region, waterwayType, unlockLevel]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of locations
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Location' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a location
+      operationId: createLocation
+      tags: [locations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LocationCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Location' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/locations/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a location
+      operationId: getLocation
+      tags: [locations]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Location' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a location
+      operationId: updateLocation
+      tags: [locations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LocationUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Location' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a location
+      operationId: deleteLocation
+      tags: [locations]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/biting-preferences:
+    get:
+      summary: List biting preferences
+      operationId: listBitingPreferences
+      tags: [biting-preferences]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: depthZone
+          in: query
+          schema: { type: string }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [fishId, depthZone]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of biting preferences
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/BitingPreference' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a biting preference
+      operationId: createBitingPreference
+      tags: [biting-preferences]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BitingPreferenceCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/BitingPreference' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/biting-preferences/{fishId}:
+    parameters:
+      - name: fishId
+        in: path
+        required: true
+        schema: { type: integer }
+    get:
+      summary: Get a biting preference by fishId
+      operationId: getBitingPreference
+      tags: [biting-preferences]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/BitingPreference' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a biting preference
+      operationId: updateBitingPreference
+      tags: [biting-preferences]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BitingPreferenceUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/BitingPreference' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a biting preference
+      operationId: deleteBitingPreference
+      tags: [biting-preferences]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/fish-locations:
+    get:
+      summary: List fish-location presence rows
+      operationId: listFishLocations
+      tags: [fish-locations]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: fishId
+          in: query
+          schema: { type: integer }
+        - name: locationId
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [fishId, locationId, specificSpot]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of fish-location rows
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/FishLocation' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a fish-location row
+      operationId: createFishLocation
+      tags: [fish-locations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/FishLocationCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FishLocation' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    patch:
+      summary: Update a fish-location row (identified by composite-key query params)
+      operationId: updateFishLocation
+      tags: [fish-locations]
+      parameters:
+        - { name: fishId, in: query, required: true, schema: { type: integer } }
+        - { name: locationId, in: query, required: true, schema: { type: integer } }
+        - { name: specificSpot, in: query, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/FishLocationUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/FishLocation' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    delete:
+      summary: Delete a fish-location row (identified by composite-key query params)
+      operationId: deleteFishLocation
+      tags: [fish-locations]
+      parameters:
+        - { name: fishId, in: query, required: true, schema: { type: integer } }
+        - { name: locationId, in: query, required: true, schema: { type: integer } }
+        - { name: specificSpot, in: query, required: true, schema: { type: string } }
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+components:
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      description: Page size (1–100)
+      schema: { type: integer, minimum: 1, maximum: 100, default: 50 }
+    Offset:
+      name: offset
+      in: query
+      description: Rows to skip
+      schema: { type: integer, minimum: 0, default: 0 }
+    Order:
+      name: order
+      in: query
+      description: Sort direction (requires sort)
+      schema: { type: string, enum: [asc, desc], default: asc }
+    IdPath:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer }
+
+  responses:
+    BadRequest:
+      description: Invalid request (malformed body, bad param/filter value)
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Conflict:
+      description: Unique-constraint violation
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    ServiceUnavailable:
+      description: Database unavailable
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        error: { type: string }
+      required: [error]
+    Page:
+      type: object
+      description: Pagination envelope; `data` is overridden per resource.
+      properties:
+        data:
+          type: array
+          items: {}
+        total: { type: integer, description: Total rows matching the query }
+        limit: { type: integer }
+        offset: { type: integer }
+      required: [data, total, limit, offset]
+
+    Fish:
+      type: object
+      description: Decimal fields (weights in kg, credit rates) serialize as strings.
+      properties:
+        id: { type: integer }
+        commonName: { type: string }
+        scientificName: { type: string, nullable: true }
+        family: { type: string, nullable: true }
+        description: { type: string, nullable: true }
+        isEventFish: { type: boolean }
+        isMonster: { type: boolean }
+        weightYoungMin: { type: string, nullable: true }
+        weightYoungMax: { type: string, nullable: true }
+        weightCommonMin: { type: string, nullable: true }
+        weightCommonMax: { type: string, nullable: true }
+        weightTrophyMin: { type: string, nullable: true }
+        weightUniqueMin: { type: string, nullable: true }
+        weightUniqueMax: { type: string, nullable: true }
+        monsterTargetWeight: { type: string, nullable: true }
+        creditsPerKgCommon: { type: string, nullable: true }
+        creditsPerKgTrophy: { type: string, nullable: true }
+        creditsPerKgUnique: { type: string, nullable: true }
+        xpCurveNotes: { type: string, nullable: true }
+        farmingMetaTier: { type: string, nullable: true }
+        notesFarming: { type: string, nullable: true }
+        dataVersion: { type: string, nullable: true }
+        lastVerified: { type: string, format: date-time, nullable: true }
+      required: [id, commonName, isEventFish, isMonster]
+    FishCreate:
+      type: object
+      properties:
+        commonName: { type: string }
+        scientificName: { type: string }
+        family: { type: string }
+        description: { type: string }
+        isEventFish: { type: boolean }
+        isMonster: { type: boolean }
+        weightYoungMin: { type: string }
+        weightYoungMax: { type: string }
+        weightCommonMin: { type: string }
+        weightCommonMax: { type: string }
+        weightTrophyMin: { type: string }
+        weightUniqueMin: { type: string }
+        weightUniqueMax: { type: string }
+        monsterTargetWeight: { type: string }
+        creditsPerKgCommon: { type: string }
+        creditsPerKgTrophy: { type: string }
+        creditsPerKgUnique: { type: string }
+        xpCurveNotes: { type: string }
+        farmingMetaTier: { type: string }
+        notesFarming: { type: string }
+        dataVersion: { type: string }
+        lastVerified: { type: string, format: date-time }
+      required: [commonName]
+    FishUpdate:
+      allOf: [ { $ref: '#/components/schemas/FishCreate' } ]
+      description: Same writable fields as create; all optional.
+
+    Location:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        region: { type: string }
+        waterwayType: { type: string }
+        unlockLevel: { type: integer }
+      required: [id, name, region, waterwayType, unlockLevel]
+    LocationCreate:
+      type: object
+      properties:
+        name: { type: string }
+        region: { type: string }
+        waterwayType: { type: string }
+        unlockLevel: { type: integer }
+      required: [name, region, waterwayType, unlockLevel]
+    LocationUpdate:
+      type: object
+      properties:
+        name: { type: string }
+        region: { type: string }
+        waterwayType: { type: string }
+        unlockLevel: { type: integer }
+
+    FishLocation:
+      type: object
+      description: Composite primary key (fishId, locationId, specificSpot).
+      properties:
+        fishId: { type: integer }
+        locationId: { type: integer }
+        specificSpot: { type: string }
+        classesPresent:
+          type: array
+          items: { type: string }
+      required: [fishId, locationId, specificSpot, classesPresent]
+    FishLocationCreate:
+      type: object
+      properties:
+        fishId: { type: integer }
+        locationId: { type: integer }
+        specificSpot: { type: string }
+        classesPresent:
+          type: array
+          items: { type: string }
+      required: [fishId, locationId, specificSpot]
+    FishLocationUpdate:
+      type: object
+      description: Only classesPresent is updatable.
+      properties:
+        classesPresent:
+          type: array
+          items: { type: string }
+
+    BitingPreference:
+      type: object
+      properties:
+        fishId: { type: integer }
+        preferredBaits:
+          type: array
+          items: { type: string }
+        preferredLures:
+          type: array
+          items: { type: string }
+        preferredLureColors:
+          type: array
+          items: { type: string }
+        hookSizeMin: { type: string, nullable: true }
+        hookSizeMax: { type: string, nullable: true }
+        depthZone: { type: string, nullable: true }
+        sunnyPeakTimes: { type: string, nullable: true }
+        cloudyPeakTimes: { type: string, nullable: true }
+        rainyPeakTimes: { type: string, nullable: true }
+      required: [fishId, preferredBaits, preferredLures, preferredLureColors]
+    BitingPreferenceCreate:
+      type: object
+      properties:
+        fishId: { type: integer }
+        preferredBaits:
+          type: array
+          items: { type: string }
+        preferredLures:
+          type: array
+          items: { type: string }
+        preferredLureColors:
+          type: array
+          items: { type: string }
+        hookSizeMin: { type: string }
+        hookSizeMax: { type: string }
+        depthZone: { type: string }
+        sunnyPeakTimes: { type: string }
+        cloudyPeakTimes: { type: string }
+        rainyPeakTimes: { type: string }
+      required: [fishId]
+    BitingPreferenceUpdate:
+      type: object
+      description: Same as create without fishId (the key is in the path).
+      properties:
+        preferredBaits:
+          type: array
+          items: { type: string }
+        preferredLures:
+          type: array
+          items: { type: string }
+        preferredLureColors:
+          type: array
+          items: { type: string }
+        hookSizeMin: { type: string }
+        hookSizeMax: { type: string }
+        depthZone: { type: string }
+        sunnyPeakTimes: { type: string }
+        cloudyPeakTimes: { type: string }
+        rainyPeakTimes: { type: string }
+
+tags:
+  - name: meta
+    description: Service info and health/readiness probes
+  - name: fish
+    description: Fish game data
+  - name: locations
+    description: Fishable locations
+  - name: biting-preferences
+    description: Per-fish bait/lure preferences (1:1 with fish)
+  - name: fish-locations
+    description: Which fish are present at which locations

@@ -1,0 +1,16 @@
+# Config for `npx @redocly/cli lint openapi.yaml`. Extends the recommended
+# ruleset but waives three opinions that don't fit this project:
+extends:
+  - recommended
+rules:
+  # The API is intentionally unauthenticated (public read/write game data),
+  # so operations have no security requirements.
+  security-defined: off
+  # The meta endpoints (/, /health, /ready) have no 4xx responses by design.
+  operation-4xx-response: off
+  # OpenAPI 3.0 has no clean way to mark a $ref nullable; `allOf` + `nullable`
+  # is the accepted idiom (Fish.bitingPreference on GET /api/fish/{id}).
+  nullable-type-sibling: off
+  # The only server is localhost by design — this runs locally / in Compose,
+  # not as a hosted service.
+  no-server-example.com: off

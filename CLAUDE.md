@@ -80,12 +80,22 @@ Four models (`prisma/schema.prisma`), all with snake_case `@map` table/column na
 
 `app.ts` mounts `routes` under `/api`; `routes/index.ts` mounts each resource
 (`/fish`, `/locations`, `/fish-locations`, `/biting-preferences`). Every resource
-file follows the same CRUD shape and two shared helpers in `routes/helpers.ts`:
+file follows the same CRUD shape and shares helpers in `routes/helpers.ts`. The
+helpers that reject bad input **throw** a Hono `HTTPException`; `app.ts`'s
+`onError` renders that as `{ error }` with its status, and turns any *other*
+error into a generic `500` (so internal Prisma messages aren't leaked):
 
+- `readJson(c)` — parse the JSON body into an object, or `400` if it's malformed
+  or not a JSON object.
 - `pick(body, FIELDS)` — whitelists a fixed `FIELDS` tuple from the JSON body so
   clients can't set arbitrary columns. Each route defines its own `FIELDS`.
-- `isNotFound(e)` — detects Prisma error `P2025` to translate a missing
-  update/delete target into a 404.
+- `intParam(c, name)` / `intQuery(c, name)` — read a required route param / an
+  optional query filter as an integer, or `400` (`intQuery` returns `undefined`
+  when the param is absent, rather than forwarding `NaN` into a query).
+- `orClientError(op)` — run a Prisma write, translating its expected failures
+  into 4xx instead of a blanket 500: `P2025` missing row → `404`, `P2002` unique
+  → `409`, `P2003` foreign key → `400`, and a `PrismaClientValidationError`
+  (missing/mistyped field) → `400`. `isNotFound(e)` (the `P2025` check) backs it.
 
 `fish-locations` is the exception to id-in-path CRUD: because its PK is composite,
 `PATCH`/`DELETE` identify the row via `?fishId=&locationId=&specificSpot=` query

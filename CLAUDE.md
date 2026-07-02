@@ -41,6 +41,19 @@ The generated client is emitted to `src/generated/prisma/` (git-ignored) by
 `../generated/prisma/client.js`, not from `@prisma/client`. After any schema
 change, regenerate before typechecking or the import will be stale.
 
+## Migrations
+
+The schema is now tracked by committed migration files in `prisma/migrations/`
+(baseline: `..._init`). Change the schema with `pnpm db:migrate`
+(`prisma migrate dev`), which generates a new migration and applies it — **do
+not** use `pnpm db:push` on this project any more: it force-syncs the schema
+without a migration file, causing drift that `migrate deploy` later flags.
+
+`prisma migrate deploy` applies committed migrations idempotently and is what the
+Docker Compose `init` service runs before the app starts. The slim runtime image
+has no Prisma CLI, so migrations only ever run from the builder image (compose
+`init`) or the host, never from the running app container.
+
 ## ESM / import conventions
 
 `type: module` + `moduleResolution: Bundler` + `verbatimModuleSyntax`. Relative

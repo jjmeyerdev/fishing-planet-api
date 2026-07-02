@@ -357,3 +357,32 @@ describe('list sorting', () => {
     expect(prisma.fish.findMany).not.toHaveBeenCalled()
   })
 })
+
+describe('readiness and DB resilience', () => {
+  it('GET /ready returns 200 when the DB responds', async () => {
+    prisma.$queryRaw.mockResolvedValue([{ ok: 1 }])
+    const res = await app.request('/ready')
+    expect(res.status).toBe(200)
+    expect(await res.json()).toEqual({ status: 'ready' })
+  })
+
+  it('GET /ready returns 503 when the DB is unreachable', async () => {
+    prisma.$queryRaw.mockRejectedValue(new Error('connection refused'))
+    const res = await app.request('/ready')
+    expect(res.status).toBe(503)
+    expect(await res.json()).toEqual({ status: 'unavailable' })
+  })
+
+  it('GET /health does not touch the DB (liveness only)', async () => {
+    const res = await app.request('/health')
+    expect(res.status).toBe(200)
+    expect(prisma.$queryRaw).not.toHaveBeenCalled()
+  })
+
+  it('maps a Prisma connection error to 503, not 500', async () => {
+    prisma.fish.findMany.mockRejectedValue(Object.assign(new Error("Can't reach database"), { code: 'P1001' }))
+    const res = await app.request('/api/fish')
+    expect(res.status).toBe(503)
+    expect(await res.json()).toEqual({ error: 'Database unavailable' })
+  })
+})

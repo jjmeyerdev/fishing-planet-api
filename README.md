@@ -127,7 +127,9 @@ src/
 
 ## Endpoints
 
-Base: `GET /` (info), `GET /health`.
+Base: `GET /` (info), `GET /health` (liveness — process is up), `GET /ready`
+(readiness — pings the DB; `503` when unreachable). A DB connection failure
+during any request returns `503`, not `500`.
 
 | Resource | Base path | Operations |
 | --- | --- | --- |

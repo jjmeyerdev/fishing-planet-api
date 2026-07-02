@@ -14,6 +14,7 @@ const model = () => ({
 // vi.mock('../src/db.js', () => import('./mocks/db.js')) makes the app import
 // this exact object, so tests configure behaviour by driving these mocks.
 export const prisma = {
+  $queryRaw: vi.fn(),
   fish: model(),
   location: model(),
   fishLocation: model(),

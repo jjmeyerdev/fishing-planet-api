@@ -233,3 +233,14 @@ describe('fish-locations CRUD', () => {
     expect(res.status).toBe(404)
   })
 })
+
+describe('error handling', () => {
+  it('does not leak the internal error message on a 500', async () => {
+    prisma.fish.create.mockRejectedValue(new Error('sensitive db detail'))
+    const res = await app.request('/api/fish', json({ commonName: 'X' }))
+    expect(res.status).toBe(500)
+    const body = await res.json()
+    expect(body).toEqual({ error: 'Internal server error' })
+    expect(JSON.stringify(body)).not.toContain('sensitive db detail')
+  })
+})

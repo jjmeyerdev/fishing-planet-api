@@ -5,12 +5,12 @@ import { prisma } from '../src/db.js'
 
 // Seeds locations + fish + fish_locations from FP-Collective place markdown.
 //
-//   pnpm seed                       # every data/*.md
-//   pnpm seed data/lone-star.md     # a single file
+//   pnpm seed                             # every data/locations/*.md
+//   pnpm seed data/locations/lone-star.md # a single file
 //
 // Idempotent: re-running upserts the same rows. Two data-model notes below.
 
-const DATA_DIR = 'data'
+const DATA_DIR = 'data/locations'
 
 // The place page lists which fish are present lake-wide, not per-spot. The
 // specific spot (part of the fish_locations PK) comes from the bite map, which

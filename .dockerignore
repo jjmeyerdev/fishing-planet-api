@@ -1,0 +1,11 @@
+node_modules
+dist
+src/generated
+.git
+.github
+.env
+.env.local
+*.log
+.DS_Store
+tests
+data

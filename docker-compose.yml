@@ -106,8 +106,9 @@ services:
           if (r.status !== 200) throw new Error('health ' + r.status)
           r = await fetch(base + '/api/fish')
           if (r.status !== 200) throw new Error('list ' + r.status)
-          const list = await r.json()
-          if (!Array.isArray(list)) throw new Error('list is not an array')
+          const page = await r.json()
+          if (!Array.isArray(page.data) || typeof page.total !== 'number') throw new Error('list is not a paginated envelope')
+          const list = page.data
           const stale = list.find((f) => f.commonName === name)
           if (stale) await fetch(base + '/api/fish/' + stale.id, { method: 'DELETE' })
           r = await fetch(base + '/api/fish', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ commonName: name }) })
@@ -117,7 +118,7 @@ services:
           if (r.status !== 200) throw new Error('get ' + r.status)
           r = await fetch(base + '/api/fish/' + created.id, { method: 'DELETE' })
           if (r.status !== 204) throw new Error('delete ' + r.status)
-          console.log('smoke tests passed: health + /api/fish CRUD round-trip (' + list.length + ' fish listed)')
+          console.log('smoke tests passed: health + /api/fish CRUD round-trip (' + page.total + ' fish total)')
         })().catch((e) => { console.error('FAIL', e.message); process.exit(1) })
 
 volumes:

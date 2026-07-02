@@ -138,6 +138,19 @@ Base: `GET /` (info), `GET /health`.
 
 The `fish_locations` join has a composite key `(fishId, locationId, specificSpot)`, so update and delete take those three as query params rather than a path id.
 
+### Pagination
+
+Every `list` endpoint is paginated via `?limit=` (default `50`, max `100`) and
+`?offset=` (default `0`), and returns an envelope rather than a bare array:
+
+```json
+{ "data": [ /* rows */ ], "total": 277, "limit": 50, "offset": 0 }
+```
+
+`total` is the full count for the query (ignoring `limit`/`offset`), so a client
+can page until `offset + limit >= total`. An out-of-range `limit`/`offset` (or a
+non-integer value) returns `400`.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, coding conventions, and the pull request flow.

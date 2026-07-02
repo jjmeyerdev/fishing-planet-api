@@ -20,16 +20,20 @@ COPY tsconfig.json ./
 COPY src ./src
 RUN pnpm build
 
-# --- Runner: production dependencies + compiled output only ---
-FROM node:22-slim AS runner
+# --- Runner: minimal Alpine image with production deps + compiled output ---
+# No OpenSSL/engine here: the runtime talks to Postgres via the pg driver
+# adapter and Prisma's wasm query compiler, not a native engine.
+FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 RUN corepack enable
 
-# --ignore-scripts skips the prisma-generate postinstall: the client is already
-# compiled into dist/, and the prisma CLI isn't a production dependency.
+# --ignore-scripts skips the prisma-generate postinstall (client is already in
+# dist/). auto-install-peers=false keeps the optional `prisma` CLI peer of
+# @prisma/client out of the runtime — it drags in ~250MB of Studio/pglite/react
+# the server never uses; the runtime needs only the pg driver adapter.
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN pnpm install --prod --frozen-lockfile --ignore-scripts
+RUN pnpm install --prod --ignore-scripts --config.auto-install-peers=false
 
 COPY --from=builder /app/dist ./dist
 

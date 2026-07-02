@@ -387,6 +387,38 @@ describe('readiness and DB resilience', () => {
   })
 })
 
+describe('get-by-name lookup', () => {
+  it('GET /api/fish/by-name/:name returns the fish (URL-decoded, with biting preference)', async () => {
+    prisma.fish.findUnique.mockResolvedValue({ id: 1, commonName: 'Largemouth Bass' })
+    const res = await app.request('/api/fish/by-name/Largemouth%20Bass')
+    expect(res.status).toBe(200)
+    expect(await res.json()).toEqual({ id: 1, commonName: 'Largemouth Bass' })
+    expect(prisma.fish.findUnique).toHaveBeenCalledWith({
+      where: { commonName: 'Largemouth Bass' },
+      include: { bitingPreference: true },
+    })
+  })
+
+  it('GET /api/fish/by-name/:name returns 404 when missing', async () => {
+    prisma.fish.findUnique.mockResolvedValue(null)
+    const res = await app.request('/api/fish/by-name/Nope')
+    expect(res.status).toBe(404)
+  })
+
+  it('GET /api/locations/by-name/:name returns the location', async () => {
+    prisma.location.findUnique.mockResolvedValue({ id: 2, name: 'Emerald Lake' })
+    const res = await app.request('/api/locations/by-name/Emerald%20Lake')
+    expect(res.status).toBe(200)
+    expect(prisma.location.findUnique).toHaveBeenCalledWith({ where: { name: 'Emerald Lake' } })
+  })
+
+  it('GET /api/locations/by-name/:name returns 404 when missing', async () => {
+    prisma.location.findUnique.mockResolvedValue(null)
+    const res = await app.request('/api/locations/by-name/Nope')
+    expect(res.status).toBe(404)
+  })
+})
+
 describe('API docs', () => {
   it('GET /docs serves Swagger UI HTML pointing at the spec', async () => {
     const res = await app.request('/docs')

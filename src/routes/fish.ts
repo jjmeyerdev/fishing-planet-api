@@ -34,6 +34,17 @@ fish.get('/', async (c) => {
   return c.json({ data, total, limit, offset })
 })
 
+// Lookup by the unique commonName (exact; the ?q= list filter covers fuzzy
+// search). URL-encoded names decode automatically (e.g. Largemouth%20Bass).
+fish.get('/by-name/:name', async (c) => {
+  const row = await prisma.fish.findUnique({
+    where: { commonName: c.req.param('name') },
+    include: { bitingPreference: true },
+  })
+  if (!row) return c.json({ error: 'Not found' }, 404)
+  return c.json(row)
+})
+
 fish.get('/:id', async (c) => {
   const id = intParam(c, 'id')
   const row = await prisma.fish.findUnique({ where: { id }, include: { bitingPreference: true } })

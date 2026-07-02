@@ -28,6 +28,13 @@ locations.get('/', async (c) => {
   return c.json({ data, total, limit, offset })
 })
 
+// Lookup by the unique name (exact; the ?q= list filter covers fuzzy search).
+locations.get('/by-name/:name', async (c) => {
+  const row = await prisma.location.findUnique({ where: { name: c.req.param('name') } })
+  if (!row) return c.json({ error: 'Not found' }, 404)
+  return c.json(row)
+})
+
 locations.get('/:id', async (c) => {
   const id = intParam(c, 'id')
   const row = await prisma.location.findUnique({ where: { id } })

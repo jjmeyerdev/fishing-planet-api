@@ -100,11 +100,18 @@ Four models (`prisma/schema.prisma`), all with snake_case `@map` table/column na
 ## Route layer (`src/routes/`)
 
 `app.ts` mounts `routes` under `/api`; `routes/index.ts` mounts each resource
-(`/fish`, `/locations`, `/fish-locations`, `/biting-preferences`). Every resource
-file follows the same CRUD shape and shares helpers in `routes/helpers.ts`. The
-helpers that reject bad input **throw** a Hono `HTTPException`; `app.ts`'s
-`onError` renders that as `{ error }` with its status, and turns any *other*
-error into a generic `500` (so internal Prisma messages aren't leaked):
+(`/fish`, `/locations`, `/fish-locations`, `/biting-preferences`). `app.ts` also
+exposes `GET /health` (liveness, DB-free) and `GET /ready`
+(readiness — runs `SELECT 1`, `503` when the DB is unreachable); the Compose
+healthcheck targets `/ready`. `src/db.ts` sizes the pg pool (`max`, idle /
+connection timeouts) so an unreachable DB fails fast instead of hanging.
+
+Every resource file follows the same CRUD shape and shares helpers in
+`routes/helpers.ts`. The helpers that reject bad input **throw** a Hono
+`HTTPException`; `app.ts`'s `onError` renders that as `{ error }` with its
+status. A Prisma connection failure (`isConnectionError`: `P1001`/`P1002`/
+`P1008`/`P1017`) becomes a `503`; any other unexpected error is logged and
+returned as a generic `500` (so internal Prisma messages aren't leaked):
 
 - `readJson(c)` — parse the JSON body into an object, or `400` if it's malformed
   or not a JSON object.

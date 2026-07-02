@@ -136,6 +136,16 @@ function prismaCode(e: unknown): string | undefined {
   return undefined
 }
 
+// Prisma connection-level failures: can't reach the DB (P1001), connection
+// timeout (P1002), operations timed out (P1008), server closed the connection
+// (P1017). Distinct from the P2xxx query errors above.
+const CONNECTION_ERROR_CODES = new Set(['P1001', 'P1002', 'P1008', 'P1017'])
+
+export function isConnectionError(e: unknown): boolean {
+  const code = prismaCode(e)
+  return code !== undefined && CONNECTION_ERROR_CODES.has(code)
+}
+
 // Prisma throws PrismaClientValidationError (no error code) when the input data
 // is missing a required field or has the wrong type.
 function isValidationError(e: unknown): boolean {

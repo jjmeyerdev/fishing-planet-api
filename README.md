@@ -16,7 +16,7 @@ A [Hono](https://hono.dev) API on Node.js + TypeScript, backed by PostgreSQL via
 ```bash
 pnpm install
 cp .env.example .env        # then set DATABASE_URL
-pnpm db:push                # create tables from the Prisma schema
+pnpm db:migrate             # apply migrations to create the schema
 pnpm seed                   # (optional) load data/locations/*.md place pages
 pnpm seed:biting            # (optional) load data/fish/*.md biting preferences
 pnpm dev
@@ -31,8 +31,8 @@ The server starts at <http://localhost:8080> (override with `PORT`).
 - `pnpm start` — run the compiled server
 - `pnpm typecheck` — type-check without emitting
 - `pnpm test` — run the Vitest suite (`pnpm test:watch` to watch)
-- `pnpm db:push` — push the Prisma schema to the database (no migration files)
-- `pnpm db:migrate` — create and apply a dev migration
+- `pnpm db:migrate` — create and apply a dev migration (the tracked way to change the schema)
+- `pnpm db:push` — force-sync the schema with no migration file; avoid on this project, as it drifts from the committed migrations
 - `pnpm db:generate` — regenerate the Prisma client
 - `pnpm seed` — seed locations, fish and fish-locations from `data/locations/*.md` (pass a single file to seed just that one)
 - `pnpm seed:biting` — seed biting preferences from `data/fish/*.md` (pass a single file to seed just that one)

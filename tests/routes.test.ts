@@ -386,3 +386,23 @@ describe('readiness and DB resilience', () => {
     expect(await res.json()).toEqual({ error: 'Database unavailable' })
   })
 })
+
+describe('API docs', () => {
+  it('GET /docs serves Swagger UI HTML pointing at the spec', async () => {
+    const res = await app.request('/docs')
+    expect(res.status).toBe(200)
+    expect(res.headers.get('content-type')).toContain('text/html')
+    const html = await res.text()
+    expect(html).toContain('swagger-ui')
+    expect(html).toContain('/openapi.yaml')
+  })
+
+  it('GET /openapi.yaml serves the spec document', async () => {
+    const res = await app.request('/openapi.yaml')
+    expect(res.status).toBe(200)
+    expect(res.headers.get('content-type')).toContain('yaml')
+    const body = await res.text()
+    expect(body).toContain('openapi:')
+    expect(body).toContain('fishing-planet-api')
+  })
+})

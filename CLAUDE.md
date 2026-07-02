@@ -105,6 +105,9 @@ exposes `GET /health` (liveness, DB-free) and `GET /ready`
 (readiness — runs `SELECT 1`, `503` when the DB is unreachable); the Compose
 healthcheck targets `/ready`. `src/db.ts` sizes the pg pool (`max`, idle /
 connection timeouts) so an unreachable DB fails fast instead of hanging.
+`src/docs.ts` serves Swagger UI at `/docs` (CDN assets) and the raw
+`openapi.yaml` at `/openapi.yaml` (read relative to the module, so it resolves
+under both `tsx` and the compiled build; the Dockerfile copies it into the image).
 
 Every resource file follows the same CRUD shape and shares helpers in
 `routes/helpers.ts`. The helpers that reject bad input **throw** a Hono

@@ -51,6 +51,9 @@ RUN pnpm install --prod --ignore-scripts --config.auto-install-peers=false \
         node_modules/.pnpm/fast-check@*
 
 COPY --from=builder /app/dist ./dist
+# Served at /openapi.yaml (and rendered by Swagger UI at /docs); the runtime
+# reads it from /app, next to dist/.
+COPY openapi.yaml ./
 
 USER node
 EXPOSE 8080

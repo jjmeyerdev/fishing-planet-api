@@ -195,6 +195,9 @@ keep it in sync when routes change; lint it with:
 npx @redocly/cli lint openapi.yaml
 ```
 
+The running server also serves interactive docs: **Swagger UI at `/docs`** (assets
+loaded from a CDN) and the raw spec at `/openapi.yaml`.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, coding conventions, and the pull request flow.

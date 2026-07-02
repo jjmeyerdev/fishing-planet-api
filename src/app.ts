@@ -3,6 +3,7 @@ import { logger } from 'hono/logger'
 import { cors } from 'hono/cors'
 import { HTTPException } from 'hono/http-exception'
 import { prisma } from './db.js'
+import { docs } from './docs.js'
 import { isConnectionError } from './routes/helpers.js'
 import { routes } from './routes/index.js'
 
@@ -26,6 +27,9 @@ app.get('/ready', async (c) => {
     return c.json({ status: 'unavailable' }, 503)
   }
 })
+
+// Swagger UI at /docs, raw spec at /openapi.yaml.
+app.route('/', docs)
 
 app.route('/api', routes)
 

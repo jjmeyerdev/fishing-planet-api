@@ -19,8 +19,8 @@ pnpm typecheck          # tsc --noEmit
 pnpm db:push            # push schema to DB (no migration files)
 pnpm db:migrate         # create + apply a dev migration
 pnpm db:generate        # regenerate the Prisma client
-pnpm seed               # seed every data/*.md
-pnpm seed data/x.md     # seed a single place file
+pnpm seed               # seed every data/locations/*.md
+pnpm seed data/locations/x.md   # seed a single place file
 pnpm seed:biting        # seed biting_preferences from every data/fish/*.md
 pnpm seed:biting data/fish/x.md   # seed a single fish file
 ```
@@ -78,7 +78,7 @@ params (see `keyFromQuery`), and `GET` filters by optional `fishId`/`locationId`
 
 ## Seed pipeline (`scripts/seed.ts`)
 
-Parses FP-Collective place pages in `data/*.md` (markdown scraped from the site)
+Parses FP-Collective place pages in `data/locations/*.md` (markdown scraped from the site)
 and upserts Locations, Fish, and FishLocations. Idempotent. Notes:
 
 - Place pages list fish **lake-wide**, not per spot, so every seeded FishLocation

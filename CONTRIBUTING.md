@@ -26,7 +26,7 @@ CI runs both of these on every push and pull request, and they must pass before 
 pull request can merge:
 
 ```bash
-pnpm typecheck              # tsc --noEmit
+pnpm typecheck              # type-check src + tests (no emit)
 pnpm test                   # Vitest suite
 ```
 

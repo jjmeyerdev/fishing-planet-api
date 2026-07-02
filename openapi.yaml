@@ -18,6 +18,10 @@ info:
     Write operations (POST/PATCH/DELETE) require `Authorization: Bearer <API key>`
     (the `bearerAuth` scheme); reads are public. A missing or invalid key returns
     `401`.
+
+
+    Every response carries an `X-Request-Id` header (echoed if the client sends
+    one) that ties it to the server's structured JSON logs.
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT

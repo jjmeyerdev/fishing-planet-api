@@ -108,7 +108,10 @@ connection timeouts) so an unreachable DB fails fast instead of hanging.
 `src/docs.ts` serves Swagger UI at `/docs` (CDN assets) and the raw
 `openapi.yaml` at `/openapi.yaml` (read relative to the module, so it resolves
 under both `tsx` and the compiled build; the Dockerfile copies it into the image).
-`src/rateLimit.ts` is an in-memory fixed-window limiter applied to `/api/*`
+`src/logger.ts` provides `log()` (one JSON line to stdout; `LOG_SILENT` mutes it,
+set by `pnpm test`) and `requestLogger()`, which assigns/echoes an `X-Request-Id`
+(stored on the context as `requestId`, typed via `LogEnv`) and logs one line per
+request; `onError` logs the structured error. `src/rateLimit.ts` is an in-memory fixed-window limiter applied to `/api/*`
 (`RATE_LIMIT_MAX`/`RATE_LIMIT_WINDOW_MS` env; `max=0` disables — the `pnpm test`
 script sets it so the suite isn't throttled). `src/auth.ts` gates writes
 (POST/PATCH/DELETE) on `/api/*` behind an API key (`Authorization: Bearer`, keys

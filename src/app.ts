@@ -1,11 +1,11 @@
 import { Hono } from 'hono'
-import { logger } from 'hono/logger'
 import { cors } from 'hono/cors'
 import { HTTPException } from 'hono/http-exception'
 import { prisma } from './db.js'
 import { docs } from './docs.js'
 import { rateLimit } from './rateLimit.js'
 import { apiKeyAuth } from './auth.js'
+import { log, requestLogger, type LogEnv } from './logger.js'
 import { isConnectionError } from './routes/helpers.js'
 import { routes } from './routes/index.js'
 
@@ -13,9 +13,9 @@ const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX ?? 100)
 const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS ?? 60_000)
 const API_KEYS = (process.env.API_KEYS ?? '').split(',').map((k) => k.trim()).filter(Boolean)
 
-export const app = new Hono()
+export const app = new Hono<LogEnv>()
 
-app.use('*', logger())
+app.use('*', requestLogger())
 app.use('*', cors())
 
 // Rate limit the data API only — liveness/readiness probes and /docs are exempt.
@@ -46,12 +46,19 @@ app.route('/', docs)
 app.route('/api', routes)
 
 app.onError((err, c) => {
+  const base = { requestId: c.get('requestId'), method: c.req.method, path: c.req.path }
   // HTTPException messages are intentional (400/404 from the routes); pass them
-  // through. Anything else is an unexpected server error — log it, but don't
-  // leak the raw message (it can carry Prisma query/column details). A DB
-  // connection failure is a 503 (transient/infra), not a 500.
-  if (err instanceof HTTPException) return c.json({ error: err.message }, err.status)
-  console.error(err)
-  if (isConnectionError(err)) return c.json({ error: 'Database unavailable' }, 503)
+  // through. Anything else is an unexpected server error — log the detail, but
+  // don't leak the raw message to the client (it can carry Prisma internals). A
+  // DB connection failure is a 503 (transient/infra), not a 500.
+  if (err instanceof HTTPException) {
+    log('warn', 'request error', { ...base, status: err.status, error: err.message })
+    return c.json({ error: err.message }, err.status)
+  }
+  if (isConnectionError(err)) {
+    log('error', 'db unavailable', { ...base, status: 503, error: err.message })
+    return c.json({ error: 'Database unavailable' }, 503)
+  }
+  log('error', 'unhandled error', { ...base, status: 500, error: err.message, stack: err.stack })
   return c.json({ error: 'Internal server error' }, 500)
 })

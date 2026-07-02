@@ -193,6 +193,15 @@ var — when it's empty, auth is **disabled** (writes open), so set it in any re
 deployment. The Compose stack sets `local-dev-key` by default. `/health`,
 `/ready`, and `/docs` are always public.
 
+### Logging
+
+The server emits **structured JSON logs** (one line per request and per error) to
+stdout — `{ level, time, msg, method, path, status, durationMs, requestId }`. Each
+response carries an `X-Request-Id` header (a generated UUID, or the client's if it
+sends one) that appears as `requestId` in the logs for correlation. Liveness/
+readiness probes aren't logged. `LOG_SILENT=1` silences output (used by the test
+suite).
+
 ### Rate limiting
 
 All `/api/*` endpoints are rate limited per client IP — by default **100 requests

@@ -53,6 +53,23 @@ export function intQuery(c: Context, name: string): number | undefined {
   return value
 }
 
+const DEFAULT_LIMIT = 50
+const MAX_LIMIT = 100
+
+// Parse ?limit=&offset= for a list endpoint, applying defaults and bounds, or
+// 400 on an out-of-range value. Feeds Prisma's `take`/`skip`.
+export function pageParams(c: Context): { limit: number; offset: number } {
+  const limit = intQuery(c, 'limit') ?? DEFAULT_LIMIT
+  const offset = intQuery(c, 'offset') ?? 0
+  if (limit < 1 || limit > MAX_LIMIT) {
+    throw new HTTPException(400, { message: `limit must be between 1 and ${MAX_LIMIT}` })
+  }
+  if (offset < 0) {
+    throw new HTTPException(400, { message: 'offset must be >= 0' })
+  }
+  return { limit, offset }
+}
+
 // Extract a Prisma known-request-error code (e.g. 'P2002') if present.
 function prismaCode(e: unknown): string | undefined {
   if (typeof e === 'object' && e !== null && 'code' in e) {

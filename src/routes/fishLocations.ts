@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import type { Context } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intQuery, orClientError } from './helpers.js'
+import { readJson, pick, intQuery, pageParams, orClientError } from './helpers.js'
 
 // Composite primary key: (fishId, locationId, specificSpot).
 const CREATE_FIELDS = ['fishId', 'locationId', 'specificSpot', 'classesPresent'] as const
@@ -19,13 +19,17 @@ export const fishLocations = new Hono()
 
 // List; optionally filter by ?fishId= and/or ?locationId=
 fishLocations.get('/', async (c) => {
+  const { limit, offset } = pageParams(c)
   const where: Prisma.FishLocationWhereInput = {}
   const fishId = intQuery(c, 'fishId')
   const locationId = intQuery(c, 'locationId')
   if (fishId !== undefined) where.fishId = fishId
   if (locationId !== undefined) where.locationId = locationId
-  const rows = await prisma.fishLocation.findMany({ where, orderBy: [{ fishId: 'asc' }, { locationId: 'asc' }] })
-  return c.json(rows)
+  const [data, total] = await Promise.all([
+    prisma.fishLocation.findMany({ where, orderBy: [{ fishId: 'asc' }, { locationId: 'asc' }], skip: offset, take: limit }),
+    prisma.fishLocation.count({ where }),
+  ])
+  return c.json({ data, total, limit, offset })
 })
 
 fishLocations.post('/', async (c) => {

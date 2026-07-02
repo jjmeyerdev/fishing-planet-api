@@ -58,12 +58,30 @@ const RESOURCES: Resource[] = [
 describe.each(RESOURCES)('$label CRUD', ({ base, key, create, junk, patch }) => {
   const m = () => prisma[key]
 
-  it('GET list returns rows', async () => {
+  it('GET list returns a paginated envelope with defaults', async () => {
     m().findMany.mockResolvedValue([{ id: 1 }])
+    m().count.mockResolvedValue(1)
     const res = await app.request(base)
     expect(res.status).toBe(200)
-    expect(await res.json()).toEqual([{ id: 1 }])
-    expect(m().findMany).toHaveBeenCalledOnce()
+    expect(await res.json()).toEqual({ data: [{ id: 1 }], total: 1, limit: 50, offset: 0 })
+    expect(m().findMany).toHaveBeenCalledWith(expect.objectContaining({ skip: 0, take: 50 }))
+  })
+
+  it('GET list honors ?limit=&offset=', async () => {
+    m().findMany.mockResolvedValue([])
+    m().count.mockResolvedValue(0)
+    const res = await app.request(`${base}?limit=2&offset=4`)
+    expect(res.status).toBe(200)
+    expect(await res.json()).toEqual({ data: [], total: 0, limit: 2, offset: 4 })
+    expect(m().findMany).toHaveBeenCalledWith(expect.objectContaining({ skip: 4, take: 2 }))
+  })
+
+  it('GET list rejects out-of-range/invalid pagination with 400', async () => {
+    for (const q of ['limit=0', 'limit=101', 'offset=-1', 'limit=abc']) {
+      const res = await app.request(`${base}?${q}`)
+      expect(res.status, q).toBe(400)
+    }
+    expect(m().findMany).not.toHaveBeenCalled()
   })
 
   it('GET one rejects a non-numeric id with 400', async () => {
@@ -169,14 +187,19 @@ describe('fish-locations CRUD', () => {
     expect(m().create).not.toHaveBeenCalled()
   })
 
-  it('GET list filters by fishId/locationId', async () => {
+  it('GET list filters by fishId/locationId and paginates', async () => {
     m().findMany.mockResolvedValue([])
+    m().count.mockResolvedValue(0)
     const res = await app.request('/api/fish-locations?fishId=1&locationId=2')
     expect(res.status).toBe(200)
+    expect(await res.json()).toEqual({ data: [], total: 0, limit: 50, offset: 0 })
     expect(m().findMany).toHaveBeenCalledWith({
       where: { fishId: 1, locationId: 2 },
       orderBy: [{ fishId: 'asc' }, { locationId: 'asc' }],
+      skip: 0,
+      take: 50,
     })
+    expect(m().count).toHaveBeenCalledWith({ where: { fishId: 1, locationId: 2 } })
   })
 
   it('GET list rejects a non-numeric fishId filter with 400', async () => {

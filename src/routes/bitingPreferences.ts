@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, orClientError } from './helpers.js'
+import { readJson, pick, intParam, pageParams, orClientError } from './helpers.js'
 
 // Keyed one-to-one on fishId.
 const CREATE_FIELDS = [
@@ -14,8 +14,12 @@ const UPDATE_FIELDS = CREATE_FIELDS.filter((f) => f !== 'fishId')
 export const bitingPreferences = new Hono()
 
 bitingPreferences.get('/', async (c) => {
-  const rows = await prisma.bitingPreference.findMany({ orderBy: { fishId: 'asc' } })
-  return c.json(rows)
+  const { limit, offset } = pageParams(c)
+  const [data, total] = await Promise.all([
+    prisma.bitingPreference.findMany({ orderBy: { fishId: 'asc' }, skip: offset, take: limit }),
+    prisma.bitingPreference.count(),
+  ])
+  return c.json({ data, total, limit, offset })
 })
 
 bitingPreferences.get('/:fishId', async (c) => {

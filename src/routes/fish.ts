@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, orClientError } from './helpers.js'
+import { readJson, pick, intParam, pageParams, orClientError } from './helpers.js'
 
 const FIELDS = [
   'commonName', 'scientificName', 'family', 'description', 'isEventFish', 'isMonster',
@@ -14,8 +14,12 @@ const FIELDS = [
 export const fish = new Hono()
 
 fish.get('/', async (c) => {
-  const rows = await prisma.fish.findMany({ orderBy: { id: 'asc' } })
-  return c.json(rows)
+  const { limit, offset } = pageParams(c)
+  const [data, total] = await Promise.all([
+    prisma.fish.findMany({ orderBy: { id: 'asc' }, skip: offset, take: limit }),
+    prisma.fish.count(),
+  ])
+  return c.json({ data, total, limit, offset })
 })
 
 fish.get('/:id', async (c) => {

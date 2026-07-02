@@ -1,15 +1,19 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, orClientError } from './helpers.js'
+import { readJson, pick, intParam, pageParams, orClientError } from './helpers.js'
 
 const FIELDS = ['name', 'region', 'waterwayType', 'unlockLevel'] as const
 
 export const locations = new Hono()
 
 locations.get('/', async (c) => {
-  const rows = await prisma.location.findMany({ orderBy: { id: 'asc' } })
-  return c.json(rows)
+  const { limit, offset } = pageParams(c)
+  const [data, total] = await Promise.all([
+    prisma.location.findMany({ orderBy: { id: 'asc' }, skip: offset, take: limit }),
+    prisma.location.count(),
+  ])
+  return c.json({ data, total, limit, offset })
 })
 
 locations.get('/:id', async (c) => {

@@ -4,6 +4,7 @@ import { vi } from 'vitest'
 const model = () => ({
   findMany: vi.fn(),
   findUnique: vi.fn(),
+  count: vi.fn(),
   create: vi.fn(),
   update: vi.fn(),
   delete: vi.fn(),

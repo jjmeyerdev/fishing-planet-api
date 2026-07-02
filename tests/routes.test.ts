@@ -93,6 +93,22 @@ describe.each(RESOURCES)('$label CRUD', ({ base, key, create, junk, patch }) => 
     expect(m().create).toHaveBeenCalledWith({ data: create })
   })
 
+  it('POST rejects a malformed JSON body with 400', async () => {
+    const res = await app.request(base, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: '{ not json',
+    })
+    expect(res.status).toBe(400)
+    expect(m().create).not.toHaveBeenCalled()
+  })
+
+  it('POST rejects a non-object JSON body with 400', async () => {
+    const res = await app.request(base, json(42))
+    expect(res.status).toBe(400)
+    expect(m().create).not.toHaveBeenCalled()
+  })
+
   it('PATCH returns 404 when the target is missing', async () => {
     m().update.mockRejectedValue(P2025)
     const res = await app.request(`${base}/1`, { ...json(patch), method: 'PATCH' })
@@ -130,6 +146,16 @@ describe.each(RESOURCES)('$label CRUD', ({ base, key, create, junk, patch }) => 
 describe('fish-locations CRUD', () => {
   const m = () => prisma.fishLocation
   const key = { fishId: 1, locationId: 2, specificSpot: 'General' }
+
+  it('POST rejects a malformed JSON body with 400', async () => {
+    const res = await app.request('/api/fish-locations', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: '{ not json',
+    })
+    expect(res.status).toBe(400)
+    expect(m().create).not.toHaveBeenCalled()
+  })
 
   it('GET list filters by fishId/locationId', async () => {
     m().findMany.mockResolvedValue([])

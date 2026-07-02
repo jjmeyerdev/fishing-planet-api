@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { pick, isNotFound } from './helpers.js'
+import { readJson, pick, isNotFound } from './helpers.js'
 
 // Keyed one-to-one on fishId.
 const CREATE_FIELDS = [
@@ -27,7 +27,7 @@ bitingPreferences.get('/:fishId', async (c) => {
 })
 
 bitingPreferences.post('/', async (c) => {
-  const body = await c.req.json<Record<string, unknown>>()
+  const body = await readJson(c)
   const created = await prisma.bitingPreference.create({
     data: pick<Prisma.BitingPreferenceUncheckedCreateInput>(body, CREATE_FIELDS),
   })
@@ -37,7 +37,7 @@ bitingPreferences.post('/', async (c) => {
 bitingPreferences.patch('/:fishId', async (c) => {
   const fishId = Number(c.req.param('fishId'))
   if (!Number.isInteger(fishId)) return c.json({ error: 'Invalid fishId' }, 400)
-  const body = await c.req.json<Record<string, unknown>>()
+  const body = await readJson(c)
   try {
     const updated = await prisma.bitingPreference.update({
       where: { fishId },

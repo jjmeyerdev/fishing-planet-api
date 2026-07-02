@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { logger } from 'hono/logger'
 import { cors } from 'hono/cors'
+import { HTTPException } from 'hono/http-exception'
 import { routes } from './routes/index.js'
 
 export const app = new Hono()
@@ -14,6 +15,7 @@ app.get('/health', (c) => c.json({ status: 'healthy' }))
 app.route('/api', routes)
 
 app.onError((err, c) => {
+  if (err instanceof HTTPException) return c.json({ error: err.message }, err.status)
   console.error(err)
   return c.json({ error: err.message }, 500)
 })

@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, isNotFound } from './helpers.js'
+import { readJson, pick, intParam, orNotFound } from './helpers.js'
 
 const FIELDS = [
   'commonName', 'scientificName', 'family', 'description', 'isEventFish', 'isMonster',
@@ -19,8 +19,7 @@ fish.get('/', async (c) => {
 })
 
 fish.get('/:id', async (c) => {
-  const id = Number(c.req.param('id'))
-  if (!Number.isInteger(id)) return c.json({ error: 'Invalid id' }, 400)
+  const id = intParam(c, 'id')
   const row = await prisma.fish.findUnique({ where: { id }, include: { bitingPreference: true } })
   if (!row) return c.json({ error: 'Not found' }, 404)
   return c.json(row)
@@ -33,26 +32,14 @@ fish.post('/', async (c) => {
 })
 
 fish.patch('/:id', async (c) => {
-  const id = Number(c.req.param('id'))
-  if (!Number.isInteger(id)) return c.json({ error: 'Invalid id' }, 400)
+  const id = intParam(c, 'id')
   const body = await readJson(c)
-  try {
-    const updated = await prisma.fish.update({ where: { id }, data: pick<Prisma.FishUpdateInput>(body, FIELDS) })
-    return c.json(updated)
-  } catch (e) {
-    if (isNotFound(e)) return c.json({ error: 'Not found' }, 404)
-    throw e
-  }
+  const updated = await orNotFound(prisma.fish.update({ where: { id }, data: pick<Prisma.FishUpdateInput>(body, FIELDS) }))
+  return c.json(updated)
 })
 
 fish.delete('/:id', async (c) => {
-  const id = Number(c.req.param('id'))
-  if (!Number.isInteger(id)) return c.json({ error: 'Invalid id' }, 400)
-  try {
-    await prisma.fish.delete({ where: { id } })
-    return c.body(null, 204)
-  } catch (e) {
-    if (isNotFound(e)) return c.json({ error: 'Not found' }, 404)
-    throw e
-  }
+  const id = intParam(c, 'id')
+  await orNotFound(prisma.fish.delete({ where: { id } }))
+  return c.body(null, 204)
 })

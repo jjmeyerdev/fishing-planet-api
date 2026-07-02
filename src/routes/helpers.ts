@@ -35,3 +35,20 @@ export function isNotFound(e: unknown): boolean {
     (e as { code?: unknown }).code === 'P2025'
   )
 }
+
+// Read a required integer route param, or fail with 400.
+export function intParam(c: Context, name: string): number {
+  const value = Number(c.req.param(name))
+  if (!Number.isInteger(value)) throw new HTTPException(400, { message: `Invalid ${name}` })
+  return value
+}
+
+// Run a Prisma write, translating a missing-row P2025 into a 404.
+export async function orNotFound<T>(op: Promise<T>): Promise<T> {
+  try {
+    return await op
+  } catch (e) {
+    if (isNotFound(e)) throw new HTTPException(404, { message: 'Not found' })
+    throw e
+  }
+}

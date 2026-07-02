@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, isNotFound } from './helpers.js'
+import { readJson, pick, intParam, orNotFound } from './helpers.js'
 
 // Keyed one-to-one on fishId.
 const CREATE_FIELDS = [
@@ -19,8 +19,7 @@ bitingPreferences.get('/', async (c) => {
 })
 
 bitingPreferences.get('/:fishId', async (c) => {
-  const fishId = Number(c.req.param('fishId'))
-  if (!Number.isInteger(fishId)) return c.json({ error: 'Invalid fishId' }, 400)
+  const fishId = intParam(c, 'fishId')
   const row = await prisma.bitingPreference.findUnique({ where: { fishId } })
   if (!row) return c.json({ error: 'Not found' }, 404)
   return c.json(row)
@@ -35,29 +34,17 @@ bitingPreferences.post('/', async (c) => {
 })
 
 bitingPreferences.patch('/:fishId', async (c) => {
-  const fishId = Number(c.req.param('fishId'))
-  if (!Number.isInteger(fishId)) return c.json({ error: 'Invalid fishId' }, 400)
+  const fishId = intParam(c, 'fishId')
   const body = await readJson(c)
-  try {
-    const updated = await prisma.bitingPreference.update({
-      where: { fishId },
-      data: pick<Prisma.BitingPreferenceUncheckedUpdateInput>(body, UPDATE_FIELDS),
-    })
-    return c.json(updated)
-  } catch (e) {
-    if (isNotFound(e)) return c.json({ error: 'Not found' }, 404)
-    throw e
-  }
+  const updated = await orNotFound(prisma.bitingPreference.update({
+    where: { fishId },
+    data: pick<Prisma.BitingPreferenceUncheckedUpdateInput>(body, UPDATE_FIELDS),
+  }))
+  return c.json(updated)
 })
 
 bitingPreferences.delete('/:fishId', async (c) => {
-  const fishId = Number(c.req.param('fishId'))
-  if (!Number.isInteger(fishId)) return c.json({ error: 'Invalid fishId' }, 400)
-  try {
-    await prisma.bitingPreference.delete({ where: { fishId } })
-    return c.body(null, 204)
-  } catch (e) {
-    if (isNotFound(e)) return c.json({ error: 'Not found' }, 404)
-    throw e
-  }
+  const fishId = intParam(c, 'fishId')
+  await orNotFound(prisma.bitingPreference.delete({ where: { fishId } }))
+  return c.body(null, 204)
 })

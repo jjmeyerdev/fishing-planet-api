@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import type { Context } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, isNotFound } from './helpers.js'
+import { readJson, pick, orNotFound } from './helpers.js'
 
 // Composite primary key: (fishId, locationId, specificSpot).
 const CREATE_FIELDS = ['fishId', 'locationId', 'specificSpot', 'classesPresent'] as const
@@ -41,26 +41,16 @@ fishLocations.patch('/', async (c) => {
   const key = keyFromQuery(c)
   if (!key) return c.json({ error: 'fishId, locationId and specificSpot query params are required' }, 400)
   const body = await readJson(c)
-  try {
-    const updated = await prisma.fishLocation.update({
-      where: { fishId_locationId_specificSpot: key },
-      data: pick<Prisma.FishLocationUncheckedUpdateInput>(body, ['classesPresent']),
-    })
-    return c.json(updated)
-  } catch (e) {
-    if (isNotFound(e)) return c.json({ error: 'Not found' }, 404)
-    throw e
-  }
+  const updated = await orNotFound(prisma.fishLocation.update({
+    where: { fishId_locationId_specificSpot: key },
+    data: pick<Prisma.FishLocationUncheckedUpdateInput>(body, ['classesPresent']),
+  }))
+  return c.json(updated)
 })
 
 fishLocations.delete('/', async (c) => {
   const key = keyFromQuery(c)
   if (!key) return c.json({ error: 'fishId, locationId and specificSpot query params are required' }, 400)
-  try {
-    await prisma.fishLocation.delete({ where: { fishId_locationId_specificSpot: key } })
-    return c.body(null, 204)
-  } catch (e) {
-    if (isNotFound(e)) return c.json({ error: 'Not found' }, 404)
-    throw e
-  }
+  await orNotFound(prisma.fishLocation.delete({ where: { fishId_locationId_specificSpot: key } }))
+  return c.body(null, 204)
 })

@@ -68,6 +68,8 @@ services:
       PORT: 8080
       RATE_LIMIT_MAX: ${RATE_LIMIT_MAX:-100}
       RATE_LIMIT_WINDOW_MS: ${RATE_LIMIT_WINDOW_MS:-60000}
+      # Writes require this key; reads stay public. Empty would disable auth.
+      API_KEYS: ${API_KEYS:-local-dev-key}
     ports:
       - "${APP_PORT:-8080}:8080"
     depends_on:
@@ -99,6 +101,7 @@ services:
         condition: service_healthy
     environment:
       BASE_URL: http://app:8080
+      API_KEY: ${API_KEYS:-local-dev-key}
     command:
       - node
       - -e
@@ -106,6 +109,7 @@ services:
         (async () => {
           const base = process.env.BASE_URL
           const name = 'Smoke Test Fish'
+          const auth = { 'content-type': 'application/json', authorization: 'Bearer ' + process.env.API_KEY }
           let r = await fetch(base + '/health')
           if (r.status !== 200) throw new Error('health ' + r.status)
           r = await fetch(base + '/api/fish')
@@ -114,15 +118,17 @@ services:
           if (!Array.isArray(page.data) || typeof page.total !== 'number') throw new Error('list is not a paginated envelope')
           const list = page.data
           const stale = list.find((f) => f.commonName === name)
-          if (stale) await fetch(base + '/api/fish/' + stale.id, { method: 'DELETE' })
+          if (stale) await fetch(base + '/api/fish/' + stale.id, { method: 'DELETE', headers: auth })
           r = await fetch(base + '/api/fish', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ commonName: name }) })
+          if (r.status !== 401) throw new Error('expected 401 for unauthenticated create, got ' + r.status)
+          r = await fetch(base + '/api/fish', { method: 'POST', headers: auth, body: JSON.stringify({ commonName: name }) })
           if (r.status !== 201) throw new Error('create ' + r.status)
           const created = await r.json()
           r = await fetch(base + '/api/fish/' + created.id)
           if (r.status !== 200) throw new Error('get ' + r.status)
-          r = await fetch(base + '/api/fish/' + created.id, { method: 'DELETE' })
+          r = await fetch(base + '/api/fish/' + created.id, { method: 'DELETE', headers: auth })
           if (r.status !== 204) throw new Error('delete ' + r.status)
-          console.log('smoke tests passed: health + /api/fish CRUD round-trip (' + page.total + ' fish total)')
+          console.log('smoke tests passed: health + /api/fish CRUD round-trip (auth enforced, ' + page.total + ' fish total)')
         })().catch((e) => { console.error('FAIL', e.message); process.exit(1) })
 
 volumes:

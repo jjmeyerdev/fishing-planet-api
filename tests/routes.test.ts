@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { Hono } from 'hono'
 import { rateLimit } from '../src/rateLimit.js'
+import { apiKeyAuth } from '../src/auth.js'
 
 // Route files import `prisma` from src/db.js; swap it for the DB-free mock.
 vi.mock('../src/db.js', () => import('./mocks/db.js'))
@@ -448,6 +449,41 @@ describe('rate limiting', () => {
   it('is disabled when max <= 0', async () => {
     const a = build(0)
     for (let i = 0; i < 10; i++) expect((await a.request('/')).status).toBe(200)
+  })
+})
+
+describe('api-key auth (writes)', () => {
+  const build = (keys: string[]) => {
+    const a = new Hono()
+    a.use('/api/*', apiKeyAuth({ keys }))
+    a.get('/api/x', (c) => c.text('read'))
+    a.post('/api/x', (c) => c.text('write'))
+    return a
+  }
+
+  it('allows reads without a key', async () => {
+    expect((await build(['k1']).request('/api/x')).status).toBe(200)
+  })
+
+  it('rejects writes without a key (401 + WWW-Authenticate)', async () => {
+    const res = await build(['k1']).request('/api/x', { method: 'POST' })
+    expect(res.status).toBe(401)
+    expect(res.headers.get('WWW-Authenticate')).toBe('Bearer')
+    expect(await res.json()).toEqual({ error: 'Unauthorized' })
+  })
+
+  it('allows writes with a valid Bearer key', async () => {
+    const res = await build(['k1', 'k2']).request('/api/x', { method: 'POST', headers: { authorization: 'Bearer k2' } })
+    expect(res.status).toBe(200)
+  })
+
+  it('rejects writes with a wrong key', async () => {
+    const res = await build(['k1']).request('/api/x', { method: 'POST', headers: { authorization: 'Bearer nope' } })
+    expect(res.status).toBe(401)
+  })
+
+  it('is disabled (writes open) when no keys are configured', async () => {
+    expect((await build([]).request('/api/x', { method: 'POST' })).status).toBe(200)
   })
 })
 

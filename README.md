@@ -184,6 +184,15 @@ whitelisted column, and `order` must be `asc`/`desc`, else `400`.
 
 Example: `GET /api/fish?sort=commonName&order=desc`.
 
+### Auth
+
+Write operations (`POST`/`PATCH`/`DELETE` on `/api`) require an API key sent as
+`Authorization: Bearer <key>`; reads (list, get, by-name) are public. A missing or
+invalid key returns `401`. Valid keys are the comma-separated **`API_KEYS`** env
+var — when it's empty, auth is **disabled** (writes open), so set it in any real
+deployment. The Compose stack sets `local-dev-key` by default. `/health`,
+`/ready`, and `/docs` are always public.
+
 ### Rate limiting
 
 All `/api/*` endpoints are rate limited per client IP — by default **100 requests

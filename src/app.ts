@@ -15,7 +15,10 @@ app.get('/health', (c) => c.json({ status: 'healthy' }))
 app.route('/api', routes)
 
 app.onError((err, c) => {
+  // HTTPException messages are intentional (400/404 from the routes); pass them
+  // through. Anything else is an unexpected server error — log it, but don't
+  // leak the raw message (it can carry Prisma query/column details).
   if (err instanceof HTTPException) return c.json({ error: err.message }, err.status)
   console.error(err)
-  return c.json({ error: err.message }, 500)
+  return c.json({ error: 'Internal server error' }, 500)
 })

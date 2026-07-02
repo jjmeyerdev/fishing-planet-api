@@ -7,6 +7,12 @@ info:
     many-to-many presence, and per-fish biting preferences. List endpoints
     support pagination, filtering, and sorting and return a
     `{ data, total, limit, offset }` envelope.
+
+
+    All `/api/*` endpoints are rate limited per client IP (default 100 requests
+    per 60s window). Responses carry `RateLimit-Limit`, `RateLimit-Remaining`,
+    and `RateLimit-Reset`; exceeding the limit returns `429` with a `Retry-After`
+    header.
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -108,6 +114,7 @@ paths:
                         type: array
                         items: { $ref: '#/components/schemas/Fish' }
         '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
         '503': { $ref: '#/components/responses/ServiceUnavailable' }
     post:
       summary: Create a fish
@@ -242,6 +249,7 @@ paths:
                         type: array
                         items: { $ref: '#/components/schemas/Location' }
         '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
         '503': { $ref: '#/components/responses/ServiceUnavailable' }
     post:
       summary: Create a location
@@ -352,6 +360,7 @@ paths:
                         type: array
                         items: { $ref: '#/components/schemas/BitingPreference' }
         '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
         '503': { $ref: '#/components/responses/ServiceUnavailable' }
     post:
       summary: Create a biting preference
@@ -450,6 +459,7 @@ paths:
                         type: array
                         items: { $ref: '#/components/schemas/FishLocation' }
         '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
         '503': { $ref: '#/components/responses/ServiceUnavailable' }
     post:
       summary: Create a fish-location row
@@ -544,6 +554,15 @@ components:
           schema: { $ref: '#/components/schemas/Error' }
     ServiceUnavailable:
       description: Database unavailable
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    TooManyRequests:
+      description: Rate limit exceeded
+      headers:
+        Retry-After:
+          schema: { type: integer }
+          description: Seconds until the limit resets
       content:
         application/json:
           schema: { $ref: '#/components/schemas/Error' }

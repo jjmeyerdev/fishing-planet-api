@@ -4,13 +4,20 @@ import { cors } from 'hono/cors'
 import { HTTPException } from 'hono/http-exception'
 import { prisma } from './db.js'
 import { docs } from './docs.js'
+import { rateLimit } from './rateLimit.js'
 import { isConnectionError } from './routes/helpers.js'
 import { routes } from './routes/index.js'
+
+const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX ?? 100)
+const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS ?? 60_000)
 
 export const app = new Hono()
 
 app.use('*', logger())
 app.use('*', cors())
+
+// Rate limit the data API only — liveness/readiness probes and /docs are exempt.
+app.use('/api/*', rateLimit({ max: RATE_LIMIT_MAX, windowMs: RATE_LIMIT_WINDOW_MS }))
 
 app.get('/', (c) => c.json({ name: 'fishing-planet-api', status: 'ok' }))
 

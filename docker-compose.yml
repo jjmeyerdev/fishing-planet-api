@@ -1,0 +1,41 @@
+# Local stack: Postgres + the API. Credentials default to the .env.example
+# values and can be overridden via a .env file or the shell environment.
+#
+# Usage:
+#   docker compose up -d db            # start Postgres
+#   pnpm db:push && pnpm seed          # create schema + (optionally) load data
+#   docker compose up -d --build app   # build and start the API on :8080
+#
+# The app image has no Prisma CLI, so schema/seed run from the host (or `pnpm
+# db:migrate`) against localhost:5432.
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DB: ${POSTGRES_DB:-fishing_planet}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-user} -d ${POSTGRES_DB:-fishing_planet}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-user}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-fishing_planet}?schema=public
+      PORT: 8080
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

@@ -63,6 +63,28 @@ Prisma 7 no longer reads the connection URL from `schema.prisma`. Instead:
 
 Both read `DATABASE_URL` from `.env`.
 
+## Docker
+
+Build and run the API alone against an existing database:
+
+```bash
+docker build -t fishing-planet-api .
+docker run -p 8080:8080 -e DATABASE_URL=postgresql://… fishing-planet-api
+```
+
+Or bring up Postgres and the API together with Compose. The image has no Prisma
+CLI, so the schema and seed run from the host against the published Postgres port:
+
+```bash
+docker compose up -d db            # start Postgres (healthchecked)
+pnpm db:push && pnpm seed          # create schema + (optionally) load data
+docker compose up -d --build app   # build and start the API on :8080
+```
+
+Credentials default to the `.env.example` values; override `POSTGRES_USER`,
+`POSTGRES_PASSWORD`, `POSTGRES_DB`, and the published `APP_PORT` / `DB_PORT` via a
+`.env` file or the shell.
+
 ## Structure
 
 ```text

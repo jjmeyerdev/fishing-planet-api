@@ -109,6 +109,18 @@ describe.each(RESOURCES)('$label CRUD', ({ base, key, create, junk, patch }) => 
     expect(m().create).not.toHaveBeenCalled()
   })
 
+  it('POST returns 409 on a unique-constraint violation', async () => {
+    m().create.mockRejectedValue({ code: 'P2002' })
+    const res = await app.request(base, json(create))
+    expect(res.status).toBe(409)
+  })
+
+  it('POST returns 400 when Prisma rejects the data as invalid', async () => {
+    m().create.mockRejectedValue(Object.assign(new Error('bad'), { name: 'PrismaClientValidationError' }))
+    const res = await app.request(base, json(create))
+    expect(res.status).toBe(400)
+  })
+
   it('PATCH returns 404 when the target is missing', async () => {
     m().update.mockRejectedValue(P2025)
     const res = await app.request(`${base}/1`, { ...json(patch), method: 'PATCH' })

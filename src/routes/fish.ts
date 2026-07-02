@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, orNotFound } from './helpers.js'
+import { readJson, pick, intParam, orClientError } from './helpers.js'
 
 const FIELDS = [
   'commonName', 'scientificName', 'family', 'description', 'isEventFish', 'isMonster',
@@ -27,19 +27,19 @@ fish.get('/:id', async (c) => {
 
 fish.post('/', async (c) => {
   const body = await readJson(c)
-  const created = await prisma.fish.create({ data: pick<Prisma.FishCreateInput>(body, FIELDS) })
+  const created = await orClientError(prisma.fish.create({ data: pick<Prisma.FishCreateInput>(body, FIELDS) }))
   return c.json(created, 201)
 })
 
 fish.patch('/:id', async (c) => {
   const id = intParam(c, 'id')
   const body = await readJson(c)
-  const updated = await orNotFound(prisma.fish.update({ where: { id }, data: pick<Prisma.FishUpdateInput>(body, FIELDS) }))
+  const updated = await orClientError(prisma.fish.update({ where: { id }, data: pick<Prisma.FishUpdateInput>(body, FIELDS) }))
   return c.json(updated)
 })
 
 fish.delete('/:id', async (c) => {
   const id = intParam(c, 'id')
-  await orNotFound(prisma.fish.delete({ where: { id } }))
+  await orClientError(prisma.fish.delete({ where: { id } }))
   return c.body(null, 204)
 })

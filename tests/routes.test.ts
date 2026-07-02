@@ -1,4 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { Hono } from 'hono'
+import { rateLimit } from '../src/rateLimit.js'
 
 // Route files import `prisma` from src/db.js; swap it for the DB-free mock.
 vi.mock('../src/db.js', () => import('./mocks/db.js'))
@@ -416,6 +418,36 @@ describe('get-by-name lookup', () => {
     prisma.location.findUnique.mockResolvedValue(null)
     const res = await app.request('/api/locations/by-name/Nope')
     expect(res.status).toBe(404)
+  })
+})
+
+describe('rate limiting', () => {
+  const build = (max: number) => {
+    const a = new Hono()
+    a.use('*', rateLimit({ max, windowMs: 60_000 }))
+    a.get('/', (c) => c.text('ok'))
+    return a
+  }
+
+  it('allows up to max, then returns 429 with Retry-After', async () => {
+    const a = build(2)
+    expect((await a.request('/')).status).toBe(200)
+    expect((await a.request('/')).status).toBe(200)
+    const blocked = await a.request('/')
+    expect(blocked.status).toBe(429)
+    expect(blocked.headers.get('Retry-After')).toBeTruthy()
+    expect(await blocked.json()).toEqual({ error: 'Too many requests' })
+  })
+
+  it('sets RateLimit headers on allowed responses', async () => {
+    const res = await build(5).request('/')
+    expect(res.headers.get('RateLimit-Limit')).toBe('5')
+    expect(res.headers.get('RateLimit-Remaining')).toBe('4')
+  })
+
+  it('is disabled when max <= 0', async () => {
+    const a = build(0)
+    for (let i = 0; i < 10; i++) expect((await a.request('/')).status).toBe(200)
   })
 })
 

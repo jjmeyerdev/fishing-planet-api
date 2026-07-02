@@ -184,6 +184,16 @@ whitelisted column, and `order` must be `asc`/`desc`, else `400`.
 
 Example: `GET /api/fish?sort=commonName&order=desc`.
 
+### Rate limiting
+
+All `/api/*` endpoints are rate limited per client IP — by default **100 requests
+per 60s**. Every response carries `RateLimit-Limit`, `RateLimit-Remaining`, and
+`RateLimit-Reset`; over the limit returns `429` with a `Retry-After` header. Tune
+with `RATE_LIMIT_MAX` / `RATE_LIMIT_WINDOW_MS` (`RATE_LIMIT_MAX=0` disables it).
+`/health`, `/ready`, and `/docs` are exempt. Counters are in-memory per instance,
+so each replica limits independently (use a shared store to limit across a
+horizontally-scaled fleet).
+
 ## API specification
 
 The full API — every endpoint, query param, request/response schema, and error

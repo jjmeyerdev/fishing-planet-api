@@ -167,6 +167,12 @@ describe('fish-locations CRUD', () => {
     })
   })
 
+  it('GET list rejects a non-numeric fishId filter with 400', async () => {
+    const res = await app.request('/api/fish-locations?fishId=abc')
+    expect(res.status).toBe(400)
+    expect(m().findMany).not.toHaveBeenCalled()
+  })
+
   it('POST creates with only whitelisted fields and returns 201', async () => {
     m().create.mockResolvedValue({ ...key, classesPresent: ['Trophy'] })
     const res = await app.request('/api/fish-locations', json({ ...key, classesPresent: ['Trophy'], bogus: 'nope' }))

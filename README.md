@@ -77,11 +77,16 @@ migrations (`prisma migrate deploy`, using the builder image, which has the CLI)
 before the API starts, so a single command is self-contained:
 
 ```bash
-docker compose up -d --build       # Postgres → schema push (init) → API on :8080
-pnpm seed                          # (optional) load data from the host
+docker compose up -d --build       # Postgres → migrations (init) → API on :8080
 ```
 
-Seeding still runs from the host, since the slim runtime image has no Prisma CLI.
+Load the data with the one-shot `seed` service (bind-mounts `data/` and
+`scripts/`, which the slim image omits; waits for migrations first):
+
+```bash
+docker compose --profile seed up --build seed
+```
+
 To run the smoke-test service, which waits for the app to report healthy:
 
 ```bash

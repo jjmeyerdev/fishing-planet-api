@@ -40,6 +40,27 @@ services:
       db:
         condition: service_healthy
 
+  # One-shot data load (seed profile, not started by a normal up). Reuses the
+  # builder image but bind-mounts data/ and scripts/ — both kept out of the slim
+  # image — and runs the seed scripts. Waits for init so the tables exist.
+  # Idempotent (upserts). Run with:
+  #   docker compose --profile seed up --build seed
+  seed:
+    build:
+      context: .
+      target: builder
+    profiles: ["seed"]
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-user}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-fishing_planet}?schema=public
+    volumes:
+      - ./data:/app/data:ro
+      - ./scripts:/app/scripts:ro
+    command: ["sh", "-c", "pnpm seed && pnpm seed:biting"]
+    restart: "no"
+    depends_on:
+      init:
+        condition: service_completed_successfully
+
   app:
     build: .
     environment:

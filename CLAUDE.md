@@ -56,6 +56,27 @@ Docker Compose `init` service runs before the app starts. The slim runtime image
 has no Prisma CLI, so migrations only ever run from the builder image (compose
 `init`) or the host, never from the running app container.
 
+## End-to-end verification
+
+`pnpm test` mocks `src/db.js`, so it never touches a database — it can't catch
+anything that depends on the real driver adapter or live Prisma error codes
+(e.g. `P2002`/`P2003`/validation → 4xx). To verify against the real stack, bring
+it up and hit the endpoints **over the compose network**, not host `curl` (the
+slim runtime image has no `curl`, and the app is only reachable on the published
+`APP_PORT` or by service name inside the network):
+
+```bash
+docker compose up -d --build     # Postgres → migrations (init) → app
+# ad-hoc check from a node container on the network (reuses the smoke `test`
+# service, which already sets BASE_URL=http://app:8080 and waits for health):
+docker compose run --rm test node -e "fetch('http://app:8080/api/fish').then(r => console.log(r.status))"
+docker compose down -v           # tear down, including the pgdata volume
+```
+
+For a longer check, mount a script: `docker compose run --rm -v ./x.mjs:/x.mjs:ro
+test node /x.mjs`. Set `APP_PORT`/`DB_PORT` to avoid clashing with anything on
+`8080`/`5432`.
+
 ## ESM / import conventions
 
 `type: module` + `moduleResolution: Bundler` + `verbatimModuleSyntax`. Relative

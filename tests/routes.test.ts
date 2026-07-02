@@ -279,3 +279,45 @@ describe('error handling', () => {
     expect(JSON.stringify(body)).not.toContain('sensitive db detail')
   })
 })
+
+describe('list filtering', () => {
+  it('fish ?q= builds a case-insensitive commonName search, applied to both queries', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    const res = await app.request('/api/fish?q=bass')
+    expect(res.status).toBe(200)
+    const where = { commonName: { contains: 'bass', mode: 'insensitive' } }
+    expect(prisma.fish.findMany).toHaveBeenCalledWith(expect.objectContaining({ where }))
+    expect(prisma.fish.count).toHaveBeenCalledWith({ where })
+  })
+
+  it('fish combines a boolean and an exact string filter', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    const res = await app.request('/api/fish?isMonster=true&family=Centrarchidae')
+    expect(res.status).toBe(200)
+    expect(prisma.fish.findMany).toHaveBeenCalledWith(
+      expect.objectContaining({ where: { isMonster: true, family: 'Centrarchidae' } }),
+    )
+  })
+
+  it('fish rejects a non-boolean filter with 400', async () => {
+    const res = await app.request('/api/fish?isMonster=maybe')
+    expect(res.status).toBe(400)
+    expect(prisma.fish.findMany).not.toHaveBeenCalled()
+  })
+
+  it('locations rejects a non-integer unlockLevel filter with 400', async () => {
+    const res = await app.request('/api/locations?unlockLevel=abc')
+    expect(res.status).toBe(400)
+    expect(prisma.location.findMany).not.toHaveBeenCalled()
+  })
+
+  it('ignores unknown query params so filters coexist with pagination', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    const res = await app.request('/api/fish?bogus=1&limit=5')
+    expect(res.status).toBe(200)
+    expect(prisma.fish.findMany).toHaveBeenCalledWith(expect.objectContaining({ where: {}, take: 5 }))
+  })
+})

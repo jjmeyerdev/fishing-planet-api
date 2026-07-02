@@ -53,6 +53,47 @@ export function intQuery(c: Context, name: string): number | undefined {
   return value
 }
 
+// A whitelisted list filter: which query param maps to which column, and how to
+// interpret it. `search` is a case-insensitive substring match; the rest are
+// exact.
+export type FilterSpec = {
+  param: string
+  field: string
+  kind: 'string' | 'search' | 'int' | 'boolean'
+}
+
+// Build a Prisma `where` from whitelisted query params. Params not in the spec
+// (limit, offset, unknown ones) are ignored, so filters coexist with
+// pagination. A malformed int/boolean value is a 400.
+export function buildWhere(c: Context, filters: readonly FilterSpec[]): Record<string, unknown> {
+  const where: Record<string, unknown> = {}
+  for (const f of filters) {
+    const raw = c.req.query(f.param)
+    if (!raw) continue
+    switch (f.kind) {
+      case 'string':
+        where[f.field] = raw
+        break
+      case 'search':
+        where[f.field] = { contains: raw, mode: 'insensitive' }
+        break
+      case 'int': {
+        const n = Number(raw)
+        if (!Number.isInteger(n)) throw new HTTPException(400, { message: `Invalid ${f.param}` })
+        where[f.field] = n
+        break
+      }
+      case 'boolean':
+        if (raw !== 'true' && raw !== 'false') {
+          throw new HTTPException(400, { message: `${f.param} must be true or false` })
+        }
+        where[f.field] = raw === 'true'
+        break
+    }
+  }
+  return where
+}
+
 const DEFAULT_LIMIT = 50
 const MAX_LIMIT = 100
 

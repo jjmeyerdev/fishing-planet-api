@@ -116,6 +116,10 @@ error into a generic `500` (so internal Prisma messages aren't leaked):
 - `pageParams(c)` — parse `?limit=` (default 50, max 100) / `?offset=` (default
   0) for the list endpoints, or `400` out of range. Every `list` returns a
   `{ data, total, limit, offset }` envelope (`take`/`skip` + a `count`).
+- `buildWhere(c, FILTERS)` — build a Prisma `where` from a per-route `FILTERS`
+  whitelist (`string`/`search`/`int`/`boolean`; `search` is a case-insensitive
+  `contains`). Unknown params are ignored so filters coexist with pagination;
+  a bad int/boolean is `400`. The same `where` feeds `findMany` and `count`.
 - `orClientError(op)` — run a Prisma write, translating its expected failures
   into 4xx instead of a blanket 500: `P2025` missing row → `404`, `P2002` unique
   → `409`, `P2003` foreign key → `400`, and a `PrismaClientValidationError`

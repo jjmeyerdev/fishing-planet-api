@@ -43,6 +43,16 @@ export function intParam(c: Context, name: string): number {
   return value
 }
 
+// Read an optional integer query param: undefined if absent/blank, or 400 if
+// present but not an integer (rather than forwarding NaN into a Prisma filter).
+export function intQuery(c: Context, name: string): number | undefined {
+  const raw = c.req.query(name)
+  if (!raw) return undefined
+  const value = Number(raw)
+  if (!Number.isInteger(value)) throw new HTTPException(400, { message: `Invalid ${name}` })
+  return value
+}
+
 // Run a Prisma write, translating a missing-row P2025 into a 404.
 export async function orNotFound<T>(op: Promise<T>): Promise<T> {
   try {

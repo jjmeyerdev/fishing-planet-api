@@ -24,7 +24,7 @@ fishLocations.get('/', async (c) => {
   const locationId = c.req.query('locationId')
   if (fishId) where.fishId = Number(fishId)
   if (locationId) where.locationId = Number(locationId)
-  const rows = await prisma.fishLocation.findMany({ where })
+  const rows = await prisma.fishLocation.findMany({ where, orderBy: [{ fishId: 'asc' }, { locationId: 'asc' }] })
   return c.json(rows)
 })
 

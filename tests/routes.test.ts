@@ -135,7 +135,10 @@ describe('fish-locations CRUD', () => {
     m().findMany.mockResolvedValue([])
     const res = await app.request('/api/fish-locations?fishId=1&locationId=2')
     expect(res.status).toBe(200)
-    expect(m().findMany).toHaveBeenCalledWith({ where: { fishId: 1, locationId: 2 } })
+    expect(m().findMany).toHaveBeenCalledWith({
+      where: { fishId: 1, locationId: 2 },
+      orderBy: [{ fishId: 'asc' }, { locationId: 'asc' }],
+    })
   })
 
   it('POST creates with only whitelisted fields and returns 201', async () => {

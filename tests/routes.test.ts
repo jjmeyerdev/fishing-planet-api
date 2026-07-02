@@ -2,6 +2,7 @@ import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { Hono } from 'hono'
 import { rateLimit } from '../src/rateLimit.js'
 import { apiKeyAuth } from '../src/auth.js'
+import { log, requestLogger, type LogEnv } from '../src/logger.js'
 
 // Route files import `prisma` from src/db.js; swap it for the DB-free mock.
 vi.mock('../src/db.js', () => import('./mocks/db.js'))
@@ -484,6 +485,46 @@ describe('api-key auth (writes)', () => {
 
   it('is disabled (writes open) when no keys are configured', async () => {
     expect((await build([]).request('/api/x', { method: 'POST' })).status).toBe(200)
+  })
+})
+
+describe('structured logging', () => {
+  const build = () => {
+    const a = new Hono<LogEnv>()
+    a.use('*', requestLogger())
+    a.get('/', (c) => c.text('ok'))
+    return a
+  }
+
+  it('sets an X-Request-Id response header', async () => {
+    const res = await build().request('/')
+    expect(res.headers.get('x-request-id')).toBeTruthy()
+  })
+
+  it('echoes an incoming X-Request-Id', async () => {
+    const res = await build().request('/', { headers: { 'x-request-id': 'trace-123' } })
+    expect(res.headers.get('x-request-id')).toBe('trace-123')
+  })
+
+  it('log() emits a single JSON line with level/time/msg and fields', async () => {
+    vi.stubEnv('LOG_SILENT', '')
+    const spy = vi.spyOn(console, 'log').mockImplementation(() => {})
+    log('info', 'hello', { path: '/x', status: 200 })
+    expect(spy).toHaveBeenCalledOnce()
+    const parsed = JSON.parse(spy.mock.calls[0][0] as string)
+    expect(parsed).toMatchObject({ level: 'info', msg: 'hello', path: '/x', status: 200 })
+    expect(typeof parsed.time).toBe('string')
+    spy.mockRestore()
+    vi.unstubAllEnvs()
+  })
+
+  it('log() is suppressed when LOG_SILENT is set', async () => {
+    vi.stubEnv('LOG_SILENT', '1')
+    const spy = vi.spyOn(console, 'log').mockImplementation(() => {})
+    log('info', 'quiet')
+    expect(spy).not.toHaveBeenCalled()
+    spy.mockRestore()
+    vi.unstubAllEnvs()
   })
 })
 

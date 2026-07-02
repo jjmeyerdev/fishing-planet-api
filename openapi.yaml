@@ -176,6 +176,31 @@ paths:
         '400': { $ref: '#/components/responses/BadRequest' }
         '404': { $ref: '#/components/responses/NotFound' }
 
+  /api/fish/by-name/{name}:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a fish by its unique commonName (URL-encoded)
+      operationId: getFishByName
+      tags: [fish]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Fish'
+                  - type: object
+                    properties:
+                      bitingPreference:
+                        nullable: true
+                        allOf: [ { $ref: '#/components/schemas/BitingPreference' } ]
+        '404': { $ref: '#/components/responses/NotFound' }
+
   /api/locations:
     get:
       summary: List locations
@@ -276,6 +301,24 @@ paths:
       responses:
         '204': { description: Deleted }
         '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/locations/by-name/{name}:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      summary: Get a location by its unique name (URL-encoded)
+      operationId: getLocationByName
+      tags: [locations]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Location' }
         '404': { $ref: '#/components/responses/NotFound' }
 
   /api/biting-preferences:

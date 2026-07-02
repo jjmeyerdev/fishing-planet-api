@@ -133,8 +133,8 @@ during any request returns `503`, not `500`.
 
 | Resource | Base path | Operations |
 | --- | --- | --- |
-| Fish | `/api/fish` | list, get `:id` (includes biting preference), create, update `:id`, delete `:id` |
-| Locations | `/api/locations` | list, get `:id`, create, update `:id`, delete `:id` |
+| Fish | `/api/fish` | list, get `:id` (includes biting preference), get `by-name/:name`, create, update `:id`, delete `:id` |
+| Locations | `/api/locations` | list, get `:id`, get `by-name/:name`, create, update `:id`, delete `:id` |
 | Biting preferences | `/api/biting-preferences` | list, get `:fishId`, create, update `:fishId`, delete `:fishId` |
 | Fish ↔ Location | `/api/fish-locations` | list (filter `?fishId=&locationId=`), create, update / delete via `?fishId=&locationId=&specificSpot=` |
 

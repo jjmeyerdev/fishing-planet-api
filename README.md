@@ -72,13 +72,20 @@ docker build -t fishing-planet-api .
 docker run -p 8080:8080 -e DATABASE_URL=postgresql://… fishing-planet-api
 ```
 
-Or bring up Postgres and the API together with Compose. The image has no Prisma
-CLI, so the schema and seed run from the host against the published Postgres port:
+Or bring up the whole stack with Compose. An `init` service pushes the Prisma
+schema (using the builder image, which has the CLI) before the API starts, so a
+single command is self-contained:
 
 ```bash
-docker compose up -d db            # start Postgres (healthchecked)
-pnpm db:push && pnpm seed          # create schema + (optionally) load data
-docker compose up -d --build app   # build and start the API on :8080
+docker compose up -d --build       # Postgres → schema push (init) → API on :8080
+pnpm seed                          # (optional) load data from the host
+```
+
+Seeding still runs from the host, since the slim runtime image has no Prisma CLI.
+To run the smoke-test service, which waits for the app to report healthy:
+
+```bash
+docker compose --profile test up --build --abort-on-container-exit --exit-code-from test
 ```
 
 Credentials default to the `.env.example` values; override `POSTGRES_USER`,

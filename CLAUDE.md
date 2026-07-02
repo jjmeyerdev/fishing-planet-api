@@ -110,7 +110,10 @@ connection timeouts) so an unreachable DB fails fast instead of hanging.
 under both `tsx` and the compiled build; the Dockerfile copies it into the image).
 `src/rateLimit.ts` is an in-memory fixed-window limiter applied to `/api/*`
 (`RATE_LIMIT_MAX`/`RATE_LIMIT_WINDOW_MS` env; `max=0` disables — the `pnpm test`
-script sets it so the suite isn't throttled).
+script sets it so the suite isn't throttled). `src/auth.ts` gates writes
+(POST/PATCH/DELETE) on `/api/*` behind an API key (`Authorization: Bearer`, keys
+from the comma-separated `API_KEYS`); reads are public and an empty `API_KEYS`
+disables it (the `pnpm test` script clears it, so write tests aren't blocked).
 
 Every resource file follows the same CRUD shape and shares helpers in
 `routes/helpers.ts`. The helpers that reject bad input **throw** a Hono

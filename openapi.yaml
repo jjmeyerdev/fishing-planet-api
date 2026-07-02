@@ -13,6 +13,11 @@ info:
     per 60s window). Responses carry `RateLimit-Limit`, `RateLimit-Remaining`,
     and `RateLimit-Reset`; exceeding the limit returns `429` with a `Retry-After`
     header.
+
+
+    Write operations (POST/PATCH/DELETE) require `Authorization: Bearer <API key>`
+    (the `bearerAuth` scheme); reads are public. A missing or invalid key returns
+    `401`.
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -119,6 +124,7 @@ paths:
     post:
       summary: Create a fish
       operationId: createFish
+      security: [ { bearerAuth: [] } ]
       tags: [fish]
       requestBody:
         required: true
@@ -159,6 +165,7 @@ paths:
     patch:
       summary: Update a fish
       operationId: updateFish
+      security: [ { bearerAuth: [] } ]
       tags: [fish]
       requestBody:
         required: true
@@ -177,6 +184,7 @@ paths:
     delete:
       summary: Delete a fish
       operationId: deleteFish
+      security: [ { bearerAuth: [] } ]
       tags: [fish]
       responses:
         '204': { description: Deleted }
@@ -254,6 +262,7 @@ paths:
     post:
       summary: Create a location
       operationId: createLocation
+      security: [ { bearerAuth: [] } ]
       tags: [locations]
       requestBody:
         required: true
@@ -287,6 +296,7 @@ paths:
     patch:
       summary: Update a location
       operationId: updateLocation
+      security: [ { bearerAuth: [] } ]
       tags: [locations]
       requestBody:
         required: true
@@ -305,6 +315,7 @@ paths:
     delete:
       summary: Delete a location
       operationId: deleteLocation
+      security: [ { bearerAuth: [] } ]
       tags: [locations]
       responses:
         '204': { description: Deleted }
@@ -365,6 +376,7 @@ paths:
     post:
       summary: Create a biting preference
       operationId: createBitingPreference
+      security: [ { bearerAuth: [] } ]
       tags: [biting-preferences]
       requestBody:
         required: true
@@ -401,6 +413,7 @@ paths:
     patch:
       summary: Update a biting preference
       operationId: updateBitingPreference
+      security: [ { bearerAuth: [] } ]
       tags: [biting-preferences]
       requestBody:
         required: true
@@ -419,6 +432,7 @@ paths:
     delete:
       summary: Delete a biting preference
       operationId: deleteBitingPreference
+      security: [ { bearerAuth: [] } ]
       tags: [biting-preferences]
       responses:
         '204': { description: Deleted }
@@ -464,6 +478,7 @@ paths:
     post:
       summary: Create a fish-location row
       operationId: createFishLocation
+      security: [ { bearerAuth: [] } ]
       tags: [fish-locations]
       requestBody:
         required: true
@@ -482,6 +497,7 @@ paths:
     patch:
       summary: Update a fish-location row (identified by composite-key query params)
       operationId: updateFishLocation
+      security: [ { bearerAuth: [] } ]
       tags: [fish-locations]
       parameters:
         - { name: fishId, in: query, required: true, schema: { type: integer } }
@@ -503,6 +519,7 @@ paths:
     delete:
       summary: Delete a fish-location row (identified by composite-key query params)
       operationId: deleteFishLocation
+      security: [ { bearerAuth: [] } ]
       tags: [fish-locations]
       parameters:
         - { name: fishId, in: query, required: true, schema: { type: integer } }
@@ -514,6 +531,11 @@ paths:
         '404': { $ref: '#/components/responses/NotFound' }
 
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'API key sent as `Authorization: Bearer <key>` (required for writes).'
   parameters:
     Limit:
       name: limit

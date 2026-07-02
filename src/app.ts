@@ -5,11 +5,13 @@ import { HTTPException } from 'hono/http-exception'
 import { prisma } from './db.js'
 import { docs } from './docs.js'
 import { rateLimit } from './rateLimit.js'
+import { apiKeyAuth } from './auth.js'
 import { isConnectionError } from './routes/helpers.js'
 import { routes } from './routes/index.js'
 
 const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX ?? 100)
 const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS ?? 60_000)
+const API_KEYS = (process.env.API_KEYS ?? '').split(',').map((k) => k.trim()).filter(Boolean)
 
 export const app = new Hono()
 
@@ -18,6 +20,9 @@ app.use('*', cors())
 
 // Rate limit the data API only — liveness/readiness probes and /docs are exempt.
 app.use('/api/*', rateLimit({ max: RATE_LIMIT_MAX, windowMs: RATE_LIMIT_WINDOW_MS }))
+
+// API-key auth on the data API: reads are public, writes require a key.
+app.use('/api/*', apiKeyAuth({ keys: API_KEYS }))
 
 app.get('/', (c) => c.json({ name: 'fishing-planet-api', status: 'ok' }))
 

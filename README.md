@@ -151,6 +151,22 @@ Every `list` endpoint is paginated via `?limit=` (default `50`, max `100`) and
 can page until `offset + limit >= total`. An out-of-range `limit`/`offset` (or a
 non-integer value) returns `400`.
 
+### Filtering
+
+`list` endpoints accept a whitelist of filter query params (combined with `AND`,
+and reflected in `total`). Unknown params are ignored. `?q=` is a
+case-insensitive substring match; the rest are exact. A malformed boolean/integer
+filter returns `400`.
+
+| Endpoint | Filters |
+| --- | --- |
+| `/api/fish` | `q` (name), `family`, `isMonster`, `isEventFish` |
+| `/api/locations` | `q` (name), `region`, `waterwayType`, `unlockLevel` |
+| `/api/biting-preferences` | `depthZone` |
+| `/api/fish-locations` | `fishId`, `locationId` |
+
+Example: `GET /api/fish?q=bass&isMonster=true&limit=10`.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, coding conventions, and the pull request flow.

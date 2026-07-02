@@ -1,17 +1,26 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, pageParams, orClientError } from './helpers.js'
+import { readJson, pick, intParam, pageParams, buildWhere, orClientError } from './helpers.js'
+import type { FilterSpec } from './helpers.js'
 
 const FIELDS = ['name', 'region', 'waterwayType', 'unlockLevel'] as const
+
+const FILTERS: FilterSpec[] = [
+  { param: 'q', field: 'name', kind: 'search' },
+  { param: 'region', field: 'region', kind: 'string' },
+  { param: 'waterwayType', field: 'waterwayType', kind: 'string' },
+  { param: 'unlockLevel', field: 'unlockLevel', kind: 'int' },
+]
 
 export const locations = new Hono()
 
 locations.get('/', async (c) => {
   const { limit, offset } = pageParams(c)
+  const where = buildWhere(c, FILTERS) as Prisma.LocationWhereInput
   const [data, total] = await Promise.all([
-    prisma.location.findMany({ orderBy: { id: 'asc' }, skip: offset, take: limit }),
-    prisma.location.count(),
+    prisma.location.findMany({ where, orderBy: { id: 'asc' }, skip: offset, take: limit }),
+    prisma.location.count({ where }),
   ])
   return c.json({ data, total, limit, offset })
 })

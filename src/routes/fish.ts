@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, pageParams, orClientError } from './helpers.js'
+import { readJson, pick, intParam, pageParams, buildWhere, orClientError } from './helpers.js'
+import type { FilterSpec } from './helpers.js'
 
 const FIELDS = [
   'commonName', 'scientificName', 'family', 'description', 'isEventFish', 'isMonster',
@@ -11,13 +12,21 @@ const FIELDS = [
   'xpCurveNotes', 'farmingMetaTier', 'notesFarming', 'dataVersion', 'lastVerified',
 ] as const
 
+const FILTERS: FilterSpec[] = [
+  { param: 'q', field: 'commonName', kind: 'search' },
+  { param: 'family', field: 'family', kind: 'string' },
+  { param: 'isMonster', field: 'isMonster', kind: 'boolean' },
+  { param: 'isEventFish', field: 'isEventFish', kind: 'boolean' },
+]
+
 export const fish = new Hono()
 
 fish.get('/', async (c) => {
   const { limit, offset } = pageParams(c)
+  const where = buildWhere(c, FILTERS) as Prisma.FishWhereInput
   const [data, total] = await Promise.all([
-    prisma.fish.findMany({ orderBy: { id: 'asc' }, skip: offset, take: limit }),
-    prisma.fish.count(),
+    prisma.fish.findMany({ where, orderBy: { id: 'asc' }, skip: offset, take: limit }),
+    prisma.fish.count({ where }),
   ])
   return c.json({ data, total, limit, offset })
 })

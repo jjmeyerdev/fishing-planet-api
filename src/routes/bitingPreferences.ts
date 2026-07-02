@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
 import type { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../db.js'
-import { readJson, pick, intParam, pageParams, orClientError } from './helpers.js'
+import { readJson, pick, intParam, pageParams, buildWhere, orClientError } from './helpers.js'
+import type { FilterSpec } from './helpers.js'
 
 // Keyed one-to-one on fishId.
 const CREATE_FIELDS = [
@@ -11,13 +12,18 @@ const CREATE_FIELDS = [
 ] as const
 const UPDATE_FIELDS = CREATE_FIELDS.filter((f) => f !== 'fishId')
 
+const FILTERS: FilterSpec[] = [
+  { param: 'depthZone', field: 'depthZone', kind: 'string' },
+]
+
 export const bitingPreferences = new Hono()
 
 bitingPreferences.get('/', async (c) => {
   const { limit, offset } = pageParams(c)
+  const where = buildWhere(c, FILTERS) as Prisma.BitingPreferenceWhereInput
   const [data, total] = await Promise.all([
-    prisma.bitingPreference.findMany({ orderBy: { fishId: 'asc' }, skip: offset, take: limit }),
-    prisma.bitingPreference.count(),
+    prisma.bitingPreference.findMany({ where, orderBy: { fishId: 'asc' }, skip: offset, take: limit }),
+    prisma.bitingPreference.count({ where }),
   ])
   return c.json({ data, total, limit, offset })
 })

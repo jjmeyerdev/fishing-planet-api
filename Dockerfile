@@ -33,7 +33,22 @@ RUN corepack enable
 # @prisma/client out of the runtime — it drags in ~250MB of Studio/pglite/react
 # the server never uses; the runtime needs only the pg driver adapter.
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN pnpm install --prod --ignore-scripts --config.auto-install-peers=false
+RUN pnpm install --prod --ignore-scripts --config.auto-install-peers=false \
+    # Drop packages left in the store that hang off the excluded prisma CLI peer
+    # (Studio UI, pglite, effect, …). None are in the runtime graph rooted at the
+    # prod deps; verified a live /api/fish round-trip still works without them.
+    && rm -rf \
+        node_modules/.pnpm/@prisma+studio-core@* \
+        node_modules/.pnpm/@prisma+dev@* \
+        node_modules/.pnpm/@prisma+config@* \
+        node_modules/.pnpm/@prisma+query-plan-executor@* \
+        node_modules/.pnpm/effect@* \
+        node_modules/.pnpm/@electric-sql+* \
+        node_modules/.pnpm/chart.js@* \
+        node_modules/.pnpm/remeda@* \
+        node_modules/.pnpm/react@* \
+        node_modules/.pnpm/react-dom@* \
+        node_modules/.pnpm/fast-check@*
 
 COPY --from=builder /app/dist ./dist
 

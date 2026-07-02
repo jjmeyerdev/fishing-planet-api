@@ -102,3 +102,7 @@ Base: `GET /` (info), `GET /health`.
 | Fish ↔ Location | `/api/fish-locations` | list (filter `?fishId=&locationId=`), create, update / delete via `?fishId=&locationId=&specificSpot=` |
 
 The `fish_locations` join has a composite key `(fishId, locationId, specificSpot)`, so update and delete take those three as query params rather than a path id.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup, coding conventions, and the pull request flow.

@@ -2,12 +2,12 @@
 # values and can be overridden via a .env file or the shell environment.
 #
 # Usage:
-#   docker compose up -d db            # start Postgres
-#   pnpm db:push && pnpm seed          # create schema + (optionally) load data
-#   docker compose up -d --build app   # build and start the API on :8080
+#   docker compose up -d --build          # Postgres → migrations (init) → API on :8080
+#   docker compose --profile seed up --build seed   # (optional) load data/ into the DB
 #
-# The app image has no Prisma CLI, so schema/seed run from the host (or `pnpm
-# db:migrate`) against localhost:5432.
+# The app image has no Prisma CLI, so the one-shot `init` service (builder image)
+# applies the committed migrations before the app starts, and the `seed` service
+# runs the seed scripts — no host Prisma commands required.
 
 services:
   db:

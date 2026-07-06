@@ -12,6 +12,8 @@ import { jigheads } from './jigheads.js'
 import { sinkers } from './sinkers.js'
 import { keepnets } from './keepnets.js'
 import { addons } from './addons.js'
+import { spots } from './spots.js'
+import { weathers } from './weathers.js'
 
 export const routes = new Hono()
 
@@ -32,3 +34,7 @@ routes.route('/jigheads', jigheads)
 routes.route('/sinkers', sinkers)
 routes.route('/keepnets', keepnets)
 routes.route('/addons', addons)
+
+// Geo spots + per-location weather (uniform id-in-path CRUD via crudResource)
+routes.route('/spots', spots)
+routes.route('/weathers', weathers)

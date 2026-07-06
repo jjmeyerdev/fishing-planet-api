@@ -27,6 +27,8 @@ pnpm seed:biting data/fish/x.md   # seed a single fish file
 pnpm seed:gear          # seed the tackle catalog from data/fp/*.json
 pnpm seed:gear baits    # seed a single gear entity (baits|boilies|lure-types|…)
 pnpm seed:fp            # enrich fish/locations + rebuild fish_locations & links
+pnpm seed:spots         # seed geo spots + per-location weather from data/fp/*.json
+pnpm seed:spots spots   # seed a single entity (spots|weathers)
 ```
 
 The static checks are `pnpm typecheck` (types, including `tests/`) and `pnpm test`
@@ -116,7 +118,8 @@ embed the biting preference plus these `baits` / `lureTypes` relations.
 `app.ts` mounts `routes` under `/api`; `routes/index.ts` mounts each resource
 (`/fish`, `/locations`, `/fish-locations`, `/biting-preferences`, plus the tackle
 catalog: `/baits`, `/boilies`, `/lure-types`, `/lures`, `/hooks`, `/jigheads`,
-`/sinkers`, `/keepnets`, `/addons`). `app.ts` also
+`/sinkers`, `/keepnets`, `/addons`; plus geo `/spots` and per-location
+`/weathers`). `app.ts` also
 exposes `GET /health` (liveness, DB-free) and `GET /ready`
 (readiness — runs `SELECT 1`, `503` when the DB is unreachable); the Compose
 healthcheck targets `/ready`. `src/db.ts` sizes the pg pool (`max`, idle /
@@ -263,3 +266,19 @@ resolve baits/lure-types by `fpId`. Notes:
 - **Links** are a full rebuild (`deleteMany` + `createMany`): `fish.baitIds` →
   `FishBait` (2 baitIds don't resolve and are skipped), `fish.lureIds` →
   `FishLureType` (lure recommendations are at the lure-**type** level).
+
+## Spots/Weather seed pipeline (`scripts/seed-spots.ts`)
+
+Seeds geo `Spot` and per-location `Weather` from `data/fp/spots.json` /
+`weathers.json`. Idempotent — every row upserts on `fpId`. **Run `pnpm seed:fp`
+first**: each row resolves its `Location` by matching the source `placeId` to
+`Location.fpId`, which `seed:fp` backfills. Notes:
+
+- `pnpm seed:spots` seeds both; `pnpm seed:spots <name>` seeds just one
+  (`spots|weathers`).
+- `placeId` is a single-element array — `[0]` is matched to a seeded `Location`
+  by `fpId`. Rows whose place isn't seeded are skipped with a count (one removed
+  place, `fpId 204`, orphans 4 spots + 6 weathers).
+- Field mapping: `id` → `fpId`, `image` → `imageUrl` (Spot), `icon`/`chart` →
+  `iconUrl`/`chartUrl` (Weather). Spot `lat`/`lng`/`x`/`y` are game-map
+  coordinates stored as `Decimal`, **not** WGS84.

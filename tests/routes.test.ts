@@ -37,6 +37,8 @@ type Key =
   | 'sinker'
   | 'keepnet'
   | 'addon'
+  | 'spot'
+  | 'weather'
 interface Resource {
   label: string
   base: string
@@ -142,6 +144,22 @@ const RESOURCES: Resource[] = [
     create: { fpId: 9, title: 'Torch Flashlight', slug: 'torch-flashlight' },
     junk: { id: 999, bogus: 'nope' },
     patch: { color: 'Red' },
+  },
+  {
+    label: 'spots',
+    base: '/api/spots',
+    key: 'spot',
+    create: { fpId: 10, name: 'Skarvika', slug: 'norway-skarvika', title: 'Norway - Skarvika', lat: '-1706.495', lng: '2469.965', x: '49.3993', y: '34.1299', locationId: 1 },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { title: 'Norway - Renamed' },
+  },
+  {
+    label: 'weathers',
+    base: '/api/weathers',
+    key: 'weather',
+    create: { fpId: 11, name: 'Cloudy', slug: 'norway-day-cloudy', title: 'Norway - Day - Cloudy', value: 'cloudy', legacyValue: 'cloudy', type: 'day', locationId: 1 },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { type: 'night' },
   },
 ]
 

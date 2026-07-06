@@ -394,7 +394,11 @@ model WikiBrand {
   contentHash String?   @map("content_hash") @db.VarChar(64)
   scrapedAt   DateTime? @map("scraped_at")
 
-  reels WikiReel[]
+  reels   WikiReel[]
+  rods    WikiRod[]
+  lines   WikiLine[]
+  hooks   WikiHook[]
+  sinkers WikiSinker[]
 
   @@map("wiki_brands")
 }
@@ -407,6 +411,7 @@ model WikiTechnology {
   category    String? @db.VarChar(30)
 
   reels WikiReelTechnology[]
+  rods  WikiRodTechnology[]
 
   @@map("wiki_technologies")
 }
@@ -462,4 +467,268 @@ model WikiReelTechnology {
   @@id([reelId, technologyId])
   @@index([technologyId])
   @@map("wiki_reel_technologies")
+}
+
+// --- Wiki tackle: gear categories (rods / lines / hooks / sinkers / bobbers / lures) ---
+// Same crawl→parse→load pipeline as reels; a model that spans several variants gets
+// a parent + per-variant child table. Rods reuse WikiBrand + WikiTechnology (like
+// reels); lines/hooks/sinkers carry an optional brand; bobbers/lures have neither.
+// Range/fraction values ("1/32 - 1/4", "3 + 3", "6'6\" NE") are stored as strings.
+
+model WikiRod {
+  id           Int      @id @default(autoincrement())
+  slug         String   @unique @db.VarChar(200)
+  name         String   @db.VarChar(150)
+  subtype      String   @db.VarChar(40) // spinning-rods | casting-rods | …
+  brandId      Int?     @map("brand_id")
+  description  String?  @db.Text
+  imageUrl     String?  @map("image_url") @db.Text
+  power        String?  @db.VarChar(40) // shared spec hoisted to the model
+  action       String?  @db.VarChar(40)
+  lineWeightLb String?  @map("line_weight_lb") @db.VarChar(40) // shared line weight (else per-variant)
+  lineWeightKg String?  @map("line_weight_kg") @db.VarChar(40)
+  electric     Boolean? // saltwater rods
+  quiverTips   String?  @map("quiver_tips") @db.Text // feeder rods
+  sourceUrl    String   @map("source_url") @db.Text
+  contentHash  String   @map("content_hash") @db.VarChar(64)
+  scrapedAt    DateTime @map("scraped_at")
+
+  brand        WikiBrand?          @relation(fields: [brandId], references: [id])
+  variants     WikiRodVariant[]
+  technologies WikiRodTechnology[]
+
+  @@index([brandId])
+  @@map("wiki_rods")
+}
+
+model WikiRodVariant {
+  id             Int     @id @default(autoincrement())
+  rodId          Int     @map("rod_id")
+  name           String? @db.VarChar(120) // length ("6'6\" NE") or DLC edition name
+  lengthFt       String? @map("length_ft") @db.VarChar(30)
+  lengthM        String? @map("length_m") @db.VarChar(30)
+  lureWeightOz   String? @map("lure_weight_oz") @db.VarChar(40)
+  lureWeightG    String? @map("lure_weight_g") @db.VarChar(40)
+  lineWeightLb   String? @map("line_weight_lb") @db.VarChar(40)
+  lineWeightKg   String? @map("line_weight_kg") @db.VarChar(40)
+  pieces         String? @db.VarChar(20)
+  guides         String? @db.VarChar(20)
+  unlockLevel    Int?    @map("unlock_level")
+  priceCredits   Int?    @map("price_credits")
+  priceBaitcoins Int?    @map("price_baitcoins")
+  dlcPack        String? @map("dlc_pack") @db.Text
+
+  rod WikiRod @relation(fields: [rodId], references: [id], onDelete: Cascade)
+
+  @@index([rodId])
+  @@map("wiki_rod_variants")
+}
+
+model WikiRodTechnology {
+  rodId        Int @map("rod_id")
+  technologyId Int @map("technology_id")
+
+  rod        WikiRod        @relation(fields: [rodId], references: [id], onDelete: Cascade)
+  technology WikiTechnology @relation(fields: [technologyId], references: [id], onDelete: Cascade)
+
+  @@id([rodId, technologyId])
+  @@index([technologyId])
+  @@map("wiki_rod_technologies")
+}
+
+model WikiLine {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique @db.VarChar(200)
+  name        String   @db.VarChar(150)
+  subtype     String   @db.VarChar(40) // monofilament | fluorocarbon | braided | saltwater-mono | …
+  kind        String   @db.VarChar(20) // regular | exclusive
+  brandId     Int?     @map("brand_id")
+  description String?  @db.Text
+  color       String?  @db.VarChar(60)
+  sourceUrl   String   @map("source_url") @db.Text
+  contentHash String   @map("content_hash") @db.VarChar(64)
+  scrapedAt   DateTime @map("scraped_at")
+
+  brand    WikiBrand?        @relation(fields: [brandId], references: [id])
+  variants WikiLineVariant[]
+
+  @@index([brandId])
+  @@map("wiki_lines")
+}
+
+// One row per (diameter × spool-size) SKU.
+model WikiLineVariant {
+  id             Int      @id @default(autoincrement())
+  lineId         Int      @map("line_id")
+  diameterMm     Decimal? @map("diameter_mm")
+  diameterIn     String?  @map("diameter_in") @db.VarChar(20)
+  testLb         String?  @map("test_lb") @db.VarChar(20)
+  testKg         String?  @map("test_kg") @db.VarChar(20)
+  color          String?  @db.VarChar(60)
+  spool          String?  @db.VarChar(60) // "150 yards BASIC"
+  priceCredits   Int?     @map("price_credits")
+  priceBaitcoins Int?     @map("price_baitcoins")
+  priceNote      String?  @map("price_note") @db.Text
+  unlockLevel    Int?     @map("unlock_level")
+  imageUrl       String?  @map("image_url") @db.Text
+  fpId           Int?     @map("fp_id") // NNN.png icon id
+
+  line WikiLine @relation(fields: [lineId], references: [id], onDelete: Cascade)
+
+  @@index([lineId])
+  @@map("wiki_line_variants")
+}
+
+model WikiHook {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique @db.VarChar(200)
+  name        String   @db.VarChar(150)
+  kind        String   @db.VarChar(20) // hook | jighead
+  subtype     String   @db.VarChar(40)
+  brandId     Int?     @map("brand_id")
+  type        String?  @db.VarChar(80) // plain hooks: Kirby/Octopus/…
+  color       String?  @db.VarChar(60)
+  sharpening  String?  @db.VarChar(40)
+  count       Int? // pack count
+  description String?  @db.Text
+  imageUrl    String?  @map("image_url") @db.Text
+  sourceUrl   String   @map("source_url") @db.Text
+  contentHash String   @map("content_hash") @db.VarChar(64)
+  scrapedAt   DateTime @map("scraped_at")
+
+  brand    WikiBrand?        @relation(fields: [brandId], references: [id])
+  variants WikiHookVariant[]
+
+  @@index([brandId])
+  @@map("wiki_hooks")
+}
+
+model WikiHookVariant {
+  id             Int      @id @default(autoincrement())
+  hookId         Int      @map("hook_id")
+  size           String?  @db.VarChar(20) // "#1/0"
+  weightOz       String?  @map("weight_oz") @db.VarChar(30) // jig heads
+  weightG        Decimal? @map("weight_g")
+  priceCredits   Int?     @map("price_credits")
+  priceBaitcoins Int?     @map("price_baitcoins")
+  priceNote      String?  @map("price_note") @db.Text
+  unlockLevel    Int?     @map("unlock_level")
+  imageUrl       String?  @map("image_url") @db.Text
+
+  hook WikiHook @relation(fields: [hookId], references: [id], onDelete: Cascade)
+
+  @@index([hookId])
+  @@map("wiki_hook_variants")
+}
+
+model WikiSinker {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique @db.VarChar(200)
+  name        String   @db.VarChar(150)
+  kind        String   @db.VarChar(20) // sinker | feeder
+  subtype     String   @db.VarChar(40)
+  brandId     Int?     @map("brand_id")
+  description String?  @db.Text
+  imageUrl    String?  @map("image_url") @db.Text
+  sourceUrl   String   @map("source_url") @db.Text
+  contentHash String   @map("content_hash") @db.VarChar(64)
+  scrapedAt   DateTime @map("scraped_at")
+
+  brand    WikiBrand?          @relation(fields: [brandId], references: [id])
+  variants WikiSinkerVariant[]
+
+  @@index([brandId])
+  @@map("wiki_sinkers")
+}
+
+model WikiSinkerVariant {
+  id              Int      @id @default(autoincrement())
+  sinkerId        Int      @map("sinker_id")
+  weightG         Decimal? @map("weight_g")
+  weightOz        String?  @map("weight_oz") @db.VarChar(30)
+  capacityKg      Decimal? @map("capacity_kg") // catapults
+  capacityLb      String?  @map("capacity_lb") @db.VarChar(30)
+  form            String?  @db.VarChar(60) // sinkers
+  count           Int?
+  capacity        String?  @db.VarChar(30) // feeders: Low/Medium/High
+  feederType      String?  @map("feeder_type") @db.VarChar(60)
+  dissolutionTime String?  @map("dissolution_time") @db.VarChar(40)
+  variantName     String?  @map("variant_name") @db.VarChar(120)
+  mesh            String?  @db.VarChar(40)
+  range           String?  @db.VarChar(40) // catapults
+  priceCredits    Int?     @map("price_credits")
+  priceBaitcoins  Int?     @map("price_baitcoins")
+  priceNote       String?  @map("price_note") @db.Text
+  unlockLevel     Int?     @map("unlock_level")
+  imageUrl        String?  @map("image_url") @db.Text
+
+  sinker WikiSinker @relation(fields: [sinkerId], references: [id], onDelete: Cascade)
+
+  @@index([sinkerId])
+  @@map("wiki_sinker_variants")
+}
+
+// Bobbers are one row per item (no variant child); buoys are out of scope.
+model WikiBobber {
+  id                Int      @id @default(autoincrement())
+  slug              String   @unique @db.VarChar(200)
+  name              String   @db.VarChar(150)
+  subtype           String   @db.VarChar(40) // classic-bobbers | wagglers | sliders | fishing-alarm
+  section           String?  @db.VarChar(20) // Regular | Exclusive
+  fpId              Int?     @map("fp_id") // NNN.png image id (names collide)
+  imageUrl          String?  @map("image_url") @db.Text
+  description       String?  @db.Text
+  color             String?  @db.VarChar(80) // float only
+  size              String?  @db.VarChar(80) // float only (raw compound string)
+  shape             String?  @db.VarChar(40) // float only
+  maxFloatingWeight String?  @map("max_floating_weight") @db.VarChar(20) // float only
+  sensitivity       String?  @db.VarChar(20) // alarm only
+  material          String?  @db.VarChar(80)
+  unlockLevel       Int?     @map("unlock_level")
+  priceCredits      Int?     @map("price_credits")
+  priceBaitcoins    Int?     @map("price_baitcoins")
+  priceNote         String?  @map("price_note") @db.Text
+  sourceUrl         String   @map("source_url") @db.Text
+  contentHash       String   @map("content_hash") @db.VarChar(64)
+  scrapedAt         DateTime @map("scraped_at")
+
+  @@map("wiki_bobbers")
+}
+
+model WikiLure {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique @db.VarChar(200)
+  name        String   @db.VarChar(150)
+  subtype     String   @db.VarChar(40) // spoons | plugs | soft-plastic-baits | spinners | bass-jigs | saltwater-lures
+  description String?  @db.Text
+  sourceUrl   String   @map("source_url") @db.Text
+  contentHash String   @map("content_hash") @db.VarChar(64)
+  scrapedAt   DateTime @map("scraped_at")
+
+  variants WikiLureVariant[]
+
+  @@map("wiki_lures")
+}
+
+// One row per (color × size) column.
+model WikiLureVariant {
+  id             Int      @id @default(autoincrement())
+  lureId         Int      @map("lure_id")
+  color          String?  @db.VarChar(80)
+  imageUrl       String?  @map("image_url") @db.Text
+  buoyancy       String?  @db.VarChar(20)
+  weightG        Decimal? @map("weight_g")
+  lengthCm       Decimal? @map("length_cm")
+  divingDepthM   Decimal? @map("diving_depth_m")
+  hookSize       String?  @map("hook_size") @db.VarChar(40)
+  quantity       Int?
+  unlockLevel    Int?     @map("unlock_level")
+  priceCredits   Int?     @map("price_credits")
+  priceBaitcoins Int?     @map("price_baitcoins")
+  priceNote      String?  @map("price_note") @db.Text
+
+  lure WikiLure @relation(fields: [lureId], references: [id], onDelete: Cascade)
+
+  @@index([lureId])
+  @@map("wiki_lure_variants")
 }

@@ -55,7 +55,7 @@ services:
     volumes:
       - ./data:/app/data:ro
       - ./scripts:/app/scripts:ro
-    command: ["sh", "-c", "pnpm seed && pnpm seed:biting"]
+    command: ["sh", "-c", "pnpm seed && pnpm seed:biting && pnpm seed:gear && pnpm seed:fp && pnpm seed:spots"]
     restart: "no"
     depends_on:
       init:

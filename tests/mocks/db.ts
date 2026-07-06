@@ -28,4 +28,6 @@ export const prisma = {
   sinker: model(),
   keepnet: model(),
   addon: model(),
+  spot: model(),
+  weather: model(),
 }

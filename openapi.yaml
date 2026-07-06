@@ -1497,6 +1497,212 @@ paths:
         '204': { description: Deleted }
         '400': { $ref: '#/components/responses/BadRequest' }
         '404': { $ref: '#/components/responses/NotFound' }
+  /api/spots:
+    get:
+      summary: List spots
+      operationId: listSpots
+      tags: [spots]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: locationId
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, name, title, locationId]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of spots
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Spot' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a spot
+      operationId: createSpot
+      security: [ { bearerAuth: [] } ]
+      tags: [spots]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SpotCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Spot' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/spots/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a spot by id
+      operationId: getSpot
+      tags: [spots]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Spot' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a spot
+      operationId: updateSpot
+      security: [ { bearerAuth: [] } ]
+      tags: [spots]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SpotUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Spot' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a spot
+      operationId: deleteSpot
+      security: [ { bearerAuth: [] } ]
+      tags: [spots]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/weathers:
+    get:
+      summary: List weathers
+      operationId: listWeathers
+      tags: [weathers]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: locationId
+          in: query
+          schema: { type: integer }
+        - name: type
+          in: query
+          description: day or night
+          schema: { type: string }
+        - name: legacyValue
+          in: query
+          description: sunny, cloudy, rainy, or partly
+          schema: { type: string }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, name, title, type, locationId]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of weathers
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Weather' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a weather
+      operationId: createWeather
+      security: [ { bearerAuth: [] } ]
+      tags: [weathers]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/WeatherCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Weather' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/weathers/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a weather by id
+      operationId: getWeather
+      tags: [weathers]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Weather' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a weather
+      operationId: updateWeather
+      security: [ { bearerAuth: [] } ]
+      tags: [weathers]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/WeatherUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Weather' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a weather
+      operationId: deleteWeather
+      security: [ { bearerAuth: [] } ]
+      tags: [weathers]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
 
 components:
   securitySchemes:
@@ -2019,6 +2225,74 @@ components:
     AddonUpdate:
       allOf: [ { $ref: '#/components/schemas/AddonCreate' } ]
       description: Same writable fields as create; all optional.
+    Spot:
+      type: object
+      description: >
+        A geo spot on a location's map. lat/lng/x/y are game-map coordinates
+        (serialized as decimal strings), not WGS84.
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        name: { type: string }
+        slug: { type: string }
+        title: { type: string }
+        lat: { type: string }
+        lng: { type: string }
+        x: { type: string }
+        y: { type: string }
+        imageUrl: { type: string, nullable: true }
+        locationId: { type: integer }
+      required: [id, fpId, name, slug, title, lat, lng, x, y, locationId]
+    SpotCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        name: { type: string }
+        slug: { type: string }
+        title: { type: string }
+        lat: { type: string }
+        lng: { type: string }
+        x: { type: string }
+        y: { type: string }
+        imageUrl: { type: string }
+        locationId: { type: integer }
+      required: [fpId, name, slug, title, lat, lng, x, y, locationId]
+    SpotUpdate:
+      allOf: [ { $ref: '#/components/schemas/SpotCreate' } ]
+      description: Same writable fields as create; all optional.
+    Weather:
+      type: object
+      description: A weather pattern available at a location (day/night).
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        name: { type: string }
+        slug: { type: string }
+        title: { type: string }
+        value: { type: string, description: 'e.g. clear-high, cloudy, stormy' }
+        legacyValue: { type: string, description: 'sunny, cloudy, rainy, or partly' }
+        type: { type: string, description: 'day or night' }
+        iconUrl: { type: string, nullable: true }
+        chartUrl: { type: string, nullable: true }
+        locationId: { type: integer }
+      required: [id, fpId, name, slug, title, value, legacyValue, type, locationId]
+    WeatherCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        name: { type: string }
+        slug: { type: string }
+        title: { type: string }
+        value: { type: string }
+        legacyValue: { type: string }
+        type: { type: string }
+        iconUrl: { type: string }
+        chartUrl: { type: string }
+        locationId: { type: integer }
+      required: [fpId, name, slug, title, value, legacyValue, type, locationId]
+    WeatherUpdate:
+      allOf: [ { $ref: '#/components/schemas/WeatherCreate' } ]
+      description: Same writable fields as create; all optional.
 
 tags:
   - name: meta
@@ -2049,3 +2323,7 @@ tags:
     description: Keepnets and stringers
   - name: addons
     description: Rod addons (torches, etc.)
+  - name: spots
+    description: Geo spots on location maps
+  - name: weathers
+    description: Per-location weather patterns

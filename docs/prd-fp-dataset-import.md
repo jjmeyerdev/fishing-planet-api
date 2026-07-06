@@ -176,13 +176,16 @@ Prisma `include` on the by-id / by-name lookups.
 
 ## Phasing (reviewable PRs, each branched off `main`)
 
+**Status: all phases complete (2026-07-06), merged as #28–#32.**
+
 1. **Schema + migration** — all model changes + new tables; `pnpm db:migrate`
-   (`migrate dev`, **not** `db:push`).
-2. **Gear** — `data/fp/*.json` + `seed-gear.ts` + gear routes + openapi.
+   (`migrate dev`, **not** `db:push`). ✅ Done (#28).
+2. **Gear** — `data/fp/*.json` + `seed-gear.ts` + gear routes + openapi. ✅ Done (#29).
 3. **Fish/Location enrichment** — `seed-fp.ts` fish/location/fish-location half +
-   `FishBait` / `FishLureType`.
-4. **Spots + Weather** — seed half + routes.
-5. **Docs + verification** — openapi, `CLAUDE.md`, redocly lint.
+   `FishBait` / `FishLureType`. ✅ Done (#30).
+4. **Spots + Weather** — seed half + routes. ✅ Done (#31).
+5. **Docs + verification** — openapi, `CLAUDE.md`, redocly lint, plus a full
+   end-to-end compose run (endpoints + idempotency + additive guarantee). ✅ Done (#32).
 
 ## Verification
 
@@ -200,13 +203,14 @@ Prisma `include` on the by-id / by-name lookups.
 - Spot-check the additive guarantee: a fish with curated weights/credits still
   has them after `seed-fp.ts` runs.
 
-## Open questions / risks
+## Open questions / risks (resolved)
 
-- **Markdown place seed** becomes redundant for the 27 places once `seed-fp.ts` is
-  authoritative. Deprecate (leave in tree) or remove? Left in per surgical scope.
-- **`description` conflict** — existing fish descriptions came from markdown; JSON
-  `content` is HTML. Plan keeps existing and only fills empties. Confirm that's the
-  desired precedence.
-- **`region` / `waterwayType` / `unlockLevel`** already curated (with waterway
-  overrides). JSON's `locationName` / `type` / `baseLevel` may differ; plan does
-  **not** overwrite them. Confirm.
+- **Markdown place seed** — **kept, not redundant.** `seed-fp.ts` only *enriches*
+  existing Locations (it skips any it can't find by name), so the markdown seed is a
+  required prerequisite that creates them plus their curated
+  `region`/`waterwayType`/`unlockLevel`. A clarifying note was added to
+  `scripts/seed.ts` (#32) instead of a "deprecated" label.
+- **`description` conflict** — **confirmed.** Keep the existing markdown descriptions;
+  fill only empties from the JSON `content` (tag-stripped).
+- **`region` / `waterwayType` / `unlockLevel`** — **confirmed not overwritten.**
+  `seed-fp.ts`'s Location update writes only `fpId` / `slug` / `imageUrl`.

@@ -11,37 +11,44 @@ datasource db {
 }
 
 model Fish {
-  id                  Int       @id @default(autoincrement())
-  commonName          String    @unique @map("common_name") @db.VarChar(100)
-  scientificName      String?   @map("scientific_name") @db.VarChar(100)
-  family              String?   @db.VarChar(50)
-  description         String?   @db.Text
-  isEventFish         Boolean   @default(false) @map("is_event_fish")
-  isMonster           Boolean   @default(false) @map("is_monster")
+  id             Int     @id @default(autoincrement())
+  commonName     String  @unique @map("common_name") @db.VarChar(100)
+  scientificName String? @map("scientific_name") @db.VarChar(100)
+  family         String? @db.VarChar(50)
+  description    String? @db.Text
+  isEventFish    Boolean @default(false) @map("is_event_fish")
+  isMonster      Boolean @default(false) @map("is_monster")
+
+  // FP-Collective source metadata (the ID is the join key for the JSON dataset)
+  fpId     Int?    @unique @map("fp_id")
+  slug     String? @unique @db.VarChar(120)
+  imageUrl String? @map("image_url") @db.Text
 
   // Weights (stored in kg)
-  weightYoungMin      Decimal?  @map("weight_young_min")
-  weightYoungMax      Decimal?  @map("weight_young_max")
-  weightCommonMin     Decimal?  @map("weight_common_min")
-  weightCommonMax     Decimal?  @map("weight_common_max")
-  weightTrophyMin     Decimal?  @map("weight_trophy_min")
-  weightUniqueMin     Decimal?  @map("weight_unique_min")
-  weightUniqueMax     Decimal?  @map("weight_unique_max")
-  monsterTargetWeight Decimal?  @map("monster_target_weight")
+  weightYoungMin      Decimal? @map("weight_young_min")
+  weightYoungMax      Decimal? @map("weight_young_max")
+  weightCommonMin     Decimal? @map("weight_common_min")
+  weightCommonMax     Decimal? @map("weight_common_max")
+  weightTrophyMin     Decimal? @map("weight_trophy_min")
+  weightUniqueMin     Decimal? @map("weight_unique_min")
+  weightUniqueMax     Decimal? @map("weight_unique_max")
+  monsterTargetWeight Decimal? @map("monster_target_weight")
 
   // Financials (base rates)
-  creditsPerKgCommon  Decimal?  @map("credits_per_kg_common")
-  creditsPerKgTrophy  Decimal?  @map("credits_per_kg_trophy")
-  creditsPerKgUnique  Decimal?  @map("credits_per_kg_unique")
+  creditsPerKgCommon Decimal? @map("credits_per_kg_common")
+  creditsPerKgTrophy Decimal? @map("credits_per_kg_trophy")
+  creditsPerKgUnique Decimal? @map("credits_per_kg_unique")
 
-  xpCurveNotes        String?   @map("xp_curve_notes") @db.Text
-  farmingMetaTier     String?   @map("farming_meta_tier") @db.VarChar(10)
-  notesFarming        String?   @map("notes_farming") @db.Text
-  dataVersion         String?   @map("data_version") @db.VarChar(20)
-  lastVerified        DateTime? @map("last_verified") @db.Date
+  xpCurveNotes    String?   @map("xp_curve_notes") @db.Text
+  farmingMetaTier String?   @map("farming_meta_tier") @db.VarChar(10)
+  notesFarming    String?   @map("notes_farming") @db.Text
+  dataVersion     String?   @map("data_version") @db.VarChar(20)
+  lastVerified    DateTime? @map("last_verified") @db.Date
 
-  locations           FishLocation[]
-  bitingPreference    BitingPreference?
+  locations        FishLocation[]
+  bitingPreference BitingPreference?
+  baits            FishBait[]
+  lureTypes        FishLureType[]
 
   @@map("fish")
 }
@@ -53,7 +60,14 @@ model Location {
   waterwayType String @map("waterway_type") @db.VarChar(50)
   unlockLevel  Int    @map("unlock_level")
 
-  fish         FishLocation[]
+  // FP-Collective source metadata (the ID is the join key for the JSON dataset)
+  fpId     Int?    @unique @map("fp_id")
+  slug     String? @unique @db.VarChar(120)
+  imageUrl String? @map("image_url") @db.Text
+
+  fish     FishLocation[]
+  spots    Spot[]
+  weathers Weather[]
 
   @@map("locations")
 }
@@ -64,8 +78,8 @@ model FishLocation {
   specificSpot   String   @map("specific_spot") @db.VarChar(100)
   classesPresent String[] @map("classes_present") @db.VarChar(50)
 
-  fish           Fish     @relation(fields: [fishId], references: [id])
-  location       Location @relation(fields: [locationId], references: [id])
+  fish     Fish     @relation(fields: [fishId], references: [id])
+  location Location @relation(fields: [locationId], references: [id])
 
   @@id([fishId, locationId, specificSpot])
   @@map("fish_locations")
@@ -84,7 +98,213 @@ model BitingPreference {
   cloudyPeakTimes     String?  @map("cloudy_peak_times") @db.Text
   rainyPeakTimes      String?  @map("rainy_peak_times") @db.Text
 
-  fish                Fish     @relation(fields: [fishId], references: [id])
+  fish Fish @relation(fields: [fishId], references: [id])
 
   @@map("biting_preferences")
+}
+
+// --- FP-Collective structured dataset (spots, weather, tackle catalog) ---
+
+model Spot {
+  id         Int     @id @default(autoincrement())
+  fpId       Int     @unique @map("fp_id")
+  name       String  @db.VarChar(100)
+  slug       String  @unique @db.VarChar(120)
+  title      String  @db.VarChar(150)
+  // Game-map coordinates, not WGS84 (values fall well outside lat/lng ranges)
+  lat        Decimal
+  lng        Decimal
+  x          Decimal
+  y          Decimal
+  imageUrl   String? @map("image_url") @db.Text
+  locationId Int     @map("location_id")
+
+  location Location @relation(fields: [locationId], references: [id])
+
+  @@index([locationId])
+  @@map("spots")
+}
+
+model Weather {
+  id          Int     @id @default(autoincrement())
+  fpId        Int     @unique @map("fp_id")
+  name        String  @db.VarChar(100)
+  slug        String  @unique @db.VarChar(120)
+  title       String  @db.VarChar(150)
+  value       String  @db.VarChar(50)
+  legacyValue String  @map("legacy_value") @db.VarChar(20)
+  type        String  @db.VarChar(10)
+  iconUrl     String? @map("icon_url") @db.Text
+  chartUrl    String? @map("chart_url") @db.Text
+  locationId  Int     @map("location_id")
+
+  location Location @relation(fields: [locationId], references: [id])
+
+  @@index([locationId])
+  @@map("weathers")
+}
+
+model Bait {
+  id            Int      @id @default(autoincrement())
+  fpId          Int      @unique @map("fp_id")
+  title         String   @db.VarChar(150)
+  slug          String   @unique @db.VarChar(150)
+  imageUrl      String?  @map("image_url") @db.Text
+  baseLevel     Int      @map("base_level")
+  baitcoinLevel Int      @map("baitcoin_level")
+  baitType      String   @map("bait_type") @db.VarChar(50)
+  tags          String[]
+
+  fishes FishBait[]
+
+  @@map("baits")
+}
+
+model Boilie {
+  id            Int      @id @default(autoincrement())
+  fpId          Int      @unique @map("fp_id")
+  title         String   @db.VarChar(150)
+  slug          String   @unique @db.VarChar(150)
+  imageUrl      String?  @map("image_url") @db.Text
+  baseLevel     Int      @map("base_level")
+  baitcoinLevel Int      @map("baitcoin_level")
+  baitType      String   @map("bait_type") @db.VarChar(50)
+  diameterMm    Int?     @map("diameter_mm")
+  tags          String[]
+
+  @@map("boilies")
+}
+
+model LureType {
+  id       Int      @id @default(autoincrement())
+  fpId     Int      @unique @map("fp_id")
+  title    String   @db.VarChar(150)
+  slug     String   @unique @db.VarChar(150)
+  imageUrl String?  @map("image_url") @db.Text
+  tags     String[]
+
+  lures  Lure[]
+  fishes FishLureType[]
+
+  @@map("lure_types")
+}
+
+model Lure {
+  id            Int      @id @default(autoincrement())
+  fpId          Int      @unique @map("fp_id")
+  title         String   @db.VarChar(150)
+  slug          String   @unique @db.VarChar(150)
+  imageUrl      String?  @map("image_url") @db.Text
+  baseLevel     Int      @map("base_level")
+  baitcoinLevel Int      @map("baitcoin_level")
+  color         String?  @db.VarChar(50)
+  weightG       Decimal? @map("weight_g")
+  lengthCm      Decimal? @map("length_cm")
+  tags          String[]
+  lureTypeId    Int?     @map("lure_type_id")
+
+  lureType LureType? @relation(fields: [lureTypeId], references: [id])
+
+  @@index([lureTypeId])
+  @@map("lures")
+}
+
+model Hook {
+  id            Int      @id @default(autoincrement())
+  fpId          Int      @unique @map("fp_id")
+  title         String   @db.VarChar(150)
+  slug          String   @unique @db.VarChar(150)
+  imageUrl      String?  @map("image_url") @db.Text
+  baseLevel     Int      @map("base_level")
+  baitcoinLevel Int      @map("baitcoin_level")
+  size          String   @db.VarChar(20)
+  type          String   @db.VarChar(50)
+  tags          String[]
+
+  @@map("hooks")
+}
+
+model Jighead {
+  id            Int      @id @default(autoincrement())
+  fpId          Int      @unique @map("fp_id")
+  title         String   @db.VarChar(150)
+  slug          String   @unique @db.VarChar(150)
+  imageUrl      String?  @map("image_url") @db.Text
+  baseLevel     Int      @map("base_level")
+  baitcoinLevel Int      @map("baitcoin_level")
+  size          String   @db.VarChar(20)
+  weightG       Decimal? @map("weight_g")
+  color         String?  @db.VarChar(50)
+  tags          String[]
+
+  @@map("jigheads")
+}
+
+model Sinker {
+  id            Int      @id @default(autoincrement())
+  fpId          Int      @unique @map("fp_id")
+  title         String   @db.VarChar(150)
+  slug          String   @unique @db.VarChar(150)
+  imageUrl      String?  @map("image_url") @db.Text
+  baseLevel     Int      @map("base_level")
+  baitcoinLevel Int      @map("baitcoin_level")
+  form          String   @db.VarChar(50)
+  weightG       Decimal? @map("weight_g")
+  color         String?  @db.VarChar(50)
+  tags          String[]
+
+  @@map("sinkers")
+}
+
+model Keepnet {
+  id             Int     @id @default(autoincrement())
+  fpId           Int     @unique @map("fp_id")
+  title          String  @db.VarChar(150)
+  slug           String  @unique @db.VarChar(150)
+  imageUrl       String? @map("image_url") @db.Text
+  baseLevel      Int     @map("base_level")
+  baitcoinLevel  Int     @map("baitcoin_level")
+  type           String  @db.VarChar(50)
+  isFishFriendly Boolean @map("is_fish_friendly")
+
+  @@map("keepnets")
+}
+
+model Addon {
+  id            Int      @id @default(autoincrement())
+  fpId          Int      @unique @map("fp_id")
+  title         String   @db.VarChar(150)
+  slug          String   @unique @db.VarChar(150)
+  imageUrl      String?  @map("image_url") @db.Text
+  baseLevel     Int      @map("base_level")
+  baitcoinLevel Int      @map("baitcoin_level")
+  color         String?  @db.VarChar(50)
+  lengthCm      Decimal? @map("length_cm")
+  tags          String[]
+
+  @@map("addons")
+}
+
+model FishBait {
+  fishId Int @map("fish_id")
+  baitId Int @map("bait_id")
+
+  fish Fish @relation(fields: [fishId], references: [id])
+  bait Bait @relation(fields: [baitId], references: [id])
+
+  @@id([fishId, baitId])
+  @@index([baitId])
+  @@map("fish_baits")
+}
+
+model FishLureType {
+  fishId     Int @map("fish_id")
+  lureTypeId Int @map("lure_type_id")
+
+  fish     Fish     @relation(fields: [fishId], references: [id])
+  lureType LureType @relation(fields: [lureTypeId], references: [id])
+
+  @@id([fishId, lureTypeId])
+  @@index([lureTypeId])
+  @@map("fish_lure_types")
 }

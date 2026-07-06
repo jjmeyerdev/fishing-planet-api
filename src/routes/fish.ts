@@ -6,6 +6,7 @@ import type { FilterSpec } from './helpers.js'
 
 const FIELDS = [
   'commonName', 'scientificName', 'family', 'description', 'isEventFish', 'isMonster',
+  'fpId', 'slug', 'imageUrl',
   'weightYoungMin', 'weightYoungMax', 'weightCommonMin', 'weightCommonMax', 'weightTrophyMin',
   'weightUniqueMin', 'weightUniqueMax', 'monsterTargetWeight',
   'creditsPerKgCommon', 'creditsPerKgTrophy', 'creditsPerKgUnique',
@@ -20,6 +21,14 @@ const FILTERS: FilterSpec[] = [
 ]
 
 const SORTABLE = ['id', 'commonName', 'family', 'creditsPerKgUnique', 'monsterTargetWeight']
+
+// Single-fish lookups embed the 1:1 biting preference plus the many-to-many
+// bait / lure-type relations (each join row nests its entity).
+const DETAIL_INCLUDE = {
+  bitingPreference: true,
+  baits: { include: { bait: true } },
+  lureTypes: { include: { lureType: true } },
+} as const
 
 export const fish = new Hono()
 
@@ -39,7 +48,7 @@ fish.get('/', async (c) => {
 fish.get('/by-name/:name', async (c) => {
   const row = await prisma.fish.findUnique({
     where: { commonName: c.req.param('name') },
-    include: { bitingPreference: true },
+    include: DETAIL_INCLUDE,
   })
   if (!row) return c.json({ error: 'Not found' }, 404)
   return c.json(row)
@@ -47,7 +56,7 @@ fish.get('/by-name/:name', async (c) => {
 
 fish.get('/:id', async (c) => {
   const id = intParam(c, 'id')
-  const row = await prisma.fish.findUnique({ where: { id }, include: { bitingPreference: true } })
+  const row = await prisma.fish.findUnique({ where: { id }, include: DETAIL_INCLUDE })
   if (!row) return c.json({ error: 'Not found' }, 404)
   return c.json(row)
 })

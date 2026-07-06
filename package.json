@@ -15,6 +15,7 @@
     "seed": "tsx scripts/seed.ts",
     "seed:biting": "tsx scripts/seed-biting-preferences.ts",
     "seed:gear": "tsx scripts/seed-gear.ts",
+    "seed:fp": "tsx scripts/seed-fp.ts",
     "postinstall": "prisma generate",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",

@@ -308,3 +308,158 @@ model FishLureType {
   @@index([lureTypeId])
   @@map("fish_lure_types")
 }
+
+// --- Fishing Planet Wiki (wiki.fishingplanet.com) import — standalone dataset ---
+// Kept fully separate from the FP-Collective models above. Vertical slice:
+// species + reels (+ brands, technologies, and the wiki links they reference).
+
+model WikiSpecies {
+  id                 Int      @id @default(autoincrement())
+  slug               String   @unique @db.VarChar(160)
+  name               String   @db.VarChar(120)
+  latinName          String?  @map("latin_name") @db.VarChar(120)
+  family             String?  @db.VarChar(80)
+  description        String?  @db.Text
+  imageUrl           String?  @map("image_url") @db.Text
+  wikipediaUrl       String?  @map("wikipedia_url") @db.Text
+  commonWeightMaxKg  Decimal? @map("common_weight_max_kg")
+  trophyWeightMaxKg  Decimal? @map("trophy_weight_max_kg")
+  uniqueWeightMaxKg  Decimal? @map("unique_weight_max_kg")
+  commonCreditsPerKg Int?     @map("common_credits_per_kg")
+  trophyCreditsPerKg Int?     @map("trophy_credits_per_kg")
+  uniqueCreditsPerKg Int?     @map("unique_credits_per_kg")
+  hookSizeMin        String?  @map("hook_size_min") @db.VarChar(10)
+  hookSizeMax        String?  @map("hook_size_max") @db.VarChar(10)
+
+  // provenance
+  sourceUrl   String   @map("source_url") @db.Text
+  contentHash String   @map("content_hash") @db.VarChar(64)
+  scrapedAt   DateTime @map("scraped_at")
+
+  baits     WikiSpeciesBait[]
+  lures     WikiSpeciesLure[]
+  locations WikiSpeciesLocation[]
+
+  @@map("wiki_species")
+}
+
+// Cross-category links whose target tables (baits/lures/locations) are seeded in
+// later phases. Store the wiki name + slug now; a later pass resolves the FK.
+model WikiSpeciesBait {
+  id        Int    @id @default(autoincrement())
+  speciesId Int    @map("species_id")
+  name      String @db.VarChar(120)
+  slug      String @db.VarChar(160)
+
+  species WikiSpecies @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+
+  @@unique([speciesId, name])
+  @@index([speciesId])
+  @@map("wiki_species_baits")
+}
+
+model WikiSpeciesLure {
+  id        Int    @id @default(autoincrement())
+  speciesId Int    @map("species_id")
+  name      String @db.VarChar(120)
+  slug      String @db.VarChar(160)
+
+  species WikiSpecies @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+
+  @@unique([speciesId, name])
+  @@index([speciesId])
+  @@map("wiki_species_lures")
+}
+
+model WikiSpeciesLocation {
+  id        Int    @id @default(autoincrement())
+  speciesId Int    @map("species_id")
+  name      String @db.VarChar(120)
+  slug      String @db.VarChar(160)
+
+  species WikiSpecies @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+
+  @@unique([speciesId, name])
+  @@index([speciesId])
+  @@map("wiki_species_locations")
+}
+
+model WikiBrand {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique @db.VarChar(160)
+  name        String    @db.VarChar(120)
+  description String?   @db.Text
+  imageUrl    String?   @map("image_url") @db.Text
+  sourceUrl   String?   @map("source_url") @db.Text
+  contentHash String?   @map("content_hash") @db.VarChar(64)
+  scrapedAt   DateTime? @map("scraped_at")
+
+  reels WikiReel[]
+
+  @@map("wiki_brands")
+}
+
+model WikiTechnology {
+  id          Int     @id @default(autoincrement())
+  slug        String  @unique @db.VarChar(180)
+  name        String  @db.VarChar(150)
+  description String? @db.Text
+  category    String? @db.VarChar(30)
+
+  reels WikiReelTechnology[]
+
+  @@map("wiki_technologies")
+}
+
+model WikiReel {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique @db.VarChar(160)
+  name        String   @db.VarChar(150)
+  subtype     String   @db.VarChar(30) // spinning | casting | saltwater
+  brandId     Int?     @map("brand_id")
+  description String?  @db.Text
+  imageUrl    String?  @map("image_url") @db.Text
+  sourceUrl   String   @map("source_url") @db.Text
+  contentHash String   @map("content_hash") @db.VarChar(64)
+  scrapedAt   DateTime @map("scraped_at")
+
+  brand        WikiBrand?           @relation(fields: [brandId], references: [id])
+  variants     WikiReelVariant[]
+  technologies WikiReelTechnology[]
+
+  @@index([brandId])
+  @@map("wiki_reels")
+}
+
+// One row per spool size — specs and price vary per variant.
+model WikiReelVariant {
+  id             Int      @id @default(autoincrement())
+  reelId         Int      @map("reel_id")
+  spoolSize      String?  @map("spool_size") @db.Text
+  gearRatio      String?  @map("gear_ratio") @db.VarChar(20)
+  retrieveCm     Decimal? @map("retrieve_cm")
+  maxDragKg      Decimal? @map("max_drag_kg")
+  ballBearings   String?  @map("ball_bearings") @db.VarChar(20)
+  weightG        Decimal? @map("weight_g")
+  lineCapacity   String?  @map("line_capacity") @db.VarChar(60)
+  priceCredits   Int?     @map("price_credits")
+  priceBaitcoins Int?     @map("price_baitcoins")
+  unlockLevel    Int?     @map("unlock_level")
+
+  reel WikiReel @relation(fields: [reelId], references: [id], onDelete: Cascade)
+
+  @@index([reelId])
+  @@map("wiki_reel_variants")
+}
+
+model WikiReelTechnology {
+  reelId       Int @map("reel_id")
+  technologyId Int @map("technology_id")
+
+  reel       WikiReel       @relation(fields: [reelId], references: [id], onDelete: Cascade)
+  technology WikiTechnology @relation(fields: [technologyId], references: [id], onDelete: Cascade)
+
+  @@id([reelId, technologyId])
+  @@index([technologyId])
+  @@map("wiki_reel_technologies")
+}

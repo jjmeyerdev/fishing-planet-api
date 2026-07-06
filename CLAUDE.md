@@ -314,3 +314,31 @@ first**: each row resolves its `Location` by matching the source `placeId` to
 - Field mapping: `id` → `fpId`, `image` → `imageUrl` (Spot), `icon`/`chart` →
   `iconUrl`/`chartUrl` (Weather). Spot `lat`/`lng`/`x`/`y` are game-map
   coordinates stored as `Decimal`, **not** WGS84.
+
+## Fishing Planet Wiki ingestion (`scripts/wiki/`)
+
+A **standalone** dataset scraped from the Fishing Planet Wiki
+(`wiki.fishingplanet.com`), kept entirely separate from the FP-Collective models
+in `wiki_*` tables. Vertical slice so far: **species + reels** (plus brands and
+technologies derived from the reels). Three decoupled, re-runnable stages:
+
+- `pnpm wiki:crawl` — scrape → disk cache (`.cache/wiki/pages/`, git-ignored) via
+  the Firecrawl SDK (`FIRECRAWL_API_KEY` in `.env`). Throttled (`p-limit` 2 +
+  exponential backoff) and **resumable** — a cached URL is never re-fetched.
+  Species are discovered by scraping the 19 family pages and taking their
+  resident-species links; reels are the 3 sub-type pages (spinning/casting/salt).
+- `pnpm wiki:parse` — cache → `.cache/wiki/parsed.json`. **Pure** (no network/DB),
+  so parsers iterate freely. Deterministic markdown parsing, no per-page LLM:
+  species infobox + `##` sections; reels are block-per-model with per-spool-size
+  variants (a spec row's per-variant values are its **last N cells**, N from the
+  `Model` row). Brands/technologies are derived from the reels.
+- `pnpm wiki:load` — `parsed.json` → Neon. Idempotent upserts on `slug`; child
+  rows (variants, links) replaced per parent; reel→brand/technology resolved by
+  slug.
+
+A species' cross-category links (baits/lures/locations) point at categories not
+in this slice, so they're stored as raw name+slug in `wiki_species_*` tables now
+and FK-resolved once those categories are scraped (later phases). `scripts/wiki/
+lib/` holds the cache, markdown helpers, the two parsers, and the parse↔load type
+contract. Big pages (reel sub-type pages run ~400 KB) are only ever handled in the
+script — never read into an agent's context.

@@ -5,6 +5,8 @@
 
 A [Hono](https://hono.dev) API on Node.js + TypeScript, backed by PostgreSQL via [Prisma 7](https://www.prisma.io) (driver adapter `@prisma/adapter-pg`).
 
+**Live API:** <https://fishing-planet-api.vercel.app> · interactive docs (Swagger UI) at **[`/docs`](https://fishing-planet-api.vercel.app/docs)**.
+
 ## Requirements
 
 - Node.js 22+

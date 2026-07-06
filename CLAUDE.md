@@ -82,6 +82,38 @@ For a longer check, mount a script: `docker compose run --rm -v ./x.mjs:/x.mjs:r
 test node /x.mjs`. Set `APP_PORT`/`DB_PORT` to avoid clashing with anything on
 `8080`/`5432`.
 
+## Deployment (Vercel)
+
+Deployed to Vercel as one Node **serverless function** wrapping the same Hono
+`app`. `api/index.ts` is the entry — `export default handle(app)` from
+**`@hono/node-server/vercel`** (the Node adapter). Do **not** use `hono/vercel`'s
+`handle`: that's the Edge adapter, and on the Node runtime it hands Hono a Node
+request whose headers lack `.get`, so every request throws
+`this.raw.headers.get is not a function`. Edge isn't viable anyway — `pg` / the
+Prisma driver adapter need Node. `src/index.ts` (the `@hono/node-server` listener)
+is unused on Vercel but still drives the container/local server.
+
+`vercel.json` configures it as an API-only project:
+
+- `framework: null` — otherwise Vercel auto-detects "Hono" and tries to run
+  `src/app.ts` itself as a function (`Invalid export … must be a function`).
+- `rewrites: /(.*) → /api` — every path (`/health`, `/ready`, `/docs`, `/metrics`,
+  `/api/*`) hits the one function, which does its own routing.
+- `buildCommand: prisma generate` + `outputDirectory: public` (an empty
+  `public/.gitkeep`) — no `tsc`/static output; `@vercel/node` bundles the function
+  and its `src/**` + generated-client imports itself. `postinstall` also runs
+  `prisma generate`.
+- `functions."api/index.ts".includeFiles: openapi.yaml` — bundles the spec so
+  `/openapi.yaml` + `/docs` resolve (they read it relative to the module).
+
+**Git integration** is connected: push to `main` → production, each PR → a preview.
+Config lives in the Vercel project, not `.env`: `DATABASE_URL` (Neon **pooled**
+`-pooler` string), `API_KEYS` (set → writes gated), optional `RATE_LIMIT_*`.
+Migrations do **not** run on deploy — apply them out-of-band with `prisma migrate
+deploy` against a **direct** (non-pooled) URL. Serverless caveats: the in-memory
+rate limiter and `/metrics` are per-instance (best-effort / not aggregated). Live
+at <https://fishing-planet-api.vercel.app>.
+
 ## ESM / import conventions
 
 `type: module` + `moduleResolution: Bundler` + `verbatimModuleSyntax`. Relative

@@ -7,7 +7,7 @@ A [Hono](https://hono.dev) API on Node.js + TypeScript, backed by PostgreSQL via
 
 ## Requirements
 
-- Node.js 20+
+- Node.js 22+
 - pnpm
 - A PostgreSQL database
 
@@ -97,6 +97,22 @@ docker compose --profile test run --build --rm test
 Credentials default to the `.env.example` values; override `POSTGRES_USER`,
 `POSTGRES_PASSWORD`, `POSTGRES_DB`, and the published `APP_PORT` / `DB_PORT` via a
 `.env` file or the shell.
+
+## Deployment (Vercel)
+
+Deployed to Vercel as a single Node serverless function wrapping the Hono app
+(`api/index.ts` via `@hono/node-server/vercel`), with `vercel.json` rewriting all
+paths to it. Push to `main` deploys production; each PR gets a preview URL.
+
+Set these in the Vercel project (not `.env`):
+
+- `DATABASE_URL` — the Neon **pooled** (`-pooler`) connection string
+- `API_KEYS` — comma-separated keys, so writes are gated (see [Auth](#auth))
+
+Migrations don't run on deploy; apply them with `prisma migrate deploy` against a
+**direct** (non-pooled) URL. On serverless the in-memory rate limiter and
+`/metrics` are per-instance. Live at <https://fishing-planet-api.vercel.app>
+(Swagger UI at `/docs`).
 
 ## Structure
 

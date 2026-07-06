@@ -176,6 +176,18 @@ paths:
                       bitingPreference:
                         nullable: true
                         allOf: [ { $ref: '#/components/schemas/BitingPreference' } ]
+                      baits:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            bait: { $ref: '#/components/schemas/Bait' }
+                      lureTypes:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            lureType: { $ref: '#/components/schemas/LureType' }
         '400': { $ref: '#/components/responses/BadRequest' }
         '404': { $ref: '#/components/responses/NotFound' }
     patch:
@@ -230,6 +242,18 @@ paths:
                       bitingPreference:
                         nullable: true
                         allOf: [ { $ref: '#/components/schemas/BitingPreference' } ]
+                      baits:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            bait: { $ref: '#/components/schemas/Bait' }
+                      lureTypes:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            lureType: { $ref: '#/components/schemas/LureType' }
         '404': { $ref: '#/components/responses/NotFound' }
 
   /api/locations:
@@ -1562,6 +1586,9 @@ components:
         description: { type: string, nullable: true }
         isEventFish: { type: boolean }
         isMonster: { type: boolean }
+        fpId: { type: integer, nullable: true }
+        slug: { type: string, nullable: true }
+        imageUrl: { type: string, nullable: true }
         weightYoungMin: { type: string, nullable: true }
         weightYoungMax: { type: string, nullable: true }
         weightCommonMin: { type: string, nullable: true }
@@ -1588,6 +1615,9 @@ components:
         description: { type: string }
         isEventFish: { type: boolean }
         isMonster: { type: boolean }
+        fpId: { type: integer }
+        slug: { type: string }
+        imageUrl: { type: string }
         weightYoungMin: { type: string }
         weightYoungMax: { type: string }
         weightCommonMin: { type: string }

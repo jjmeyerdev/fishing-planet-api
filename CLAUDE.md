@@ -26,6 +26,7 @@ pnpm seed:biting        # seed biting_preferences from every data/fish/*.md
 pnpm seed:biting data/fish/x.md   # seed a single fish file
 pnpm seed:gear          # seed the tackle catalog from data/fp/*.json
 pnpm seed:gear baits    # seed a single gear entity (baits|boilies|lure-types|…)
+pnpm seed:fp            # enrich fish/locations + rebuild fish_locations & links
 ```
 
 The static checks are `pnpm typecheck` (types, including `tests/`) and `pnpm test`
@@ -89,15 +90,26 @@ build and only ever run through `tsx`.
 
 ## Data model
 
-Four models (`prisma/schema.prisma`), all with snake_case `@map` table/column names:
+The schema (`prisma/schema.prisma`) grew from four core models to the full
+FP-Collective dataset; all use snake_case `@map` names. Core models:
 
 - **Fish** — game-data fields (weights in kg, credit rates, farming notes).
-  Unique on `commonName`. Has optional 1:1 `BitingPreference` and many `FishLocation`.
-- **Location** — unique `name`, plus `region`, `waterwayType`, `unlockLevel`.
+  Unique on `commonName`. Optional 1:1 `BitingPreference`, many `FishLocation`,
+  and many-to-many `baits` (`FishBait`) / `lureTypes` (`FishLureType`). Also
+  carries FP-Collective `fpId`/`slug`/`imageUrl`.
+- **Location** — unique `name`, plus `region`, `waterwayType`, `unlockLevel`,
+  FP-Collective `fpId`/`slug`/`imageUrl`, and many `spots` / `weathers`.
 - **FishLocation** — join table with a **composite primary key**
-  `(fishId, locationId, specificSpot)` and a `classesPresent` string array.
+  `(fishId, locationId, specificSpot)` and a `classesPresent` string array
+  (`Young`/`Common`/`Trophy`/`Unique`, or `Monster` for monster presence).
 - **BitingPreference** — keyed 1:1 on `fishId`; array fields for baits/lures/colors
   and peak-time text per weather.
+
+The FP-Collective import added: the tackle catalog (`Bait`, `Boilie`, `LureType`,
+`Lure`, `Hook`, `Jighead`, `Sinker`, `Keepnet`, `Addon`), geo `Spot` and
+per-location `Weather`, and the `FishBait` / `FishLureType` join tables — each
+keyed by a unique FP-Collective `fpId`. `GET /api/fish/:id` and `/by-name/:name`
+embed the biting preference plus these `baits` / `lureTypes` relations.
 
 ## Route layer (`src/routes/`)
 
@@ -228,3 +240,26 @@ Notes:
 - `data/fp/` also holds `fish.json`, `places.json`, `spots.json`, `weathers.json`
   for later phases (fish/location enrichment, spots, weather) — not used by this
   pipeline.
+
+## Fish/Location enrichment seed pipeline (`scripts/seed-fp.ts`)
+
+Enriches the existing `Fish`/`Location` rows from `data/fp/fish.json` +
+`places.json`, rebuilds `FishLocation` presence, and populates the `FishBait` /
+`FishLureType` links. Idempotent. **Run `pnpm seed:gear` first** — the links
+resolve baits/lure-types by `fpId`. Notes:
+
+- **Matching:** fish by `commonName` == `fish.json` title (271 match; Caspian Roach
+  and Volga Zander are created); locations by `name`, normalizing a trailing
+  ` (reworked)` suffix three DB names carry that the place titles don't.
+- **Additive for curated columns:** `fpId`/`slug`/`imageUrl` are always set;
+  `scientificName` (from `latinName`) and `description` (from HTML `content`,
+  tag-stripped) fill **only when currently empty**; `isMonster` is only ever set
+  true (a fish in any place's `monsterFishIds`), never cleared. Weights, credit
+  rates, and farming fields are never touched (they aren't in the JSON).
+- **FishLocation** is rebuilt atomically per run: parse each place's `fishDetails`
+  (the `types` → `classesPresent`), plus a `['Monster']` row per `monsterFishId`,
+  all at the `General` spot; a `$transaction` deletes the old `General` rows for
+  those locations and `createMany`s the fresh set.
+- **Links** are a full rebuild (`deleteMany` + `createMany`): `fish.baitIds` →
+  `FishBait` (2 baitIds don't resolve and are skipped), `fish.lureIds` →
+  `FishLureType` (lure recommendations are at the lure-**type** level).

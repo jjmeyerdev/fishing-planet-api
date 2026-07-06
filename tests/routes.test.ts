@@ -485,7 +485,11 @@ describe('get-by-name lookup', () => {
     expect(await res.json()).toEqual({ id: 1, commonName: 'Largemouth Bass' })
     expect(prisma.fish.findUnique).toHaveBeenCalledWith({
       where: { commonName: 'Largemouth Bass' },
-      include: { bitingPreference: true },
+      include: {
+        bitingPreference: true,
+        baits: { include: { bait: true } },
+        lureTypes: { include: { lureType: true } },
+      },
     })
   })
 

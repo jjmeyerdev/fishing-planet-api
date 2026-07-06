@@ -24,6 +24,8 @@ pnpm seed               # seed every data/locations/*.md
 pnpm seed data/locations/x.md   # seed a single place file
 pnpm seed:biting        # seed biting_preferences from every data/fish/*.md
 pnpm seed:biting data/fish/x.md   # seed a single fish file
+pnpm seed:gear          # seed the tackle catalog from data/fp/*.json
+pnpm seed:gear baits    # seed a single gear entity (baits|boilies|lure-types|…)
 ```
 
 The static checks are `pnpm typecheck` (types, including `tests/`) and `pnpm test`
@@ -100,7 +102,9 @@ Four models (`prisma/schema.prisma`), all with snake_case `@map` table/column na
 ## Route layer (`src/routes/`)
 
 `app.ts` mounts `routes` under `/api`; `routes/index.ts` mounts each resource
-(`/fish`, `/locations`, `/fish-locations`, `/biting-preferences`). `app.ts` also
+(`/fish`, `/locations`, `/fish-locations`, `/biting-preferences`, plus the tackle
+catalog: `/baits`, `/boilies`, `/lure-types`, `/lures`, `/hooks`, `/jigheads`,
+`/sinkers`, `/keepnets`, `/addons`). `app.ts` also
 exposes `GET /health` (liveness, DB-free) and `GET /ready`
 (readiness — runs `SELECT 1`, `503` when the DB is unreachable); the Compose
 healthcheck targets `/ready`. `src/db.ts` sizes the pg pool (`max`, idle /
@@ -128,7 +132,12 @@ from the comma-separated `API_KEYS`); reads are public and an empty `API_KEYS`
 disables it (the `pnpm test` script clears it, so write tests aren't blocked).
 
 Every resource file follows the same CRUD shape and shares helpers in
-`routes/helpers.ts`. The helpers that reject bad input **throw** a Hono
+`routes/helpers.ts`. The nine tackle resources are uniform id-in-path CRUD, so
+they share one `routes/crud.ts` `crudResource({ model, fields, filters, sortable })`
+factory (each route file is just its config) instead of a hand-written file each;
+the four bespoke resources keep their own routers for their quirks (fish/locations
+`by-name`, the `fish-locations` composite key). The helpers that reject bad input
+**throw** a Hono
 `HTTPException`; `app.ts`'s `onError` renders that as `{ error }` with its
 status. A Prisma connection failure (`isConnectionError`: `P1001`/`P1002`/
 `P1008`/`P1017`) becomes a `503`; any other unexpected error is logged and
@@ -198,3 +207,24 @@ per fish. Idempotent. Separate from the place-file pipeline above. Notes:
   `preferredLureColors` (intentionally empty — flagged disputed in the schema).
 - The per-fish pages are JS-rendered, so the prose is absent from a plain fetch;
   the `data/fish/*.md` files are pre-scraped via Firecrawl (with `waitFor`).
+
+## Tackle-catalog seed pipeline (`scripts/seed-gear.ts`)
+
+Seeds the nine tackle entities (`Bait`, `Boilie`, `LureType`, `Lure`, `Hook`,
+`Jighead`, `Sinker`, `Keepnet`, `Addon`) from the **structured** FP-Collective
+JSON vendored in `data/fp/*.json` (the same source as the markdown, straight from
+their API). Idempotent — every row upserts on `fpId` (the FP-Collective id).
+Notes:
+
+- One JSON file per entity (`baits.json`, `boilies-pellets.json`,
+  `lure-types.json`, `lures.json`, `hooks.json`, `jigheads.json`, `sinkers.json`,
+  `keepnets-stringers.json`, `addons.json`). `pnpm seed:gear <name>` seeds just one.
+- `lure-types` seed **before** `lures`: each lure resolves its `lureTypeId` by
+  matching the source `lureType` name to a seeded `LureType.title` (nullable FK;
+  an unmatched name logs a warning and leaves it null).
+- Field mapping flattens the source `specs` (`weight`/`length`/`diameter` →
+  `weightG`/`lengthCm`/`diameterMm`) and normalizes empty strings (e.g. `color: ""`)
+  to null. `image` → `imageUrl`, `id` → `fpId`.
+- `data/fp/` also holds `fish.json`, `places.json`, `spots.json`, `weathers.json`
+  for later phases (fish/location enrichment, spots, weather) — not used by this
+  pipeline.

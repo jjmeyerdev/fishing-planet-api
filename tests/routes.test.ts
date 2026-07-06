@@ -22,8 +22,21 @@ beforeEach(() => {
   vi.clearAllMocks()
 })
 
-// The three id-in-path resources are structurally identical CRUD wrappers.
-type Key = 'fish' | 'location' | 'bitingPreference'
+// The id-in-path resources are structurally identical CRUD wrappers (the tackle
+// resources below share a single crudResource() factory).
+type Key =
+  | 'fish'
+  | 'location'
+  | 'bitingPreference'
+  | 'bait'
+  | 'boilie'
+  | 'lureType'
+  | 'lure'
+  | 'hook'
+  | 'jighead'
+  | 'sinker'
+  | 'keepnet'
+  | 'addon'
 interface Resource {
   label: string
   base: string
@@ -57,6 +70,78 @@ const RESOURCES: Resource[] = [
     create: { fishId: 1, depthZone: 'shallow' },
     junk: { bogus: 'nope' },
     patch: { depthZone: 'deep' },
+  },
+  {
+    label: 'baits',
+    base: '/api/baits',
+    key: 'bait',
+    create: { fpId: 1, title: 'Worm', slug: 'worm', baitType: 'Live Baits' },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { baseLevel: 5 },
+  },
+  {
+    label: 'boilies',
+    base: '/api/boilies',
+    key: 'boilie',
+    create: { fpId: 2, title: 'Banana Boilie', slug: 'banana-boilie', baitType: 'Boilies' },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { diameterMm: 12 },
+  },
+  {
+    label: 'lure-types',
+    base: '/api/lure-types',
+    key: 'lureType',
+    create: { fpId: 3, title: 'Slop Spoons', slug: 'slop-spoons' },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { title: 'Spoons' },
+  },
+  {
+    label: 'lures',
+    base: '/api/lures',
+    key: 'lure',
+    create: { fpId: 4, title: 'Slop Spoon 5 g', slug: 'slop-spoon-5-g' },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { color: 'Gold' },
+  },
+  {
+    label: 'hooks',
+    base: '/api/hooks',
+    key: 'hook',
+    create: { fpId: 5, title: 'Hook #10', slug: 'hook-10', size: '#10', type: 'kirby' },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { baseLevel: 2 },
+  },
+  {
+    label: 'jigheads',
+    base: '/api/jigheads',
+    key: 'jighead',
+    create: { fpId: 6, title: 'JigHead 5 g', slug: 'jighead-5-g', size: '#2' },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { color: 'Red' },
+  },
+  {
+    label: 'sinkers',
+    base: '/api/sinkers',
+    key: 'sinker',
+    create: { fpId: 7, title: 'Drop Sinker 2 g', slug: 'drop-sinker-2-g', form: 'Drop' },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { color: 'Black' },
+  },
+  {
+    label: 'keepnets',
+    base: '/api/keepnets',
+    key: 'keepnet',
+    create: { fpId: 8, title: 'FishHut XS', slug: 'fishhut-xs', type: 'Keepnet', isFishFriendly: true },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { baseLevel: 1 },
+  },
+  {
+    label: 'addons',
+    base: '/api/addons',
+    key: 'addon',
+    create: { fpId: 9, title: 'Torch Flashlight', slug: 'torch-flashlight' },
+    junk: { id: 999, bogus: 'nope' },
+    patch: { color: 'Red' },
   },
 ]
 

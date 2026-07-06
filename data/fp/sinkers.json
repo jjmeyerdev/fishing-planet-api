@@ -1,0 +1,1112 @@
+[
+  {
+    "id": 19918,
+    "title": "Drop Sinker 2 g",
+    "slug": "drop-sinker-2-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 2,
+    "specs": {
+      "weight": {
+        "value": "2",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 12,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19921,
+    "title": "Drop Sinker 4 g",
+    "slug": "drop-sinker-4-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 4,
+    "specs": {
+      "weight": {
+        "value": "4",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 12,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19922,
+    "title": "Drop Sinker 6 g",
+    "slug": "drop-sinker-6-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 6,
+    "specs": {
+      "weight": {
+        "value": "6",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 14,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19923,
+    "title": "Drop Sinker 8 g",
+    "slug": "drop-sinker-8-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 8,
+    "specs": {
+      "weight": {
+        "value": "8",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 16,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19924,
+    "title": "Drop Sinker 10 g",
+    "slug": "drop-sinker-10-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 10,
+    "specs": {
+      "weight": {
+        "value": "10",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 18,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19925,
+    "title": "Drop Sinker 14 g",
+    "slug": "drop-sinker-14-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 14,
+    "specs": {
+      "weight": {
+        "value": "14",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 20,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19926,
+    "title": "Drop Sinker 18 g",
+    "slug": "drop-sinker-18-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 18,
+    "specs": {
+      "weight": {
+        "value": "18",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 22,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19927,
+    "title": "Drop Sinker 21 g",
+    "slug": "drop-sinker-21-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 21,
+    "specs": {
+      "weight": {
+        "value": "21",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 25,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19928,
+    "title": "Drop Sinker 24 g",
+    "slug": "drop-sinker-24-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 24,
+    "specs": {
+      "weight": {
+        "value": "24",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 30,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19931,
+    "title": "Drop Sinker 28 g",
+    "slug": "drop-sinker-28-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 28,
+    "specs": {
+      "weight": {
+        "value": "28",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 32,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19932,
+    "title": "Drop Sinker 36 g",
+    "slug": "drop-sinker-36-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 36,
+    "specs": {
+      "weight": {
+        "value": "36",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 36,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19933,
+    "title": "Drop Sinker 42 g",
+    "slug": "drop-sinker-42-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 42,
+    "specs": {
+      "weight": {
+        "value": "42",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 38,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19934,
+    "title": "Drop Sinker 56 g",
+    "slug": "drop-sinker-56-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 56,
+    "specs": {
+      "weight": {
+        "value": "56",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 40,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19935,
+    "title": "Drop Sinker 70 g",
+    "slug": "drop-sinker-70-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/drop-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 70,
+    "specs": {
+      "weight": {
+        "value": "70",
+        "unit": "g"
+      }
+    },
+    "form": "Drop",
+    "color": "",
+    "baseLevel": 76,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19936,
+    "title": "Bullet Sinker 2 g",
+    "slug": "bullet-sinker-2-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 2,
+    "specs": {
+      "weight": {
+        "value": "2",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 13,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19937,
+    "title": "Bullet Sinker 4 g",
+    "slug": "bullet-sinker-4-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 4,
+    "specs": {
+      "weight": {
+        "value": "4",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 13,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19938,
+    "title": "Bullet Sinker 6 g",
+    "slug": "bullet-sinker-6-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 6,
+    "specs": {
+      "weight": {
+        "value": "6",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 15,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19939,
+    "title": "Bullet Sinker 8 g",
+    "slug": "bullet-sinker-8-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 8,
+    "specs": {
+      "weight": {
+        "value": "8",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 17,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19940,
+    "title": "Bullet Sinker 10 g",
+    "slug": "bullet-sinker-10-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 10,
+    "specs": {
+      "weight": {
+        "value": "10",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 19,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19942,
+    "title": "Bullet Sinker 14 g",
+    "slug": "bullet-sinker-14-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 14,
+    "specs": {
+      "weight": {
+        "value": "14",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 21,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19943,
+    "title": "Bullet Sinker 18 g",
+    "slug": "bullet-sinker-18-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 18,
+    "specs": {
+      "weight": {
+        "value": "18",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 23,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19944,
+    "title": "Bullet Sinker 21 g",
+    "slug": "bullet-sinker-21-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 21,
+    "specs": {
+      "weight": {
+        "value": "21",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 24,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19945,
+    "title": "Bullet Sinker 24 g",
+    "slug": "bullet-sinker-24-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 24,
+    "specs": {
+      "weight": {
+        "value": "24",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 31,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19946,
+    "title": "Bullet Sinker 28 g",
+    "slug": "bullet-sinker-28-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 28,
+    "specs": {
+      "weight": {
+        "value": "28",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 33,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19947,
+    "title": "Bullet Sinker 36 g",
+    "slug": "bullet-sinker-36-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 36,
+    "specs": {
+      "weight": {
+        "value": "36",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 37,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19948,
+    "title": "Bullet Sinker 42 g",
+    "slug": "bullet-sinker-42-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 42,
+    "specs": {
+      "weight": {
+        "value": "42",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 38,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19949,
+    "title": "Bullet Sinker 56 g",
+    "slug": "bullet-sinker-56-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 56,
+    "specs": {
+      "weight": {
+        "value": "56",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 40,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 19950,
+    "title": "Bullet Sinker 70 g",
+    "slug": "bullet-sinker-70-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/bullet-sinkers-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [],
+    "weight": 70,
+    "specs": {
+      "weight": {
+        "value": "70",
+        "unit": "g"
+      }
+    },
+    "form": "Bullet",
+    "color": "",
+    "baseLevel": 76,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20115,
+    "title": "Trolling Skirt Head 170 g",
+    "slug": "trolling-skirt-head-170-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-white.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 170,
+    "specs": {
+      "weight": {
+        "value": "170",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "White",
+    "baseLevel": 94,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20116,
+    "title": "Trolling Skirt Head 170 g",
+    "slug": "trolling-skirt-head-170-g-2",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-blue.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 170,
+    "specs": {
+      "weight": {
+        "value": "170",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Blue",
+    "baseLevel": 94,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20117,
+    "title": "Trolling Skirt Head 170 g",
+    "slug": "trolling-skirt-head-170-g-3",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-purple.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 170,
+    "specs": {
+      "weight": {
+        "value": "170",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Purple",
+    "baseLevel": 0,
+    "baitcoinLevel": 94
+  },
+  {
+    "id": 20118,
+    "title": "Trolling Skirt Head 170 g",
+    "slug": "trolling-skirt-head-170-g-4",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-green.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 170,
+    "specs": {
+      "weight": {
+        "value": "170",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Green",
+    "baseLevel": 0,
+    "baitcoinLevel": 94
+  },
+  {
+    "id": 20119,
+    "title": "Trolling Skirt Head 198 g",
+    "slug": "trolling-skirt-head-198-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-green.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 198,
+    "specs": {
+      "weight": {
+        "value": "198",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Green",
+    "baseLevel": 0,
+    "baitcoinLevel": 94
+  },
+  {
+    "id": 20120,
+    "title": "Trolling Skirt Head 198 g",
+    "slug": "trolling-skirt-head-198-g-2",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-purple.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 198,
+    "specs": {
+      "weight": {
+        "value": "198",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Purple",
+    "baseLevel": 0,
+    "baitcoinLevel": 94
+  },
+  {
+    "id": 20121,
+    "title": "Trolling Skirt Head 227 g",
+    "slug": "trolling-skirt-head-227-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-green.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 227,
+    "specs": {
+      "weight": {
+        "value": "227",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Green",
+    "baseLevel": 0,
+    "baitcoinLevel": 94
+  },
+  {
+    "id": 20122,
+    "title": "Trolling Skirt Head 227 g",
+    "slug": "trolling-skirt-head-227-g-2",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-purple.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 227,
+    "specs": {
+      "weight": {
+        "value": "227",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Purple",
+    "baseLevel": 0,
+    "baitcoinLevel": 94
+  },
+  {
+    "id": 20123,
+    "title": "Trolling Skirt Head 255 g",
+    "slug": "trolling-skirt-head-255-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-green.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 255,
+    "specs": {
+      "weight": {
+        "value": "255",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Green",
+    "baseLevel": 0,
+    "baitcoinLevel": 94
+  },
+  {
+    "id": 20124,
+    "title": "Trolling Skirt Head 255 g",
+    "slug": "trolling-skirt-head-255-g-2",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-purple.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 255,
+    "specs": {
+      "weight": {
+        "value": "255",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Purple",
+    "baseLevel": 0,
+    "baitcoinLevel": 94
+  },
+  {
+    "id": 20125,
+    "title": "Trolling Skirt Head 198 g",
+    "slug": "trolling-skirt-head-198-g-3",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-white.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 198,
+    "specs": {
+      "weight": {
+        "value": "198",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "White",
+    "baseLevel": 95,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20126,
+    "title": "Trolling Skirt Head 198 g",
+    "slug": "trolling-skirt-head-198-g-4",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-blue.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 198,
+    "specs": {
+      "weight": {
+        "value": "198",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Blue",
+    "baseLevel": 95,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20127,
+    "title": "Trolling Skirt Head 255 g",
+    "slug": "trolling-skirt-head-255-g-3",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-white.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 255,
+    "specs": {
+      "weight": {
+        "value": "255",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "White",
+    "baseLevel": 97,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20128,
+    "title": "Trolling Skirt Head 255 g",
+    "slug": "trolling-skirt-head-255-g-4",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-blue.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 255,
+    "specs": {
+      "weight": {
+        "value": "255",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Blue",
+    "baseLevel": 97,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20129,
+    "title": "Trolling Skirt Head 227 g",
+    "slug": "trolling-skirt-head-227-g-3",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-white.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 227,
+    "specs": {
+      "weight": {
+        "value": "227",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "White",
+    "baseLevel": 99,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20130,
+    "title": "Trolling Skirt Head 227 g",
+    "slug": "trolling-skirt-head-227-g-4",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-blue.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 227,
+    "specs": {
+      "weight": {
+        "value": "227",
+        "unit": "g"
+      }
+    },
+    "form": "Tapered Cylinder",
+    "color": "Blue",
+    "baseLevel": 99,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20131,
+    "title": "Head Starter Sinker 50 g",
+    "slug": "head-starter-sinker-50-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/hss-50.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 50,
+    "specs": {
+      "weight": {
+        "value": "50",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 86,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20132,
+    "title": "Head Starter Sinker 75 g",
+    "slug": "head-starter-sinker-75-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/hss-75.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 75,
+    "specs": {
+      "weight": {
+        "value": "75",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 86,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20133,
+    "title": "Head Starter Sinker 100 g",
+    "slug": "head-starter-sinker-100-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/hss-100.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 100,
+    "specs": {
+      "weight": {
+        "value": "100",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 88,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20134,
+    "title": "Head Starter Sinker 135 g",
+    "slug": "head-starter-sinker-135-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/hss-135.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 135,
+    "specs": {
+      "weight": {
+        "value": "135",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 88,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20135,
+    "title": "Head Starter Sinker 170 g",
+    "slug": "head-starter-sinker-170-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/hss-170.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 170,
+    "specs": {
+      "weight": {
+        "value": "170",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 89,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20136,
+    "title": "Head Starter Sinker 240 g",
+    "slug": "head-starter-sinker-240-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/hss-240.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 240,
+    "specs": {
+      "weight": {
+        "value": "240",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 94,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20137,
+    "title": "Head Starter Sinker 300 g",
+    "slug": "head-starter-sinker-300-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/hss-300.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 300,
+    "specs": {
+      "weight": {
+        "value": "300",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 95,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 20138,
+    "title": "Head Starter Sinker 350 g",
+    "slug": "head-starter-sinker-350-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/hss-350.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 350,
+    "specs": {
+      "weight": {
+        "value": "350",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 96,
+    "baitcoinLevel": 0
+  },
+  {
+    "id": 21038,
+    "title": "Shining Head Starter Sinker 170 g",
+    "slug": "shining-head-starter-sinker-170-g",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/07/shining-head-starter-sinker.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "weight": 170,
+    "specs": {
+      "weight": {
+        "value": "170",
+        "unit": "g"
+      }
+    },
+    "form": "Fish Head",
+    "color": "",
+    "baseLevel": 0,
+    "baitcoinLevel": 0
+  }
+]

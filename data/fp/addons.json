@@ -1,0 +1,212 @@
+[
+  {
+    "id": 24625,
+    "title": "Torch Flashlight 12 cm",
+    "slug": "torch-flashlight-12-cm",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/torch-red-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "specs": {
+      "length": {
+        "value": "12",
+        "unit": "cm"
+      }
+    },
+    "color": "Red"
+  },
+  {
+    "id": 24630,
+    "title": "Torch Flashlight 12 cm",
+    "slug": "torch-flashlight-12-cm-2",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/torch-green-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "specs": {
+      "length": {
+        "value": "12",
+        "unit": "cm"
+      }
+    },
+    "color": "Green"
+  },
+  {
+    "id": 24631,
+    "title": "Torch Flashlight 17 cm",
+    "slug": "torch-flashlight-17-cm",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/torch-red-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "specs": {
+      "length": {
+        "value": "17",
+        "unit": "cm"
+      }
+    },
+    "color": "Red"
+  },
+  {
+    "id": 24632,
+    "title": "Torch Flashlight 17 cm",
+    "slug": "torch-flashlight-17-cm-2",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/torch-green-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "specs": {
+      "length": {
+        "value": "17",
+        "unit": "cm"
+      }
+    },
+    "color": "Green"
+  },
+  {
+    "id": 24693,
+    "title": "X-Series Torch Flashlight 12 cm",
+    "slug": "x-series-torch-flashlight-12-cm",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/x-series-torch.png",
+    "imageWidth": 110,
+    "imageHeight": 110,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "specs": {
+      "length": {
+        "value": "12",
+        "unit": "cm"
+      }
+    },
+    "color": "Black/Yellow"
+  },
+  {
+    "id": 25117,
+    "title": "Enchanted Torch Flashlight 12 cm",
+    "slug": "enchanted-torch-flashlight-12-cm",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/placeholder.jpg",
+    "imageWidth": 350,
+    "imageHeight": 350,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "specs": {
+      "length": {
+        "value": "12",
+        "unit": "cm"
+      }
+    },
+    "color": "Purple"
+  },
+  {
+    "id": 24633,
+    "title": "Torch Flashlight 12 cm",
+    "slug": "torch-flashlight-12-cm-3",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/torch-blue-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 106,
+    "baitcoinLevel": 0,
+    "specs": {
+      "length": {
+        "value": "12",
+        "unit": "cm"
+      }
+    },
+    "color": "Blue"
+  },
+  {
+    "id": 24634,
+    "title": "Torch Flashlight 12 cm",
+    "slug": "torch-flashlight-12-cm-4",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/torch-yellow-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 106,
+    "baitcoinLevel": 0,
+    "specs": {
+      "length": {
+        "value": "12",
+        "unit": "cm"
+      }
+    },
+    "color": "Yellow"
+  },
+  {
+    "id": 24635,
+    "title": "Torch Flashlight 17 cm",
+    "slug": "torch-flashlight-17-cm-3",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/torch-blue-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 108,
+    "baitcoinLevel": 0,
+    "specs": {
+      "length": {
+        "value": "17",
+        "unit": "cm"
+      }
+    },
+    "color": "Blue"
+  },
+  {
+    "id": 24636,
+    "title": "Torch Flashlight 17 cm",
+    "slug": "torch-flashlight-17-cm-4",
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-torch"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/torch-yellow-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 108,
+    "baitcoinLevel": 0,
+    "specs": {
+      "length": {
+        "value": "17",
+        "unit": "cm"
+      }
+    },
+    "color": "Yellow"
+  }
+]

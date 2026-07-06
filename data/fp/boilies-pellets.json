@@ -1,0 +1,2594 @@
+[
+  {
+    "id": 1608,
+    "title": "Banana Pop-up Boilies 10 mm",
+    "slug": "banana-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-banana.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1644,
+    "title": "Banana Pop-up Boilies 20 mm",
+    "slug": "banana-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-banana.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1626,
+    "title": "Banana Pop-up Boilies 20 mm Golden",
+    "slug": "banana-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-banana.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1584,
+    "title": "Banana Sinking Boilies 15 mm",
+    "slug": "banana-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-banana.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1620,
+    "title": "Banana Sinking Boilies 25 mm",
+    "slug": "banana-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-banana.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1590,
+    "title": "Banana Sinking Boilies 25 mm Golden",
+    "slug": "banana-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-banana.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1577,
+    "title": "Bloodworm Pop-up Pellets 14 mm",
+    "slug": "bloodworm-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-bloodworm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1533,
+    "title": "Bloodworm Pop-up Pellets 14 mm Golden",
+    "slug": "bloodworm-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-bloodworm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1547,
+    "title": "Bloodworm Pop-up Pellets 8 mm",
+    "slug": "bloodworm-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-bloodworm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1559,
+    "title": "Bloodworm Sinking Pellets 14 mm",
+    "slug": "bloodworm-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-bloodworm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1513,
+    "title": "Bloodworm Sinking Pellets 14 mm Golden",
+    "slug": "bloodworm-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-bloodworm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 34,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1527,
+    "title": "Bloodworm Sinking Pellets 8 mm",
+    "slug": "bloodworm-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-bloodworm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1583,
+    "title": "Caviar Pop-up Pellets 14 mm",
+    "slug": "caviar-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-caviar.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1565,
+    "title": "Caviar Pop-up Pellets 14 mm Golden",
+    "slug": "caviar-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-caviar.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1553,
+    "title": "Caviar Pop-up Pellets 8 mm",
+    "slug": "caviar-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-caviar.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1571,
+    "title": "Caviar Sinking Pellets 14 mm",
+    "slug": "caviar-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-caviar.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1521,
+    "title": "Caviar Sinking Pellets 14 mm Golden",
+    "slug": "caviar-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-caviar.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 38,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1541,
+    "title": "Caviar Sinking Pellets 8 mm",
+    "slug": "caviar-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-caviar.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1610,
+    "title": "Chocolate Pop-up Boilies 10 mm",
+    "slug": "chocolate-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-chocolate.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1646,
+    "title": "Chocolate Pop-up Boilies 20 mm",
+    "slug": "chocolate-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-chocolate.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1630,
+    "title": "Chocolate Pop-up Boilies 20 mm Golden",
+    "slug": "chocolate-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-chocolate.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1586,
+    "title": "Chocolate Sinking Boilies 15 mm",
+    "slug": "chocolate-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-chocolate.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1622,
+    "title": "Chocolate Sinking Boilies 25 mm",
+    "slug": "chocolate-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-chocolate.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1594,
+    "title": "Chocolate Sinking Boilies 25 mm Golden",
+    "slug": "chocolate-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-chocolate.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1614,
+    "title": "Citrus Pop-up Boilies 10 mm",
+    "slug": "citrus-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-citrus.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1650,
+    "title": "Citrus Pop-up Boilies 20 mm",
+    "slug": "citrus-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-citrus.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1627,
+    "title": "Citrus Pop-up Boilies 20 mm Golden",
+    "slug": "citrus-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-citrus.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1602,
+    "title": "Citrus Sinking Boilies 15 mm",
+    "slug": "citrus-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-citrus.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1638,
+    "title": "Citrus Sinking Boilies 25 mm",
+    "slug": "citrus-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-citrus.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1591,
+    "title": "Citrus Sinking Boilies 25 mm Golden",
+    "slug": "citrus-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-citrus.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1617,
+    "title": "Crab Pop-up Boilies 10 mm",
+    "slug": "crab-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-crab.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1653,
+    "title": "Crab Pop-up Boilies 20 mm",
+    "slug": "crab-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-crab.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1632,
+    "title": "Crab Pop-up Boilies 20 mm Golden",
+    "slug": "crab-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-crab.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1605,
+    "title": "Crab Sinking Boilies 15 mm",
+    "slug": "crab-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-crab.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1641,
+    "title": "Crab Sinking Boilies 25 mm",
+    "slug": "crab-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-crab.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1596,
+    "title": "Crab Sinking Boilies 25 mm Golden",
+    "slug": "crab-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-crab.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1611,
+    "title": "Fishmeal Pop-up Boilies 10 mm",
+    "slug": "fishmeal-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-fishmeal.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1647,
+    "title": "Fishmeal Pop-up Boilies 20 mm",
+    "slug": "fishmeal-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-fishmeal.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1633,
+    "title": "Fishmeal Pop-up Boilies 20 mm Golden",
+    "slug": "fishmeal-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-fishmeal.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1587,
+    "title": "Fishmeal Sinking Boilies 15 mm",
+    "slug": "fishmeal-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-fishmeal.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1623,
+    "title": "Fishmeal Sinking Boilies 25 mm",
+    "slug": "fishmeal-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-fishmeal.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1597,
+    "title": "Fishmeal Sinking Boilies 25 mm Golden",
+    "slug": "fishmeal-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-fishmeal.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1578,
+    "title": "Garlic Pop-up Pellets 14 mm",
+    "slug": "garlic-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-garlic.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1560,
+    "title": "Garlic Pop-up Pellets 14 mm Golden",
+    "slug": "garlic-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-garlic.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1548,
+    "title": "Garlic Pop-up Pellets 8 mm",
+    "slug": "garlic-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/thumb109.png",
+    "imageWidth": 265,
+    "imageHeight": 265,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1566,
+    "title": "Garlic Sinking Pellets 14 mm",
+    "slug": "garlic-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-garlic.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1514,
+    "title": "Garlic Sinking Pellets 14 mm Golden",
+    "slug": "garlic-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-garlic.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 38,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1534,
+    "title": "Garlic Sinking Pellets 8 mm",
+    "slug": "garlic-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-garlic.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1581,
+    "title": "Halibut Pop-up Pellets 14 mm",
+    "slug": "halibut-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-halibut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1563,
+    "title": "Halibut Pop-up Pellets 14 mm Golden",
+    "slug": "halibut-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-halibut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1551,
+    "title": "Halibut Pop-up Pellets 8 mm",
+    "slug": "halibut-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-halibut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1569,
+    "title": "Halibut Sinking Pellets 14 mm",
+    "slug": "halibut-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-halibut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1517,
+    "title": "Halibut Sinking Pellets 14 mm Golden",
+    "slug": "halibut-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-halibut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 38,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1537,
+    "title": "Halibut Sinking Pellets 8 mm",
+    "slug": "halibut-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-halibut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1574,
+    "title": "Hemp Pop-up Pellets 14 mm",
+    "slug": "hemp-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-hemp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1530,
+    "title": "Hemp Pop-up Pellets 14 mm Golden",
+    "slug": "hemp-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-hemp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1544,
+    "title": "Hemp Pop-up Pellets 8 mm",
+    "slug": "hemp-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-hemp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1556,
+    "title": "Hemp Sinking Pellets 14 mm",
+    "slug": "hemp-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-hemp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1510,
+    "title": "Hemp Sinking Pellets 14 mm Golden",
+    "slug": "hemp-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-hemp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 34,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1524,
+    "title": "Hemp Sinking Pellets 8 mm",
+    "slug": "hemp-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-hemp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1579,
+    "title": "Honey Pop-up Pellets 14 mm",
+    "slug": "honey-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-honey.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1561,
+    "title": "Honey Pop-up Pellets 14 mm Golden",
+    "slug": "honey-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-honey.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1549,
+    "title": "Honey Pop-up Pellets 8 mm",
+    "slug": "honey-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-honey.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1567,
+    "title": "Honey Sinking Pellets 14 mm",
+    "slug": "honey-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-honey.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1515,
+    "title": "Honey Sinking Pellets 14 mm Golden",
+    "slug": "honey-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-honey.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 38,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1535,
+    "title": "Honey Sinking Pellets 8 mm",
+    "slug": "honey-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-honey.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1618,
+    "title": "Krill Pop-up Boilies 10 mm",
+    "slug": "krill-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-krill.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1654,
+    "title": "Krill Pop-up Boilies 20 mm",
+    "slug": "krill-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-krill.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1634,
+    "title": "Krill Pop-up Boilies 20 mm Golden",
+    "slug": "krill-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-krill.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1606,
+    "title": "Krill Sinking Boilies 15 mm",
+    "slug": "krill-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-krill.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1642,
+    "title": "Krill Sinking Boilies 25 mm",
+    "slug": "krill-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-krill.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1598,
+    "title": "Krill Sinking Boilies 25 mm Golden",
+    "slug": "krill-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-krill.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1580,
+    "title": "Mulberry Pop-up Pellets 14 mm",
+    "slug": "mulberry-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-mulberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1562,
+    "title": "Mulberry Pop-up Pellets 14 mm Golden",
+    "slug": "mulberry-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-mulberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1550,
+    "title": "Mulberry Pop-up Pellets 8 mm",
+    "slug": "mulberry-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-mulberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1568,
+    "title": "Mulberry Sinking Pellets 14 mm",
+    "slug": "mulberry-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-mulberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1516,
+    "title": "Mulberry Sinking Pellets 14 mm Golden",
+    "slug": "mulberry-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-mulberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 38,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1536,
+    "title": "Mulberry Sinking Pellets 8 mm",
+    "slug": "mulberry-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-mulberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1572,
+    "title": "Pineapple Pop-up Pellets 14 mm",
+    "slug": "pineapple-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-pineapple.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1528,
+    "title": "Pineapple Pop-up Pellets 14 mm Golden",
+    "slug": "pineapple-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-pineapple.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1542,
+    "title": "Pineapple Pop-up Pellets 8 mm",
+    "slug": "pineapple-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-pineapple.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1554,
+    "title": "Pineapple Sinking Pellets 14 mm",
+    "slug": "pineapple-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-pineapple.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1508,
+    "title": "Pineapple Sinking Pellets 14 mm Golden",
+    "slug": "pineapple-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-pineapple.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 34,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1522,
+    "title": "Pineapple Sinking Pellets 8 mm",
+    "slug": "pineapple-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-pineapple.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1645,
+    "title": "Plum Pop-up Boilies 20 mm",
+    "slug": "plum-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-plum.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1629,
+    "title": "Plum Pop-up Boilies 20 mm Golden",
+    "slug": "plum-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-plum.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1609,
+    "title": "Plum Pop-up Pellets 10 mm",
+    "slug": "plum-pop-up-pellets-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-plum.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1585,
+    "title": "Plum Sinking Boilies 15 mm",
+    "slug": "plum-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-plum.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1621,
+    "title": "Plum Sinking Boilies 25 mm",
+    "slug": "plum-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-plum.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1593,
+    "title": "Plum Sinking Boilies 25 mm Golden",
+    "slug": "plum-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-plum.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1575,
+    "title": "Salmon Pop-up Pellets 14 mm",
+    "slug": "salmon-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-salmon.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1531,
+    "title": "Salmon Pop-up Pellets 14 mm Golden",
+    "slug": "salmon-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-salmon.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1545,
+    "title": "Salmon Pop-up Pellets 8 mm",
+    "slug": "salmon-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-salmon.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1557,
+    "title": "Salmon Sinking Pellets 14 mm",
+    "slug": "salmon-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-salmon.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1511,
+    "title": "Salmon Sinking Pellets 14 mm Golden",
+    "slug": "salmon-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-salmon.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 34,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1525,
+    "title": "Salmon Sinking Pellets 8 mm",
+    "slug": "salmon-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-salmon.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1613,
+    "title": "Shellfish Pop-up Boilies 10 mm",
+    "slug": "shellfish-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-shellfish.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1649,
+    "title": "Shellfish Pop-up Boilies 20 mm",
+    "slug": "shellfish-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-shellfish.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1636,
+    "title": "Shellfish Pop-up Boilies 20 mm Golden",
+    "slug": "shellfish-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-shellfish.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1589,
+    "title": "Shellfish Sinking Boilies 15 mm",
+    "slug": "shellfish-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-shellfish.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1625,
+    "title": "Shellfish Sinking Boilies 25 mm",
+    "slug": "shellfish-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-shellfish.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1600,
+    "title": "Shellfish Sinking Boilies 25 mm Golden",
+    "slug": "shellfish-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-shellfish.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1576,
+    "title": "Shrimp Pop-up Pellets 14 mm",
+    "slug": "shrimp-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-shrimp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1532,
+    "title": "Shrimp Pop-up Pellets 14 mm Golden",
+    "slug": "shrimp-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-shrimp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1546,
+    "title": "Shrimp Pop-up Pellets 8 mm",
+    "slug": "shrimp-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-shrimp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1558,
+    "title": "Shrimp Sinking Pellets 14 mm",
+    "slug": "shrimp-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-shrimp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1512,
+    "title": "Shrimp Sinking Pellets 14 mm Golden",
+    "slug": "shrimp-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-shrimp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 34,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1526,
+    "title": "Shrimp Sinking Pellets 8 mm",
+    "slug": "shrimp-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-shrimp.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1619,
+    "title": "Spices Pop-up Boilies 10 mm",
+    "slug": "spices-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-spices.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1655,
+    "title": "Spices Pop-up Boilies 20 mm",
+    "slug": "spices-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-spices.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1637,
+    "title": "Spices Pop-up Boilies 20 mm Golden",
+    "slug": "spices-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-spices.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1607,
+    "title": "Spices Sinking Boilies 15 mm",
+    "slug": "spices-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-spices.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1643,
+    "title": "Spices Sinking Boilies 25 mm",
+    "slug": "spices-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-spices.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1601,
+    "title": "Spices Sinking Boilies 25 mm Golden",
+    "slug": "spices-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-spices.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1615,
+    "title": "Strawberry Pop-up Boilies 10 mm",
+    "slug": "strawberry-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-strawberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1651,
+    "title": "Strawberry Pop-up Boilies 20 mm",
+    "slug": "strawberry-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-strawberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1628,
+    "title": "Strawberry Pop-up Boilies 20 mm Golden",
+    "slug": "strawberry-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-strawberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1603,
+    "title": "Strawberry Sinking Boilies 15 mm",
+    "slug": "strawberry-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-strawberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1639,
+    "title": "Strawberry Sinking Boilies 25 mm",
+    "slug": "strawberry-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-strawberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1592,
+    "title": "Strawberry Sinking Boilies 25 mm Golden",
+    "slug": "strawberry-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-strawberry.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1573,
+    "title": "Sunflower oil cake Pop-up Pellets 14 mm",
+    "slug": "sunflower-oil-cake-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-sunflower.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1529,
+    "title": "Sunflower oil cake Pop-up Pellets 14 mm Golden",
+    "slug": "sunflower-oil-cake-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-sunflower.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1543,
+    "title": "Sunflower oil cake Pop-up Pellets 8 mm",
+    "slug": "sunflower-oil-cake-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-sunflower.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1555,
+    "title": "Sunflower oil cake Sinking Pellets 14 mm",
+    "slug": "sunflower-oil-cake-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-sunflower.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1509,
+    "title": "Sunflower oil cake Sinking Pellets 14 mm Golden",
+    "slug": "sunflower-oil-cake-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-sunflower.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 34,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1523,
+    "title": "Sunflower oil cake Sinking Pellets 8 mm",
+    "slug": "sunflower-oil-cake-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-sunflower.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1616,
+    "title": "Tiger Nut Pop-up Boilies 10 mm",
+    "slug": "tiger-nut-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-tiger-nut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1652,
+    "title": "Tiger Nut Pop-up Boilies 20 mm",
+    "slug": "tiger-nut-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-tiger-nut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1631,
+    "title": "Tiger Nut Pop-up Boilies 20 mm Golden",
+    "slug": "tiger-nut-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-tiger-nut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1604,
+    "title": "Tiger Nut Sinking Boilies 15 mm",
+    "slug": "tiger-nut-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-tiger-nut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1640,
+    "title": "Tiger Nut Sinking Boilies 25 mm",
+    "slug": "tiger-nut-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-tiger-nut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1595,
+    "title": "Tiger Nut Sinking Boilies 25 mm Golden",
+    "slug": "tiger-nut-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-tiger-nut.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1582,
+    "title": "Tuna Pop-up Pellets 14 mm",
+    "slug": "tuna-pop-up-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-tuna.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1564,
+    "title": "Tuna Pop-up Pellets 14 mm Golden",
+    "slug": "tuna-pop-up-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-14-golden-tuna.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1552,
+    "title": "Tuna Pop-up Pellets 8 mm",
+    "slug": "tuna-pop-up-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-pellets-8-tuna.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 45,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1570,
+    "title": "Tuna Sinking Pellets 14 mm",
+    "slug": "tuna-sinking-pellets-14-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-14-tuna.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1520,
+    "title": "Tuna Sinking Pellets 14 mm Golden",
+    "slug": "tuna-sinking-pellets-14-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-golden-14-tuna.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 38,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "14",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1539,
+    "title": "Tuna Sinking Pellets 8 mm",
+    "slug": "tuna-sinking-pellets-8-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-pellets-8-tuna.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 43,
+    "baitcoinLevel": 0,
+    "baitType": "Pellets",
+    "specs": {
+      "diameter": {
+        "value": "8",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1612,
+    "title": "Worm Pop-up Boilies 10 mm",
+    "slug": "worm-pop-up-boilies-10-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-10-worm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "10",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1648,
+    "title": "Worm Pop-up Boilies 20 mm",
+    "slug": "worm-pop-up-boilies-20-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-worm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1635,
+    "title": "Worm Pop-up Boilies 20 mm Golden",
+    "slug": "worm-pop-up-boilies-20-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/popup-boilies-20-golden-worm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 46,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "20",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1588,
+    "title": "Worm Sinking Boilies 15 mm",
+    "slug": "worm-sinking-boilies-15-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-15-worm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "15",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1624,
+    "title": "Worm Sinking Boilies 25 mm",
+    "slug": "worm-sinking-boilies-25-mm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-worm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  },
+  {
+    "id": 1599,
+    "title": "Worm Sinking Boilies 25 mm Golden",
+    "slug": "worm-sinking-boilies-25-mm-golden",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/03/sinking-boilies-25-golden-worm.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 0,
+    "baitcoinLevel": 42,
+    "baitType": "Boilies",
+    "specs": {
+      "diameter": {
+        "value": "25",
+        "unit": "mm"
+      }
+    }
+  }
+]

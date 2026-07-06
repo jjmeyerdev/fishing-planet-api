@@ -1,0 +1,2674 @@
+[
+  {
+    "id": 24214,
+    "slug": "norway-night-stormy",
+    "title": "Norway - Night - Clear Midnight Peak",
+    "placeId": [
+      24098
+    ],
+    "name": "Clear Midnight Peak",
+    "value": "clear-high",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-night-partly-midnight-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 24213,
+    "slug": "norway-night-clear-high-pressure",
+    "title": "Norway - Night - Stormy",
+    "placeId": [
+      24098
+    ],
+    "name": "Stormy",
+    "value": "stormy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2025/12/night-stormy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/peru-night-partly-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 24212,
+    "slug": "norway-night-clear-low-pressure",
+    "title": "Norway - Night - Clear Dusk Peak",
+    "placeId": [
+      24098
+    ],
+    "name": "Clear Dusk Peak",
+    "value": "clear-low",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 24211,
+    "slug": "norway-day-cloudy",
+    "title": "Norway - Day - Cloudy",
+    "placeId": [
+      24098
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/czech-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 24209,
+    "slug": "norway-day-partly-cloudy",
+    "title": "Norway - Day - Partly Cloudy",
+    "placeId": [
+      24098
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly-cloudy",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-texas-day-sunny.png",
+    "type": "day",
+    "imageWidth": 310,
+    "imageHeight": 85
+  },
+  {
+    "id": 24210,
+    "slug": "norway-day-sunny",
+    "title": "Norway - Day - Sunny",
+    "placeId": [
+      24098
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/germany-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 19964,
+    "slug": "maldives-night-clear-full-moon",
+    "title": "Maldives - Night - Clear Full Moon",
+    "placeId": [
+      19914
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-night-partly-midnight-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 19963,
+    "slug": "maldives-night-cloudy",
+    "title": "Maldives - Night - Cloudy",
+    "placeId": [
+      19914
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-night-partly-dusk-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 19962,
+    "slug": "maldives-night-partly-cloudy",
+    "title": "Maldives - Night - Partly Cloudy",
+    "placeId": [
+      19914
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly-cloudy",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-night-snowy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 19961,
+    "slug": "maldives-day-sunny",
+    "title": "Maldives - Day - Sunny",
+    "placeId": [
+      19914
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 19960,
+    "slug": "maldives-day-cloudy",
+    "title": "Maldives - Day - Cloudy",
+    "placeId": [
+      19914
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/north-carolina-day-partly-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 19959,
+    "slug": "maldives-day-partly-cloudy",
+    "title": "Maldives - Day - Partly Cloudy",
+    "placeId": [
+      19914
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly-cloudy",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/peru-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 16684,
+    "slug": "ukraine-night-cloudy",
+    "title": "Ukraine - Night - Cloudy",
+    "placeId": [
+      16670
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-night-partly-cloudy-dusk-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 16683,
+    "slug": "ukraine-night-clear-new-moon",
+    "title": "Ukraine - Night - Clear New Moon",
+    "placeId": [
+      16670
+    ],
+    "name": "Clear New Moon",
+    "value": "clear-new-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-night-partly-cloudy-dawn-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 16682,
+    "slug": "ukraine-night-clear-full-moon",
+    "title": "Ukraine - Night - Clear Full Moon",
+    "placeId": [
+      16670
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 16681,
+    "slug": "ukraine-day-cloudy",
+    "title": "Ukraine - Day - Cloudy",
+    "placeId": [
+      16670
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 16680,
+    "slug": "ukraine-day-partly-cloudy",
+    "title": "Ukraine - Day - Partly Cloudy",
+    "placeId": [
+      16670
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly-cloudy",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 16679,
+    "slug": "ukraine-day-sunny",
+    "title": "Ukraine - Day - Sunny",
+    "placeId": [
+      16670
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 12050,
+    "slug": "japan-night-cloudy",
+    "title": "Japan - Night - Cloudy",
+    "placeId": [
+      11864
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/bolivia-night-partly-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 12049,
+    "slug": "japan-night-clear-new-moon",
+    "title": "Japan - Night - Clear New Moon",
+    "placeId": [
+      11864
+    ],
+    "name": "Clear New Moon",
+    "value": "clear-new-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/california-night-clear-half-moon-one-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 12048,
+    "slug": "japan-night-clear-full-moon",
+    "title": "Japan - Night - Clear Full Moon",
+    "placeId": [
+      11864
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 12047,
+    "slug": "japan-day-cloudy",
+    "title": "Japan - Day - Cloudy",
+    "placeId": [
+      11864
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/czech-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 12046,
+    "slug": "japan-day-partly-cloudy",
+    "title": "Japan - Day - Partly Cloudy",
+    "placeId": [
+      11864
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/germany-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 12045,
+    "slug": "japan-day-sunny",
+    "title": "Japan - Day - Sunny",
+    "placeId": [
+      11864
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-texas-day-sunny.png",
+    "type": "day",
+    "imageWidth": 310,
+    "imageHeight": 85
+  },
+  {
+    "id": 11320,
+    "slug": "mongolia-night-snowy",
+    "title": "Mongolia - Night - Snowy",
+    "placeId": [
+      6423
+    ],
+    "name": "Snowy",
+    "value": "snowy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-snowy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-night-snowy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11319,
+    "slug": "mongolia-night-partly-cloudy",
+    "title": "Mongolia - Night - Partly Cloudy",
+    "placeId": [
+      6423
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-night-partly-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11318,
+    "slug": "mongolia-night-clear-full-moon",
+    "title": "Mongolia - Night - Clear Full Moon",
+    "placeId": [
+      6423
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11317,
+    "slug": "mongolia-day-cloudy",
+    "title": "Mongolia - Day - Cloudy",
+    "placeId": [
+      6423
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11316,
+    "slug": "mongolia-day-partly-cloudy",
+    "title": "Mongolia - Day - Partly Cloudy",
+    "placeId": [
+      6423
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11309,
+    "slug": "mongolia-day-sunny",
+    "title": "Mongolia - Day - Sunny",
+    "placeId": [
+      6423
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mongolia-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11308,
+    "slug": "congo-night-partly-cloudy-midnight-peak",
+    "title": "Congo - Night - Partly Cloudy Midnight Peak",
+    "placeId": [
+      5828
+    ],
+    "name": "Partly Cloudy Midnight Peak",
+    "value": "partly-cloudy-midnight-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-night-partly-midnight-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11307,
+    "slug": "congo-night-partly-cloudy-dusk-peak",
+    "title": "Congo - Night - Partly Cloudy Dusk Peak",
+    "placeId": [
+      5828
+    ],
+    "name": "Partly Cloudy Dusk Peak",
+    "value": "partly-cloudy-dusk-peak",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-night-partly-dusk-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11306,
+    "slug": "congo-night-clear-full-moon",
+    "title": "Congo - Night - Clear Full Moon",
+    "placeId": [
+      5828
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11305,
+    "slug": "congo-day-rainy",
+    "title": "Congo - Day - Rainy",
+    "placeId": [
+      5828
+    ],
+    "name": "Rainy",
+    "value": "rainy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-day-rainy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11304,
+    "slug": "congo-day-partly",
+    "title": "Congo - Day - Partly Cloudy",
+    "placeId": [
+      5828
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11297,
+    "slug": "congo-day-sunny",
+    "title": "Congo - Day - Sunny",
+    "placeId": [
+      5828
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/congo-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11296,
+    "slug": "brazil-night-cloudy",
+    "title": "Brazil - Night - Cloudy",
+    "placeId": [
+      4281
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/brazil-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11295,
+    "slug": "brazil-night-clear-full-moon",
+    "title": "Brazil - Night - Clear Full Moon",
+    "placeId": [
+      4281
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/brazil-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11294,
+    "slug": "brazil-night-clear-new-moon",
+    "title": "Brazil - Night - Clear New Moon",
+    "placeId": [
+      4281
+    ],
+    "name": "Clear New Moon",
+    "value": "clear-new-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/brazil-night-clear-new-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11293,
+    "slug": "brazil-day-rainy",
+    "title": "Brazil - Day - Rainy",
+    "placeId": [
+      4281
+    ],
+    "name": "Rainy",
+    "value": "rainy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/brazil-day-rainy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11292,
+    "slug": "brazil-day-cloudy",
+    "title": "Brazil - Day - Cloudy",
+    "placeId": [
+      4281
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/brazil-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11285,
+    "slug": "brazil-day-partly-cloudy",
+    "title": "Brazil - Day - Partly Cloudy",
+    "placeId": [
+      4281
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/brazil-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11284,
+    "slug": "bolivia-night-partly-cloudy",
+    "title": "Bolivia - Night - Partly Cloudy",
+    "placeId": [
+      3255
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/bolivia-night-partly-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11283,
+    "slug": "bolivia-night-clear-full-moon",
+    "title": "Bolivia - Night - Clear Half Moon",
+    "placeId": [
+      3255
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/bolivia-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11282,
+    "slug": "bolivia-night-clear-new-moon",
+    "title": "Bolivia - Night - Clear New Moon",
+    "placeId": [
+      3255
+    ],
+    "name": "Clear New Moon",
+    "value": "clear-new-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/bolivia-night-clear-new-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11281,
+    "slug": "bolivia-day-rainy",
+    "title": "Bolivia - Day - Rainy",
+    "placeId": [
+      3255
+    ],
+    "name": "Rainy",
+    "value": "rainy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/bolivia-day-rainy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11280,
+    "slug": "bolivia-day-partly-cloudy",
+    "title": "Bolivia - Day - Partly Cloudy",
+    "placeId": [
+      3255
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/bolivia-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11273,
+    "slug": "bolivia-day-sunny",
+    "title": "Bolivia - Day - Sunny",
+    "placeId": [
+      3255
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/bolivia-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11272,
+    "slug": "peru-night-partly-cloudy",
+    "title": "Peru - Night - Partly Cloudy",
+    "placeId": [
+      2503
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/peru-night-partly-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11271,
+    "slug": "peru-night-clear-full-moon",
+    "title": "Peru - Night - Clear Full Moon",
+    "placeId": [
+      2503
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/peru-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11270,
+    "slug": "peru-night-clear-half-moon",
+    "title": "Peru - Night - Clear Half Moon",
+    "placeId": [
+      2503
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/peru-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11269,
+    "slug": "peru-day-rainy",
+    "title": "Peru - Day - Rainy",
+    "placeId": [
+      2503
+    ],
+    "name": "Rainy",
+    "value": "rainy",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/peru-day-rainy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11268,
+    "slug": "peru-day-cloudy",
+    "title": "Peru - Day - Cloudy",
+    "placeId": [
+      2503
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/peru-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11261,
+    "slug": "peru-day-sunny",
+    "title": "Peru - Day - Sunny",
+    "placeId": [
+      2503
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/peru-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11260,
+    "slug": "mississippi-night-rainy",
+    "title": "Mississippi - Night - Rainy",
+    "placeId": [
+      2365
+    ],
+    "name": "Rainy",
+    "value": "rainy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mississippi-night-rainy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11259,
+    "slug": "mississippi-night-clear-half-moon",
+    "title": "Mississippi - Night - Clear Half Moon",
+    "placeId": [
+      2365
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mississippi-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11258,
+    "slug": "mississippi-night-clear-new-moon",
+    "title": "Mississippi - Night - Clear New Moon",
+    "placeId": [
+      2365
+    ],
+    "name": "Clear New Moon",
+    "value": "clear-new-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mississippi-night-clear-new-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11257,
+    "slug": "mississippi-day-rainy",
+    "title": "Mississippi - Day - Rainy",
+    "placeId": [
+      2365
+    ],
+    "name": "Rainy",
+    "value": "rainy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mississippi-day-rainy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11256,
+    "slug": "mississippi-day-partly-cloudy",
+    "title": "Mississippi - Day - Partly Cloudy",
+    "placeId": [
+      2365
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mississippi-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11249,
+    "slug": "mississippi-day-sunny",
+    "title": "Mississippi - Day - Sunny",
+    "placeId": [
+      2365
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/mississippi-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11248,
+    "slug": "united-kingdom-night-cloudy-midnight-peak",
+    "title": "United Kingdom - Night - Cloudy Midnight Peak",
+    "placeId": [
+      1433
+    ],
+    "name": "Cloudy Midnight Peak",
+    "value": "cloudy-midnight-peak",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/uk-night-cloudy-midnight-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11247,
+    "slug": "united-kindgom-night-cloudy-dawn-peak",
+    "title": "United Kindgom - Night - Cloudy Dawn Peak",
+    "placeId": [
+      1433
+    ],
+    "name": "Cloudy Dawn Peak",
+    "value": "cloudy-dawn-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/uk-night-cloudy-dawn-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11243,
+    "slug": "united-kingdom-night-clear-full-moon",
+    "title": "United Kingdom - Night - Clear Full Moon",
+    "placeId": [
+      1433
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/uk-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11242,
+    "slug": "united-kingdom-day-cloudy-afternoon-peak",
+    "title": "United Kingdom - Day - Cloudy Afternoon Peak",
+    "placeId": [
+      1433
+    ],
+    "name": "Cloudy Afternoon Peak",
+    "value": "cloudy-afternoon-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/uk-day-cloudy-afternoon-peak.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11241,
+    "slug": "united-kingdom-day-cloudy-morning-evening-peaks",
+    "title": "United Kingdom - Day - Cloudy Morning Evening Peaks",
+    "placeId": [
+      1433
+    ],
+    "name": "Cloudy Morning Evening Peaks",
+    "value": "cloudy-morning-evening-peaks",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/uk-day-cloudy-morning-evening-peak.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11237,
+    "slug": "united-kingdom-day-sunny",
+    "title": "United Kingdom - Day - Sunny",
+    "placeId": [
+      1433
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/uk-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11235,
+    "slug": "russia-night-partly-cloudy-dawn-peak",
+    "title": "Russia - Night - Partly Cloudy Dawn Peak",
+    "placeId": [
+      204
+    ],
+    "name": "Partly Cloudy Dawn Peak",
+    "value": "partly-cloudy-dawn-peak",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-night-partly-cloudy-dawn-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11234,
+    "slug": "russia-night-partly-cloudy-dusk-peak",
+    "title": "Russia - Night - Partly Cloudy Dusk Peak",
+    "placeId": [
+      204
+    ],
+    "name": "Partly Cloudy Dusk Peak",
+    "value": "partly-cloudy-dusk-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-night-partly-cloudy-dusk-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11233,
+    "slug": "russia-night-clear-half-moon",
+    "title": "Russia - Night - Clear Half Moon",
+    "placeId": [
+      204
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11232,
+    "slug": "russia-day-cloudy",
+    "title": "Russia - Day - Cloudy",
+    "placeId": [
+      204
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11231,
+    "slug": "russia-day-partly-cloudy",
+    "title": "Russia - Day - Partly Cloudy",
+    "placeId": [
+      204
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11224,
+    "slug": "russia-day-sunny",
+    "title": "Russia - Day - Sunny",
+    "placeId": [
+      204
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/russia-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11223,
+    "slug": "germany-night-partly-cloudy",
+    "title": "Germany - Night - Partly Cloudy",
+    "placeId": [
+      203
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/germany-night-partly-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11222,
+    "slug": "germany-night-clear-full-moon",
+    "title": "Germany - Night - Clear Full Moon",
+    "placeId": [
+      203
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/germany-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11221,
+    "slug": "germany-night-clear-half-moon",
+    "title": "Germany - Night - Clear Half Moon",
+    "placeId": [
+      203
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/germany-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11220,
+    "slug": "germany-day-cloudy",
+    "title": "Germany - Day - Cloudy",
+    "placeId": [
+      203
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/germany-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11219,
+    "slug": "germany-day-partly-cloudy",
+    "title": "Germany - Day - Partly Cloudy",
+    "placeId": [
+      203
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/germany-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11212,
+    "slug": "germany-day-sunny",
+    "title": "Germany - Day - Sunny",
+    "placeId": [
+      203
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/germany-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11211,
+    "slug": "italy-night-partly-cloudy",
+    "title": "Italy - Night - Partly Cloudy",
+    "placeId": [
+      202
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/italy-night-partly-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11210,
+    "slug": "italy-night-clear-full-moon",
+    "title": "Italy - Night - Clear Full Moon",
+    "placeId": [
+      202
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/italy-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11209,
+    "slug": "italy-night-clear-half-moon",
+    "title": "Italy - Night - Clear Half Moon",
+    "placeId": [
+      202
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/italy-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11208,
+    "slug": "italy-day-cloudy",
+    "title": "Italy - Day - Cloudy",
+    "placeId": [
+      202
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/italy-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11207,
+    "slug": "italy-day-partly-cloudy",
+    "title": "Italy - Day - Partly Cloudy",
+    "placeId": [
+      202
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/italy-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11200,
+    "slug": "italy-day-sunny",
+    "title": "Italy - Day - Sunny",
+    "placeId": [
+      202
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/italy-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11199,
+    "slug": "netherlands-night-cloudy",
+    "title": "Netherlands - Night - Cloudy",
+    "placeId": [
+      201
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/netherlands-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11198,
+    "slug": "netherlands-night-partly-cloudy",
+    "title": "Netherlands - Night - Partly Cloudy",
+    "placeId": [
+      201
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/netherlands-night-partly-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11197,
+    "slug": "netherlands-night-clear-full-moon",
+    "title": "Netherlands - Night - Clear Full Moon",
+    "placeId": [
+      201
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/netherlands-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11196,
+    "slug": "netherlands-day-rainy",
+    "title": "Netherlands - Day - Rainy",
+    "placeId": [
+      201
+    ],
+    "name": "Rainy",
+    "value": "rainy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/netherlands-day-rainy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11195,
+    "slug": "netherlands-day-cloudy",
+    "title": "Netherlands - Day - Cloudy",
+    "placeId": [
+      201
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/netherlands-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11188,
+    "slug": "netherlands-day-partly-cloudy",
+    "title": "Netherlands - Day - Partly Cloudy",
+    "placeId": [
+      201
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/netherlands-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11186,
+    "slug": "czech-republic-night-partly-cloudy-midnight-peak",
+    "title": "Czech Republic - Night - Partly Cloudy Midnight Peak",
+    "placeId": [
+      200
+    ],
+    "name": "Partly Cloudy Midnight Peak",
+    "value": "partly-cloudy-midnight-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/czech-night-partly-cloudy-midnight-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11185,
+    "slug": "czech-republic-night-partly-cloudy-dawn-peak",
+    "title": "Czech Republic - Night - Partly Cloudy Dawn Peak",
+    "placeId": [
+      200
+    ],
+    "name": "Partly Cloudy Dawn Peak",
+    "value": "partly-cloudy-dawn-peak",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/czech-night-partly-cloudy-dawn-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11184,
+    "slug": "czech-republic-night-clear-half-moon",
+    "title": "Czech Republic - Night - Clear Half Moon",
+    "placeId": [
+      200
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/czech-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11183,
+    "slug": "czech-republic-day-cloudy",
+    "title": "Czech Republic - Day - Cloudy",
+    "placeId": [
+      200
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/czech-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11182,
+    "slug": "czech-republic-day-partly-cloudy",
+    "title": "Czech Republic - Day - Partly Cloudy",
+    "placeId": [
+      200
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/czech-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11175,
+    "slug": "czech-republic-day-sunny",
+    "title": "Czech Republic - Day - Sunny",
+    "placeId": [
+      200
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/czech-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11174,
+    "slug": "alaska-night-cloudy",
+    "title": "Alaska - Night - Cloudy",
+    "placeId": [
+      199
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alaska-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11173,
+    "slug": "alaska-night-clear-full-moon",
+    "title": "Alaska - Night - Clear Full Moon",
+    "placeId": [
+      199
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alaska-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11172,
+    "slug": "alaska-night-clear-half-moon",
+    "title": "Alaska - Night - Clear Half Moon",
+    "placeId": [
+      199
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alaska-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11171,
+    "slug": "alaska-day-cloudy",
+    "title": "Alaska - Day - Rainy",
+    "placeId": [
+      199
+    ],
+    "name": "Rainy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alaska-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11170,
+    "slug": "alaska-day-partly-cloudy",
+    "title": "Alaska - Day - Partly Cloudy",
+    "placeId": [
+      199
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alaska-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11163,
+    "slug": "alaska-day-sunny",
+    "title": "Alaska - Day - Sunny",
+    "placeId": [
+      199
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alaska-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11162,
+    "slug": "california-night-cloudy",
+    "title": "California - Night - Cloudy",
+    "placeId": [
+      198
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/california-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11161,
+    "slug": "california-night-clear-half-moon-two-peaks",
+    "title": "California - Night - Clear Half Moon Two Peaks",
+    "placeId": [
+      197
+    ],
+    "name": "Clear Half Moon Two Peaks",
+    "value": "clear-half-moon-two-peaks",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/california-night-clear-half-moon-two-peaks.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11160,
+    "slug": "california-night-clear-half-moon-one-peak",
+    "title": "California - Night - Clear Half Moon One Peak",
+    "placeId": [
+      198
+    ],
+    "name": "Clear Half Moon One Peak",
+    "value": "clear-half-moon-one-peak",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/california-night-clear-half-moon-one-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11159,
+    "slug": "california-day-cloudy",
+    "title": "California - Day - Cloudy",
+    "placeId": [
+      198
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/california-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11158,
+    "slug": "california-day-partly-cloudy",
+    "title": "California - Day - Partly Cloudy",
+    "placeId": [
+      198
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/california-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11151,
+    "slug": "california-day-sunny",
+    "title": "California - Day - Sunny",
+    "placeId": [
+      198
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/california-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11150,
+    "slug": "michigan-night-cloudy-two-peaks",
+    "title": "Michigan - Night - Cloudy Two Peaks",
+    "placeId": [
+      197
+    ],
+    "name": "Cloudy Two Peaks",
+    "value": "cloudy-two-peaks",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/michigan-night-cloudy-two-peaks.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11149,
+    "slug": "michigan-night-cloudy-one-peak",
+    "title": "Michigan - Night - Cloudy One Peak",
+    "placeId": [
+      197
+    ],
+    "name": "Cloudy One Peak",
+    "value": "cloudy-one-peak",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/michigan-night-cloudy-one-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11148,
+    "slug": "michigan-night-clear-half-moon",
+    "title": "Michigan - Night - Clear Half Moon",
+    "placeId": [
+      197
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/michigan-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11147,
+    "slug": "michigan-day-cloudy",
+    "title": "Michigan - Day - Rainy",
+    "placeId": [
+      197
+    ],
+    "name": "Rainy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/michigan-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11146,
+    "slug": "michigan-day-partly-cloudy",
+    "title": "Michigan - Day - Partly Cloudy",
+    "placeId": [
+      197
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/michigan-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11139,
+    "slug": "michigan-day-sunny",
+    "title": "Michigan - Day - Sunny",
+    "placeId": [
+      197
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/michigan-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11138,
+    "slug": "louisiana-night-cloudy",
+    "title": "Louisiana - Night - Cloudy",
+    "placeId": [
+      196
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/missouri-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11137,
+    "slug": "louisiana-night-clear-full-moon",
+    "title": "Louisiana - Night - Clear Full Moon",
+    "placeId": [
+      196
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/missouri-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11136,
+    "slug": "louisiana-night-clear-new-moon",
+    "title": "Louisiana - Night - Clear New Moon",
+    "placeId": [
+      196
+    ],
+    "name": "Clear New Moon",
+    "value": "clear-new-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/missouri-night-clear-new-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11135,
+    "slug": "louisiana-day-cloudy",
+    "title": "Louisiana - Day - Rainy",
+    "placeId": [
+      196
+    ],
+    "name": "Rainy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/missouri-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11134,
+    "slug": "louisiana-day-partly-cloudy",
+    "title": "Louisiana - Day - Partly Cloudy",
+    "placeId": [
+      196
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/missouri-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11127,
+    "slug": "louisiana-day-sunny",
+    "title": "Louisiana - Day - Sunny",
+    "placeId": [
+      196
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/missouri-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11126,
+    "slug": "alberta-night-cloudy",
+    "title": "Alberta - Night - Cloudy",
+    "placeId": [
+      195
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alberta-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11125,
+    "slug": "alberta-night-clear-full-moon",
+    "title": "Alberta - Night - Clear Full Moon",
+    "placeId": [
+      195
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alberta-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11124,
+    "slug": "alberta-night-clear-half-moon",
+    "title": "Alberta - Night - Clear Half Moon",
+    "placeId": [
+      195
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alberta-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11123,
+    "slug": "alberta-day-snowy",
+    "title": "Alberta - Day - Snowy",
+    "placeId": [
+      195
+    ],
+    "name": "Snowy",
+    "value": "snowy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-snowy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alberta-day-snowy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11122,
+    "slug": "alberta-day-cloudy",
+    "title": "Alberta - Day - Cloudy",
+    "placeId": [
+      195
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alberta-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11115,
+    "slug": "alberta-day-sunny",
+    "title": "Alberta - Day - Sunny",
+    "placeId": [
+      195
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/alberta-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11114,
+    "slug": "florida-night-clear-full-moon",
+    "title": "Florida - Night - Clear Full Moon One Peak",
+    "placeId": [
+      194
+    ],
+    "name": "Clear Full Moon One Peak",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/florida-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11113,
+    "slug": "florida-night-clear-half-moon",
+    "title": "Florida - Night - Clear Half Moon",
+    "placeId": [
+      194
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/florida-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11112,
+    "slug": "florida-night-clear-new-moon",
+    "title": "Florida - Night - Clear Full Moon Two Peaks",
+    "placeId": [
+      194
+    ],
+    "name": "Clear Full Moon Two Peaks",
+    "value": "clear-new-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/florida-night-clear-new-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11111,
+    "slug": "florida-day-cloudy",
+    "title": "Florida - Day - Partly Cloudy One Peak",
+    "placeId": [
+      194
+    ],
+    "name": "Partly Cloudy One Peak",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/florida-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11110,
+    "slug": "florida-day-partly-cloudy",
+    "title": "Florida - Day - Partly Cloudy Two Peaks",
+    "placeId": [
+      194
+    ],
+    "name": "Partly Cloudy Two Peaks",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/florida-day-partly-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11103,
+    "slug": "florida-day-sunny",
+    "title": "Florida - Day - Sunny",
+    "placeId": [
+      194
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/florida-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11100,
+    "slug": "oregon-night-cloudy",
+    "title": "Oregon - Night - Cloudy",
+    "placeId": [
+      193
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/oregon-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11099,
+    "slug": "oregon-night-clear-full-moon",
+    "title": "Oregon - Night - Clear Full Moon",
+    "placeId": [
+      193
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/oregon-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11098,
+    "slug": "oregon-night-clear-new-moon",
+    "title": "Oregon - Night - Clear New Moon",
+    "placeId": [
+      193
+    ],
+    "name": "Clear New Moon",
+    "value": "clear-new-moon",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/oregon-night-clear-new-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11097,
+    "slug": "oregon-day-cloudy",
+    "title": "Oregon - Day - Cloudy",
+    "placeId": [
+      193
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/oregon-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11102,
+    "slug": "oregon-day-partly-cloudy",
+    "title": "Oregon - Day - Partly Cloudy",
+    "placeId": [
+      193
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/oregon-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11091,
+    "slug": "oregon-day-sunny",
+    "title": "Oregon - Day - Sunny",
+    "placeId": [
+      193
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/oregon-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11090,
+    "slug": "north-carolina-night-cloudy-late-peak",
+    "title": "North Carolina - Night - Cloudy Late Peak",
+    "placeId": [
+      192
+    ],
+    "name": "Cloudy Late Peak",
+    "value": "cloudy-late-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/north-carolina-night-cloudy-late-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11089,
+    "slug": "north-carolina-night-cloudy-mid-peak",
+    "title": "North Carolina - Night - Cloudy Mid Peak",
+    "placeId": [
+      192
+    ],
+    "name": "Cloudy Mid Peak",
+    "value": "cloudy-mid-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/north-carolina-night-cloudy-mid-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11088,
+    "slug": "north-carolina-night-clear-half-moon",
+    "title": "North Carolina - Night - Clear Half Moon",
+    "placeId": [
+      192
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/north-carolina-night-clear-half-moon.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11087,
+    "slug": "north-carolina-day-cloudy",
+    "title": "North Carolina - Day - Cloudy",
+    "placeId": [
+      192
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/north-carolina-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11086,
+    "slug": "north-carolina-day-partly-cloudy",
+    "title": "North Carolina - Day - Partly Cloudy",
+    "placeId": [
+      192
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/north-carolina-day-partly-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11079,
+    "slug": "north-carolina-day-sunny",
+    "title": "North Carolina - Day - Sunny",
+    "placeId": [
+      192
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/north-carolina-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11078,
+    "slug": "colorado-night-cloudy",
+    "title": "Colorado - Night - Cloudy",
+    "placeId": [
+      191
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-colorado-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11077,
+    "slug": "colorado-night-clear-full-moon-one-peak",
+    "title": "Colorado - Night - Clear Full Moon One Peak",
+    "placeId": [
+      191
+    ],
+    "name": "Clear Full Moon One Peak",
+    "value": "clear-full-moon-one-peak",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-colorado-night-clear-full-moon-one-peak.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11076,
+    "slug": "colorado-night-clear-full-moon-two-peaks",
+    "title": "Colorado - Night - Clear Full Moon Two Peaks",
+    "placeId": [
+      191
+    ],
+    "name": "Clear Full Moon Two Peaks",
+    "value": "clear-full-moon-two-peaks",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-colorado-night-clear-full-moon-two-peaks.png",
+    "type": "night",
+    "imageWidth": 175,
+    "imageHeight": 85
+  },
+  {
+    "id": 11075,
+    "slug": "colorado-day-cloudy",
+    "title": "Colorado - Day - Cloudy",
+    "placeId": [
+      191
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-colorado-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11074,
+    "slug": "colorado-day-partly-cloudy",
+    "title": "Colorado - Day - Partly Cloudy",
+    "placeId": [
+      191
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-colorado-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11061,
+    "slug": "colorado-day-sunny",
+    "title": "Colorado - Day - Sunny",
+    "placeId": [
+      191
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-colorado-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11060,
+    "slug": "new-york-night-cloudy-no-peak",
+    "title": "New York - Night - Cloudy No Peak",
+    "placeId": [
+      190
+    ],
+    "name": "Cloudy No Peak",
+    "value": "cloudy-no-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-new-york-night-cloudy-no-peak.png",
+    "type": "night",
+    "imageWidth": 176,
+    "imageHeight": 85
+  },
+  {
+    "id": 11059,
+    "slug": "new-york-night-cloudy-high-peak",
+    "title": "New York - Night - Cloudy High Peak",
+    "placeId": [
+      190
+    ],
+    "name": "Cloudy High Peak",
+    "value": "cloudy-high-peak",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-new-york-night-cloudy-high-peak.png",
+    "type": "night",
+    "imageWidth": 176,
+    "imageHeight": 85
+  },
+  {
+    "id": 11058,
+    "slug": "new-york-night-clear-full-moon",
+    "title": "New York - Night - Clear Full Moon",
+    "placeId": [
+      190
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-new-york-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 176,
+    "imageHeight": 85
+  },
+  {
+    "id": 11057,
+    "slug": "new-york-day-rainy",
+    "title": "New York - Day - Rainy",
+    "placeId": [
+      190
+    ],
+    "name": "Rainy",
+    "value": "rainy",
+    "legacyValue": "rainy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-rainy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-new-york-day-rainy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11055,
+    "slug": "new-york-day-cloudy",
+    "title": "New York - Day - Cloudy",
+    "placeId": [
+      190
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-new-york-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11048,
+    "slug": "new-york-day-sunny",
+    "title": "New York - Day - Sunny",
+    "placeId": [
+      190
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-new-york-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11046,
+    "slug": "missouri-night-cloudy",
+    "title": "Missouri - Night - Cloudy",
+    "placeId": [
+      189
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-missouri-night-cloudy.png",
+    "type": "night",
+    "imageWidth": 180,
+    "imageHeight": 85
+  },
+  {
+    "id": 11044,
+    "slug": "missouri-night-clear-full-moon",
+    "title": "Missouri - Night - Clear Full Moon",
+    "placeId": [
+      189
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-missouri-night-clear-full-moon.png",
+    "type": "night",
+    "imageWidth": 179,
+    "imageHeight": 85
+  },
+  {
+    "id": 11042,
+    "slug": "missouri-day-cloudy",
+    "title": "Missouri - Day - Cloudy",
+    "placeId": [
+      189
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-missouri-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11040,
+    "slug": "missouri-day-partly-cloudy",
+    "title": "Missouri - Day - Partly Cloudy",
+    "placeId": [
+      189
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-missouri-day-partly.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11038,
+    "slug": "missouri-day-sunny",
+    "title": "Missouri - Day - Sunny",
+    "placeId": [
+      189
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-missouri-day-sunny.png",
+    "type": "day",
+    "imageWidth": 300,
+    "imageHeight": 85
+  },
+  {
+    "id": 11011,
+    "slug": "texas-night-clear-half-moon",
+    "title": "Texas - Night - Clear Half Moon",
+    "placeId": [
+      32
+    ],
+    "name": "Clear Half Moon",
+    "value": "clear-half-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-half-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-texas-night-clear-half-moon-1.png",
+    "type": "night",
+    "imageWidth": 178,
+    "imageHeight": 85
+  },
+  {
+    "id": 11009,
+    "slug": "texas-night-clear-full-moon",
+    "title": "Texas - Night - Clear Full Moon",
+    "placeId": [
+      32
+    ],
+    "name": "Clear Full Moon",
+    "value": "clear-full-moon",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-clear-moon.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-texas-night-clear-1.png",
+    "type": "night",
+    "imageWidth": 179,
+    "imageHeight": 85
+  },
+  {
+    "id": 11005,
+    "slug": "texas-night-cloudy",
+    "title": "Texas - Night - Cloudy",
+    "placeId": [
+      32
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-night-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-texas-night-cloudy-1.png",
+    "type": "night",
+    "imageWidth": 179,
+    "imageHeight": 85
+  },
+  {
+    "id": 11003,
+    "slug": "texas-day-partly-cloudy",
+    "title": "Texas - Day - Partly Cloudy",
+    "placeId": [
+      32
+    ],
+    "name": "Partly Cloudy",
+    "value": "partly",
+    "legacyValue": "partly",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-partly-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-texas-day-partly-cloudy.png",
+    "type": "day",
+    "imageWidth": 310,
+    "imageHeight": 85
+  },
+  {
+    "id": 11001,
+    "slug": "texas-day-cloudy",
+    "title": "Texas - Day - Cloudy",
+    "placeId": [
+      32
+    ],
+    "name": "Cloudy",
+    "value": "cloudy",
+    "legacyValue": "cloudy",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-cloudy.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-texas-day-cloudy.png",
+    "type": "day",
+    "imageWidth": 310,
+    "imageHeight": 85
+  },
+  {
+    "id": 10999,
+    "slug": "texas-day-sunny",
+    "title": "Texas - Day - Sunny",
+    "placeId": [
+      32
+    ],
+    "name": "Sunny",
+    "value": "sunny",
+    "legacyValue": "sunny",
+    "icon": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-day-sunny.png",
+    "chart": "https://api.fp-collective.com/wp-content/uploads/2024/03/weather-texas-day-sunny.png",
+    "type": "day",
+    "imageWidth": 310,
+    "imageHeight": 85
+  }
+]

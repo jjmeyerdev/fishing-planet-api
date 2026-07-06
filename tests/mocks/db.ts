@@ -19,4 +19,13 @@ export const prisma = {
   location: model(),
   fishLocation: model(),
   bitingPreference: model(),
+  bait: model(),
+  boilie: model(),
+  lureType: model(),
+  lure: model(),
+  hook: model(),
+  jighead: model(),
+  sinker: model(),
+  keepnet: model(),
+  addon: model(),
 }

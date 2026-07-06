@@ -1,0 +1,1923 @@
+[
+  {
+    "id": 24101,
+    "slug": "norway-skarvika",
+    "title": "Norway - Skarvika",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 166,
+    "name": "Skarvika",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/fp-skarvika.png",
+    "lat": -1706.495,
+    "lng": 2469.965,
+    "x": 49.3993,
+    "y": 34.1299,
+    "placeId": [
+      24098
+    ]
+  },
+  {
+    "id": 24100,
+    "slug": "norway-ranvika-marina",
+    "title": "Norway - Ranvika Marina",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 166,
+    "name": "Ranvika Marina",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/fp-ranvika-marina.png",
+    "lat": -3693.5,
+    "lng": 1652.745,
+    "x": 33.0549,
+    "y": 73.87,
+    "placeId": [
+      24098
+    ]
+  },
+  {
+    "id": 19916,
+    "slug": "maldives-kuda-veli",
+    "title": "Maldives - Kuda Veli",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 166,
+    "name": "Kuda Veli",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/Kuda_Veli.jpg",
+    "lat": -6899.031717881148,
+    "lng": 6609.664877403325,
+    "x": 66.0966,
+    "y": 68.9903,
+    "placeId": [
+      19914
+    ]
+  },
+  {
+    "id": 19915,
+    "slug": "maldives-maahuraa-lagoon",
+    "title": "Maldives - Maahuraa Lagoon",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 165,
+    "name": "Maahuraa Lagoon",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/Maahuraa_Lagoon.jpg",
+    "lat": -5172.357671979826,
+    "lng": 4907.62257509869,
+    "x": 49.07622,
+    "y": 51.72357,
+    "placeId": [
+      19914
+    ]
+  },
+  {
+    "id": 16678,
+    "slug": "ukraine-reed-cat",
+    "title": "Ukraine - Reed Cat",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Reed Cat",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/12/reed-cat.jpg",
+    "lat": 0,
+    "lng": 0,
+    "x": 71.18019,
+    "y": 33.101504,
+    "placeId": [
+      16670
+    ]
+  },
+  {
+    "id": 16677,
+    "slug": "ukraine-poachers-side",
+    "title": "Ukraine - Poachers' Side",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Poachers' Side",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/12/poachers-side.jpg",
+    "lat": 0,
+    "lng": 0,
+    "x": 53.30592,
+    "y": 51.43709,
+    "placeId": [
+      16670
+    ]
+  },
+  {
+    "id": 16676,
+    "slug": "ukraine-wild-beach",
+    "title": "Ukraine - Wild Beach",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Wild Beach",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/12/wild-beach.jpg",
+    "lat": 0,
+    "lng": 0,
+    "x": 36.724905,
+    "y": 41.34316,
+    "placeId": [
+      16670
+    ]
+  },
+  {
+    "id": 16675,
+    "slug": "ukraine-delta-fishing-lodge",
+    "title": "Ukraine - Delta Fishing Lodge",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Delta Fishing Lodge",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/12/delta-fishing-lodge.jpg",
+    "lat": 0,
+    "lng": 0,
+    "x": 43.37102,
+    "y": 8.91936,
+    "placeId": [
+      16670
+    ]
+  },
+  {
+    "id": 12100,
+    "slug": "japan-torii-no-koto",
+    "title": "Japan - Torii No Koto",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Torii No Koto",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/japan-torii-no-koto.jpg",
+    "lat": 0.024847032895298053,
+    "lng": 0.15329360961914062,
+    "x": 57.664680480957,
+    "y": 48.757711391558,
+    "placeId": [
+      11864
+    ]
+  },
+  {
+    "id": 12099,
+    "slug": "japan-green-harbor",
+    "title": "Japan - Green Harbor",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Green Harbor",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/japan-green-harbor.jpg",
+    "lat": 0.09834058186812311,
+    "lng": -0.0556182861328125,
+    "x": 47.219085693359,
+    "y": 45.083218134314,
+    "placeId": [
+      11864
+    ]
+  },
+  {
+    "id": 6436,
+    "slug": "mongolia-ancient-hitching-post",
+    "title": "Mongolia - Ancient Hitching Post",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Ancient Hitching Post",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/Ancient_Hitching_Post.jpg",
+    "lat": 19.42037043725725,
+    "lng": 20.456542968750004,
+    "x": 70.45654296875,
+    "y": 29.521792791294,
+    "placeId": [
+      6423
+    ]
+  },
+  {
+    "id": 6435,
+    "slug": "mongolia-taimen-island",
+    "title": "Mongolia - Taimen Island",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Taimen Island",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/Taimen_Island.jpg",
+    "lat": 3.037680810492214,
+    "lng": 4.389038085937501,
+    "x": 54.389038085938,
+    "y": 46.857317222232,
+    "placeId": [
+      6423
+    ]
+  },
+  {
+    "id": 6434,
+    "slug": "mongolia-nomadic-camp",
+    "title": "Mongolia - Nomadic Camp",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Nomadic Camp",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/Nomadic_Camp.jpg",
+    "lat": -10.849473478679753,
+    "lng": -25.686035156250004,
+    "x": 24.31396484375,
+    "y": 61.286897192626,
+    "placeId": [
+      6423
+    ]
+  },
+  {
+    "id": 6433,
+    "slug": "mongolia-tom-gal",
+    "title": "Mongolia - Tom Gal",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Tom Gal",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/Tom_Gal.jpg",
+    "lat": -30.095244963962394,
+    "lng": -29.937744140625004,
+    "x": 20.062255859375,
+    "y": 82.659357076694,
+    "placeId": [
+      6423
+    ]
+  },
+  {
+    "id": 5889,
+    "slug": "congo-hanging-bridges",
+    "title": "Congo - Hanging Bridges",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Hanging Bridges",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/congo-hanging-bridges.jpg",
+    "lat": 6.483138372456294,
+    "lng": -10.404052734375002,
+    "x": 36.216146350855,
+    "y": 44.390213334403,
+    "placeId": [
+      5828
+    ]
+  },
+  {
+    "id": 5888,
+    "slug": "congo-forgotten-village",
+    "title": "Congo - Forgotten Village",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Forgotten Village",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/congo-forgotten-village.jpg",
+    "lat": -18.236392180120454,
+    "lng": -24.093017578125004,
+    "x": 18.080262880068,
+    "y": 66.018834173239,
+    "placeId": [
+      5828
+    ]
+  },
+  {
+    "id": 5887,
+    "slug": "congo-bomuna-settlement",
+    "title": "Congo - Bomuna Settlement",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Bomuna Settlement",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/congo-bomuna-settlement.jpg",
+    "lat": -22.769564982911458,
+    "lng": 10.56884765625,
+    "x": 64.002182904412,
+    "y": 70.199066636427,
+    "placeId": [
+      5828
+    ]
+  },
+  {
+    "id": 5886,
+    "slug": "congo-wild-islands",
+    "title": "Congo - Wild Islands",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Wild Islands",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/congo-wild-islands.jpg",
+    "lat": 23.712947614974762,
+    "lng": -20.500488281250004,
+    "x": 22.839840644873,
+    "y": 28.914427481144,
+    "placeId": [
+      5828
+    ]
+  },
+  {
+    "id": 5885,
+    "slug": "congo-local-school",
+    "title": "Congo - Local School",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Local School",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/congo-local-school.jpg",
+    "lat": 14.292943666149148,
+    "lng": 19.665527343750004,
+    "x": 76.053957795111,
+    "y": 37.528870661201,
+    "placeId": [
+      5828
+    ]
+  },
+  {
+    "id": 5884,
+    "slug": "congo-waterfall-roar",
+    "title": "Congo - Waterfall Roar",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Waterfall Roar",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/cong-waterfall-roar.jpg",
+    "lat": -35.69903873805082,
+    "lng": -0.9777832031250001,
+    "x": 48.704579752087,
+    "y": 83.036813058329,
+    "placeId": [
+      5828
+    ]
+  },
+  {
+    "id": 5832,
+    "slug": "congo-cable-ferry",
+    "title": "Congo - Cable Ferry",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Cable Ferry",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/congo-cable-ferry.jpg",
+    "lat": 42.45120213218662,
+    "lng": 15.567626953125002,
+    "x": 70.624836980823,
+    "y": 9.4431813904855,
+    "placeId": [
+      5828
+    ]
+  },
+  {
+    "id": 4292,
+    "slug": "brazil-giant-palm-tree-beach",
+    "title": "Brazil - Giant Palm Tree Beach",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Giant Palm Tree Beach",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Giant_Palm_Tree_Beach.jpg",
+    "lat": 18.5102097629501,
+    "lng": -33.68408203125001,
+    "x": 16.31591796875,
+    "y": 33.25841222373,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 4290,
+    "slug": "brazil-stilt-hut",
+    "title": "Brazil - Stilt Hut",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Stilt Hut",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Stilt_Hut.jpg",
+    "lat": -4.1818927600029125,
+    "lng": -4.152832031250001,
+    "x": 45.84716796875,
+    "y": 53.719244504664,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 4289,
+    "slug": "brazil-acanga",
+    "title": "Brazil - Acanga",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Acanga",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Acanga.jpg",
+    "lat": 22.548539980504664,
+    "lng": 34.35424804687501,
+    "x": 84.354248046875,
+    "y": 29.425679299159,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 4288,
+    "slug": "brazil-mboya-village",
+    "title": "Brazil - Mboya Village",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Mboya Village",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Mboya_Village.jpg",
+    "lat": 29.03226869742894,
+    "lng": 6.734619140625,
+    "x": 56.734619140625,
+    "y": 23.022000193064,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 4286,
+    "slug": "brazil-st-sebastian-church",
+    "title": "Brazil - St. Sebastian Church",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "St. Sebastian Church",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/St._Sebastian_Church.jpg",
+    "lat": 6.872057443092865,
+    "lng": -3.3178710937500004,
+    "x": 46.68212890625,
+    "y": 43.878942627367,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 4285,
+    "slug": "brazil-abandoned-temple",
+    "title": "Brazil - Abandoned Temple",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Abandoned Temple",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Abandoned_Temple.jpg",
+    "lat": -1.0820061672857413,
+    "lng": 16.029052734375004,
+    "x": 66.029052734375,
+    "y": 50.961504785009,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 4284,
+    "slug": "brazil-orchid-shore",
+    "title": "Brazil - Orchid Shore",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Orchid Shore",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Orchid_Shore.jpg",
+    "lat": 35.56392817061387,
+    "lng": -12.139892578125002,
+    "x": 37.860107421875,
+    "y": 16.149057445211,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 4283,
+    "slug": "brazil-rio-grande-hotel",
+    "title": "Brazil - Rio Grande Hotel",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Rio Grande Hotel",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Rio_Grande_Hotel.jpg",
+    "lat": 35.814043933768176,
+    "lng": -32.53051757812501,
+    "x": 17.469482421875,
+    "y": 15.875419081798,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 4282,
+    "slug": "brazil-stone-flower",
+    "title": "Brazil - Stone Flower",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Stone Flower",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Stone_Flower.jpg",
+    "lat": 18.911575451089956,
+    "lng": -2.9772949218750004,
+    "x": 47.022705078125,
+    "y": 32.881865574951,
+    "placeId": [
+      4281
+    ]
+  },
+  {
+    "id": 3305,
+    "slug": "bolivia-los-cardos-village",
+    "title": "Bolivia - Los Cardos Village",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Los Cardos Village",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/bolivia-los-cardos-village.png",
+    "lat": -30.0711460369468,
+    "lng": -14.567871093750002,
+    "x": 31.084371753879,
+    "y": 77.245950777525,
+    "placeId": [
+      3255
+    ]
+  },
+  {
+    "id": 3304,
+    "slug": "bolivia-viejo-vado-boat-station",
+    "title": "Bolivia - Viejo Vado Boat Station",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Viejo Vado Boat Station",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/bolivia-viejo-vado-boat-station.png",
+    "lat": -11.99789799070708,
+    "lng": -14.963378906250002,
+    "x": 30.570825285659,
+    "y": 60.43601934157,
+    "placeId": [
+      3255
+    ]
+  },
+  {
+    "id": 3303,
+    "slug": "bolivia-selva",
+    "title": "Bolivia - Selva",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Selva",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/bolivia-selva.png",
+    "lat": -7.320419539969555,
+    "lng": 20.280761718750004,
+    "x": 76.333521675972,
+    "y": 56.338012622748,
+    "placeId": [
+      3255
+    ]
+  },
+  {
+    "id": 3302,
+    "slug": "bolivia-chiri-islet",
+    "title": "Bolivia - Chiri Islet",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Chiri Islet",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/bolivia-chiri-islet.png",
+    "lat": 0.7467518534327361,
+    "lng": -7.448730468750001,
+    "x": 40.328208181848,
+    "y": 49.355206078161,
+    "placeId": [
+      3255
+    ]
+  },
+  {
+    "id": 3301,
+    "slug": "bolivia-anku",
+    "title": "Bolivia - Anku",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Anku",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/bolivia-anku.png",
+    "lat": 29.45752430189332,
+    "lng": 12.524414062500002,
+    "x": 66.262304826982,
+    "y": 23.364399899512,
+    "placeId": [
+      3255
+    ]
+  },
+  {
+    "id": 3300,
+    "slug": "bolivia-sacha-kallpa",
+    "title": "Bolivia - Sacha Kallpa",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Sacha Kallpa",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/bolivia-sacha-kallpa.png",
+    "lat": 36.879628979082334,
+    "lng": -18.479003906250004,
+    "x": 26.005967790366,
+    "y": 15.698474724576,
+    "placeId": [
+      3255
+    ]
+  },
+  {
+    "id": 2507,
+    "slug": "peru-oval-island",
+    "title": "Peru - Oval Island",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Oval Island",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/peru-oval-island.png",
+    "lat": -3.771161757386089,
+    "lng": 25.72998046875,
+    "x": 79.163716442715,
+    "y": 53.258526748831,
+    "placeId": [
+      2503
+    ]
+  },
+  {
+    "id": 2506,
+    "slug": "peru-otorongo-village",
+    "title": "Peru - Otorongo Village",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Otorongo Village",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/peru-otorongo-village.png",
+    "lat": -31.7561893587855,
+    "lng": -24.697265625000004,
+    "x": 22.006817009725,
+    "y": 78.941897318816,
+    "placeId": [
+      2503
+    ]
+  },
+  {
+    "id": 2505,
+    "slug": "peru-tourist-landing-pier",
+    "title": "Peru - Tourist Landing Pier",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Tourist Landing Pier",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/peru-tourist-landing-pier.png",
+    "lat": -47.868805409236394,
+    "lng": 1.7358398437500002,
+    "x": 51.967492398783,
+    "y": 97.198231709581,
+    "placeId": [
+      2503
+    ]
+  },
+  {
+    "id": 2372,
+    "slug": "mississipi-the-bass-base",
+    "title": "Mississipi - The Bass Base",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "The Bass Base",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/mississippi-the-bass-base.jpg",
+    "lat": -20,
+    "lng": 0,
+    "x": 50,
+    "y": 70.422644927039,
+    "placeId": [
+      2365
+    ]
+  },
+  {
+    "id": 2370,
+    "slug": "mississipi-mangrove-sunset",
+    "title": "Mississipi - Mangrove Sunset",
+    "content": "",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Mangrove Sunset",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/01/mississippi-mangrove-sunset.jpg",
+    "lat": -7,
+    "lng": 15,
+    "x": 65,
+    "y": 57.018737314246,
+    "placeId": [
+      2365
+    ]
+  },
+  {
+    "id": 1820,
+    "slug": "united-kingdom-bridges-lake",
+    "title": "United Kingdom - Bridges Lake",
+    "content": "\n<p class=\"wp-block-paragraph\">In the northernmost part of Weeping Willow fisheries, anglers can find Lake Bridges &#8211; a real fishing wonderland with a maze of wooden bridges connecting small picturesque islands scattered across the lake’s mirrory surface. Just the sight for sore eyes, this picturesque fishing spot is the place to go with your favorite match rod if you’re up for a good hunt. Numerous Carp, Bream, Tench, Carassius and more underwater dwellers await their worthy opponent looking for the fish fight of their life.</p>\n",
+    "imageWidth": 394,
+    "imageHeight": 164,
+    "name": "Bridges Lake",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Bridges_Lake.jpg",
+    "lat": -5.166240601101364,
+    "lng": -5.866699218750001,
+    "x": 44.13330078125,
+    "y": 56.661437440212,
+    "placeId": [
+      1433
+    ]
+  },
+  {
+    "id": 1818,
+    "slug": "united-kingdom-cave-lake",
+    "title": "United Kingdom - Cave Lake",
+    "content": "\n<p class=\"wp-block-paragraph\">In the southeastern part of the Weeping Willow Lakes fishing complex you can indulge in fishing right amidst the cool calm waters of Cave Lake. This unique fishing spot is located on a small island right in the middle of a rather vast wetland, and is just the place to escape the heat of late summer days with your favorite match rod in hand and the sweet fresh breeze caressing all your senses in its exquisite spontaneity. Relaxing and mesmerizing in its purity, Cave Lake boasts a rather varied underwater terrain with crevices and caves that are perfect hideout for many bottom-dwellers, including Carp, Tench, Carassius and Bream.</p>\n",
+    "imageWidth": 394,
+    "imageHeight": 164,
+    "name": "Cave Lake",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Cave_Lake.jpg",
+    "lat": 14.341048942896753,
+    "lng": -10.72265625,
+    "x": 39.27734375,
+    "y": 31.337589135354,
+    "placeId": [
+      1433
+    ]
+  },
+  {
+    "id": 1816,
+    "slug": "united-kingdom-grasswickshire-river",
+    "title": "United Kingdom - Grasswickshire River",
+    "content": "\n<p class=\"wp-block-paragraph\">Once you’ve explore the bottom-fishing paradise of the five Weeping Willow’s match lakes, you can grab your favorite spinning rod and go get some predators! This meandering shallow river, charming in its serene natural beauty, looks both old and ageless at the same time. Indeed, together with the Willow Lake, this natural waterway was the source and foundation for the rest of the Weeping Willow Lakes fisheries. But that is history…whereas in the eyes of our angling guests, the Grasswickshire River is a breath of fresh air with its pleasant contrast of slow, but existent current and clearer waters as opposed to its still-watered aquatic companions within the complex. The river’s grassy steep shores abruptly descend into the cool waters, making it is just the place to get out your spinning tackle and finally catch some Northern Pike, European Perch and Chub!</p>\n",
+    "imageWidth": 394,
+    "imageHeight": 164,
+    "name": "Grasswickshire River",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Grasswickshire_River.jpg",
+    "lat": 25.6255629586922,
+    "lng": -0.5712890625000001,
+    "x": 49.4287109375,
+    "y": 15.844257331876,
+    "placeId": [
+      1433
+    ]
+  },
+  {
+    "id": 1814,
+    "slug": "united-kingdom-arbor-lake",
+    "title": "United Kingdom - Arbor Lake",
+    "content": "\n<p class=\"wp-block-paragraph\">This magnificent little peninsular with a lovely gazebo right in the middle of Arbor Lake is perhaps the most popular fishing spot in the whole complex. Treating its guests to a stunning sunrise view of the pristine landscape, Arbor Lake engulfs you whole with its hypnotic vibe of relaxing freedom. The old wooden gazebo peacefully overlooks this glorious fishing paradise with its dense green reeds and the gradual grassy shore descending into the murky waters that surround the weary traveller, as if cutting off all worries and hassles and leaving them somewhere behind…anywhere, but here. Just listen to the songs of summer birds and you feel the rustling of crispy grass underneath your feet…and meditate in serene concentration as you fish for supple Bream, meaty Carp or feisty Tench.</p>\n",
+    "imageWidth": 394,
+    "imageHeight": 164,
+    "name": "Arbor Lake",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Arbor_Lake.jpg",
+    "lat": -10.160868184886498,
+    "lng": -27.773437500000004,
+    "x": 22.2265625,
+    "y": 63.1529534916,
+    "placeId": [
+      1433
+    ]
+  },
+  {
+    "id": 1812,
+    "slug": "united-kingdom-weeping-willow-administration",
+    "title": "United Kingdom - Weeping Willow Administration",
+    "content": "\n<p class=\"wp-block-paragraph\">Welcome to the Weeping Willow Lakes fishing complex, a 120-acre fishery with over 45 acres of water surface that is suitable for anglers of all levels and age groups! Our marvelous willowy fishery encompasses a total of 5 match lakes: Willow Lake, Bridges Lake, Cave Lake, Arbor Lake and Golden Lake as well as the lovely Grasswickshire River &#8211; all available for day &amp; night fishing. The Weeping Willow Administration is here to cater to your needs with its convenient leisure facilities and an on-site tackle shop! We hope you enjoy your stay! Tight Lines!</p>\n",
+    "imageWidth": 394,
+    "imageHeight": 164,
+    "name": "Weeping Willow Administration",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Weeping_Willow_Administration.jpg",
+    "lat": -24.61692671433775,
+    "lng": -17.973632812500004,
+    "x": 32.0263671875,
+    "y": 82.721242173617,
+    "placeId": [
+      1433
+    ]
+  },
+  {
+    "id": 1810,
+    "slug": "united-kingdom-golden-lake",
+    "title": "United Kingdom - Golden Lake",
+    "content": "\n<p class=\"wp-block-paragraph\">Heading further down south along the sunny willow-grown path, the angler stumbles upon yet another aquatic pearl of the Weeping Willow necklace &#8211; the Golden Lake. Grown with charming lily pads and yellow irises, this wetland is said by some to get its name from the golden gleam of its waters in the rays of late-summer sun. However, the true reason is far more satisfying to any angler in search of the unique Golden Tench, abundantly dwelling in the still waters of Golden Lake. Surrounded by luscious green trees, this reed-grown enigmatic pond’s soothing atmosphere to quench weary traveller’s desire for peace and quiet is also home to different fish species, like Carp, Bream and Carassius.</p>\n",
+    "imageWidth": 394,
+    "imageHeight": 164,
+    "name": "Golden Lake",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Golden_Lake.jpg",
+    "lat": -18.154260825673845,
+    "lng": 3.1201171875,
+    "x": 53.1201171875,
+    "y": 73.777931009502,
+    "placeId": [
+      1433
+    ]
+  },
+  {
+    "id": 1808,
+    "slug": "united-kingdom-willow-lake",
+    "title": "United Kingdom - Willow Lake",
+    "content": "\n<p class=\"wp-block-paragraph\">If one were to ask where’s the best Carp fishing in Britain, Weeping Willow Lakes would be the answer. Now, if one were to ask which of the five marvellous lakes is best, we could say that each one has its own unique fishing charm and challenges. But anglers tend to agree, that the biggest Carp seem to dwell in the oldest and deepest of all lakes &#8211; the Willow Lake, which is in fact the original natural lake, around which the other four manmade ponds were created just a few decades ago for the purpose of fishing recreation. The lake with its legendary century-old weeping willow is located in the easternmost part of the complex, being the smallest and yet deepest of all, its grassy shore steadily descending into the still waters. There, in deep crevices and holes, lurk all your favorite bottom-dwellers: meaty Carp, supple Bream and juicy Tench.</p>\n",
+    "imageWidth": 394,
+    "imageHeight": 164,
+    "name": "Willow Lake",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Willow_Lake.jpg",
+    "lat": 2.484499768557975,
+    "lng": 16.875000000000004,
+    "x": 66.875,
+    "y": 46.799785085458,
+    "placeId": [
+      1433
+    ]
+  },
+  {
+    "id": 1806,
+    "slug": "russia-all-hail-the-pioneers",
+    "title": "Russia - All Hail the Pioneers!",
+    "content": "\n<p class=\"wp-block-paragraph\">Further upstream, in the higher reaches of Akhtuba River, you will discover a lovely steak of a long-forgotten desolate beach that once belonged to an old summer camp for young and daring Soviet pioneers. Here, on the gradually sloping shore rests this enigmatic Russian relic with a palpable historic vibe, adding some inexplicable charm to the overall spirit of the quiet, somewhat ghostly atmosphere. Ah, what an ambient place to spend the day out fishing for Zander, Northern Pike, Asp and Wels Catfish… as you gaze into the deep murky waters, flowing by into the distance, steadily and relentlessly as time itself!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "All Hail the Pioneers!",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/All_Hail_the_Pioneers.jpg",
+    "lat": 30.72427541294801,
+    "lng": -14.655761718750002,
+    "x": 20.272650396243,
+    "y": 22.097079201131,
+    "placeId": [
+      204
+    ]
+  },
+  {
+    "id": 1804,
+    "slug": "russia-resting-waters",
+    "title": "Russia - Resting Waters",
+    "content": "\n<p class=\"wp-block-paragraph\">Densely covered with lotuses and lily pads, it seems as if this still little lake is an aquatic pit-stop, where the hurrying current of Akhtuba River flows to fall into a tranquil slumber when tired from its incessant movement. As the soft rays of October sun illuminate these serenely resting waters with a mild golden glow, make your best cast and breathe in the autumn air to feel its crisp freshness with a sweet hint of dried grass and a musky scent of fallen leaves. Now wait for the strike in placid meditation. After all, the lake’s calm aquatic depth hides a plentiful array of underwater inhabitants for an angler to hunt on: Blue Bream, Volga Zander, Ide, Common Carp, Chub and Northern Pike just to list a few&#8230;</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Resting Waters",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Resting_Waters.jpg",
+    "lat": -25.00189265314863,
+    "lng": 9.667968750000002,
+    "x": 69.610245615672,
+    "y": 72.309793285359,
+    "placeId": [
+      204
+    ]
+  },
+  {
+    "id": 1802,
+    "slug": "russia-wide-as-the-russian-soul",
+    "title": "Russia - Wide as the Russian Soul",
+    "content": "\n<p class=\"wp-block-paragraph\">This beautiful fishing spot is situated on one of the vast and most spacious parts of the Akhtuba River. The broad open area surrounding this lovely riverside beach, greets the traveller’s eyes with gradually sloping sandy shores overlooking a somewhat abrupt and cliffy opposite bank. Nothing seems to interrupt the placid natural calm but a thin streak of smoke rising from a distant power plant somewhere on the horizon. Enjoy this broad open space, wide as the Russian soul, as you indulge in catching Asp, Caspian Roach, Tench, Ziege, Silver Bream, Zander and many other fish inhabiting Akhtuba’s deep mysterious waters…flowing by without haste, perhaps with an air of dignified moderation.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Wide as the Russian Soul",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Wide_as_the_Russian_Soul.jpg",
+    "lat": -7.685384249722444,
+    "lng": 7.800292968750001,
+    "x": 65.821902712644,
+    "y": 56.656610817687,
+    "placeId": [
+      204
+    ]
+  },
+  {
+    "id": 1800,
+    "slug": "russia-%d1%81haika-creek",
+    "title": "Russia - Сhaika Creek",
+    "content": "\n<p class=\"wp-block-paragraph\">On the southern side of Akhtuba River, a little creek branches off from the main body of water to create a fascinating fishing location with fast moving boisterous waters and sandy shawls. Locals call Chaika, because of the name of an old abandoned camping site nearby, with shabby wooden houses standing since the days of USSR…left to their own fate, like ghosts of the Soviet past. Separated from the wide and moderately paced waterway by a small island, these narrow waters have a totally different dynamic with much faster current and a notably different fishing experience that comes with. Nevertheless, the little river armlet is swarming with a large variety of different fish: from Caspian Roach and Common Bream to Zander, Asp and Wels Catfish.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Сhaika Creek",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Chaika_Creek.jpg",
+    "lat": 13.671645026780721,
+    "lng": 5.405273437500001,
+    "x": 60.963910048762,
+    "y": 38.080363358414,
+    "placeId": [
+      204
+    ]
+  },
+  {
+    "id": 1798,
+    "slug": "germany-bavarian-woods",
+    "title": "Germany - Bavarian Woods",
+    "content": "\n<p class=\"wp-block-paragraph\">Separated from the open wide waters of Sander Baggersee Lake by a picturesque tree-grown peninsular, this fishing location in the lake’s northernmost part is a genuine natural paradise surrounded by dense green woods. A truly marvelous contrast from the industrial settings of the opposite shore, this fishing location is just the place for getting some fresh air and letting go of all the worries of our urbanistic world. As the soft summer breeze gently rustles the emerald green of trees, enjoy a profoundly meditative angling experience fishing for European Eel, Bream, Tench, Zander, European Perch and Northern Pike.</p>\n",
+    "imageWidth": 394,
+    "imageHeight": 164,
+    "name": "Bavarian Woods",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Bavarian_Woods.jpg",
+    "lat": -18.581466109537892,
+    "lng": -5.910644531250001,
+    "x": 44.08935546875,
+    "y": 71.941340020531,
+    "placeId": [
+      203
+    ]
+  },
+  {
+    "id": 1796,
+    "slug": "germany-fields-of-gold",
+    "title": "Germany - Fields of Gold",
+    "content": "\n<p class=\"wp-block-paragraph\">Moving further east along the picturesque banks of Sander Baggersee Lake, you can discover this lovely stretch of shore, grown with trees and bushes. This area welcomingly grants access to another part of the lake, somewhat separated from the main body of water, forming a small charming bay where large Carp, including giant Bighead Carp, are now inhabited not without human effort. Here, right beyond a narrow dirt road, countless German farm fields stretch on for as far as the eye can see. What a great spot to enjoy a day of fishing! As the warm summer breeze tickles your senses with a sweet aroma of golden wheat and grassy fields, dissolve all your worries in this natural paradise. You can catch countless Bream, Tench, Crucian Carp, Mirror Carp, Leather Carp or two kinds of Bighead Carp, as well as many other fishy inhabitants of these calm, clear waters&#8230;</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Fields of Gold",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Fields_of_Gold.jpg",
+    "lat": -9.160659835088893,
+    "lng": -37.43591308593751,
+    "x": 12.564086914062,
+    "y": 60.671325293715,
+    "placeId": [
+      203
+    ]
+  },
+  {
+    "id": 1794,
+    "slug": "germany-fishing-on-main",
+    "title": "Germany - Fishing on Main",
+    "content": "\n<p class=\"wp-block-paragraph\">One of the most popular fishing spots on the whole Sander Baggersee in the northernmost part of the lake is in fact located right on the river Main &#8211; the right tributary of the Rhine and the longest river flowing entirely in Germany. Its navigable waters meander past the green valleys of the German Highland and the picturesque Main Lowlands with powerful grace while providing endless opportunities for recreation angling with an exuberance of fish species. Be it Roach, European Perch, Zander, Bream, Tench or Northern Pike, the river Main is generous in its abundance of fishy inhabitants!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Fishing on Main",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Fishing_on_Main.jpg",
+    "lat": -23.47128045984891,
+    "lng": -17.797851562500004,
+    "x": 32.2021484375,
+    "y": 78.020192809339,
+    "placeId": [
+      203
+    ]
+  },
+  {
+    "id": 1792,
+    "slug": "germany-lake-in-a-lake",
+    "title": "Germany - Lake in a Lake",
+    "content": "\n<p class=\"wp-block-paragraph\">Moving further along the north-eastern shore, past the golden farm fields, the angling explorer can find this marvelous little lake, separated from the main waters and offering a charming hideout for a day of fishing. Hidden from view by a dense strip of woods and overlooking a lovely little island, this remote fishing spot on high, grassy banks is literally a lake within a lake with a fishy fauna of its own. In fact, this particular location is well known for its amazing Carp fishing opportunities! Common Carp, Crucian Carp, Mirror Carp or Grass Carp &#8211; all in one place. Just go and get some of the biggest trophy specimens!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Lake in a Lake",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Lake_in_a_Lake.jpg",
+    "lat": 8.941047936225464,
+    "lng": -37.66113281250001,
+    "x": 12.3388671875,
+    "y": 39.586621907467,
+    "placeId": [
+      203
+    ]
+  },
+  {
+    "id": 1790,
+    "slug": "germany-stillwater-village",
+    "title": "Germany - Stillwater Village",
+    "content": "\n<p class=\"wp-block-paragraph\">This absolutely charming fishing spot on Sander Baggersee Lake is located on the bank of a stillwater area that resembles a lovely creek, somewhat cut off from the rest of the waterway. Surrounded by dense green woods on one side and overlooking a lovely rural landscape with little houses of a nearby village on the opposite bank, this enigmatic location offers a heartwarming taste of local coloring, as if bringing you closer to the serene everyday life of the people, blessed to live amidst such natural beauty. What a marvelous place to enjoy a lazy summer afternoon and indulge in some fishing excitement as you catch Bream, Crucian Carp, Tench and Common Roach that are quite abundant in these deep waters&#8230;</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 162,
+    "name": "Stillwater Village",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Stillwater_Village.jpg",
+    "lat": 12.72908728944517,
+    "lng": -23.2470703125,
+    "x": 26.7529296875,
+    "y": 35.112116395337,
+    "placeId": [
+      203
+    ]
+  },
+  {
+    "id": 1788,
+    "slug": "germany-southern-docks",
+    "title": "Germany - Southern Docks",
+    "content": "\n<p class=\"wp-block-paragraph\">Nearly the whole perimeter of Sander Baggersee Lake can be regarded as one never-ending fishing spot. The lake’s gradual earthen bank, grown with grass and bushy shrubs, is marvelously accessible for angling regardless of the surrounding landscape. This particular fishing spot further down south can be found just off a narrow paved road with a parking lot. Situated on large wooden docks and overlooking a distant mountain range, this is a lovely location with access to one of the deepest areas of the lake and a marvelous spot to do some recreational fishing for Carp, Catfish, Bream, Tench, and Zander.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Southern Docks",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Southern_Docks_G.jpg",
+    "lat": 39.47229863876633,
+    "lng": -21.621093750000004,
+    "x": 28.37890625,
+    "y": 0.0935079420031,
+    "placeId": [
+      203
+    ]
+  },
+  {
+    "id": 1786,
+    "slug": "germany-sunrise-fishing",
+    "title": "Germany - Sunrise Fishing",
+    "content": "\n<p class=\"wp-block-paragraph\">The long western bank of Sander Baggersee Lake is separated by a narrow paved road from some lovely houses and a popular recreational camping area. Here, on the grassy earthen shore, the angling explorer will find a wide array of fishing spots that welcomingly give access to some of the deepest areas of this immense aquatic kingdom and greet the eye with the most breathtaking sunrise views. Standing on this reed-grown shrubby waterline, indulge in a deeply satisfying fishing experience, as you catch the countless inhabitants of these clear deep waters, including numerous fish species, like Bream, Carp, Zander, and Northern Pike. And how many huge Wels Catfish found in this place &#8211; you won&#8217;t believe it!.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Sunrise Fishing",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Sunrise_Fishing.jpg",
+    "lat": 18.063724281983195,
+    "lng": -15.611572265625002,
+    "x": 34.388427734375,
+    "y": 28.691281883504,
+    "placeId": [
+      203
+    ]
+  },
+  {
+    "id": 1784,
+    "slug": "italy-western-tiber",
+    "title": "Italy - Western Tiber",
+    "content": "\n<p class=\"wp-block-paragraph\">The river’s western bank is generally steep and high, densely grown with luscious trees and thick shrubs. It is here, in this spot surrounded by mesmerizingly scenic landscapes, that you can discover a wonderful fishing location overlooking vast farm fields and beautiful valleys of the opposite shore. Situated near a pedestrian suspension bridge, serving as a pathway across the river’s vast waters, this moderately deep area is one of the best places on Tiber to fish for Common Roach, Crucian Carp, European Perch, Chub and Asp that simply love to hide in their shady lairs, lurking amidst the woody debris and sunken logs.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Western Tiber",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Western_Tiber.jpg",
+    "lat": -24.80207514522131,
+    "lng": -6.899414062500001,
+    "x": 43.1005859375,
+    "y": 73.864048431265,
+    "placeId": [
+      202
+    ]
+  },
+  {
+    "id": 1782,
+    "slug": "italy-streaming-beauty",
+    "title": "Italy - Streaming Beauty",
+    "content": "\n<p class=\"wp-block-paragraph\">This lovely fishing spot is located right on a small charming stream, where it flows into the Tiber to join the mighty river’s powerful current. Just relax and watch as the little stream joyfully prattles meandering from afar. Its speedy waters merrily emit a steady and harmonious whisper that will hush your weary mind into a deep rejuvenating slumber. Just the perfect spot to enjoy a day of angling, as you fish these shallow waters for Creek Brown Trout, European Grayling and Chub.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Streaming Beauty",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Streaming_Beauty.jpg",
+    "lat": -2.7615441744802602,
+    "lng": 26.762695312500004,
+    "x": 76.7626953125,
+    "y": 52.573767087414,
+    "placeId": [
+      202
+    ]
+  },
+  {
+    "id": 1780,
+    "slug": "italy-the-breathy-bridge",
+    "title": "Italy - The Breathy Bridge",
+    "content": "\n<p class=\"wp-block-paragraph\">One of the most attractive and deep-watered fishing locations in the area is this spot right on the automobile bridge, spanning over Tiber’s vast waters to every so often accommodate lazy traffic, unhurriedly moving across. Here, standing over this deep part of Tiber, you can see the stunning beauty of the surrounding landscape, unraveling before your eyes from up high. What a fantastic spot to let go and indulge in deep breathing as you catch Common Carp, Wels Catfish, European Eel and Common Barbel!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "The Breathy Bridge",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/The_Breathy_Bridge.jpg",
+    "lat": -25.712009797753513,
+    "lng": 26.806640625000004,
+    "x": 76.806640625,
+    "y": 74.801403174944,
+    "placeId": [
+      202
+    ]
+  },
+  {
+    "id": 1778,
+    "slug": "italy-twisty-tiber",
+    "title": "Italy - Twisty Tiber",
+    "content": "\n<p class=\"wp-block-paragraph\">Gracefully flowing for over 405 km amidst astonishing scenic landscapes and blinding natural beauty until confluence with the waters of Mediterranean, Tiber is the third longest river in Italy. Naturally, the waterway’s opportunities for angling are unfathomably immense. And yet, any well-wishing insider will take you straight to this particular angling spot on the middle reaches of Tiber’s eastern bank. This picturesque area, surrounded by vast farm fields and beautiful valleys overlooking a dense treeline on the opposite side of the river, is a perfect place to while away the warm September days, indulging in your favorite pastime! As the wide and murky waters peacefully flow, without haste continuing their glorious journey further west, you can catch Common Carp, Common Barbel, Common Roach and Asp, simply watching the world go by.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Twisty Tiber",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Twisty_Tiber.jpg",
+    "lat": -28.257833607184903,
+    "lng": 6.855468750000001,
+    "x": 56.85546875,
+    "y": 77.463308102413,
+    "placeId": [
+      202
+    ]
+  },
+  {
+    "id": 1776,
+    "slug": "italy-float-feeder-heaven",
+    "title": "Italy - Float &#038; Feeder Heaven",
+    "content": "\n<p class=\"wp-block-paragraph\">As you joyfully walk along the Tiber past the bridge connecting the two banks, you will discover this area of the river’s middle reach. Located in the Italian region of Umbria, known for its medieval towns, dense forests and lovely rolling hills, this is one of Italy’s top spots for feeder and float fishing. Here, near a small groyne, the Tiber’s dark waters are slow-paced and deep, and a knowing angler will discover a marvelous opportunity to fish for Common Carp, Wels Catfish and Crucian Carp while admiring magical views of distant vineyards amidst a mesmerizing pastoral landscape&#8230;</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Float & Feeder Heaven",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Float_and_Feeder_Heaven.jpg",
+    "lat": -13.254990694433914,
+    "lng": 49.38903808593751,
+    "x": 99.389038085938,
+    "y": 62.460554082426,
+    "placeId": [
+      202
+    ]
+  },
+  {
+    "id": 1774,
+    "slug": "italy-tiber-rocks",
+    "title": "Italy - Tiber Rocks!",
+    "content": "\n<p class=\"wp-block-paragraph\">Just a short lovely stroll further downstream, yet another impressive fishing spot comes into view, welcoming the traveller with glorious splendour of Tiber’s braided streamflow. Located below one of river’s water dams, this is where Tiber becomes shallower and fastens its pace, changing its usual attire of earthen banks to a scenic rocky landscape with small river islands and stone ridges and treating the observer to a series of rocky islands. What a refreshing feast for the eyes on these hot days of late September! And what a fantastic angling location for getting out your spinning rod and going after some Brown Trout, European Grayling and Creek Brown Trout!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Tiber Rocks!",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Tiber_Rocks.jpg",
+    "lat": -8.425774526136877,
+    "lng": 38.91357421875,
+    "x": 88.91357421875,
+    "y": 57.878252128469,
+    "placeId": [
+      202
+    ]
+  },
+  {
+    "id": 1772,
+    "slug": "netherlands-charm-of-industrial",
+    "title": "Netherlands - Charm of Industrial",
+    "content": "\n<p class=\"wp-block-paragraph\">The eastern bank of Ghent–Terneuzen Canal is well-known and loved by all anglers for the marvelous fishing opportunities it offers and the vast variety of fish inhabiting its slow moving waters. Overlooking the distant urban landscape, this particular spot is located closer to the sea and the port of Terneuzen. Here, the fresh salty breeze only adds to the overall unparalleled industrial charm of wind turbines on the opposite shore, that can be appreciated by contrast to the pristine natural wilderness most anglers are usually accustomed to. The reed grown shores, the dry midsummer grass under your feet, that new powerful rod in your hands, the meditative allure and calm mystique of these deep murky waters…what else could a true angling spirit wish for? Indeed, the countless fish species inhabiting the canal’s deep waters include Common Roach, Ide, European Eel, Common Bream, Thicklip Grey Mullet and plenty others that are too many to list.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Charm of Industrial",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Charm_of_Industrial.jpg",
+    "lat": 9.974503476768465,
+    "lng": 9.228515625000002,
+    "x": 59.228515625,
+    "y": 37.864288973902,
+    "placeId": [
+      201
+    ]
+  },
+  {
+    "id": 1770,
+    "slug": "netherlands-urban-paradise",
+    "title": "Netherlands - Urban Paradise",
+    "content": "\n<p class=\"wp-block-paragraph\">Looking at the urbanized banks of Ghent–Terneuzen Canal through the eyes of any generic nature lover, the scenery may come off as a bit dull and monotonous. But every angler knows, that this place not far from a large swing bridge, is one of the most amazing fishing destinations in all of the country! This particular spot on canal’s eastern bank is situated not far from a small Dutch town, just a few miles off the Belgium–Netherlands border. Known among the angling elite as a splendid place for catching countless fish species, including Common Roach, European Eel, Ide, Zander, Thicklip Grey Mullet and European Flounder to name just a few, this is an urban fishing paradise with a hardcore view of a monumental elevator and warehouses on the opposite shore. Now, this place can keep a real angler in deep meditation one sunny day after another!.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Urban Paradise",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Urban_Paradise.jpg",
+    "lat": 28.46274604302853,
+    "lng": -21.621093750000004,
+    "x": 28.37890625,
+    "y": 14.034168479333,
+    "placeId": [
+      201
+    ]
+  },
+  {
+    "id": 1768,
+    "slug": "czech-gazebo-in-the-woods",
+    "title": "Czech - Gazebo in the Woods",
+    "content": "\n<p class=\"wp-block-paragraph\">Take a refreshing stroll along Lesní Víla pond and explore the path leading to the eastern side of this small and charming lake. There, surrounded by dense greens woods and overlooking the picturesque distant hills, remotely stands a lovely summertime gazebo. But aside from being an element of decor, this charming structure marks another productive fishing spot, a true angling paradise for catching Common Carp, Mirror Carp and Common Roach.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Gazebo in the Woods",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Gazebo_in_the_Woods.jpg",
+    "lat": -29.68092940162965,
+    "lng": -22.8076171875,
+    "x": 26.552741603442,
+    "y": 76.857382146653,
+    "placeId": [
+      200
+    ]
+  },
+  {
+    "id": 1766,
+    "slug": "czech-rybarsky-domov",
+    "title": "Czech - Rybarsky Domov",
+    "content": "\n<p class=\"wp-block-paragraph\">This lovely little fishing spot on the southern bank of Lesní Víla pond has a certain housewarming vibe that makes one feel truly at ease. There’s simply no better place to start exploring the dazzling variety of European angling destination than this remote little area next to your very own secret getaway home! And like they say, east or west &#8211; Home is best! So take a gradual dive into the limitless possibilities of European fishing by casting your line to catch some Prussian Carp or Tench and prepare for the countless adventures to come!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Rybarsky Domov",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Rybarsky_Domov.jpg",
+    "lat": 4.308746404420799,
+    "lng": -47.28515625000001,
+    "x": 1.3887282568468,
+    "y": 46.27614299733,
+    "placeId": [
+      200
+    ]
+  },
+  {
+    "id": 1764,
+    "slug": "czech-the-other-side",
+    "title": "Czech - The Other Side",
+    "content": "\n<p class=\"wp-block-paragraph\">On the other side of the Lesni Vila fishery, you can find a remote sandy shore, enigmatically lit in the warm rays of the late spring sun. This northernmost fishing spot, beautifully surrounded by a picturesque pastoral landscape of distant rolling hills and meadows, slopes steeply into the lake’s shallow waters and seems like a perfect place to try fishing for European Perch and Northern Pike.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "The Other Side",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/The_Other_Side.jpg",
+    "lat": -10.720821165781256,
+    "lng": 14.106445312500002,
+    "x": 64.502061551628,
+    "y": 59.311282715563,
+    "placeId": [
+      200
+    ]
+  },
+  {
+    "id": 1762,
+    "slug": "alaska-hunters-cabin",
+    "title": "Alaska - Hunter’s Cabin",
+    "content": "\n<p class=\"wp-block-paragraph\">The Kaniq Creek flows further South as the shore expands into a vast bank of sand and gravel. Fantastic scenery is simply breathtaking: blinding-white mountain snow peaks are towering over vast expanses of dense green forests and stretches of cold taiga. The only sign of any human presence is a lonely hunter’s cabin nearby. Apparently occasional herds of sitka deer attract not only fishermen to these frozen lands. But it is for anglers that this place is quite a dream…just watch the first rays of sun breaking the silver surface of Kaniq Creek’s crystal clear, almost translucent waters, mirroring the sky of soft azure blue. This area of the creek is a particularly promising spot for going after Northern Pike, Coho Salmon, Chinook Salmon, Chum Salmon and Longnose Sucker. Here, standing ashore or sitting in your boat with your fishing rod in hand, breathe in the crystal fresh air and let your mind fill with cold clarity, cleansing all your senses, taking the stress and worries away….</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Hunter’s Cabin",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Hunters_Cabin.jpg",
+    "lat": -18.622309197249727,
+    "lng": 15.864257812500002,
+    "x": 86.394259721266,
+    "y": 66.371955615592,
+    "placeId": [
+      199
+    ]
+  },
+  {
+    "id": 1760,
+    "slug": "alaska-angling-the-middle-earth",
+    "title": "Alaska - Angling the Middle-Earth",
+    "content": "\n<p class=\"wp-block-paragraph\">As you continue exploring untamed wilderness of the Denali preservation, go South, downstream the Kaniq Creek and watch it expand in its powerful beauty and might. Local rangers call this part of the Denali “Middle-Earth”, for it’s literally in the very center of the preservation area. Enjoy the scenic beauty of the river, lined with dense coniferous forests, that seem almost impregnable, towering over the gravel banks. Here among the clusters of heavy boulders is just the place to feel the hard rocky bottom under your feet as you firmly grip your fishing rod and angle for Chum Salmon, Dolly Varden, Pink Salmon, Chinook Salmon and Alaska Blackfish. Just look around! The emerald green of deep forests with snowy mountain peaks gleaming in the distance and a gurgling mountain stream, rapidly flowing into the Kaniq Creek right from the mountain tops…this is untamed nature in all its wild grandeur!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Angling the Middle-Earth",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Angling_the_Middle-Earth.jpg",
+    "lat": -18.454651044579574,
+    "lng": -1.3114929199218752,
+    "x": 46.991298646658,
+    "y": 66.219252293458,
+    "placeId": [
+      199
+    ]
+  },
+  {
+    "id": 1758,
+    "slug": "alaska-taming-the-kaniq",
+    "title": "Alaska - Taming the Kaniq",
+    "content": "\n<p class=\"wp-block-paragraph\">It’s better to gradually get used to the rugged realities of the local rough terrain and severe climate even for the most daring of anglers. So let’s head all the way North and upstream, where the otherwise wild and turbid waters of the freezing Kaniq Creek become shallow and welcoming, almost tame. The local climate in summertime is comfortably cool during the day, but keep in mind, that the weather here changes quickly. So it would be a good idea to warmen up as you fish the day away overlooking magnificent Denali mountains and enjoy angling for plump Pink Salmon, Longnose Sucker, Chum Salmon, and savory Alaska Blackfish. The enthralling natural beauty is enough to make your head spin: morning sunlight covering the chilling terrain, the crystal clear waters, the captivating tundra… Meditate gazing at the Kaniq Creek as it flows South, meandering away into the distance, leaving you and the beautiful Denali mountain range behind&#8230;</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Taming the Kaniq",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Taming_the_Kaniq.jpg",
+    "lat": 9.21161571964281,
+    "lng": 7.141113281250001,
+    "x": 66.382457630764,
+    "y": 42.010909109484,
+    "placeId": [
+      199
+    ]
+  },
+  {
+    "id": 1756,
+    "slug": "california-southern-docks",
+    "title": "California - Southern Docks",
+    "content": "\n<p class=\"wp-block-paragraph\">In the southwestern part of San Joaquin Delta you can find another lovely fishing spot with heartwarming wooden docks that offer a beautiful view of Beaver Island right across. Magnificent in its serenity, this enchanting place bedazzles with its clear summer skies, peacefully reflecting in the water’s mirrory surface. Just the spot to indulge in rejuvenating angling meditations with your favorite rod in hand, as you outsmart underwater adversaries like Common Carp, Striped Bass, Bluegill or Redear Sunfish.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Southern Docks",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Southern_Docks.jpg",
+    "lat": -6.963476910697805,
+    "lng": 17.885742187500004,
+    "x": 67.8857421875,
+    "y": 56.933976400303,
+    "placeId": [
+      198
+    ]
+  },
+  {
+    "id": 1754,
+    "slug": "california-fishing-the-beaver",
+    "title": "California - Fishing the Beaver",
+    "content": "\n<p class=\"wp-block-paragraph\">Welcome to Beaver Island, a small desolate spec of land in the vast San Joaquin River, overlooking the Cryton Dam and a lovely settlement of stilt houses that rests along the flooded banks of Sacramento River close to its estuary. This wide watershed area with marshy flooded shores is scenically contoured by a green landscape that is full of life and a hint of local coloring. This secluded location is among the best places for Common Carp fishing, not to mention that the Beaver Island has other countless fish species for you to hook: Striped Bass, Bluegill, Redear Sunfish are just to name a few.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Fishing the Beaver",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Fishing_the_Beaver.jpg",
+    "lat": -0.8003979231474275,
+    "lng": 4.383544921875001,
+    "x": 54.383544921875,
+    "y": 50.795068419065,
+    "placeId": [
+      198
+    ]
+  },
+  {
+    "id": 1752,
+    "slug": "california-below-the-cryton-dam",
+    "title": "California - Below the Cryton Dam",
+    "content": "\n<p class=\"wp-block-paragraph\">The California Delta, being a major migration path for Chinook Salmon travelling to and from the Pacific ocean is an overall marvelous fishing location. But one of the best places to fish here is perhaps this spot on the San Joaquin River right below the Cryton Dam. Here, the otherwise whitewater tributary turns into a flat valley river with occasional riffles and shallow areas with crowded weeds and rocky constructions. So either get comfortable on the pebbly steep shore or put on your wader boots and step into the cool almost clear waters as you master the current and spend the day angling away. You may also try to hook fish like Steelhead and rejoice to the refreshing crisp sound of this man-made Cryton Dam waterfall, rumbling in a sapphire downpour, as if connecting the grey waters of San Joaquin to the deep blue sky.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Below the Cryton Dam",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Below_the_Cryton_Dam.jpg",
+    "lat": -31.193029858577503,
+    "lng": -27.729492187500004,
+    "x": 22.2705078125,
+    "y": 82.639109247778,
+    "placeId": [
+      198
+    ]
+  },
+  {
+    "id": 1750,
+    "slug": "california-the-foggy-sanctuary",
+    "title": "California - The Foggy Sanctuary",
+    "content": "\n<p class=\"wp-block-paragraph\">This lovely area is located right at the mouth of San Joaquin River, where its waters flow into Saint-Anne Bay. A series of old wooden docks on one of the river&#8217;s many channels is a marvelous place for sport fishing &#8211; a serenely lonesome and quiet location gives you that &#8220;edge of the world&#8221; feeling. The atmosphere is indeed enchanting, with the dense mystic fog often covering the area. Among the thickets of dark-green reeds, these weedy waters house abundant Striped Bass. Not to mention White Crappie or Redear Sunfish, that you can catch in this desolate no-man&#8217;s land with nothing to disturb your silent pastime but the enchanting sounds of nature.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "The Foggy Sanctuary",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/The_Foggy_Sanctuary.jpg",
+    "lat": 0.6157523880982885,
+    "lng": -28.399658203125004,
+    "x": 21.600341796875,
+    "y": 49.388355761486,
+    "placeId": [
+      198
+    ]
+  },
+  {
+    "id": 1748,
+    "slug": "michigan-sandy-cape",
+    "title": "Michigan - Sandy Cape",
+    "content": "\n<p class=\"wp-block-paragraph\">Anyone looking for a place with a fulfilling feeling of open space, natural freedom and breezy freshness should head on a fishing getaway straight to the Sandy Cape. This beautiful fishing spot on the western bank of Saint-Croix Lake is located on an open sandy cape overlooking the lovely Conifer Channel pier and the distant Vanishing Rock Lighthouse. Here the sandy shore gradually slopes down into the cool blue waters, home to many fish that prefer large open spaces and deep waters, such as Walleye, Blue Catfish, White Bass and Smallmouth Bass. And as you enjoy some truly productive fishing, feel the fresh summer breeze caressing your face with a slight air of saltiness coming from Lake Michigan and enjoy the view that truly lets you appreciate all the splendour of Saint-Croix Lake.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Sandy Cape",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Sandy_Cape.jpg",
+    "lat": 2.4199002677988886,
+    "lng": -6.701660156250001,
+    "x": 43.29833984375,
+    "y": 47.716786026226,
+    "placeId": [
+      197
+    ]
+  },
+  {
+    "id": 1746,
+    "slug": "michigan-woods-of-the-eastern-bank",
+    "title": "Michigan - Woods of the Eastern Bank",
+    "content": "\n<p class=\"wp-block-paragraph\">Lake Saint-Croix has many places of unique beauty perfect for a day out fishing. So here is yet another marvelous fishing spot set among the luscious green woods of the lake’s eastern bank. Enjoy this picturesque fishing location not far from the Conifer Channel pier, as you stand on the gradually sloping shore gazing in serene meditation at the clear blue waters, occasional yachts and forresty thickets on the opposite side of the lake. Aside from the breathtaking sunset view, this spot boasts countless fishing opportunities, as the waters nearby are inhabited by numerous Northern Pike, Muskellunge, White Bass, Walleye and Smallmouth Bass.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Woods of the Eastern Bank",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Woods_of_the_Eastern_Bank.jpg",
+    "lat": 4.843459407361085,
+    "lng": 16.435546875000004,
+    "x": 66.435546875,
+    "y": 45.426027799749,
+    "placeId": [
+      197
+    ]
+  },
+  {
+    "id": 1744,
+    "slug": "michigan-from-dawn-till-dusk",
+    "title": "Michigan - From Dawn Till Dusk",
+    "content": "\n<p class=\"wp-block-paragraph\">This incredible fishing location on the east bank of Lake Saint-Croix is conveniently located atop a lovely pier stretching along the Conifer Channel. This remote area is adored by local anglers for two reasons, one of which makes this spot a true gem among fishing locations. This place is known to be the “it” spot among locals for going after fish like Walleye, Brook Trout, Yellow Perch, Brown Bullhead Catfish or Rock Bass and probably the best spot for mighty Smallmouth Bass… so many delicious dwellers lurking in these deep waters. The second reason is this spot’s unique sightseeing specialty. Here you can enjoy both the best sunrise and sunset views on the entire lake! While in the early morning hours the sun gleefully shines from behind, caressing you with its heartwarming rays, as the evening draws closer you can enjoy the fiery sunset and reflect on the day gone by…a fulfilling day of fishing…a day from dawn till dusk.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "From Dawn Till Dusk",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/From_Dawn_Till_Dusk.jpg",
+    "lat": -18.054487390582754,
+    "lng": 5.273437500000001,
+    "x": 55.2734375,
+    "y": 67.318656549603,
+    "placeId": [
+      197
+    ]
+  },
+  {
+    "id": 1742,
+    "slug": "michigan-vanishing-rock-light",
+    "title": "Michigan - Vanishing Rock Light",
+    "content": "\n<p class=\"wp-block-paragraph\">Let’s move down the Conifer Channel, a waterway connecting Lake Saint-Croix and Lake Michigan. Here you’ll find a marvelous sunset spot next to the beautiful Vanishing Rock Light, a notorious lighthouse marking safe entry to the welcoming waters of Saint-Croix. Overlooking the clear deep waters of Lake Michigan, this enigmatically charming lighthouse was built back in the 1880&#8217;s and has quite a history of its own. Originally called Michigan Breakwater Light, it was renamed by the locals after the breakwater vanishing mystery in 1930, when on a stormy night four lighthouse keepers disappeared from their duty stations without a trace. At the time, they were officially thought to have been swept out to sea by a freak wave. But ten years later, when three more keepers vanished on a still spring night leaving behind important personal belongings, there was no place for such mundane conclusions. The case officially remained unsolved and the lighthouse earned its spooky name, attracting many visitors throughout the year. Cool story, huh? But this spot is appealing to anglers for entirely different reasons: big Yellow Perch, meaty Brook Trout, plump Walleye and savory Smallmouth Bass are just to name a few.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Vanishing Rock Light",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Vanishing_Rock_Light.jpg",
+    "lat": -23.17665348552912,
+    "lng": 19.31396484375,
+    "x": 69.31396484375,
+    "y": 72.482822712309,
+    "placeId": [
+      197
+    ]
+  },
+  {
+    "id": 1740,
+    "slug": "michigan-king-of-the-green-bay",
+    "title": "Michigan - King of the Green Bay",
+    "content": "\n<p class=\"wp-block-paragraph\">This incredible fishing location on the south-east bank of Saint-Croix is called the Greenpoint Bay and has one of the lake’s most remote spots for enjoying the wildlife scenery on the entire lake. Here, the sloped grass grown shore gradually descends into the cool shallow waters, a bit silty closer to shore and turning to a mystic deep blue as your sight glides further towards the horizon. Loosen up and relax as you feel the old wooden docks under your feet and catch Trophy Northern Pike and Muskellunge with the refreshing spring breeze caressing your face. The spiritual beauty of this picturesque landscape, create a serene and empowering “King of the World” atmosphere that restores your energy, rejuvenates your body and soothes the tired mind.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "King of the Green Bay",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/King_of_the_Green_Bay.jpg",
+    "lat": 28.65607624410185,
+    "lng": 4.921875000000001,
+    "x": 54.921875,
+    "y": 21.76768064418,
+    "placeId": [
+      197
+    ]
+  },
+  {
+    "id": 1738,
+    "slug": "michigan-fairytale-fishing",
+    "title": "Michigan - Fairytale Fishing",
+    "content": "\n<p class=\"wp-block-paragraph\">Enchanting gingerbread houses, beautiful piers and gorgeous yachts surrounding Lake Saint-Croix make up the idyllic beauty of this pastoral landscape. And what better spot to appreciate the fantastic scenery of this urbanistic fairytale than from offshore &#8211; on a convenient pontoon right in the middle of the crystal-clear Lake. Feast your eyes on the fabulous houses sinking in the countless shades of brilliant green, specked with blossoming trees and blooming flowers as you inhale the floral aroma carried by a fresh spring breeze. The deep waters of this serene fishing spot are perfect for spending the day casting away and hooking Brook Trout, Brown Trout, Walleye and Blue Catfish. It’s easy to lose track of time here, listening to the joyful cries of seagulls and tranquilizing sound of splashing waves as you angle under the clear spring skies that suddenly becomes overcast with majestic clouds, hiding the pastoral landscape from view…</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Fairytale Fishing",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Fairytale_Fishing.jpg",
+    "lat": 9.412486551812226,
+    "lng": -33.57421875000001,
+    "x": 16.42578125,
+    "y": 41.081606557231,
+    "placeId": [
+      197
+    ]
+  },
+  {
+    "id": 1736,
+    "slug": "louisiana-good-ol-tobacco",
+    "title": "Louisiana - Good Ol’ Tobacco",
+    "content": "\n<p class=\"wp-block-paragraph\">Let the meandering dirt trail take you to the southeastern point of Quanchkin Lake, as you feel the satisfying softness of the earthen path under your feet. Here, you’ll discover another marvelous fishing spot &#8211; right next to an old tobacco drying barn. Inhale the enigmatic scents of fresh spring air mixed with aromatic hints of dried tobacco leaves as you enjoy the thrill of angling excitement.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Good Ol’ Tobacco",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Good_Ol_Tobacco.jpg",
+    "lat": 6.579600737060247,
+    "lng": 37.74902343750001,
+    "x": 87.752647691678,
+    "y": 40.642014458184,
+    "placeId": [
+      196
+    ]
+  },
+  {
+    "id": 1734,
+    "slug": "louisiana-pelican-hut",
+    "title": "Louisiana - Pelican Hut",
+    "content": "\n<p class=\"wp-block-paragraph\">Right in the middle of Quanchkin Lake’s swampy wetland, you will find a shabby old house. Locals say that it belonged to an old ranger who once rescued an injured pelican and the bird remained in the area long after the old man died and that’s how the house got its name. But that’s an old story of many years ago. For now, just stay in the moment and leave your worries behind as you indulge in the soothing atmosphere of your favorite passtime.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Pelican Hut",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Pelican_Hut.jpg",
+    "lat": -2.4794981474806774,
+    "lng": 12.810058593750002,
+    "x": 62.811288477444,
+    "y": 53.519861588355,
+    "placeId": [
+      196
+    ]
+  },
+  {
+    "id": 1732,
+    "slug": "louisiana-down-south",
+    "title": "Louisiana - Down South",
+    "content": "\n<p class=\"wp-block-paragraph\">Walking south along Quanchkin Lake’s vague shoreline you will stumble upon a hidden fishing spot next to a big old log. The thin sprip of shore grown with bushes and shrub, gradually descends into the swampy shallow waters. Beautiful lily pads ornament the stillness of this aquascape &#8211; just the perfect spot to cast your bait in the hopes of land a very promising catch.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Down South",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Down_South.jpg",
+    "lat": -7.663692736369246,
+    "lng": -29.311523437500004,
+    "x": 20.685662386089,
+    "y": 60.908452516145,
+    "placeId": [
+      196
+    ]
+  },
+  {
+    "id": 1730,
+    "slug": "louisiana-cypress-dreams",
+    "title": "Louisiana - Cypress Dreams",
+    "content": "\n<p class=\"wp-block-paragraph\">This lovely path meandering along the vague elongated shoreline splitting as it invitingly leads to the depth of the forest, as if calling you to go and explore. Tempting as it may be, the cypress trees growing in the lake are however far more enticing for a real angler…with the numerous underwater predators lurking among the roots of these green giants.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Cypress Dreams",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Cypress_Dreams.jpg",
+    "lat": 10.532989692443172,
+    "lng": -39.15527343750001,
+    "x": 10.84096729536,
+    "y": 34.967266899471,
+    "placeId": [
+      196
+    ]
+  },
+  {
+    "id": 1728,
+    "slug": "louisiana-swampy-open-space",
+    "title": "Louisiana - Swampy Open Space",
+    "content": "\n<p class=\"wp-block-paragraph\">Another marvelous fishing spot on the northwest of Lake Quanchkin is this lovely thin strip of shore surrounded by dense bushy thickets. Overlooking the broadest part of the lake’s still waters, this spot is perfect for slipping into sweet oblivion as you masterfully catch underwater dwellers in the satisfying attempt to land a trophy giant hiding in the weed grown waters or next to a sunken log…</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Swampy Open Space",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Swampy_Open_Space.jpg",
+    "lat": 29.249500796974658,
+    "lng": -29.201660156250004,
+    "x": 20.795536215227,
+    "y": 6.5606562326612,
+    "placeId": [
+      196
+    ]
+  },
+  {
+    "id": 1726,
+    "slug": "louisiana-upside-down",
+    "title": "Louisiana - Upside Down",
+    "content": "\n<p class=\"wp-block-paragraph\">This perfect fishing spot right next to an old sunken boat is located in the northern part of Quanchkin Lake. The serene mystic atmosphere of this particularly swampy area is just the right chill-out place for the exhausted mind. Here the lake’s bottom is gradual and rather shallow while the still clear waters are grown with dense aquatic vegetation and lily pads, thus providing shelter for underwater predators just waiting for you to cast the right bait.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Upside Down",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Upside_Down.jpg",
+    "lat": 22.147728728670696,
+    "lng": -3.8781738281250004,
+    "x": 46.121453831443,
+    "y": 17.755891736599,
+    "placeId": [
+      196
+    ]
+  },
+  {
+    "id": 1724,
+    "slug": "alberta-fishermans-hut",
+    "title": "Alberta - Fisherman's Hut",
+    "content": "\n<p class=\"wp-block-paragraph\">White Moose Lake is just one of those fantastic places with a special neverending air of the holiday season. The western bank of this abysmal mountain lake with crystal clear, deep waters has a vacation spot like no other, a magic place that pulls you right into the flamboyant childhood world of sledges and snowballs. Here atop the rocky shoreline with perfectly polished boulders covered in enchanting white snow, next to a long wooden pier, stands a marvelously cozy wooden cabin, known by the locals as Fisherman’s Hut. The truly magical atmosphere of this remote and fantastically picturesque fishing location will make you believe in love at first sight. Offering unmatched opportunities for fishing, especially if you are targeting Lake Trout and Atlantic Salmon, this fishing spot is the place to be for all those eager to enjoy the natural wonders of winter!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Fisherman's Hut",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Fishermans_Hut.jpg",
+    "lat": 5.639422959309232,
+    "lng": -24.587402343750004,
+    "x": 25.411122323589,
+    "y": 36.768288614049,
+    "placeId": [
+      195
+    ]
+  },
+  {
+    "id": 1722,
+    "slug": "florida-the-salty-delta",
+    "title": "Florida - The Salty Delta",
+    "content": "\n<p class=\"wp-block-paragraph\">This magnificent brackish water delta right at the end of Lily Pad Channel lets you get a taste of the high seas at long last. As the morning sun dawns on the horizon, sail at full speed inhaling the invigorating cool air in greedy gulps as the fresh breeze carries a salty reminiscence of the nearby ocean. This part of the Everglades is probably the very quintessence of Florida’s most majestic watershed and just the spot for catching some Tarpon! Here, you can find almost anything: shallow shoals, densely grown with submerged vegetation, islands of “floating” mangrove thickets, beautiful gradual shores lined with exotic palm trees, habitat of different birds, including herons and egrets. This delta offers a multitude of captivating locations for the most fun and challenging fishing experience!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "The Salty Delta",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/The_Salty_Delta.jpg",
+    "lat": 3.4646513466410034,
+    "lng": 15.908203125000002,
+    "x": 65.908203125,
+    "y": 46.17632155632,
+    "placeId": [
+      194
+    ]
+  },
+  {
+    "id": 1720,
+    "slug": "florida-lily-pad-channel",
+    "title": "Florida - Lily Pad Channel",
+    "content": "\n<p class=\"wp-block-paragraph\">Take your fishing tackle and make yourself comfortable on a wooden dock near this natural channel of breathtaking beauty covered in submergent juicy vegetation, hence its name &#8211; the Lily Pad Channel. This is a clash of aquatic splendor and natural exotic flora at its best! These clear, crisp waters covered in abundant lily pads, tunnels of green reeds and dense bushy weed beds are a natural habitat to an array of exotic wildlife, beautiful birds and a multitude of fish species, including Channel Catfish and really big Largemouth Bass. Just don’t forget your fishing license! And watch out for alligators, who feel very much at home in this plant-covered watershed.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Lily Pad Channel",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Lily_Pad_Channel.jpg",
+    "lat": -12.070187317130399,
+    "lng": -16.589355468750004,
+    "x": 33.41064453125,
+    "y": 63.412425358829,
+    "placeId": [
+      194
+    ]
+  },
+  {
+    "id": 1718,
+    "slug": "florida-infinity-tunnels",
+    "title": "Florida - Infinity Tunnels",
+    "content": "\n<p class=\"wp-block-paragraph\">What are the most mesmerizing angling locations in the Everglades? Well, it is next to impossible to choose among the intricate maze of magnificent creeks, beautiful ponds and picturesque canals. However, some spots stand out as unmatched by their beauty and angling opportunities. Like these man-made canals, created among the endless thickets of dense luscious green reeds, spreading to the horizon as far as the eye can see. Anglers sometimes call them the Infinity Tunnels. Indeed &#8211; just one look ahead is enough to feel oneself one on the verge of infinity…This canals are perhaps the nature’s metaphor for the very essence of human existence. And wait till you start testing out your angling skills &#8211; with countless fish like Largemouth Bass or huge Butterfly Peacock Bass just to name a few &#8211; you won’t be disappointed.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Infinity Tunnels",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Infinity_Tunnels.jpg",
+    "lat": 15.880246402415263,
+    "lng": 1.2524414062500002,
+    "x": 51.25244140625,
+    "y": 32.256180125027,
+    "placeId": [
+      194
+    ]
+  },
+  {
+    "id": 1716,
+    "slug": "florida-the-floating-thickets",
+    "title": "Florida - The Floating Thickets",
+    "content": "\n<p class=\"wp-block-paragraph\">Fish off an old wooden dock overlooking a vast watershed area. This moderately shallow pond spills over a thick reedy jungle giving you the illusion that these dead trees, roots and vegetation are almost floating on clear water. Just imagine the splendid aquatic kingdom right below the water level, among the submerged wooden thickets. Some of Florida’s biggest Largemouth Bass, Warmouth, Bluegill and Brown Bullhead Catfish inhabit this wondrous ecosystem of silty mud bottom with its intricate tree roots and rocky reefs. In this spacious and desolate atmosphere, there is nothing to distract the still air but the merry chirping of birds and the peaceful buzzing of insects (don’t forget your repellent!)…and the not-so-peaceful crackling of dried branch…a sure sign of an alligator nearby (sorry, no repellent for that).</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "The Floating Thickets",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/The_Floating_Thickets.jpg",
+    "lat": 10.61275258882935,
+    "lng": -9.179077148437502,
+    "x": 40.820922851562,
+    "y": 38.227119506888,
+    "placeId": [
+      194
+    ]
+  },
+  {
+    "id": 1714,
+    "slug": "oregon-a-bridge-of-logs",
+    "title": "Oregon - A Bridge of Logs",
+    "content": "\n<p class=\"wp-block-paragraph\">A deeply indented area of Falcon Lake’s rocky western shore hides a very remote and soothingly discreet fishing spot where the lake’s cold waters proceed on their neverending journey by falling into a small mountain river. By the large moss-grown boulders you can find a natural bridge of sorts, constructed by local anglers from massive fallen logs. The rocky shore ends here with some sharp drop-offs, disappearing in the cold relatively shallow waters with an earthen bottom that are home to numerous Pumpkinseed, Redbreast Sunfish, Smallmouth Bass, Rainbow Trout and Cutthroat Trout.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "A Bridge of Logs",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/A_Bridge_of_Logs.jpg",
+    "lat": -20.361558099209116,
+    "lng": 12.0849609375,
+    "x": 62.086725599438,
+    "y": 69.64211194871,
+    "placeId": [
+      193
+    ]
+  },
+  {
+    "id": 1712,
+    "slug": "oregon-natures-charming-hardcore",
+    "title": "Oregon - Nature’s Charming Hardcore",
+    "content": "\n<p class=\"wp-block-paragraph\">The southernmost point of Falcon Lake is where the waters of a boisterous whitewater mountain river seem to relax and calmly flow into the crystal-clear aquatoria of this rocky basin. Here the steep-sided bank sharply drops into the reservoir’s abyssmal depth. The bottom in this area is rocky with occasional large boulders, a perfect hideout for Brown Trout, Oregon Redband Trout and Rainbow Trout. Surrounded by pristine rocks, this place has that chilly mid-fall atmosphere that is just further emphasized by the moist fallen trees and wooden debris covering the stony bank here and there. Now, it may not be a cozy trip to Hawaii, but this place definitely has its hardcore natural charm that straightforwardly says “this is the great American outdoors” and makes it a simply irresistible destination for a real fishing escapade.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Nature’s Charming Hardcore",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Nature_Charming_Hardcore.jpg",
+    "lat": 9.039546761995583,
+    "lng": -21.335449218750004,
+    "x": 28.661435350811,
+    "y": 41.429755530098,
+    "placeId": [
+      193
+    ]
+  },
+  {
+    "id": 1710,
+    "slug": "oregon-waterfall-cascade",
+    "title": "Oregon - Waterfall Cascade",
+    "content": "\n<p class=\"wp-block-paragraph\">This southernmost point of Falcon Lake is a marvelous fishing spot overlooking the lusciously colorful forest on the opposite bank. This secluded location with large boulders covered in green juicy moss is right next to a gently cascading waterfall that sparkles in rays of the setting sun. The rocky shallow bank with cool, crystal clear water and some rocks just further offshore is natural home to Cutthroat Trout. So put on your waders (wellie boots) and let the fishing begin!</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Waterfall Cascade",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Waterfall_Cascade.jpg",
+    "lat": -12.933325998189023,
+    "lng": -40.91308593750001,
+    "x": 9.0809398797224,
+    "y": 62.315936017996,
+    "placeId": [
+      193
+    ]
+  },
+  {
+    "id": 1708,
+    "slug": "oregon-trout-lair",
+    "title": "Oregon - Trout Lair",
+    "content": "\n<p class=\"wp-block-paragraph\">Step into a tranquil world of solitude as you make your way to this special fishing spot in the very North of Falcon Lake, surrounded by dense forests. Breathe in the smell of damp leaves and bark as you make your cast to outmaneuver thick brush and weed beds and reach the shelter of savvy trout. Make sure to have your tackle for long distance casts at hand &#8211; quite a way offshore is the deepest part of Falcon Lake, a cold and abysmal Trout Lair. This is a genuinely unchartered territory with varying and unpredictable bottom and underwater terrain, so using strong tackle would definitely be a good idea if your aspirations go as high as landing a huge Trophy Rainbow Trout.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Trout Lair",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Trout_Lair.jpg",
+    "lat": -40.32613370307427,
+    "lng": -13.710937500000002,
+    "x": 36.28706041082,
+    "y": 91.672789951459,
+    "placeId": [
+      193
+    ]
+  },
+  {
+    "id": 1706,
+    "slug": "oregon-the-mountain-watcher",
+    "title": "Oregon - The Mountain Watcher",
+    "content": "\n<p class=\"wp-block-paragraph\">This splendid moderately shallow fishing spot with a magnificent view of the distant mountain range is perfect not just for watching the sunrise, but also abundant in dark-green weedy vegetation which is a favorite hideout for Smallmouth Bass. This marvelous spot is also perfect for longer casts – from here you can reach one of the most interesting parts of the lake, the aquamarine sanctuary to Brown Trout.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "The Mountain Watcher",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/The_Mountain_Watcher.jpg",
+    "lat": -11.172285459950274,
+    "lng": -10.678710937500002,
+    "x": 39.319729743042,
+    "y": 60.615711692279,
+    "placeId": [
+      193
+    ]
+  },
+  {
+    "id": 1704,
+    "slug": "north-carolina-rubble-of-old-times",
+    "title": "North Carolina - Rubble of Old Times",
+    "content": "\n<p class=\"wp-block-paragraph\">There is a story of old times, from about half a century ago, when one rich man from the city set his mind on taking a piece of this pristine natural beauty and taming it for his own use, making a large area restricted to anyone who wanted to fish on the riverbank nearby. He built a summer cottage here and made sure the area was closed off to any unwelcome guests. But the house he built befell countless misfortunes &#8211; every storm would end in a tree falling on top of his roof, and every time he fixed his dwelling, it just happened all over again. Eventually the man gave up and left the wooden dwelling in ruins, never to return again. And now, these old wooden debris stand here grown by dense green shrubs as a discreet reminder of nature’s triumph over shrewd men. Since then, this became a National Park and no private property will ever be built here. This means that any angler can freely enjoy the marvelous fishing on this steep bank of Neherrin river, catching countless Panfish and Smallmouth Bass.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Rubble of Old Times",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Rubble_of_Old_Times.jpg",
+    "lat": -4.864694871798182,
+    "lng": -3.1640625000000004,
+    "x": 46.8359375,
+    "y": 62.141116090977,
+    "placeId": [
+      192
+    ]
+  },
+  {
+    "id": 1702,
+    "slug": "north-carolina-into-the-rocky-blue",
+    "title": "North Carolina - Into the Rocky Blue",
+    "content": "\n<p class=\"wp-block-paragraph\">As you progress further downstream, a splendid fishing spot right on a scenic sharp drop-off welcomes you with a beautiful undercut rocky bank descending out of sight into deep cool waters of the Neherrin River. Reflecting the bright late-summer sky in its translucent blue, the spawning river is deep indeed making this a perfect location not only to enjoy the magnificent view, but also catch some Smallmouth Bass, Black Crappie, Redear Sunfish and Bluegill. And if you feel like you had enough water gazing for one day, just look up and rest your sight upon bushy foliage of the luscious green surrounding you as far as the eye can see.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Into the Rocky Blue",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Into_the_Rocky_Blue.jpg",
+    "lat": -4.9088349711893,
+    "lng": -19.291992187500004,
+    "x": 30.7080078125,
+    "y": 62.251548218382,
+    "placeId": [
+      192
+    ]
+  },
+  {
+    "id": 1700,
+    "slug": "north-carolina-great-parking-job",
+    "title": "North Carolina - Great Parking Job",
+    "content": "\n<p class=\"wp-block-paragraph\">Moving a bit further along woods of unparalleled beauty, the Neherrin nature trail takes you to this delightfully small still-water pool with some lovely lily pads and brush. Everything in this place seems to be made of captivating tranquility. Inhale the crisp fresh air and sooth your senses with no distractions but the distant chirping of summer birds and occasional croaking of frogs, as you angle the day away catching Redfin Pickerel, Largemouth Bass or White Crappie just to name a few… Here, in the shade of old sycamores, nothing reminds you of the hectic world you left behind. Well, almost nothing…</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Great Parking Job",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Great_parking_job.jpg",
+    "lat": 18.98199572201341,
+    "lng": -9.975585937500002,
+    "x": 40.0244140625,
+    "y": 1.7923068314077,
+    "placeId": [
+      192
+    ]
+  },
+  {
+    "id": 1698,
+    "slug": "north-carolina-woody-enchantment",
+    "title": "North Carolina - Woody Enchantment",
+    "content": "\n<p class=\"wp-block-paragraph\">Traversed by the remote Neherrin Trail with its countless rocky curves and picturesque ridges, these dense green woods graciously canvas the weary traveler with soothing cool shade, an ideal sanctuary for the worn and tired mind. Take in the energy of the deep ancient forest, once home to many prehistoric and historic settlements and now peacefully dominated by hardwood trees like red oak, maple, birch and walnut to offer a secluded and tranquil angling location. Relax and chill out on an earthen shallow bank, with no obstruction to fishing aside some tree roots and weed beds, home and hideout to varied panfish, like Bluegill and Pumpkinseed.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Woody Enchantment",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Woody_Enchantment.jpg",
+    "lat": 20.555825182129322,
+    "lng": -3.9550781250000004,
+    "x": 46.044921875,
+    "y": -2.3767333049697,
+    "placeId": [
+      192
+    ]
+  },
+  {
+    "id": 1696,
+    "slug": "colorado-trout-galore",
+    "title": "Colorado - Trout Galore",
+    "content": "\n<p class=\"wp-block-paragraph\">Take a picturesque walk along the main trail and progress further down south to reach yet another delightfully scenic fishing spot with a magnificent overlook area. Feast all your senses as you gaze at the surrounding pristine woods and majestic mountain ranges, standing in their overwhelming stillness complemented by translucent blue skies and a fresh spring breeze. Here, where the rocky shore steeply descends into the lake’s cool depth, you’ll find some large boulders protruding from the water’s mirror-like surface &#8211; a sure sign of trout lurking nearby… So make yourself comfortable on this promising fishing spot surrounded by beautiful pine trees as you spend the day catching numerous Cutthroat Trout and Panfish.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Trout Galore",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Trout_Galore.jpg",
+    "lat": 30.604621254610787,
+    "lng": -46.40625000000001,
+    "x": 3.59375,
+    "y": 3.4824029742719,
+    "placeId": [
+      191
+    ]
+  },
+  {
+    "id": 1694,
+    "slug": "colorado-ferntastic-fishing",
+    "title": "Colorado - Ferntastic Fishing",
+    "content": "\n<p class=\"wp-block-paragraph\">Take a day off to go fishing on the shores of one of Colorado’s most secluded natural lakes &#8211; Lake Rocky. Surrounded by scenic wildlife, the lake’s cool and shady northern bank offers a splendid fishing spot with a magnificent view of snow-covered mountain peaks. Make your way through the shamrock-green fern thickets to step out onto the gradually sloping bank with a weedy area close to the shoreline to discover a marvelous location, perfect for catching some Rainbow Trout and Black Crappie. After all, it’s spring! So relax and listen to the merry chirping of birds as you spend the day angling in a majestically serene atmosphere of nature’s awakening.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Ferntastic Fishing",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Ferntastic_Fishing.jpg",
+    "lat": 33.87195696083326,
+    "lng": -3.4277343750000004,
+    "x": 46.572265625,
+    "y": -2.1040411972168,
+    "placeId": [
+      191
+    ]
+  },
+  {
+    "id": 1692,
+    "slug": "new-york-midland-charm",
+    "title": "New York - Midland Charm",
+    "content": "\n<p class=\"wp-block-paragraph\">This lovely fishing spot right on the west bank of Emerald Lake is a perfect sunrise view location with an air of midland charm. Here, the shallow sandy shore gradually descends to its untamed depth and the placid, statue-still surface of the lake is disturbed only by an occasional Crappie, hunting just under the surface of the water to feast on unsuspecting flies. As the smell of damp grass and wet sand overwhelms your senses, let all your worries dissolve and concentrate in peaceful meditation as you fish the day away for Northern Pike, Chain Pickerel, Golden Shiner and Yellow Perch hiding in the tree-roots and weed beds just offshore…</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Midland Charm",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Midland_Charm.jpg",
+    "lat": 6.539024626090887,
+    "lng": -37.48535156250001,
+    "x": 0.7975854323629,
+    "y": 44.341037524638,
+    "placeId": [
+      190
+    ]
+  },
+  {
+    "id": 1690,
+    "slug": "new-york-the-dock-of-peace",
+    "title": "New York - The Dock of Peace",
+    "content": "\n<p class=\"wp-block-paragraph\">This heavily rooted area right on the picturesque bank of Emerald Lake offers a splendid angling location right atop a small wooden dock. This spot may be a bit difficult to access, but you will undoubtedly find it a rewarding sanctuary of peace. Enjoy the lush green, red and yellow of the surrounding woods and sooth your hearing by slight splashing of waves against the wooden logs under your feet. Not to mention that the placid cool waters of this fishing location are delightfully deep, offering great opportunity to catch numerous Black Crappie, Grass Pickerel, Redfin Pickerel and Northern Pike. Perfect fishing spot to try your luck and skills at getting some Trophy catches.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "The Dock of Peace",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/The_Dock_of_Peace.jpg",
+    "lat": -7.704644716651533,
+    "lng": -37.17773437500001,
+    "x": 1.2013567125194,
+    "y": 56.67335823654,
+    "placeId": [
+      190
+    ]
+  },
+  {
+    "id": 1688,
+    "slug": "missouri-catfish-heaven",
+    "title": "Missouri - Catfish Heaven",
+    "content": "\n<p class=\"wp-block-paragraph\">Mudwater River is much appreciated among anglers for its splendid population of a variety of aquatic dwellers and it’s varied underwater terrain makes the destination a sure favorite especially among bottom fishing enthusiasts. And this particular spot on the river’s east bank is a real Catfish jackpot. Here the earthen shore ends in a sharp drop-off and descends into the river’s blue waters of varied depth. Relax as you take in the splendid sunset view offered by this fishing spot, standing embraced by dense green thickets and you give in to your favorite hobby with no one and nothing but an old willow tree that stands still in neverending contemplation as a silent witness to your peaceful state of mind.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Catfish Heaven",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Catfish_Heaven.jpg",
+    "lat": -15.269947747401647,
+    "lng": -2.9003906250000004,
+    "x": 46.121632459169,
+    "y": 63.34474637753,
+    "placeId": [
+      189
+    ]
+  },
+  {
+    "id": 1686,
+    "slug": "missouri-pike-challenge",
+    "title": "Missouri - Pike Challenge",
+    "content": "\n<p class=\"wp-block-paragraph\">As you move a bit further down the west bank of Mudwater River, walk past some bushy green shrubs to discover a gradually sloping, shallow area with a narrow strip of sandy shoreline. Here, right next to an old sunken log, you’ll find yet another excellent fishing location. So get out your fishing rod and try your luck at catching a Trophy Pumpkinseed or a juicy Grass Pickerel, as you rest your eyes on these ripply waters, meandering past endless green plains of Missouri and mirroring the deep blue of a late summer sky. Inhale the sweet scent of sun-scorched grass with an aftertaste of musky wet sand as you meditate patiently waiting for a good catch. And oh boy, the catch can be very satisfying! With Largemouth Bass, Chain Pickerel and White Crappie inhabiting this area, your day will be anything but boring.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Pike Challenge",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Pike_Challenge.jpg",
+    "lat": 31.99428346213809,
+    "lng": 2.6367187500000004,
+    "x": 53.525788673483,
+    "y": 20.813506575869,
+    "placeId": [
+      189
+    ]
+  },
+  {
+    "id": 1684,
+    "slug": "missouri-last-songs-of-summer",
+    "title": "Missouri - Last Songs of Summer",
+    "content": "\n<p class=\"wp-block-paragraph\">Enjoy a day full of fishing excitement on the Mudwater River! The river’s curvy west bank with its gently sloping shores and some sandy drop offs is beautifully outlined by some tall poplar trees and graciously sprawling willows. The jolly chirping of red cardinals and the buzzing of occasional flies will be the only things distracting you from that still silence of nature in its final days of summer. Indeed, surrounded by vast green plains, this particular area gives that open-space feel of freedom and tranquility we all lack in our daily megalopolis reality. It is here that you’ll find a magnificent fishing spot, perfect for catching Largemouth Bass, White Crappie or Grass Pickerel. And if you’re good enough, you might even land a Channel Catfish, silently lurking in deep underwater holes of the river’s muddy bottom…</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Last Songs of Summer",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Last_Songs_of_Summer.jpg",
+    "lat": -10.300380389120342,
+    "lng": 29.794921875000004,
+    "x": 89.841412010355,
+    "y": 58.942830004461,
+    "placeId": [
+      189
+    ]
+  },
+  {
+    "id": 1678,
+    "slug": "texas-dam-road",
+    "title": "Texas - Dam Road",
+    "content": "\n<p class=\"wp-block-paragraph\">After crossing the narrow bridge, old wood crackling under the feet with every step of the way, the your will find yourself exploring Lone Star Lake’s southern bank. Walk further east along the gradually sloping shore to find some marvelous fishing spots by the earthen dam, that is both a border marking the lake’s boundaries and a road that meanders through the Texas landscape to other distant places. Walk the soft green grass to discover just the right fishing spot that grants access to the deepest part of the lake, just the perfect hideout for Smallmouth Buffalo or a Young Channel Catfish. Catch countless Bluegill or Redear Sunfish and enjoy the heartwarming view of your lovely house surrounded by bushy green trees from across the lake…</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Dam Road",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Dam_Road-1.jpg",
+    "lat": 46.98133948725623,
+    "lng": 21.26953125,
+    "x": 93.501311510615,
+    "y": 3.9307069037437,
+    "placeId": [
+      32
+    ]
+  },
+  {
+    "id": 1676,
+    "slug": "texas-swampy-exploration",
+    "title": "Texas - Swampy Exploration",
+    "content": "\n<p class=\"wp-block-paragraph\">Moving further west along the lovely northern bank of Lone Star Lake, you’ll discover an old wooden bridge that’ll take you to the opposite bank. Here, the lake is roughly divided by the bridge in two as the open space of the sun-filled meadow gives way to the shady thickets and the clear main waters flow into a small shallow area of the lake densely grown with lily pads and water vegetation. Enjoy fishing on the wooden bridge or head over to the sedge-grown shore &#8211; either way, try your luck at catching Spotted Bass, Grass Pickerel, Bluegill or Green Sunfish in the shallow waters of this swampy reservoir.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Swampy Exploration",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Swampy_Exploration.jpg",
+    "lat": 16.01184382701356,
+    "lng": 17.490234375000004,
+    "x": 85.77173963063,
+    "y": 35.990050650608,
+    "placeId": [
+      32
+    ]
+  },
+  {
+    "id": 1674,
+    "slug": "texas-home-sweet-home",
+    "title": "Texas - Home Sweet Home",
+    "content": "\n<p class=\"wp-block-paragraph\">Welcome to this little piece of Heaven you can call your own! A lovely wooden house on the bank of Lone Star Lake, hidden in a remote rural area of Paris county, Texas. Only a few decades ago Lone Star Lake was a nameless little pond amidst picturesque Texan wilderness. Owing to the efforts of local anglers, the pond was turned into a beautiful lake, inhabited by many fish species like White Crappie, Golden Shiner, Redear Sunfish, Bluegill and Blacktail Shiner. Any angler dreams of living in a place like this and now this dream is turning real! So grab your fishing rod and walk down the gradually sloping bank of the lake’s clear waters to rest your sight on the idyllic rural view of the opposite shore with its distant hills and cornfields. Truly, there’s no place like home…the place you’ll always want to go back to.</p>\n",
+    "imageWidth": 392,
+    "imageHeight": 164,
+    "name": "Home Sweet Home",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/05/Home_Sweet_Home.jpg",
+    "lat": 22.601124572440185,
+    "lng": -8.305664062500002,
+    "x": 33.01291761259,
+    "y": 29.956951353779,
+    "placeId": [
+      32
+    ]
+  }
+]

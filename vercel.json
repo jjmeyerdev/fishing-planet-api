@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "prisma generate",
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api" }
+  ],
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "openapi.yaml"
+    }
+  }
+}

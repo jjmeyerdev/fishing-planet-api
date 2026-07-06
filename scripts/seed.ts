@@ -9,6 +9,12 @@ import { prisma } from '../src/db.js'
 //   pnpm seed data/locations/lone-star.md # a single file
 //
 // Idempotent: re-running upserts the same rows. Two data-model notes below.
+//
+// For the 27 FP-Collective places, scripts/seed-fp.ts (pnpm seed:fp) is the
+// authoritative source of fish *presence* — it rebuilds fish_locations from the
+// structured JSON. This markdown seed is still required and runs first: seed-fp
+// only *enriches* existing Locations (it skips any it can't find by name), so the
+// Location rows and their curated region/waterwayType/unlockLevel originate here.
 
 const DATA_DIR = 'data/locations'
 

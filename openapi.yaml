@@ -546,6 +546,934 @@ paths:
         '400': { $ref: '#/components/responses/BadRequest' }
         '404': { $ref: '#/components/responses/NotFound' }
 
+  /api/baits:
+    get:
+      summary: List baits
+      operationId: listBaits
+      tags: [baits]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: baitType
+          in: query
+          schema: { type: string }
+        - name: baseLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title, baseLevel, baitcoinLevel, baitType]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of baits
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Bait' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a bait
+      operationId: createBait
+      security: [ { bearerAuth: [] } ]
+      tags: [baits]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BaitCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Bait' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/baits/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a bait by id
+      operationId: getBait
+      tags: [baits]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Bait' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a bait
+      operationId: updateBait
+      security: [ { bearerAuth: [] } ]
+      tags: [baits]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BaitUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Bait' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a bait
+      operationId: deleteBait
+      security: [ { bearerAuth: [] } ]
+      tags: [baits]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/boilies:
+    get:
+      summary: List boilies
+      operationId: listBoilies
+      tags: [boilies]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: baitType
+          in: query
+          schema: { type: string }
+        - name: baseLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title, baseLevel, baitcoinLevel, diameterMm]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of boilies
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Boilie' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a boilie
+      operationId: createBoilie
+      security: [ { bearerAuth: [] } ]
+      tags: [boilies]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BoilieCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Boilie' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/boilies/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a boilie by id
+      operationId: getBoilie
+      tags: [boilies]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Boilie' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a boilie
+      operationId: updateBoilie
+      security: [ { bearerAuth: [] } ]
+      tags: [boilies]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BoilieUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Boilie' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a boilie
+      operationId: deleteBoilie
+      security: [ { bearerAuth: [] } ]
+      tags: [boilies]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/lure-types:
+    get:
+      summary: List lure-types
+      operationId: listLureTypes
+      tags: [lure-types]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of lure-types
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/LureType' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a luretype
+      operationId: createLureType
+      security: [ { bearerAuth: [] } ]
+      tags: [lure-types]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LureTypeCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LureType' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/lure-types/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a luretype by id
+      operationId: getLureType
+      tags: [lure-types]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LureType' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a luretype
+      operationId: updateLureType
+      security: [ { bearerAuth: [] } ]
+      tags: [lure-types]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LureTypeUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LureType' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a luretype
+      operationId: deleteLureType
+      security: [ { bearerAuth: [] } ]
+      tags: [lure-types]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/lures:
+    get:
+      summary: List lures
+      operationId: listLures
+      tags: [lures]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: color
+          in: query
+          schema: { type: string }
+        - name: lureTypeId
+          in: query
+          schema: { type: integer }
+        - name: baseLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title, baseLevel, baitcoinLevel, weightG, lengthCm]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of lures
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Lure' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a lure
+      operationId: createLure
+      security: [ { bearerAuth: [] } ]
+      tags: [lures]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LureCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Lure' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/lures/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a lure by id
+      operationId: getLure
+      tags: [lures]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Lure' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a lure
+      operationId: updateLure
+      security: [ { bearerAuth: [] } ]
+      tags: [lures]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LureUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Lure' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a lure
+      operationId: deleteLure
+      security: [ { bearerAuth: [] } ]
+      tags: [lures]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/hooks:
+    get:
+      summary: List hooks
+      operationId: listHooks
+      tags: [hooks]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: type
+          in: query
+          schema: { type: string }
+        - name: size
+          in: query
+          schema: { type: string }
+        - name: baseLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title, baseLevel, baitcoinLevel]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of hooks
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Hook' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a hook
+      operationId: createHook
+      security: [ { bearerAuth: [] } ]
+      tags: [hooks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/HookCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Hook' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/hooks/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a hook by id
+      operationId: getHook
+      tags: [hooks]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Hook' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a hook
+      operationId: updateHook
+      security: [ { bearerAuth: [] } ]
+      tags: [hooks]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/HookUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Hook' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a hook
+      operationId: deleteHook
+      security: [ { bearerAuth: [] } ]
+      tags: [hooks]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/jigheads:
+    get:
+      summary: List jigheads
+      operationId: listJigheads
+      tags: [jigheads]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: size
+          in: query
+          schema: { type: string }
+        - name: color
+          in: query
+          schema: { type: string }
+        - name: baseLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title, baseLevel, baitcoinLevel, weightG]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of jigheads
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Jighead' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a jighead
+      operationId: createJighead
+      security: [ { bearerAuth: [] } ]
+      tags: [jigheads]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/JigheadCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Jighead' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/jigheads/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a jighead by id
+      operationId: getJighead
+      tags: [jigheads]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Jighead' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a jighead
+      operationId: updateJighead
+      security: [ { bearerAuth: [] } ]
+      tags: [jigheads]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/JigheadUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Jighead' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a jighead
+      operationId: deleteJighead
+      security: [ { bearerAuth: [] } ]
+      tags: [jigheads]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/sinkers:
+    get:
+      summary: List sinkers
+      operationId: listSinkers
+      tags: [sinkers]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: form
+          in: query
+          schema: { type: string }
+        - name: color
+          in: query
+          schema: { type: string }
+        - name: baseLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title, baseLevel, baitcoinLevel, weightG]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of sinkers
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Sinker' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a sinker
+      operationId: createSinker
+      security: [ { bearerAuth: [] } ]
+      tags: [sinkers]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SinkerCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Sinker' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/sinkers/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a sinker by id
+      operationId: getSinker
+      tags: [sinkers]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Sinker' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a sinker
+      operationId: updateSinker
+      security: [ { bearerAuth: [] } ]
+      tags: [sinkers]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SinkerUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Sinker' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a sinker
+      operationId: deleteSinker
+      security: [ { bearerAuth: [] } ]
+      tags: [sinkers]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/keepnets:
+    get:
+      summary: List keepnets
+      operationId: listKeepnets
+      tags: [keepnets]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: type
+          in: query
+          schema: { type: string }
+        - name: isFishFriendly
+          in: query
+          schema: { type: boolean }
+        - name: baseLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title, baseLevel, baitcoinLevel]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of keepnets
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Keepnet' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a keepnet
+      operationId: createKeepnet
+      security: [ { bearerAuth: [] } ]
+      tags: [keepnets]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/KeepnetCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Keepnet' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/keepnets/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a keepnet by id
+      operationId: getKeepnet
+      tags: [keepnets]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Keepnet' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a keepnet
+      operationId: updateKeepnet
+      security: [ { bearerAuth: [] } ]
+      tags: [keepnets]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/KeepnetUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Keepnet' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a keepnet
+      operationId: deleteKeepnet
+      security: [ { bearerAuth: [] } ]
+      tags: [keepnets]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/addons:
+    get:
+      summary: List addons
+      operationId: listAddons
+      tags: [addons]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: q
+          in: query
+          description: Case-insensitive substring match on title
+          schema: { type: string }
+        - name: color
+          in: query
+          schema: { type: string }
+        - name: baseLevel
+          in: query
+          schema: { type: integer }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [id, title, baseLevel, baitcoinLevel]
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of addons
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items: { $ref: '#/components/schemas/Addon' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+    post:
+      summary: Create a addon
+      operationId: createAddon
+      security: [ { bearerAuth: [] } ]
+      tags: [addons]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AddonCreate' }
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Addon' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '409': { $ref: '#/components/responses/Conflict' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/addons/{id}:
+    parameters:
+      - $ref: '#/components/parameters/IdPath'
+    get:
+      summary: Get a addon by id
+      operationId: getAddon
+      tags: [addons]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Addon' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+    patch:
+      summary: Update a addon
+      operationId: updateAddon
+      security: [ { bearerAuth: [] } ]
+      tags: [addons]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/AddonUpdate' }
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Addon' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '409': { $ref: '#/components/responses/Conflict' }
+    delete:
+      summary: Delete a addon
+      operationId: deleteAddon
+      security: [ { bearerAuth: [] } ]
+      tags: [addons]
+      responses:
+        '204': { description: Deleted }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
 components:
   securitySchemes:
     bearerAuth:
@@ -795,6 +1723,273 @@ components:
         cloudyPeakTimes: { type: string }
         rainyPeakTimes: { type: string }
 
+    Bait:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        baitType: { type: string }
+        tags: { type: array, items: { type: string } }
+      required: [id, fpId, title, slug, baseLevel, baitcoinLevel, baitType, tags]
+    BaitCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        baitType: { type: string }
+        tags: { type: array, items: { type: string } }
+      required: [fpId, title, slug, baseLevel, baitcoinLevel, baitType]
+    BaitUpdate:
+      allOf: [ { $ref: '#/components/schemas/BaitCreate' } ]
+      description: Same writable fields as create; all optional.
+    Boilie:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        baitType: { type: string }
+        diameterMm: { type: integer, nullable: true }
+        tags: { type: array, items: { type: string } }
+      required: [id, fpId, title, slug, baseLevel, baitcoinLevel, baitType, tags]
+    BoilieCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        baitType: { type: string }
+        diameterMm: { type: integer }
+        tags: { type: array, items: { type: string } }
+      required: [fpId, title, slug, baseLevel, baitcoinLevel, baitType]
+    BoilieUpdate:
+      allOf: [ { $ref: '#/components/schemas/BoilieCreate' } ]
+      description: Same writable fields as create; all optional.
+    LureType:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        tags: { type: array, items: { type: string } }
+      required: [id, fpId, title, slug, tags]
+    LureTypeCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        tags: { type: array, items: { type: string } }
+      required: [fpId, title, slug]
+    LureTypeUpdate:
+      allOf: [ { $ref: '#/components/schemas/LureTypeCreate' } ]
+      description: Same writable fields as create; all optional.
+    Lure:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        color: { type: string, nullable: true }
+        weightG: { type: string, nullable: true }
+        lengthCm: { type: string, nullable: true }
+        tags: { type: array, items: { type: string } }
+        lureTypeId: { type: integer, nullable: true }
+      required: [id, fpId, title, slug, baseLevel, baitcoinLevel, tags]
+    LureCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        color: { type: string }
+        weightG: { type: string }
+        lengthCm: { type: string }
+        tags: { type: array, items: { type: string } }
+        lureTypeId: { type: integer }
+      required: [fpId, title, slug, baseLevel, baitcoinLevel]
+    LureUpdate:
+      allOf: [ { $ref: '#/components/schemas/LureCreate' } ]
+      description: Same writable fields as create; all optional.
+    Hook:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        size: { type: string }
+        type: { type: string }
+        tags: { type: array, items: { type: string } }
+      required: [id, fpId, title, slug, baseLevel, baitcoinLevel, size, type, tags]
+    HookCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        size: { type: string }
+        type: { type: string }
+        tags: { type: array, items: { type: string } }
+      required: [fpId, title, slug, baseLevel, baitcoinLevel, size, type]
+    HookUpdate:
+      allOf: [ { $ref: '#/components/schemas/HookCreate' } ]
+      description: Same writable fields as create; all optional.
+    Jighead:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        size: { type: string }
+        weightG: { type: string, nullable: true }
+        color: { type: string, nullable: true }
+        tags: { type: array, items: { type: string } }
+      required: [id, fpId, title, slug, baseLevel, baitcoinLevel, size, tags]
+    JigheadCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        size: { type: string }
+        weightG: { type: string }
+        color: { type: string }
+        tags: { type: array, items: { type: string } }
+      required: [fpId, title, slug, baseLevel, baitcoinLevel, size]
+    JigheadUpdate:
+      allOf: [ { $ref: '#/components/schemas/JigheadCreate' } ]
+      description: Same writable fields as create; all optional.
+    Sinker:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        form: { type: string }
+        weightG: { type: string, nullable: true }
+        color: { type: string, nullable: true }
+        tags: { type: array, items: { type: string } }
+      required: [id, fpId, title, slug, baseLevel, baitcoinLevel, form, tags]
+    SinkerCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        form: { type: string }
+        weightG: { type: string }
+        color: { type: string }
+        tags: { type: array, items: { type: string } }
+      required: [fpId, title, slug, baseLevel, baitcoinLevel, form]
+    SinkerUpdate:
+      allOf: [ { $ref: '#/components/schemas/SinkerCreate' } ]
+      description: Same writable fields as create; all optional.
+    Keepnet:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        type: { type: string }
+        isFishFriendly: { type: boolean }
+      required: [id, fpId, title, slug, baseLevel, baitcoinLevel, type, isFishFriendly]
+    KeepnetCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        type: { type: string }
+        isFishFriendly: { type: boolean }
+      required: [fpId, title, slug, baseLevel, baitcoinLevel, type, isFishFriendly]
+    KeepnetUpdate:
+      allOf: [ { $ref: '#/components/schemas/KeepnetCreate' } ]
+      description: Same writable fields as create; all optional.
+    Addon:
+      type: object
+      properties:
+        id: { type: integer }
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string, nullable: true }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        color: { type: string, nullable: true }
+        lengthCm: { type: string, nullable: true }
+        tags: { type: array, items: { type: string } }
+      required: [id, fpId, title, slug, baseLevel, baitcoinLevel, tags]
+    AddonCreate:
+      type: object
+      properties:
+        fpId: { type: integer }
+        title: { type: string }
+        slug: { type: string }
+        imageUrl: { type: string }
+        baseLevel: { type: integer }
+        baitcoinLevel: { type: integer }
+        color: { type: string }
+        lengthCm: { type: string }
+        tags: { type: array, items: { type: string } }
+      required: [fpId, title, slug, baseLevel, baitcoinLevel]
+    AddonUpdate:
+      allOf: [ { $ref: '#/components/schemas/AddonCreate' } ]
+      description: Same writable fields as create; all optional.
+
 tags:
   - name: meta
     description: Service info and health/readiness probes
@@ -806,3 +2001,21 @@ tags:
     description: Per-fish bait/lure preferences (1:1 with fish)
   - name: fish-locations
     description: Which fish are present at which locations
+  - name: baits
+    description: Bait catalog
+  - name: boilies
+    description: Boilies and pellets
+  - name: lure-types
+    description: Lure categories (grouping for lures)
+  - name: lures
+    description: Individual lure SKUs
+  - name: hooks
+    description: Hooks
+  - name: jigheads
+    description: Jigheads
+  - name: sinkers
+    description: Sinkers
+  - name: keepnets
+    description: Keepnets and stringers
+  - name: addons
+    description: Rod addons (torches, etc.)

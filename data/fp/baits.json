@@ -1,0 +1,1592 @@
+[
+  {
+    "id": 10895,
+    "title": "Skull Bait",
+    "slug": "skull-bait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/skull-bait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 10905,
+    "title": "Zombie Bait",
+    "slug": "zombie-bait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/zombie-bait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 10906,
+    "title": "Caviar Bait",
+    "slug": "caviar-bait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/caviar-bait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 10907,
+    "title": "Voodoo Shells",
+    "slug": "voodoo-shells",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/voodoo-shells.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 10908,
+    "title": "Bassy Bait",
+    "slug": "bassy-bait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/bassy-bait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 10909,
+    "title": "Brown Trout Eggs",
+    "slug": "brown-trout-eggs",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/brown-trout-eggs.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 10910,
+    "title": "Frankenbait",
+    "slug": "frankenbait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/frankenbait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 10911,
+    "title": "Eel Doll Bait",
+    "slug": "eel-doll-bait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/eel-doll-bait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 10912,
+    "title": "Drowned Mouse",
+    "slug": "drowned-mouse",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/03/drowned-mouse-bait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 19967,
+    "title": "Luminous Flying Fish",
+    "slug": "luminous-flying-fish",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/07/luminous-flying-fish.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 53,
+    "title": "Red Worms",
+    "slug": "red-worms",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Red_Worms.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 1,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 52,
+    "title": "Bread",
+    "slug": "bread",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Bread.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 1,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 12106,
+    "title": "Mutant Lobster",
+    "slug": "mutant-lobster",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/Mutant_Lobster.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 1,
+    "baitcoinLevel": 0,
+    "baitType": "Event Baits"
+  },
+  {
+    "id": 55,
+    "title": "Pearl Barley",
+    "slug": "pearl-barley",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Pearl_Barley.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 3,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 54,
+    "title": "Cheese",
+    "slug": "cheese",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Cheese.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "baseLevel": 3,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 57,
+    "title": "Grasshoppers",
+    "slug": "grasshoppers",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Grasshoppers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 4,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 56,
+    "title": "Pet Food",
+    "slug": "pet-food",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Pet_Food.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 4,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 58,
+    "title": "Small Cutbait",
+    "slug": "small-cutbait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Small_Cutbait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 5,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 15,
+    "title": "Dough balls",
+    "slug": "dough-balls",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Dough_Balls.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 5,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 61,
+    "title": "Bread with Honey",
+    "slug": "bread-with-honey",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Bread_with_Honey.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 6,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 62,
+    "title": "Small Minnows",
+    "slug": "small-minnows",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Small_Minnows.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 7,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 64,
+    "title": "Artificial Salmon Eggs",
+    "slug": "artificial-salmon-eggs",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Artificial_Salmon_Eggs.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 8,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 63,
+    "title": "Flies",
+    "slug": "flies",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Flies.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 8,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 67,
+    "title": "Pinkies",
+    "slug": "pinkies",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Pinkies.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 9,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 66,
+    "title": "Crickets",
+    "slug": "crickets",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Crickets.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 9,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 68,
+    "title": "Maggots",
+    "slug": "maggots",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Maggots.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 10,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 71,
+    "title": "Crawfish Cut",
+    "slug": "crawfish-cut",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Crawfish_Cut.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 11,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 16,
+    "title": "Semolina Balls",
+    "slug": "semolina-balls",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Semolina_Balls.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 11,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 73,
+    "title": "Bloodworms",
+    "slug": "bloodworms",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Bloodworms.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 12,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 72,
+    "title": "Caster Maggots",
+    "slug": "caster-maggots",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Caster_Maggots.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 12,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 74,
+    "title": "Wax Worms",
+    "slug": "wax-worms",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Wax_Worms.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 13,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 75,
+    "title": "Marshmallows",
+    "slug": "marshmallows",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Marshmallows.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 14,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 78,
+    "title": "Natural Eggs",
+    "slug": "natural-eggs",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Natural_Eggs.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 15,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 77,
+    "title": "Yellow Maggots",
+    "slug": "yellow-maggots",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Yellow_Maggots.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 15,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 65,
+    "title": "Mayflies",
+    "slug": "mayflies",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Mayflies.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 16,
+    "baitcoinLevel": 8,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 79,
+    "title": "Red Maggots",
+    "slug": "red-maggots",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Red_Maggots.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 17,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 80,
+    "title": "Night Crawlers",
+    "slug": "night-crawlers",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Night_Crawlers.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 18,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 59,
+    "title": "Shiners",
+    "slug": "shiners",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Shiners.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 19,
+    "baitcoinLevel": 5,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 82,
+    "title": "Duck Mussel Meat",
+    "slug": "duck-mussel-meat",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Duck_Mussel_Meat.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 20,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 81,
+    "title": "Medium Cutbait",
+    "slug": "medium-cutbait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Medium_Cutbait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 20,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 83,
+    "title": "Mole Cricket Larva",
+    "slug": "mole-cricket-larva",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Mole_Cricket_Larva.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 21,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 84,
+    "title": "Blood",
+    "slug": "blood",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Blood.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 23,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 86,
+    "title": "Frog",
+    "slug": "frog",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Frog.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 27,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 70,
+    "title": "Crawfish",
+    "slug": "crawfish",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Crawfish.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 28,
+    "baitcoinLevel": 10,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 87,
+    "title": "Leeches",
+    "slug": "leeches",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Leeches.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 30,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 69,
+    "title": "Shrimp",
+    "slug": "shrimp",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Shrimp.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 30,
+    "baitcoinLevel": 10,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 85,
+    "title": "Large Minnows",
+    "slug": "large-minnows",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Large_Minnows.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 31,
+    "baitcoinLevel": 26,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 88,
+    "title": "Large Cutbait",
+    "slug": "large-cutbait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Large_Cutbait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 32,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 90,
+    "title": "Peas",
+    "slug": "peas",
+    "tags": [
+      "__fpc-carp-bait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Peas.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 34,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 89,
+    "title": "Corn",
+    "slug": "corn",
+    "tags": [
+      "__fpc-carp-bait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Corn.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 34,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 2292,
+    "title": "Clam Meat",
+    "slug": "clam-meat",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Clam_Meat.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 35,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 91,
+    "title": "Dragonflies",
+    "slug": "dragonflies",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Dragonflies.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 38,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 76,
+    "title": "Spawn Sack",
+    "slug": "spawn-sack",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Spawn_Sack.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 39,
+    "baitcoinLevel": 14,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 93,
+    "title": "Sweet Peas",
+    "slug": "sweet-peas",
+    "tags": [
+      "__fpc-carp-bait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Sweet_Peas.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 40,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 92,
+    "title": "Sweet Corn",
+    "slug": "sweet-corn",
+    "tags": [
+      "__fpc-carp-bait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Sweet_Corn.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 40,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 94,
+    "title": "Vegetables",
+    "slug": "vegetables",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Vegetables.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 95,
+    "title": "Technoplankton",
+    "slug": "technoplankton",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Technoplankton.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 97,
+    "title": "Centipedes",
+    "slug": "centipedes",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Centipedes.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 96,
+    "title": "Pea Dough",
+    "slug": "pea-dough",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Pea_dough.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 16666,
+    "title": "Crawling Worm",
+    "slug": "crawling-worm",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/12/crawling-worm.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 46,
+    "baitcoinLevel": 46,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 2293,
+    "title": "Mussel Meat",
+    "slug": "mussel-meat",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Mussel_Meat.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 47,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 98,
+    "title": "Cockchafer",
+    "slug": "cockchafer",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Cockchafer.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 6417,
+    "title": "Curd Dough",
+    "slug": "curd-dough",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/curd-dough-1-1.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 6418,
+    "title": "Common Minnow",
+    "slug": "common-minnow",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/common-minnow-1-1.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 16667,
+    "title": "Mole Cricket",
+    "slug": "mole-cricket",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/12/mole-cricket.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 48,
+    "baitcoinLevel": 46,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 6416,
+    "title": "Boiled Red Roe",
+    "slug": "boiled-red-roe",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/boiled-red-roe-1-1.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 49,
+    "baitcoinLevel": 42,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 6420,
+    "title": "Bark Beetle Larva",
+    "slug": "bark-beetle-larva",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/bark-beetle-larva-1-1.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 49,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 16668,
+    "title": "Salo",
+    "slug": "salo",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/12/salo.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 50,
+    "baitcoinLevel": 46,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 6421,
+    "title": "Oat Flakes",
+    "slug": "oat-flakes",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/oat-flakes-1-1.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 51,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 6419,
+    "title": "Sideswimmers",
+    "slug": "sideswimmers",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2022/06/sideswimmers-1-1.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 52,
+    "baitcoinLevel": 48,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 2294,
+    "title": "Sea Worms",
+    "slug": "sea-worms",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Sea_Worms.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 54,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 2295,
+    "title": "Sand Fleas",
+    "slug": "sand-fleas",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Sand_Fleas.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 54,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 2296,
+    "title": "Finger Mullets",
+    "slug": "finger-mullets",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Finger_Mullets.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 54,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 2291,
+    "title": "Gulf Shrimp",
+    "slug": "gulf-shrimp",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Gulf_Shrimp.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 55,
+    "baitcoinLevel": 18,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 2297,
+    "title": "Scaled Sardines",
+    "slug": "scaled-sardines",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Scaled_Sardines.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 55,
+    "baitcoinLevel": 50,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 2298,
+    "title": "Crab",
+    "slug": "crab",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Crab.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 55,
+    "baitcoinLevel": 50,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 2510,
+    "title": "Meat Chunk",
+    "slug": "meat-chunk",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Meat_Chunk.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 56,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 2511,
+    "title": "Chicken Liver",
+    "slug": "chicken-liver",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Chicken_Liver.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 57,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 3242,
+    "title": "Huge Cutbait",
+    "slug": "huge-cutbait",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Huge_Cutbait.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 57,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 2512,
+    "title": "Camu-Camu",
+    "slug": "camu-camu",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Camu-Camu.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 58,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 2513,
+    "title": "Freshwater Prawns",
+    "slug": "freshwater-prawns",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Freshwater_Prawns.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 58,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 2514,
+    "title": "Dead Lambari Fish",
+    "slug": "dead-lambari-fish",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Dead_Lambari_Fish.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 58,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 2515,
+    "title": "Aracu Minnow",
+    "slug": "aracu-minnow",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Aracu_Minnow.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 59,
+    "baitcoinLevel": 58,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 2509,
+    "title": "Dobsonfly Larva",
+    "slug": "dobsonfly-larva",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Dobsonfly_Larva.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 60,
+    "baitcoinLevel": 54,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 3244,
+    "title": "Large Liver",
+    "slug": "large-liver",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Large_Liver.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 60,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 3245,
+    "title": "Jauari Palm Fruit",
+    "slug": "jauari-palm-fruit",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Jauari_Palm_Fruit.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 61,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 3246,
+    "title": "Moriche Palm Fruit",
+    "slug": "moriche-palm-fruit",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Moriche_Palm_Fruit.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 62,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 3247,
+    "title": "Rubber Tree Seeds",
+    "slug": "rubber-tree-seeds",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Rubber_Tree_Seeds.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 63,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 3243,
+    "title": "Dobsonfly",
+    "slug": "dobsonfly",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Dobsonfly.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 64,
+    "baitcoinLevel": 58,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 3248,
+    "title": "Freshwater Crab",
+    "slug": "freshwater-crab",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2020/09/Freshwater_Crab.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 65,
+    "baitcoinLevel": 63,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 4296,
+    "title": "Blue-Winged Grasshopper",
+    "slug": "blue-winged-grasshopper",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Blue-Winged_Grasshopper.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 68,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 4297,
+    "title": "Amazonian Sardine",
+    "slug": "amazonian-sardine",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Amazonian_Sardine.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 68,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 4295,
+    "title": "Banded Aracu Minnow",
+    "slug": "banded-aracu-minnow",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Banded_Aracu_Minnow.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 69,
+    "baitcoinLevel": 63,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 4294,
+    "title": "Giant Silk Moth Larva",
+    "slug": "giant-silk-moth-larva",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/Giant_Silk_Moth_Larva.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 70,
+    "baitcoinLevel": 63,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 5754,
+    "title": "Banana Bread",
+    "slug": "banana-bread",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/banana-bread.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 71,
+    "baitcoinLevel": 0,
+    "baitType": "Common Baits"
+  },
+  {
+    "id": 5756,
+    "title": "Canned Meat",
+    "slug": "canned-meat",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/canned-meat.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 73,
+    "baitcoinLevel": 0,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 5755,
+    "title": "Caddis Larva",
+    "slug": "caddis-larva",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/caddis-larva.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 75,
+    "baitcoinLevel": 71,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 5757,
+    "title": "African Giant Water Bug",
+    "slug": "african-giant-water-bug",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/african-giant-water-bug.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 75,
+    "baitcoinLevel": 0,
+    "baitType": "Insect Worm Baits"
+  },
+  {
+    "id": 5758,
+    "title": "Buffalo Kidneys",
+    "slug": "buffalo-kidneys",
+    "tags": [],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/buffalo-kidneys.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 77,
+    "baitcoinLevel": 75,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 5759,
+    "title": "Small Tilapia",
+    "slug": "small-tilapia",
+    "tags": [
+      "__fpc-fish-livebait"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/small-tilapia.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "baseLevel": 79,
+    "baitcoinLevel": 75,
+    "baitType": "Fresh Baits"
+  },
+  {
+    "id": 11892,
+    "title": "Medium Fish Strips",
+    "slug": "medium-fish-strips",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/Medium_Fish_Strips.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 81,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 11893,
+    "title": "Large Fish Strips",
+    "slug": "large-fish-strips",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/Large_Fish_Strips.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 82,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 11895,
+    "title": "Japanese Flying Squid",
+    "slug": "japanese-flying-squid",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/Japanese_Flying_Squid.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 83,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 11901,
+    "title": "Gutted Fish",
+    "slug": "gutted-fish",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/Gutted_Fish.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 84,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 11894,
+    "title": "Japanese Anchovy",
+    "slug": "japanese-anchovy",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/Japanese_Anchovy.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 85,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 11896,
+    "title": "Japanese Jack Mackerel",
+    "slug": "japanese-jack-mackerel",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/Japanese_Jack_Mackerel.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 87,
+    "baitcoinLevel": 83,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 11897,
+    "title": "Japanese Spiny Lobster",
+    "slug": "japanese-spiny-lobster",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/Japanese_Spiny_Lobster.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 88,
+    "baitcoinLevel": 83,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19873,
+    "title": "Natal Rock Oyster Meat",
+    "slug": "natal-rock-oyster-meat",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/natal-rock-oyster-meat.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 92,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19862,
+    "title": "Filamentous Red Algae",
+    "slug": "filamentous-red-algae",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/filamentous-red-algae.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 94,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19871,
+    "title": "Fish Head",
+    "slug": "fish-head",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/fish-head.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 94,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19875,
+    "title": "Small Flying Fish",
+    "slug": "small-flying-fish",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/flying-fish.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 94,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19872,
+    "title": "Giant Tiger Prawn",
+    "slug": "giant-tiger-prawn",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/black-tiger-shrimp.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 95,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19876,
+    "title": "Indian Ocean Squid",
+    "slug": "indian-ocean-squid",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/indian-ocean-squid.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 96,
+    "baitcoinLevel": 94,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19874,
+    "title": "Indo-Pacific Swimming Crab",
+    "slug": "indo-pacific-swimming-crab",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/indo-pacific-swimming-crab.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 97,
+    "baitcoinLevel": 94,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19877,
+    "title": "Split Tail Mullet",
+    "slug": "split-tail-mullet",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/split-tail-mullet.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 98,
+    "baitcoinLevel": 94,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 19956,
+    "title": "Large Flying Fish",
+    "slug": "large-flying-fish",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/flying-fish.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 100,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24181,
+    "title": "Ragworms",
+    "slug": "ragworms",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/ragworms-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 105,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24182,
+    "title": "Razor Shell",
+    "slug": "razor-shell",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/razor-shell-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 105,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24183,
+    "title": "Peeler Crab",
+    "slug": "peeler-crab",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/peeler-crab-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 105,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24184,
+    "title": "Atlantic Mackerel Cut Baits",
+    "slug": "atlantic-mackerel-cut-baits",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/atlantic-mackerel-cut-baits-low.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 105,
+    "baitcoinLevel": 0,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24185,
+    "title": "Lesser Sand Eel",
+    "slug": "lesser-sand-eel",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/lesser-sand-eel-low.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 106,
+    "baitcoinLevel": 105,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24188,
+    "title": "Black Lugworms",
+    "slug": "black-lugworms",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/black-lugworms.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 107,
+    "baitcoinLevel": 105,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24187,
+    "title": "Bluey",
+    "slug": "bluey",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/bluey-low.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 108,
+    "baitcoinLevel": 105,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24189,
+    "title": "Atlantic Herring",
+    "slug": "atlantic-herring",
+    "tags": [
+      "__fpc-fish-livebait",
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/atlantic-herring-low.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "baseLevel": 109,
+    "baitcoinLevel": 105,
+    "baitType": "Saltwater Baits"
+  },
+  {
+    "id": 24186,
+    "title": "Seal Blubber",
+    "slug": "seal-blubber",
+    "tags": [
+      "__fpc-saltwater"
+    ],
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/seal-blubber-low.png",
+    "imageWidth": 160,
+    "imageHeight": 160,
+    "baseLevel": 110,
+    "baitcoinLevel": 105,
+    "baitType": "Saltwater Baits"
+  }
+]

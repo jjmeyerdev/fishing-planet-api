@@ -1,0 +1,2249 @@
+[
+  {
+    "id": 682,
+    "title": "Hook #10",
+    "slug": "hook-10",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-10.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#10",
+    "baseLevel": 1,
+    "baitcoinLevel": 0,
+    "type": "kirby"
+  },
+  {
+    "id": 686,
+    "title": "Hook #8",
+    "slug": "hook-8",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-8.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#8",
+    "baseLevel": 1,
+    "baitcoinLevel": 0,
+    "type": "kirby"
+  },
+  {
+    "id": 688,
+    "title": "Hook #6",
+    "slug": "hook-6",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-6.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#6",
+    "baseLevel": 2,
+    "baitcoinLevel": 0,
+    "type": "kirby"
+  },
+  {
+    "id": 689,
+    "title": "Hook #4",
+    "slug": "hook-4",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-4.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#4",
+    "baseLevel": 3,
+    "baitcoinLevel": 0,
+    "type": "kirby"
+  },
+  {
+    "id": 690,
+    "title": "Hook #2",
+    "slug": "hook-2",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-2.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#2",
+    "baseLevel": 3,
+    "baitcoinLevel": 0,
+    "type": "kirby"
+  },
+  {
+    "id": 691,
+    "title": "Hook #1",
+    "slug": "hook-1",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-1.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#1",
+    "baseLevel": 4,
+    "baitcoinLevel": 0,
+    "type": "octopus"
+  },
+  {
+    "id": 692,
+    "title": "Hook #1/0",
+    "slug": "hook-1-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-1-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#1/0",
+    "baseLevel": 7,
+    "baitcoinLevel": 0,
+    "type": "octopus"
+  },
+  {
+    "id": 693,
+    "title": "Hook #2/0",
+    "slug": "hook-2-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-2-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#2/0",
+    "baseLevel": 10,
+    "baitcoinLevel": 0,
+    "type": "octopus"
+  },
+  {
+    "id": 694,
+    "title": "Hook #12",
+    "slug": "hook-12",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-12.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#12",
+    "baseLevel": 12,
+    "baitcoinLevel": 0,
+    "type": "kirby"
+  },
+  {
+    "id": 695,
+    "title": "Hook #3/0",
+    "slug": "hook-3-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-3-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#3/0",
+    "baseLevel": 12,
+    "baitcoinLevel": 0,
+    "type": "octopus"
+  },
+  {
+    "id": 696,
+    "title": "Hook #14",
+    "slug": "hook-14",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-14.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#14",
+    "baseLevel": 15,
+    "baitcoinLevel": 0,
+    "type": "kirby"
+  },
+  {
+    "id": 697,
+    "title": "Hook #4/0",
+    "slug": "hook-4-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-4-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#4/0",
+    "baseLevel": 18,
+    "baitcoinLevel": 0,
+    "type": "catfish"
+  },
+  {
+    "id": 698,
+    "title": "Hook #5/0",
+    "slug": "hook-5-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-5-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#5/0",
+    "baseLevel": 19,
+    "baitcoinLevel": 0,
+    "type": "catfish"
+  },
+  {
+    "id": 699,
+    "title": "Hook #16",
+    "slug": "hook-16",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-16.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#16",
+    "baseLevel": 20,
+    "baitcoinLevel": 0,
+    "type": "kirby"
+  },
+  {
+    "id": 700,
+    "title": "Hook #6/0",
+    "slug": "hook-6-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-6-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#6/0",
+    "baseLevel": 20,
+    "baitcoinLevel": 0,
+    "type": "catfish"
+  },
+  {
+    "id": 701,
+    "title": "Hook #7/0",
+    "slug": "hook-7-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-7-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#7/0",
+    "baseLevel": 30,
+    "baitcoinLevel": 0,
+    "type": "catfish"
+  },
+  {
+    "id": 702,
+    "title": "Hook #8/0",
+    "slug": "hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-8-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#8/0",
+    "baseLevel": 31,
+    "baitcoinLevel": 0,
+    "type": "catfish"
+  },
+  {
+    "id": 703,
+    "title": "Hook #9/0",
+    "slug": "hook-9-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-9-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#9/0",
+    "baseLevel": 32,
+    "baitcoinLevel": 0,
+    "type": "catfish"
+  },
+  {
+    "id": 704,
+    "title": "Hook #10/0",
+    "slug": "hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/hook-10-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#10/0",
+    "baseLevel": 33,
+    "baitcoinLevel": 0,
+    "type": "catfish"
+  },
+  {
+    "id": 705,
+    "title": "Barbless Hook #10",
+    "slug": "barbless-hook-10",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-10.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#10",
+    "baseLevel": 0,
+    "baitcoinLevel": 8,
+    "type": "kirby"
+  },
+  {
+    "id": 706,
+    "title": "Barbless Hook #8",
+    "slug": "barbless-hook-8",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-8.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#8",
+    "baseLevel": 0,
+    "baitcoinLevel": 8,
+    "type": "kirby"
+  },
+  {
+    "id": 707,
+    "title": "Barbless Hook #6",
+    "slug": "barbless-hook-6",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-6.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#6",
+    "baseLevel": 0,
+    "baitcoinLevel": 8,
+    "type": "kirby"
+  },
+  {
+    "id": 709,
+    "title": "Barbless Hook #4",
+    "slug": "barbless-hook-4",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-4.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#4",
+    "baseLevel": 0,
+    "baitcoinLevel": 8,
+    "type": "kirby"
+  },
+  {
+    "id": 710,
+    "title": "Barbless Hook #2",
+    "slug": "barbless-hook-2",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-2.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#2",
+    "baseLevel": 0,
+    "baitcoinLevel": 8,
+    "type": "kirby"
+  },
+  {
+    "id": 711,
+    "title": "Barbless Hook #1",
+    "slug": "barbless-hook-1",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-1.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#1",
+    "baseLevel": 0,
+    "baitcoinLevel": 8,
+    "type": "octopus"
+  },
+  {
+    "id": 712,
+    "title": "Barbless Hook #1/0",
+    "slug": "barbless-hook-1-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-1-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#1/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 8,
+    "type": "octopus"
+  },
+  {
+    "id": 713,
+    "title": "Barbless Hook #2/0",
+    "slug": "barbless-hook-2-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-2-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#2/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 14,
+    "type": "octopus"
+  },
+  {
+    "id": 714,
+    "title": "Barbless Hook #3/0",
+    "slug": "barbless-hook-3-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-3-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#3/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 14,
+    "type": "octopus"
+  },
+  {
+    "id": 715,
+    "title": "Barbless Hook #4/0",
+    "slug": "barbless-hook-4-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-4-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#4/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 14,
+    "type": "catfish"
+  },
+  {
+    "id": 716,
+    "title": "Barbless Hook #5/0",
+    "slug": "barbless-hook-5-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-5-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#5/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 14,
+    "type": "catfish"
+  },
+  {
+    "id": 717,
+    "title": "Barbless Hook #6/0",
+    "slug": "barbless-hook-6-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-6-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#6/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 14,
+    "type": "catfish"
+  },
+  {
+    "id": 718,
+    "title": "Barbless Hook #7/0",
+    "slug": "barbless-hook-7-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-7-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#7/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 22,
+    "type": "catfish"
+  },
+  {
+    "id": 719,
+    "title": "Barbless Hook #8/0",
+    "slug": "barbless-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-8-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#8/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 22,
+    "type": "catfish"
+  },
+  {
+    "id": 720,
+    "title": "Barbless Hook #9/0",
+    "slug": "barbless-hook-9-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-9-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#9/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 22,
+    "type": "catfish"
+  },
+  {
+    "id": 721,
+    "title": "Barbless Hook #10/0",
+    "slug": "barbless-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2019/02/barbless-hook-10-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#10/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 22,
+    "type": "catfish"
+  },
+  {
+    "id": 5931,
+    "title": "Carp Hook #2",
+    "slug": "carp-hook-2",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#2",
+    "baseLevel": 34,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 5932,
+    "title": "Carp Hook #1",
+    "slug": "carp-hook-1",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-1.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#1",
+    "baseLevel": 35,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 5933,
+    "title": "Carp Hook #1/0",
+    "slug": "carp-hook-1-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-1-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#1/0",
+    "baseLevel": 42,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 5935,
+    "title": "Carp Hook #2/0",
+    "slug": "carp-hook-2-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-2-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#2/0",
+    "baseLevel": 44,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 5936,
+    "title": "Carp Hook #3/0",
+    "slug": "carp-hook-3-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-3-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#3/0",
+    "baseLevel": 46,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 5937,
+    "title": "Carp Hook #4/0",
+    "slug": "carp-hook-4-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-4-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#4/0",
+    "baseLevel": 48,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 5938,
+    "title": "Carp Hook #6/0",
+    "slug": "carp-hook-6-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-6-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#6/0",
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 5939,
+    "title": "Carp Hook #8/0",
+    "slug": "carp-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-8-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#8/0",
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 5941,
+    "title": "Carp Hook #10/0",
+    "slug": "carp-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/carp-hook-10-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-carp-hook"
+    ],
+    "size": "#10/0",
+    "baseLevel": 50,
+    "baitcoinLevel": 0,
+    "type": "Carp"
+  },
+  {
+    "id": 4332,
+    "title": "Capn Hook #7/0",
+    "slug": "capn-hook-7-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/capn-hooks-7-0.png",
+    "imageWidth": 254,
+    "imageHeight": 254,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#7/0",
+    "baseLevel": 61,
+    "baitcoinLevel": 0,
+    "type": "Circle"
+  },
+  {
+    "id": 4333,
+    "title": "Capn Hook #8/0",
+    "slug": "capn-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/capn-hooks-8-0.png",
+    "imageWidth": 254,
+    "imageHeight": 254,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#8/0",
+    "baseLevel": 62,
+    "baitcoinLevel": 0,
+    "type": "Circle"
+  },
+  {
+    "id": 4334,
+    "title": "Capn Hook #9/0",
+    "slug": "capn-hook-9-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/capn-hooks-9-0.png",
+    "imageWidth": 254,
+    "imageHeight": 254,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#9/0",
+    "baseLevel": 63,
+    "baitcoinLevel": 0,
+    "type": "Circle"
+  },
+  {
+    "id": 4335,
+    "title": "Capn Hook #10/0",
+    "slug": "capn-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/capn-hooks-10-0.png",
+    "imageWidth": 254,
+    "imageHeight": 254,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#10/0",
+    "baseLevel": 64,
+    "baitcoinLevel": 0,
+    "type": "Circle"
+  },
+  {
+    "id": 4336,
+    "title": "Capn Hook #11/0",
+    "slug": "capn-hook-11-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/capn-hooks-11-0.png",
+    "imageWidth": 254,
+    "imageHeight": 254,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#11/0",
+    "baseLevel": 65,
+    "baitcoinLevel": 0,
+    "type": "Circle"
+  },
+  {
+    "id": 4337,
+    "title": "Capn Hook #12/0",
+    "slug": "capn-hook-12-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/capn-hooks-12-0.png",
+    "imageWidth": 254,
+    "imageHeight": 254,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#12/0",
+    "baseLevel": 66,
+    "baitcoinLevel": 0,
+    "type": "Circle"
+  },
+  {
+    "id": 4338,
+    "title": "Capn Hook #13/0",
+    "slug": "capn-hook-13-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/capn-hooks-13-0.png",
+    "imageWidth": 254,
+    "imageHeight": 254,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#13/0",
+    "baseLevel": 67,
+    "baitcoinLevel": 0,
+    "type": "Circle"
+  },
+  {
+    "id": 4339,
+    "title": "Capn Hook #14/0",
+    "slug": "capn-hook-14-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/03/capn-hooks-14-0.png",
+    "imageWidth": 254,
+    "imageHeight": 254,
+    "tags": [
+      "__fpc-carp-hook",
+      "__fpc-fl-bt-hook"
+    ],
+    "size": "#14/0",
+    "baseLevel": 68,
+    "baitcoinLevel": 0,
+    "type": "Circle"
+  },
+  {
+    "id": 5921,
+    "title": "Offset Hook #4",
+    "slug": "offset-hook-4",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-4.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#4",
+    "baseLevel": 8,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5922,
+    "title": "Offset Hook #2",
+    "slug": "offset-hook-2",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-2.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#2",
+    "baseLevel": 8,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5923,
+    "title": "Offset Hook #1",
+    "slug": "offset-hook-1",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-1.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#1",
+    "baseLevel": 9,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5924,
+    "title": "Offset Hook #1/0",
+    "slug": "offset-hook-1-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-1-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#1/0",
+    "baseLevel": 10,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5925,
+    "title": "Offset Hook #2/0",
+    "slug": "offset-hook-2-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-2-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#2/0",
+    "baseLevel": 12,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5926,
+    "title": "Offset Hook #3/0",
+    "slug": "offset-hook-3-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-3-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#3/0",
+    "baseLevel": 15,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5927,
+    "title": "Offset Hook #4/0",
+    "slug": "offset-hook-4-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-4-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#4/0",
+    "baseLevel": 20,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5928,
+    "title": "Offset Hook #5/0",
+    "slug": "offset-hook-5-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-5-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#5/0",
+    "baseLevel": 25,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5929,
+    "title": "Offset Hook #6/0",
+    "slug": "offset-hook-6-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-6-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#6/0",
+    "baseLevel": 30,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5930,
+    "title": "Offset Hook #8/0",
+    "slug": "offset-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-8-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#8/0",
+    "baseLevel": 35,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5748,
+    "title": "Offset Hook #9/0",
+    "slug": "offset-hook-9-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-9-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#9/0",
+    "baseLevel": 71,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5749,
+    "title": "Offset Hook #10/0",
+    "slug": "offset-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-10-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#10/0",
+    "baseLevel": 73,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5750,
+    "title": "Offset Hook #11/0",
+    "slug": "offset-hook-11-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-11-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#11/0",
+    "baseLevel": 75,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5751,
+    "title": "Offset Hook #12/0",
+    "slug": "offset-hook-12-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-12-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#12/0",
+    "baseLevel": 77,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5752,
+    "title": "Offset Hook #13/0",
+    "slug": "offset-hook-13-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-13-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#13/0",
+    "baseLevel": 78,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 5753,
+    "title": "Offset Hook #14/0",
+    "slug": "offset-hook-14-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2021/12/offset-hook-14-0.png",
+    "imageWidth": 256,
+    "imageHeight": 256,
+    "tags": [
+      "__fpc-spin-rig-hook"
+    ],
+    "size": "#14/0",
+    "baseLevel": 80,
+    "baitcoinLevel": 0,
+    "type": "Offset"
+  },
+  {
+    "id": 12219,
+    "title": "Fabulous Point Hook #10/0",
+    "slug": "fabulous-point-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-10-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#10/0",
+    "baseLevel": 81,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12220,
+    "title": "Fabulous Point Hook #11/0",
+    "slug": "fabulous-point-hook-11-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-11-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#11/0",
+    "baseLevel": 82,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12221,
+    "title": "Fabulous Point Hook #12/0",
+    "slug": "fabulous-point-hook-12-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-12-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#12/0",
+    "baseLevel": 83,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12222,
+    "title": "Fabulous Point Hook #13/0",
+    "slug": "fabulous-point-hook-13-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-13-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#13/0",
+    "baseLevel": 84,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12223,
+    "title": "Fabulous Point Hook #14/0",
+    "slug": "fabulous-point-hook-14-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-14-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#14/0",
+    "baseLevel": 85,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12224,
+    "title": "Fabulous Point Hook #15/0",
+    "slug": "fabulous-point-hook-15-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-15-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#15/0",
+    "baseLevel": 86,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12225,
+    "title": "Fabulous Point Hook #16/0",
+    "slug": "fabulous-point-hook-16-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-16-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#16/0",
+    "baseLevel": 87,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12226,
+    "title": "Fabulous Point Hook #17/0",
+    "slug": "fabulous-point-hook-17-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-17-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#17/0",
+    "baseLevel": 88,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12228,
+    "title": "Fabulous Point Hook #18/0",
+    "slug": "fabulous-point-hook-18-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/f-p-hook-18-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#18/0",
+    "baseLevel": 89,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12229,
+    "title": "Saltwater Curved Hook #8/0",
+    "slug": "saltwater-curved-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-8-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#8/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12230,
+    "title": "Saltwater Curved Hook #9/0",
+    "slug": "saltwater-curved-hook-9-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-9-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#9/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12231,
+    "title": "Saltwater Curved Hook #10/0",
+    "slug": "saltwater-curved-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-10-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#10/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12233,
+    "title": "Saltwater Curved Hook #11/0",
+    "slug": "saltwater-curved-hook-11-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-11-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#11/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12234,
+    "title": "Saltwater Curved Hook #12/0",
+    "slug": "saltwater-curved-hook-12-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-12-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#12/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12235,
+    "title": "Saltwater Curved Hook #13/0",
+    "slug": "saltwater-curved-hook-13-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-13-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#13/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12236,
+    "title": "Saltwater Curved Hook #14/0",
+    "slug": "saltwater-curved-hook-14-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-14-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#14/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12237,
+    "title": "Saltwater Curved Hook #15/0",
+    "slug": "saltwater-curved-hook-15-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-15-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#15/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12238,
+    "title": "Saltwater Curved Hook #16/0",
+    "slug": "saltwater-curved-hook-16-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-16-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#16/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12239,
+    "title": "Saltwater Curved Hook #17/0",
+    "slug": "saltwater-curved-hook-17-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-17-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#17/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12240,
+    "title": "Saltwater Curved Hook #18/0",
+    "slug": "saltwater-curved-hook-18-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/08/curved-hook-18-0.png",
+    "imageWidth": 512,
+    "imageHeight": 512,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#18/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 83,
+    "type": "Circle"
+  },
+  {
+    "id": 12241,
+    "title": "Livebait Trolling Hook #2/0",
+    "slug": "livebait-trolling-hook-2-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-2.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#2/0",
+    "baseLevel": 86,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12242,
+    "title": "Livebait Trolling Hook #3/0",
+    "slug": "livebait-trolling-hook-3-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-3.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#3/0",
+    "baseLevel": 86,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12243,
+    "title": "Livebait Trolling Hook #5/0",
+    "slug": "livebait-trolling-hook-5-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-5.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#5/0",
+    "baseLevel": 86,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12244,
+    "title": "Livebait Trolling Hook #7/0",
+    "slug": "livebait-trolling-hook-7-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-7.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#7/0",
+    "baseLevel": 88,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12245,
+    "title": "Livebait Trolling Hook #8/0",
+    "slug": "livebait-trolling-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-8.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#8/0",
+    "baseLevel": 88,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 12247,
+    "title": "Livebait Trolling Hook #10/0",
+    "slug": "livebait-trolling-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-10.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#10/0",
+    "baseLevel": 89,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 20083,
+    "title": "Kaku Tsuribari Hook #1/0",
+    "slug": "kaku-tsuribari-hook-1-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-1.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#1/0",
+    "baseLevel": 81,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20084,
+    "title": "Kaku Tsuribari Hook #2/0",
+    "slug": "kaku-tsuribari-hook-2-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-2.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#2/0",
+    "baseLevel": 82,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20085,
+    "title": "Kaku Tsuribari Hook #3/0",
+    "slug": "kaku-tsuribari-hook-3-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-3.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#3/0",
+    "baseLevel": 83,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20086,
+    "title": "Kaku Tsuribari Hook #4/0",
+    "slug": "kaku-tsuribari-hook-4-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-4.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#4/0",
+    "baseLevel": 84,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20087,
+    "title": "Kaku Tsuribari Hook #5/0",
+    "slug": "kaku-tsuribari-hook-5-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-5.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#5/0",
+    "baseLevel": 85,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20088,
+    "title": "Kaku Tsuribari Hook #6/0",
+    "slug": "kaku-tsuribari-hook-6-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-6.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#6/0",
+    "baseLevel": 86,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20089,
+    "title": "Kaku Tsuribari Hook #7/0",
+    "slug": "kaku-tsuribari-hook-7-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-7.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#7/0",
+    "baseLevel": 87,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20090,
+    "title": "Kaku Tsuribari Hook #8/0",
+    "slug": "kaku-tsuribari-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-8.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#8/0",
+    "baseLevel": 88,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20091,
+    "title": "Kaku Tsuribari Hook #9/0",
+    "slug": "kaku-tsuribari-hook-9-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-9.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#9/0",
+    "baseLevel": 89,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20092,
+    "title": "Kaku Tsuribari Hook #10/0",
+    "slug": "kaku-tsuribari-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-10.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#10/0",
+    "baseLevel": 90,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20093,
+    "title": "Kaku Tsuribari Hook #11/0",
+    "slug": "kaku-tsuribari-hook-11-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-11.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#11/0",
+    "baseLevel": 91,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20094,
+    "title": "Kaku Tsuribari Hook #12/0",
+    "slug": "kaku-tsuribari-hook-12-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-12.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#12/0",
+    "baseLevel": 92,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20095,
+    "title": "Kaku Tsuribari Hook #13/0",
+    "slug": "kaku-tsuribari-hook-13-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-13.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#13/0",
+    "baseLevel": 93,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20096,
+    "title": "Kaku Tsuribari Hook #14/0",
+    "slug": "kaku-tsuribari-hook-14-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-14.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#14/0",
+    "baseLevel": 94,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20097,
+    "title": "Kaku Tsuribari Hook #15/0",
+    "slug": "kaku-tsuribari-hook-15-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-15.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#15/0",
+    "baseLevel": 95,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20098,
+    "title": "Kaku Tsuribari Hook #16/0",
+    "slug": "kaku-tsuribari-hook-16-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-16.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#16/0",
+    "baseLevel": 96,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20099,
+    "title": "Kaku Tsuribari Hook #17/0",
+    "slug": "kaku-tsuribari-hook-17-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-17.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#17/0",
+    "baseLevel": 97,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20100,
+    "title": "Kaku Tsuribari Hook #18/0",
+    "slug": "kaku-tsuribari-hook-18-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-18.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#18/0",
+    "baseLevel": 98,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20101,
+    "title": "Kaku Tsuribari Hook #19/0",
+    "slug": "kaku-tsuribari-hook-19-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-19.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#19/0",
+    "baseLevel": 99,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20102,
+    "title": "Kaku Tsuribari Hook #20/0",
+    "slug": "kaku-tsuribari-hook-20-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/kth-20.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#20/0",
+    "baseLevel": 100,
+    "baitcoinLevel": 0,
+    "type": "Square"
+  },
+  {
+    "id": 20103,
+    "title": "Livebait Trolling Hook #12/0",
+    "slug": "livebait-trolling-hook-12-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-12.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#12/0",
+    "baseLevel": 94,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 20104,
+    "title": "Livebait Trolling Hook #14/0",
+    "slug": "livebait-trolling-hook-14-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-14.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#14/0",
+    "baseLevel": 95,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 20105,
+    "title": "Livebait Trolling Hook #16/0",
+    "slug": "livebait-trolling-hook-16-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2024/06/lth-16.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#16/0",
+    "baseLevel": 96,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 20106,
+    "title": "Trolling Skirt Hook #6/0",
+    "slug": "trolling-skirt-hook-6-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-6.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-skirt-hook"
+    ],
+    "size": "#6/0",
+    "baseLevel": 94,
+    "baitcoinLevel": 0,
+    "type": "Trolling Skirt Hook"
+  },
+  {
+    "id": 20107,
+    "title": "Trolling Skirt Hook #7/0",
+    "slug": "trolling-skirt-hook-7-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-7.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-skirt-hook"
+    ],
+    "size": "#7/0",
+    "baseLevel": 95,
+    "baitcoinLevel": 0,
+    "type": "Trolling Skirt Hook"
+  },
+  {
+    "id": 20108,
+    "title": "Trolling Skirt Hook #8/0",
+    "slug": "trolling-skirt-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-8.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-skirt-hook"
+    ],
+    "size": "#8/0",
+    "baseLevel": 96,
+    "baitcoinLevel": 0,
+    "type": "Trolling Skirt Hook"
+  },
+  {
+    "id": 20109,
+    "title": "Trolling Skirt Hook #9/0",
+    "slug": "trolling-skirt-hook-9-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-9.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-skirt-hook"
+    ],
+    "size": "#9/0",
+    "baseLevel": 97,
+    "baitcoinLevel": 0,
+    "type": "Trolling Skirt Hook"
+  },
+  {
+    "id": 20110,
+    "title": "Trolling Skirt Hook #10/0",
+    "slug": "trolling-skirt-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-10.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-skirt-hook"
+    ],
+    "size": "#10/0",
+    "baseLevel": 98,
+    "baitcoinLevel": 0,
+    "type": "Trolling Skirt Hook"
+  },
+  {
+    "id": 20111,
+    "title": "Trolling Skirt Hook #11/0",
+    "slug": "trolling-skirt-hook-11-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-11.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-skirt-hook"
+    ],
+    "size": "#11/0",
+    "baseLevel": 99,
+    "baitcoinLevel": 0,
+    "type": "Trolling Skirt Hook"
+  },
+  {
+    "id": 20112,
+    "title": "Trolling Skirt Hook #12/0",
+    "slug": "trolling-skirt-hook-12-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/06/tsh-12.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-skirt-hook"
+    ],
+    "size": "#12/0",
+    "baseLevel": 100,
+    "baitcoinLevel": 0,
+    "type": "Trolling Skirt Hook"
+  },
+  {
+    "id": 21039,
+    "title": "Razor Trolling Hook #15/0",
+    "slug": "razor-trolling-hook-15-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/07/razor-trolling-hook.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-saltwater",
+      "__fpc-trolling-livebait-hook"
+    ],
+    "size": "#15/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 0,
+    "type": "J-Hook"
+  },
+  {
+    "id": 24190,
+    "title": "Golden Hook #1/0",
+    "slug": "golden-hook-1-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-1.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#1/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24192,
+    "title": "Golden Hook #2/0",
+    "slug": "golden-hook-2-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-2.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#2/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24193,
+    "title": "Golden Hook #3/0",
+    "slug": "golden-hook-3-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-3.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#3/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24194,
+    "title": "Golden Hook #4/0",
+    "slug": "golden-hook-4-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-4.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#4/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24195,
+    "title": "Golden Hook #5/0",
+    "slug": "golden-hook-5-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-5.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#5/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24196,
+    "title": "Golden Hook #6/0",
+    "slug": "golden-hook-6-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-6.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#6/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24197,
+    "title": "Golden Hook #7/0",
+    "slug": "golden-hook-7-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-7.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#7/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24198,
+    "title": "Golden Hook #8/0",
+    "slug": "golden-hook-8-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-8.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#8/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24199,
+    "title": "Golden Hook #9/0",
+    "slug": "golden-hook-9-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-9.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#9/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24200,
+    "title": "Golden Hook #10/0",
+    "slug": "golden-hook-10-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-10.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#10/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24201,
+    "title": "Golden Hook #11/0",
+    "slug": "golden-hook-11-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-11.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#11/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24202,
+    "title": "Golden Hook #12/0",
+    "slug": "golden-hook-12-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-12.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#12/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24203,
+    "title": "Golden Hook #13/0",
+    "slug": "golden-hook-13-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-13.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#13/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24204,
+    "title": "Golden Hook #14/0",
+    "slug": "golden-hook-14-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-14.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#14/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24205,
+    "title": "Golden Hook #15/0",
+    "slug": "golden-hook-15-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-15.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#15/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24206,
+    "title": "Golden Hook #16/0",
+    "slug": "golden-hook-16-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-16.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#16/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24207,
+    "title": "Golden Hook #17/0",
+    "slug": "golden-hook-17-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-17.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#17/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  },
+  {
+    "id": 24208,
+    "title": "Golden Hook #18/0",
+    "slug": "golden-hook-18-0",
+    "image": "https://api.fp-collective.com/wp-content/uploads/2025/12/sgh-18.png",
+    "imageWidth": 500,
+    "imageHeight": 500,
+    "tags": [
+      "__fpc-fl-bt-hook",
+      "__fpc-saltwater"
+    ],
+    "size": "#18/0",
+    "baseLevel": 0,
+    "baitcoinLevel": 105,
+    "type": ""
+  }
+]

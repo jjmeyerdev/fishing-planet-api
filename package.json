@@ -14,6 +14,7 @@
     "test:watch": "RATE_LIMIT_MAX=0 API_KEYS= LOG_SILENT=1 vitest",
     "seed": "tsx scripts/seed.ts",
     "seed:biting": "tsx scripts/seed-biting-preferences.ts",
+    "seed:gear": "tsx scripts/seed-gear.ts",
     "postinstall": "prisma generate",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",

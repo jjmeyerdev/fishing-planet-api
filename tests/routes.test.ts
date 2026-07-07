@@ -790,10 +790,7 @@ describe('wiki cross-category search', () => {
     'wikiBait', 'wikiBoilie', 'wikiGroundbait', 'wikiEquipment', 'wikiTransport', 'wikiOther', 'wikiRig', 'wikiBrand', 'wikiTechnology',
   ] as const
   beforeEach(() => {
-    for (const k of WIKI_MODELS) {
-      prisma[k].findMany.mockResolvedValue([])
-      prisma[k].count.mockResolvedValue(0)
-    }
+    for (const k of WIKI_MODELS) prisma[k].findMany.mockResolvedValue([])
   })
 
   it('requires q (400 without it)', async () => {
@@ -802,50 +799,55 @@ describe('wiki cross-category search', () => {
   })
 
   it('fans out across categories and returns tagged hits grouped by category', async () => {
-    prisma.wikiSpecies.count.mockResolvedValue(1)
     prisma.wikiSpecies.findMany.mockResolvedValue([{ name: 'Largemouth Bass', slug: 'lmb', imageUrl: 'i' }])
-    prisma.wikiReel.count.mockResolvedValue(1)
     prisma.wikiReel.findMany.mockResolvedValue([{ name: 'BassShooter', slug: 'bs', subtype: 'casting' }])
     const res = await app.request('/api/wiki/search?q=bass')
     expect(res.status).toBe(200)
     const body = await res.json()
     expect(body).toEqual({
       query: 'bass',
-      total: 2,
       limit: 50,
       offset: 0,
+      hasMore: false,
       results: [
         { category: 'species', name: 'Largemouth Bass', slug: 'lmb', imageUrl: 'i' },
         { category: 'reels', name: 'BassShooter', slug: 'bs', subtype: 'casting' },
       ],
     })
-    expect(prisma.wikiSpecies.count).toHaveBeenCalledWith({
-      where: { name: { contains: 'bass', mode: 'insensitive' } },
-    })
+    // No count() fan-out — it exhausted the serverless pool in production. Each
+    // find is bounded to the page window (default limit 50 + offset 0, +1).
+    expect(prisma.wikiSpecies.count).not.toHaveBeenCalled()
+    expect(prisma.wikiSpecies.findMany).toHaveBeenCalledWith(
+      expect.objectContaining({ where: { name: { contains: 'bass', mode: 'insensitive' } }, take: 51 }),
+    )
   })
 
-  it('paginates the merged list with limit/offset and a true total', async () => {
-    // Two species precede two reels in the flat list; total counts all four.
-    prisma.wikiSpecies.count.mockResolvedValue(2)
-    prisma.wikiSpecies.findMany.mockResolvedValue([{ name: 'Bass Two', slug: 'b2' }])
-    prisma.wikiReel.count.mockResolvedValue(2)
+  it('paginates the merged list with limit/offset and reports hasMore', async () => {
+    // species concatenate before reels; the page window is a slice of the merge.
+    prisma.wikiSpecies.findMany.mockResolvedValue([{ name: 'Bass One', slug: 'b1' }, { name: 'Bass Two', slug: 'b2' }])
     prisma.wikiReel.findMany.mockResolvedValue([{ name: 'Reel One', slug: 'r1', subtype: 'casting' }])
     const res = await app.request('/api/wiki/search?q=x&limit=2&offset=1')
     expect(res.status).toBe(200)
     const body = await res.json()
-    expect(body.total).toBe(4)
     expect(body.limit).toBe(2)
     expect(body.offset).toBe(1)
+    // merged = [species Bass One, species Bass Two, reels Reel One]; slice(1,3).
     expect(body.results).toEqual([
       { category: 'species', name: 'Bass Two', slug: 'b2' },
       { category: 'reels', name: 'Reel One', slug: 'r1', subtype: 'casting' },
     ])
-    // Window starts at absolute index 1: skip the first species, take one.
-    expect(prisma.wikiSpecies.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({ skip: 1, take: 2 }),
-    )
-    // Page still needs one more; the reels category starts fresh (skip 0).
-    expect(prisma.wikiReel.findMany).toHaveBeenCalledWith(expect.objectContaining({ skip: 0, take: 1 }))
+    expect(body.hasMore).toBe(false)
+    // Bounded fetch: cap (offset+limit=3) + 1.
+    expect(prisma.wikiSpecies.findMany).toHaveBeenCalledWith(expect.objectContaining({ take: 4 }))
+  })
+
+  it('flags hasMore when a category returns beyond the page window', async () => {
+    // One category returns cap+1 rows (offset 0 + limit 1, +1 = 2), so there is more.
+    prisma.wikiSpecies.findMany.mockResolvedValue([{ name: 'A', slug: 'a' }, { name: 'B', slug: 'b' }])
+    const res = await app.request('/api/wiki/search?q=x&limit=1')
+    const body = await res.json()
+    expect(body.results).toEqual([{ category: 'species', name: 'A', slug: 'a' }])
+    expect(body.hasMore).toBe(true)
   })
 
   it('rejects out-of-range limit/offset and unknown category with 400', async () => {
@@ -857,8 +859,8 @@ describe('wiki cross-category search', () => {
 
   it('category= narrows the fan-out to the named categories', async () => {
     await app.request('/api/wiki/search?q=carp&category=species,baits')
-    expect(prisma.wikiSpecies.count).toHaveBeenCalled()
-    expect(prisma.wikiBait.count).toHaveBeenCalled()
-    expect(prisma.wikiReel.count).not.toHaveBeenCalled()
+    expect(prisma.wikiSpecies.findMany).toHaveBeenCalled()
+    expect(prisma.wikiBait.findMany).toHaveBeenCalled()
+    expect(prisma.wikiReel.findMany).not.toHaveBeenCalled()
   })
 })

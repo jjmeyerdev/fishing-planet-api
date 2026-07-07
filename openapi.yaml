@@ -1713,7 +1713,7 @@ paths:
         category. Returns one paginated flat list of category-tagged hits (ordered
         by category, then name); each hit links to its detail route
         /api/wiki/{category}/{slug}. Page through the merged result set with
-        limit/offset; total is the full match count across all categories.
+        limit/offset; hasMore signals whether further results exist beyond the page.
       operationId: searchWiki
       tags: [wiki]
       parameters:
@@ -3235,11 +3235,11 @@ components:
       type: object
       properties:
         query: { type: string }
-        total: { type: integer, description: Total matches across all searched categories. }
         limit: { type: integer, description: Page size applied. }
         offset: { type: integer, description: Rows skipped into the merged result set. }
+        hasMore: { type: boolean, description: Whether further results exist beyond this page. }
         results: { type: array, items: { $ref: '#/components/schemas/WikiSearchHit' } }
-      required: [query, total, limit, offset, results]
+      required: [query, limit, offset, hasMore, results]
 
 tags:
   - name: meta

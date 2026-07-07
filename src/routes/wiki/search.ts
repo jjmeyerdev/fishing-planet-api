@@ -11,10 +11,7 @@ import { pageParams } from '../helpers.js'
 
 interface SearchTarget {
   category: string
-  model: {
-    findMany(args: unknown): Promise<unknown[]>
-    count(args: unknown): Promise<number>
-  }
+  model: { findMany(args: unknown): Promise<unknown[]> }
 }
 
 const TARGETS: SearchTarget[] = [
@@ -65,30 +62,23 @@ export async function wikiSearch(c: Context): Promise<Response> {
 
   const where = { name: { contains: q, mode: 'insensitive' } }
 
-  // True total across every target category (cheap parallel counts).
-  const counts = await Promise.all(targets.map((t) => t.model.count({ where })))
-  const total = counts.reduce((sum, n) => sum + n, 0)
-
-  // The flat list concatenates the categories in TARGETS order, each sorted by
-  // name. Walk them and query only the categories the [offset, offset+limit)
-  // window actually spans, so the DB fetch stays bounded to one page.
-  const results: Record<string, unknown>[] = []
-  let seen = 0 // absolute index of the current category's first row
-  for (const [i, t] of targets.entries()) {
-    if (results.length >= limit) break
-    const n = counts[i]
-    if (n === 0) continue
-    const skip = offset - seen // window start relative to this category
-    seen += n
-    if (skip >= n) continue // this whole category precedes the window
-    const rows = (await t.model.findMany({
-      where,
-      orderBy: { name: 'asc' },
-      skip: Math.max(0, skip),
-      take: limit - results.length,
-    })) as Record<string, unknown>[]
-    for (const r of rows) results.push(hit(t.category, r))
-  }
-
-  return c.json({ query: q, total, limit, offset, results })
+  // Fetch, per category in parallel, just enough to cover the page plus one row
+  // to detect further results. The categories concatenate in TARGETS order (each
+  // name-sorted), so slicing the merged list yields the cross-category page. We
+  // deliberately fetch with a bounded `take` and no count() fan-out: a per-
+  // category count() over the unindexed `name ILIKE '%q%'` is a full scan, and
+  // 17 of them in parallel exhausted the serverless pool (connection-timeout
+  // 500s in production). A true cross-category total needs those counts, so we
+  // report `hasMore` instead.
+  const cap = offset + limit
+  const groups = await Promise.all(
+    targets.map(async (t) => {
+      const rows = (await t.model.findMany({ where, take: cap + 1, orderBy: { name: 'asc' } })) as Record<string, unknown>[]
+      return rows.map((r) => hit(t.category, r))
+    }),
+  )
+  const merged = groups.flat()
+  const results = merged.slice(offset, cap)
+  const hasMore = merged.length > cap
+  return c.json({ query: q, limit, offset, hasMore, results })
 }

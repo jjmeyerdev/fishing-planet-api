@@ -41,6 +41,7 @@ The server starts at <http://localhost:8080> (override with `PORT`).
 - `pnpm seed:gear` — seed the tackle catalog (baits, lures, hooks, …) from `data/fp/*.json` (pass one entity name to seed just that one)
 - `pnpm seed:fp` — enrich fish/locations from `data/fp/*.json` and rebuild the fish-location + bait/lure-type links
 - `pnpm seed:spots` — seed geo spots and per-location weather from `data/fp/*.json`
+- `pnpm seed:fish-curated` — backfill curated `Fish` fields (family, credit rates, max weights) from the `wiki_species` dataset (pass `--dry` to preview)
 - `pnpm wiki:crawl` / `wiki:parse` / `wiki:load` — the three-stage Fishing Planet Wiki ingestion (scrape → parse → load); see [Wiki dataset](#wiki-dataset)
 
 ## Seeding
@@ -91,6 +92,16 @@ re-runnable stages, each reading the previous one's output:
 3. `pnpm wiki:load` — upsert `parsed.json` into the database.
 
 The wiki data is exposed read-only under `/api/wiki` (see [Wiki API](#wiki-api)).
+
+### Curated fish backfill
+
+Some `Fish` columns (family, credit rates, class max weights) aren't in the
+FP-Collective source, so they start null. `pnpm seed:fish-curated` backfills them
+from the `wiki_species` dataset above (**run `wiki:load` first**), matching by name.
+It's additive (fills only empty fields) and idempotent, and covers just the fish
+whose name matches a wiki species — the rest, plus the fields the wiki can't source
+(weight mins, young/monster weights, farming meta), stay null. Pass `--dry` to
+preview the counts without writing.
 
 ## Database config (Prisma 7)
 

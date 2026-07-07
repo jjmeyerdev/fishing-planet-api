@@ -29,6 +29,7 @@ pnpm seed:gear baits    # seed a single gear entity (baits|boilies|lure-types|�
 pnpm seed:fp            # enrich fish/locations + rebuild fish_locations & links
 pnpm seed:spots         # seed geo spots + per-location weather from data/fp/*.json
 pnpm seed:spots spots   # seed a single entity (spots|weathers)
+pnpm seed:fish-curated  # backfill curated Fish fields from wiki_species (add --dry to preview)
 ```
 
 The static checks are `pnpm typecheck` (types, including `tests/`) and `pnpm test`
@@ -402,3 +403,24 @@ cache, markdown helpers, the shared `gear.ts` primitives, the per-category parse
 and the parse↔load type contract. Big pages (reel/rod sub-type pages run
 ~130–400 KB) are only ever handled in the script — never read into an agent's
 context; structural analysis of a new category is best done in a subagent.
+
+## Curated Fish backfill (`scripts/seed-fish-curated.ts`)
+
+Backfills the curated `Fish` columns that no other seed sources — the FP-Collective
+JSON never carried them, so they were all null. The **only** in-repo source is the
+standalone `wiki_species` dataset, so this is a cross-dataset enrich: **run
+`pnpm wiki:load` first**. Matches `Fish.commonName == WikiSpecies.name`
+(case-insensitive, trimmed). `pnpm seed:fish-curated` applies; `--dry` previews the
+counts and writes nothing. Notes:
+
+- **Additive + idempotent:** each field is filled only when the `Fish` row is
+  currently empty (a hand-curated value is never clobbered; a re-run is a no-op).
+- **Fields filled:** `family` (source's trailing ` family` stripped), the three
+  `creditsPerKg*` (from `wiki_species.*CreditsPerKg`), and `weightCommonMax` /
+  `weightUniqueMax` (from `*WeightMaxKg`).
+- **Left null — no source:** weight *mins*, `weightYoung*`, `monsterTargetWeight`,
+  the trophy *max* (Fish has no such column, though wiki has `trophyWeightMaxKg`),
+  and the farming/xp meta (`xpCurveNotes`/`farmingMetaTier`/`notesFarming`).
+- **Coverage:** only fish whose name matches a wiki species — 141 of 279 at time of
+  writing (the other 138, mostly exotics, aren't in the 148-species wiki set).
+- Data-only (no schema change); apply to Neon out-of-band like the other seeds.

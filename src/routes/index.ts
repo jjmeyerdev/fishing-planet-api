@@ -14,6 +14,7 @@ import { keepnets } from './keepnets.js'
 import { addons } from './addons.js'
 import { spots } from './spots.js'
 import { weathers } from './weathers.js'
+import { wiki } from './wiki/index.js'
 
 export const routes = new Hono()
 
@@ -38,3 +39,6 @@ routes.route('/addons', addons)
 // Geo spots + per-location weather (uniform id-in-path CRUD via crudResource)
 routes.route('/spots', spots)
 routes.route('/weathers', weathers)
+
+// Read-only API over the standalone wiki_* dataset (species + headline gear)
+routes.route('/wiki', wiki)

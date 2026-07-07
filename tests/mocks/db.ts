@@ -30,4 +30,13 @@ export const prisma = {
   addon: model(),
   spot: model(),
   weather: model(),
+  // wiki_* read-only resources
+  wikiSpecies: model(),
+  wikiReel: model(),
+  wikiRod: model(),
+  wikiLine: model(),
+  wikiHook: model(),
+  wikiSinker: model(),
+  wikiBobber: model(),
+  wikiLure: model(),
 }

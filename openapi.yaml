@@ -1704,6 +1704,322 @@ paths:
         '400': { $ref: '#/components/responses/BadRequest' }
         '404': { $ref: '#/components/responses/NotFound' }
 
+  # --- Wiki: read-only API over the standalone wiki_* dataset (species + gear) ---
+  /api/wiki/species:
+    get:
+      summary: List wiki species
+      operationId: listWikiSpecies
+      tags: [wiki]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - { name: q, in: query, description: Case-insensitive substring match on name, schema: { type: string } }
+        - { name: family, in: query, schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [id, name, family] } }
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of wiki species
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties: { data: { type: array, items: { $ref: '#/components/schemas/WikiSpecies' } } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/wiki/species/{slug}:
+    parameters: [ { $ref: '#/components/parameters/WikiSlugPath' } ]
+    get:
+      summary: Get a wiki species by slug (embeds bait/lure/location links)
+      operationId: getWikiSpecies
+      tags: [wiki]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiSpeciesDetail' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/wiki/reels:
+    get:
+      summary: List wiki reels
+      operationId: listWikiReels
+      tags: [wiki]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - { name: q, in: query, description: Case-insensitive substring match on name, schema: { type: string } }
+        - { name: subtype, in: query, schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [id, name, subtype] } }
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of wiki reels
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties: { data: { type: array, items: { $ref: '#/components/schemas/WikiReel' } } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/wiki/reels/{slug}:
+    parameters: [ { $ref: '#/components/parameters/WikiSlugPath' } ]
+    get:
+      summary: Get a wiki reel by slug (embeds brand, variants, technologies)
+      operationId: getWikiReel
+      tags: [wiki]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiGearDetail' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/wiki/rods:
+    get:
+      summary: List wiki rods
+      operationId: listWikiRods
+      tags: [wiki]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - { name: q, in: query, description: Case-insensitive substring match on name, schema: { type: string } }
+        - { name: subtype, in: query, schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [id, name, subtype] } }
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of wiki rods
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties: { data: { type: array, items: { $ref: '#/components/schemas/WikiGear' } } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/wiki/rods/{slug}:
+    parameters: [ { $ref: '#/components/parameters/WikiSlugPath' } ]
+    get:
+      summary: Get a wiki rod by slug (embeds brand, variants, technologies)
+      operationId: getWikiRod
+      tags: [wiki]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiGearDetail' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/wiki/lines:
+    get:
+      summary: List wiki lines
+      operationId: listWikiLines
+      tags: [wiki]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - { name: q, in: query, description: Case-insensitive substring match on name, schema: { type: string } }
+        - { name: subtype, in: query, schema: { type: string } }
+        - { name: kind, in: query, description: 'regular | exclusive', schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [id, name, subtype] } }
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of wiki lines
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties: { data: { type: array, items: { $ref: '#/components/schemas/WikiGear' } } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/wiki/lines/{slug}:
+    parameters: [ { $ref: '#/components/parameters/WikiSlugPath' } ]
+    get:
+      summary: Get a wiki line by slug (embeds brand, variants)
+      operationId: getWikiLine
+      tags: [wiki]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiGearDetail' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/wiki/hooks:
+    get:
+      summary: List wiki hooks
+      operationId: listWikiHooks
+      tags: [wiki]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - { name: q, in: query, description: Case-insensitive substring match on name, schema: { type: string } }
+        - { name: subtype, in: query, schema: { type: string } }
+        - { name: kind, in: query, description: 'hook | jighead', schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [id, name, subtype] } }
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of wiki hooks
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties: { data: { type: array, items: { $ref: '#/components/schemas/WikiGear' } } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/wiki/hooks/{slug}:
+    parameters: [ { $ref: '#/components/parameters/WikiSlugPath' } ]
+    get:
+      summary: Get a wiki hook by slug (embeds brand, variants)
+      operationId: getWikiHook
+      tags: [wiki]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiGearDetail' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/wiki/sinkers:
+    get:
+      summary: List wiki sinkers
+      operationId: listWikiSinkers
+      tags: [wiki]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - { name: q, in: query, description: Case-insensitive substring match on name, schema: { type: string } }
+        - { name: subtype, in: query, schema: { type: string } }
+        - { name: kind, in: query, description: 'sinker | feeder', schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [id, name, subtype] } }
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of wiki sinkers
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties: { data: { type: array, items: { $ref: '#/components/schemas/WikiGear' } } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/wiki/sinkers/{slug}:
+    parameters: [ { $ref: '#/components/parameters/WikiSlugPath' } ]
+    get:
+      summary: Get a wiki sinker by slug (embeds brand, variants)
+      operationId: getWikiSinker
+      tags: [wiki]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiGearDetail' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/wiki/bobbers:
+    get:
+      summary: List wiki bobbers
+      operationId: listWikiBobbers
+      tags: [wiki]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - { name: q, in: query, description: Case-insensitive substring match on name, schema: { type: string } }
+        - { name: subtype, in: query, schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [id, name, subtype] } }
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of wiki bobbers
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties: { data: { type: array, items: { $ref: '#/components/schemas/WikiBobber' } } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/wiki/bobbers/{slug}:
+    parameters: [ { $ref: '#/components/parameters/WikiSlugPath' } ]
+    get:
+      summary: Get a wiki bobber by slug
+      operationId: getWikiBobber
+      tags: [wiki]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiBobber' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /api/wiki/lures:
+    get:
+      summary: List wiki lures
+      operationId: listWikiLures
+      tags: [wiki]
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - { name: q, in: query, description: Case-insensitive substring match on name, schema: { type: string } }
+        - { name: subtype, in: query, schema: { type: string } }
+        - { name: sort, in: query, schema: { type: string, enum: [id, name, subtype] } }
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: A page of wiki lures
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Page'
+                  - type: object
+                    properties: { data: { type: array, items: { $ref: '#/components/schemas/WikiLure' } } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
+  /api/wiki/lures/{slug}:
+    parameters: [ { $ref: '#/components/parameters/WikiSlugPath' } ]
+    get:
+      summary: Get a wiki lure by slug (embeds variants)
+      operationId: getWikiLure
+      tags: [wiki]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiLureDetail' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
 components:
   securitySchemes:
     bearerAuth:
@@ -1731,6 +2047,12 @@ components:
       in: path
       required: true
       schema: { type: integer }
+    WikiSlugPath:
+      name: slug
+      in: path
+      required: true
+      description: The wiki entity's unique slug.
+      schema: { type: string }
 
   responses:
     BadRequest:
@@ -2294,6 +2616,145 @@ components:
       allOf: [ { $ref: '#/components/schemas/WeatherCreate' } ]
       description: Same writable fields as create; all optional.
 
+    # --- Wiki read-only dataset (scraped from wiki.fishingplanet.com) ---
+    WikiLink:
+      type: object
+      description: A cross-category link stored as raw name + slug (FK-resolved where possible).
+      properties:
+        name: { type: string }
+        slug: { type: string }
+    WikiSpecies:
+      type: object
+      description: A fish species from the wiki (game-data fields; cross-links embedded on detail).
+      properties:
+        id: { type: integer }
+        slug: { type: string }
+        name: { type: string }
+        latinName: { type: string, nullable: true }
+        family: { type: string, nullable: true }
+        description: { type: string, nullable: true }
+        imageUrl: { type: string, nullable: true }
+        wikipediaUrl: { type: string, nullable: true }
+        commonWeightMaxKg: { type: number, nullable: true }
+        trophyWeightMaxKg: { type: number, nullable: true }
+        uniqueWeightMaxKg: { type: number, nullable: true }
+        hookSizeMin: { type: string, nullable: true }
+        hookSizeMax: { type: string, nullable: true }
+      required: [id, slug, name]
+    WikiSpeciesDetail:
+      allOf:
+        - $ref: '#/components/schemas/WikiSpecies'
+        - type: object
+          description: Adds the bait/lure/location cross-links; bait/lure links embed the resolved catalog row when matched.
+          properties:
+            baits:
+              type: array
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/WikiLink'
+                  - type: object
+                    properties: { baitId: { type: integer, nullable: true }, bait: { type: object, nullable: true } }
+            lures:
+              type: array
+              items:
+                allOf:
+                  - $ref: '#/components/schemas/WikiLink'
+                  - type: object
+                    properties: { lureId: { type: integer, nullable: true }, lure: { type: object, nullable: true } }
+            locations:
+              type: array
+              items: { $ref: '#/components/schemas/WikiLink' }
+    WikiBrand:
+      type: object
+      properties:
+        id: { type: integer }
+        slug: { type: string }
+        name: { type: string }
+        description: { type: string, nullable: true }
+        imageUrl: { type: string, nullable: true }
+      required: [id, slug, name]
+    WikiReel:
+      type: object
+      description: A wiki reel (headline gear). List returns the parent; detail embeds brand/variants/technologies.
+      properties:
+        id: { type: integer }
+        slug: { type: string }
+        name: { type: string }
+        subtype: { type: string, description: 'spinning | casting | saltwater' }
+        brandId: { type: integer, nullable: true }
+        description: { type: string, nullable: true }
+        imageUrl: { type: string, nullable: true }
+      required: [id, slug, name, subtype]
+    WikiGear:
+      type: object
+      description: A wiki gear parent (rod/line/hook/sinker). Detail embeds brand + variants (+ technologies for rods).
+      properties:
+        id: { type: integer }
+        slug: { type: string }
+        name: { type: string }
+        subtype: { type: string }
+        brandId: { type: integer, nullable: true }
+        description: { type: string, nullable: true }
+        imageUrl: { type: string, nullable: true }
+      required: [id, slug, name, subtype]
+    WikiGearDetail:
+      type: object
+      description: A gear parent (reel/rod/line/hook/sinker) with its relations embedded on by-slug lookup.
+      properties:
+        id: { type: integer }
+        slug: { type: string }
+        name: { type: string }
+        subtype: { type: string }
+        description: { type: string, nullable: true }
+        imageUrl: { type: string, nullable: true }
+        brand:
+          allOf: [ { $ref: '#/components/schemas/WikiBrand' } ]
+          nullable: true
+        variants:
+          type: array
+          description: Per-variant specs (columns of the source spec table).
+          items: { type: object }
+        technologies:
+          type: array
+          description: Technology links (reels/rods only); each embeds the technology row.
+          items: { type: object }
+      required: [id, slug, name, subtype]
+    WikiBobber:
+      type: object
+      description: A wiki bobber (flat, one row per item).
+      properties:
+        id: { type: integer }
+        slug: { type: string }
+        name: { type: string }
+        subtype: { type: string }
+        section: { type: string, nullable: true }
+        color: { type: string, nullable: true }
+        size: { type: string, nullable: true }
+        material: { type: string, nullable: true }
+        unlockLevel: { type: integer, nullable: true }
+        priceCredits: { type: integer, nullable: true }
+        priceBaitcoins: { type: integer, nullable: true }
+        imageUrl: { type: string, nullable: true }
+      required: [id, slug, name, subtype]
+    WikiLure:
+      type: object
+      description: A wiki lure parent; detail embeds its (color × size) variants.
+      properties:
+        id: { type: integer }
+        slug: { type: string }
+        name: { type: string }
+        subtype: { type: string }
+        description: { type: string, nullable: true }
+      required: [id, slug, name, subtype]
+    WikiLureDetail:
+      allOf:
+        - $ref: '#/components/schemas/WikiLure'
+        - type: object
+          properties:
+            variants:
+              type: array
+              items: { type: object }
+
 tags:
   - name: meta
     description: Service info and health/readiness probes
@@ -2327,3 +2788,5 @@ tags:
     description: Geo spots on location maps
   - name: weathers
     description: Per-location weather patterns
+  - name: wiki
+    description: Read-only wiki dataset (species + headline gear) scraped from the Fishing Planet Wiki

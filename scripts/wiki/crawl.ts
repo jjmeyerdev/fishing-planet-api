@@ -67,6 +67,16 @@ const GEAR_CATEGORIES: Array<{ category: CacheEntry['category']; slugs: string[]
     category: 'equipment',
     slugs: ['Glasses_and_Flashlights', 'Hats', 'Waist_Coats', 'Rod_Holders', 'Rod_Cases', 'Tackle_Boxes', 'Stringers_and_Keepnets'],
   },
+  {
+    // Transport — vehicles (bespoke: engine/seats/speed/storage), not tackle.
+    category: 'transport',
+    slugs: ['Bass_Boats', 'Fishing_Yachts', 'Kayaks', 'Motor_Boats'],
+  },
+  {
+    // Other — grab-bag (fireworks, mission items, repair kits).
+    category: 'other',
+    slugs: ['Fireworks', 'Mission_Items', 'Repair_kits'],
+  },
 ]
 const GEAR_PAGES: Array<{ url: string; category: CacheEntry['category']; subtype: string }> = GEAR_CATEGORIES.flatMap((g) =>
   g.slugs.map((slug) => ({ url: `${WIKI}/${encodeURIComponent(slug)}`, category: g.category, subtype: slugify(readable(slug)) })),

@@ -867,3 +867,59 @@ model WikiEquipment {
 
   @@map("wiki_equipment")
 }
+
+// Transport — vehicles (bass-boats, fishing-yachts, kayaks, motor-boats). One row
+// per model variant, flattened from the block-per-model layout. Bespoke vehicle
+// spec set (dimensions/engine/capacity/electronics). Dimensions/weights stay raw
+// strings (mixed units and fractions like `16 ft 4″`).
+model WikiTransport {
+  id                Int      @id @default(autoincrement())
+  slug              String   @unique @db.VarChar(200)
+  name              String   @db.VarChar(150)
+  subtype           String   @db.VarChar(40) // bass-boats | fishing-yachts | kayaks | motor-boats
+  fpId              Int?     @map("fp_id")
+  imageUrl          String?  @map("image_url") @db.Text
+  lengthFt          String?  @map("length_ft") @db.VarChar(20)
+  lengthCm          String?  @map("length_cm") @db.VarChar(20)
+  widthFt           String?  @map("width_ft") @db.VarChar(20)
+  widthCm           String?  @map("width_cm") @db.VarChar(20)
+  weightLb          String?  @map("weight_lb") @db.VarChar(20)
+  weightKg          String?  @map("weight_kg") @db.VarChar(20)
+  material          String?  @db.VarChar(80)
+  passengerCapacity String?  @map("passenger_capacity") @db.VarChar(20)
+  engine            String?  @db.VarChar(80)
+  echoSounder       String?  @map("echo_sounder") @db.VarChar(120)
+  rodHolders        String?  @map("rod_holders") @db.VarChar(80)
+  gps               String?  @db.VarChar(20)
+  detailing         String?  @db.VarChar(20)
+  unlockLevel       Int?     @map("unlock_level")
+  priceCredits      Int?     @map("price_credits")
+  priceBaitcoins    Int?     @map("price_baitcoins")
+  priceNote         String?  @map("price_note") @db.Text
+  sourceUrl         String   @map("source_url") @db.Text
+  contentHash       String   @map("content_hash") @db.VarChar(64)
+  scrapedAt         DateTime @map("scraped_at")
+
+  @@map("wiki_transport")
+}
+
+// Other — grab-bag (fireworks, mission-items; repair-kits is a prose page with no
+// catalog). One row per item, only the shared fields. Mission items are quest
+// rewards (no price); fireworks are Baitcoins-priced.
+model WikiOther {
+  id             Int      @id @default(autoincrement())
+  slug           String   @unique @db.VarChar(200)
+  name           String   @db.VarChar(200)
+  subtype        String   @db.VarChar(40) // fireworks | mission-items
+  fpId           Int?     @map("fp_id")
+  imageUrl       String?  @map("image_url") @db.Text
+  description    String?  @db.Text
+  priceCredits   Int?     @map("price_credits")
+  priceBaitcoins Int?     @map("price_baitcoins")
+  priceNote      String?  @map("price_note") @db.Text
+  sourceUrl      String   @map("source_url") @db.Text
+  contentHash    String   @map("content_hash") @db.VarChar(64)
+  scrapedAt      DateTime @map("scraped_at")
+
+  @@map("wiki_other")
+}

@@ -210,10 +210,34 @@ async function main() {
     await prisma.wikiEquipment.upsert({ where: { slug: e.slug }, create: { slug: e.slug, ...fields }, update: fields })
   }
 
+  // 14. Transport — vehicles (flattened block-per-model).
+  for (const t of data.transport) {
+    const fields = {
+      name: t.name, subtype: t.subtype, fpId: t.fpId, imageUrl: t.imageUrl,
+      lengthFt: t.lengthFt, lengthCm: t.lengthCm, widthFt: t.widthFt, widthCm: t.widthCm, weightLb: t.weightLb, weightKg: t.weightKg,
+      material: t.material, passengerCapacity: t.passengerCapacity, engine: t.engine, echoSounder: t.echoSounder,
+      rodHolders: t.rodHolders, gps: t.gps, detailing: t.detailing, unlockLevel: t.unlockLevel,
+      priceCredits: t.priceCredits, priceBaitcoins: t.priceBaitcoins, priceNote: t.priceNote,
+      sourceUrl: t.sourceUrl, contentHash: t.contentHash, scrapedAt: new Date(),
+    }
+    await prisma.wikiTransport.upsert({ where: { slug: t.slug }, create: { slug: t.slug, ...fields }, update: fields })
+  }
+
+  // 15. Other — grab-bag (fireworks, mission-items).
+  for (const o of data.other) {
+    const fields = {
+      name: o.name, subtype: o.subtype, fpId: o.fpId, imageUrl: o.imageUrl, description: o.description,
+      priceCredits: o.priceCredits, priceBaitcoins: o.priceBaitcoins, priceNote: o.priceNote,
+      sourceUrl: o.sourceUrl, contentHash: o.contentHash, scrapedAt: new Date(),
+    }
+    await prisma.wikiOther.upsert({ where: { slug: o.slug }, create: { slug: o.slug, ...fields }, update: fields })
+  }
+
   console.log(
     `✓ loaded: ${data.species.length} species, ${data.reels.length} reels, ${data.rods.length} rods, ${data.lines.length} lines, ` +
       `${data.hooks.length} hooks, ${data.sinkers.length} sinkers, ${data.bobbers.length} bobbers, ${data.lures.length} lures, ` +
       `${data.baits.length} baits, ${data.boilies.length} boilies, ${data.groundbaits.length} groundbaits, ${data.equipment.length} equipment, ` +
+      `${data.transport.length} transport, ${data.other.length} other, ` +
       `${data.brands.length} brands, ${data.technologies.length} technologies` +
       (unresolvedTech ? ` (${unresolvedTech} rod/reel→tech links unresolved)` : ''),
   )

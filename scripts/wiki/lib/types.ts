@@ -349,6 +349,52 @@ export interface ParsedEquipment {
   contentHash: string
 }
 
+// Transport — vehicles (bass-boats, fishing-yachts, kayaks, motor-boats). A
+// block-per-model layout (Model row = variant axis, like boilies) with a bespoke
+// vehicle spec set; flattened one row per model variant.
+export interface ParsedTransport {
+  slug: string
+  name: string
+  subtype: string // bass-boats | fishing-yachts | kayaks | motor-boats
+  fpId: number | null
+  imageUrl: string | null
+  lengthFt: string | null
+  lengthCm: string | null
+  widthFt: string | null
+  widthCm: string | null
+  weightLb: string | null
+  weightKg: string | null
+  material: string | null
+  passengerCapacity: string | null
+  engine: string | null // "200 hp"
+  echoSounder: string | null
+  rodHolders: string | null
+  gps: string | null
+  detailing: string | null
+  unlockLevel: number | null
+  priceCredits: number | null
+  priceBaitcoins: number | null
+  priceNote: string | null
+  sourceUrl: string
+  contentHash: string
+}
+
+// Other — grab-bag (fireworks, mission-items, repair-kits). One row per item with
+// only the fields they share: name, image, description, price.
+export interface ParsedOther {
+  slug: string
+  name: string
+  subtype: string // fireworks | mission-items | repair-kits
+  fpId: number | null
+  imageUrl: string | null
+  description: string | null
+  priceCredits: number | null
+  priceBaitcoins: number | null
+  priceNote: string | null
+  sourceUrl: string
+  contentHash: string
+}
+
 export interface ParsedBrand {
   slug: string
   name: string
@@ -379,6 +425,8 @@ export interface ParsedDataset {
   boilies: ParsedBoilie[]
   groundbaits: ParsedGroundbait[]
   equipment: ParsedEquipment[]
+  transport: ParsedTransport[]
+  other: ParsedOther[]
   brands: ParsedBrand[]
   technologies: ParsedTechnology[]
 }

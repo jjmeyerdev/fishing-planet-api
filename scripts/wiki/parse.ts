@@ -12,6 +12,8 @@ import { parseBaits } from './lib/parse-baits.js'
 import { parseBoilies } from './lib/parse-boilies.js'
 import { parseGroundbaits, parseGroundbaitMixes } from './lib/parse-groundbaits.js'
 import { parseEquipment, parseStringersKeepnets } from './lib/parse-equipment.js'
+import { parseTransport } from './lib/parse-transport.js'
+import { parseOther } from './lib/parse-other.js'
 import { parseSpecies } from './lib/parse-species.js'
 import type {
   ParsedBait,
@@ -24,11 +26,13 @@ import type {
   ParsedHook,
   ParsedLine,
   ParsedLure,
+  ParsedOther,
   ParsedReel,
   ParsedRod,
   ParsedSinker,
   ParsedSpecies,
   ParsedTechnology,
+  ParsedTransport,
   ReelSubtype,
   WikiLink,
 } from './lib/types.js'
@@ -67,6 +71,8 @@ function main() {
   const boilies: ParsedBoilie[] = []
   const groundbaits: ParsedGroundbait[] = []
   const equipment: ParsedEquipment[] = []
+  const transport: ParsedTransport[] = []
+  const other: ParsedOther[] = []
 
   for (const p of allPages()) {
     if (p.status !== 200) continue
@@ -96,6 +102,8 @@ function main() {
       equipment.push(...parseEquipment(p.markdown, p.url, sub))
       if (sub === 'stringers-and-keepnets') equipment.push(...parseStringersKeepnets(p.markdown, p.url, 'stringers-keepnets'))
     }
+    else if (p.category === 'transport') transport.push(...parseTransport(p.markdown, p.url, sub))
+    else if (p.category === 'other') other.push(...parseOther(p.markdown, p.url, sub))
   }
 
   // Brands (reels/rods/lines/hooks/sinkers) + technologies (reels/rods) are derived
@@ -133,6 +141,8 @@ function main() {
     boilies: uniqueSlugs(boilies),
     groundbaits: uniqueSlugs(groundbaits),
     equipment: uniqueSlugs(equipment),
+    transport: uniqueSlugs(transport),
+    other: uniqueSlugs(other),
     brands: [...brands.values()],
     technologies: [...technologies.values()],
   }
@@ -145,6 +155,7 @@ function main() {
       `${lines.length} lines (${variants(lines)} variants), ${hooks.length} hooks (${variants(hooks)} variants), ` +
       `${sinkers.length} sinkers (${variants(sinkers)} variants), ${bobbers.length} bobbers, ${lures.length} lures (${variants(lures)} variants), ` +
       `${baits.length} baits, ${boilies.length} boilies, ${groundbaits.length} groundbaits, ${equipment.length} equipment, ` +
+      `${transport.length} transport, ${other.length} other, ` +
       `${dataset.brands.length} brands, ${dataset.technologies.length} technologies → ${out}`,
   )
 }

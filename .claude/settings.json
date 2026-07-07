@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "permissions": {
+    "allow": [
+      "Bash(pnpm dev:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm start:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm test:watch:*)",
+      "Bash(pnpm seed:*)",
+      "Bash(pnpm seed:biting:*)",
+      "Bash(pnpm seed:gear:*)",
+      "Bash(pnpm seed:fp:*)",
+      "Bash(pnpm seed:spots:*)",
+      "Bash(pnpm wiki:crawl:*)",
+      "Bash(pnpm wiki:parse:*)",
+      "Bash(pnpm wiki:load:*)",
+      "Bash(pnpm postinstall:*)",
+      "Bash(pnpm db:generate:*)",
+      "Bash(pnpm db:push:*)",
+      "Bash(pnpm db:migrate:*)"
+    ]
+  }
+}

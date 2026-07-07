@@ -783,3 +783,51 @@ describe('wiki read routes', () => {
     expect(prisma.wikiBrand.findMany).toHaveBeenCalledWith(expect.objectContaining({ where: {} }))
   })
 })
+
+describe('wiki cross-category search', () => {
+  const WIKI_MODELS = [
+    'wikiSpecies', 'wikiReel', 'wikiRod', 'wikiLine', 'wikiHook', 'wikiSinker', 'wikiBobber', 'wikiLure',
+    'wikiBait', 'wikiBoilie', 'wikiGroundbait', 'wikiEquipment', 'wikiTransport', 'wikiOther', 'wikiRig', 'wikiBrand', 'wikiTechnology',
+  ] as const
+  beforeEach(() => {
+    for (const k of WIKI_MODELS) prisma[k].findMany.mockResolvedValue([])
+  })
+
+  it('requires q (400 without it)', async () => {
+    expect((await app.request('/api/wiki/search')).status).toBe(400)
+    expect(prisma.wikiReel.findMany).not.toHaveBeenCalled()
+  })
+
+  it('fans out across categories and returns tagged hits grouped by category', async () => {
+    prisma.wikiSpecies.findMany.mockResolvedValue([{ name: 'Largemouth Bass', slug: 'lmb', imageUrl: 'i' }])
+    prisma.wikiReel.findMany.mockResolvedValue([{ name: 'BassShooter', slug: 'bs', subtype: 'casting' }])
+    const res = await app.request('/api/wiki/search?q=bass')
+    expect(res.status).toBe(200)
+    const body = await res.json()
+    expect(body).toEqual({
+      query: 'bass',
+      limit: 8,
+      total: 2,
+      results: [
+        { category: 'species', name: 'Largemouth Bass', slug: 'lmb', imageUrl: 'i' },
+        { category: 'reels', name: 'BassShooter', slug: 'bs', subtype: 'casting' },
+      ],
+    })
+    expect(prisma.wikiBait.findMany).toHaveBeenCalledWith(
+      expect.objectContaining({ where: { name: { contains: 'bass', mode: 'insensitive' } }, take: 8 }),
+    )
+  })
+
+  it('rejects out-of-range limit and unknown category with 400', async () => {
+    expect((await app.request('/api/wiki/search?q=x&limit=99')).status).toBe(400)
+    expect((await app.request('/api/wiki/search?q=x&category=bogus')).status).toBe(400)
+    expect(prisma.wikiReel.findMany).not.toHaveBeenCalled()
+  })
+
+  it('category= narrows the fan-out to the named categories', async () => {
+    await app.request('/api/wiki/search?q=carp&category=species,baits')
+    expect(prisma.wikiSpecies.findMany).toHaveBeenCalled()
+    expect(prisma.wikiBait.findMany).toHaveBeenCalled()
+    expect(prisma.wikiReel.findMany).not.toHaveBeenCalled()
+  })
+})

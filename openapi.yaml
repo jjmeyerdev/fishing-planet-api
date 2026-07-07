@@ -1705,6 +1705,29 @@ paths:
         '404': { $ref: '#/components/responses/NotFound' }
 
   # --- Wiki: read-only API over the standalone wiki_* dataset (species + gear) ---
+  /api/wiki/search:
+    get:
+      summary: Search across all wiki categories by name
+      description: >-
+        Case-insensitive substring match on name, fanned out across every wiki
+        category. Returns one flat list of category-tagged hits (grouped by
+        category); each hit links to its detail route /api/wiki/{category}/{slug}.
+        Capped per category — query a category's list endpoint with ?q= for the full set.
+      operationId: searchWiki
+      tags: [wiki]
+      parameters:
+        - { name: q, in: query, required: true, description: Search term (substring match on name), schema: { type: string } }
+        - { name: limit, in: query, description: Max hits per category, schema: { type: integer, minimum: 1, maximum: 25, default: 8 } }
+        - { name: category, in: query, description: 'Comma-separated categories to restrict to (e.g. reels,baits)', schema: { type: string } }
+      responses:
+        '200':
+          description: Category-tagged search hits
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WikiSearchResults' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '429': { $ref: '#/components/responses/TooManyRequests' }
+        '503': { $ref: '#/components/responses/ServiceUnavailable' }
   /api/wiki/species:
     get:
       summary: List wiki species
@@ -3196,6 +3219,24 @@ components:
         category: { type: string, nullable: true, description: 'reel | rod' }
         description: { type: string, nullable: true }
       required: [id, slug, name]
+    WikiSearchHit:
+      type: object
+      description: One search match; link to its detail via /api/wiki/{category}/{slug}.
+      properties:
+        category: { type: string, description: 'The wiki category (species, reels, baits, …)' }
+        name: { type: string }
+        slug: { type: string }
+        subtype: { type: string, description: Present for categories that have a subtype. }
+        imageUrl: { type: string, description: Present for categories that carry an image. }
+      required: [category, name, slug]
+    WikiSearchResults:
+      type: object
+      properties:
+        query: { type: string }
+        limit: { type: integer, description: The per-category cap applied. }
+        total: { type: integer }
+        results: { type: array, items: { $ref: '#/components/schemas/WikiSearchHit' } }
+      required: [query, limit, total, results]
 
 tags:
   - name: meta

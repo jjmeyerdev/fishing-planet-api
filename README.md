@@ -38,6 +38,10 @@ The server starts at <http://localhost:8080> (override with `PORT`).
 - `pnpm db:generate` — regenerate the Prisma client
 - `pnpm seed` — seed locations, fish and fish-locations from `data/locations/*.md` (pass a single file to seed just that one)
 - `pnpm seed:biting` — seed biting preferences from `data/fish/*.md` (pass a single file to seed just that one)
+- `pnpm seed:gear` — seed the tackle catalog (baits, lures, hooks, …) from `data/fp/*.json` (pass one entity name to seed just that one)
+- `pnpm seed:fp` — enrich fish/locations from `data/fp/*.json` and rebuild the fish-location + bait/lure-type links
+- `pnpm seed:spots` — seed geo spots and per-location weather from `data/fp/*.json`
+- `pnpm wiki:crawl` / `wiki:parse` / `wiki:load` — the three-stage Fishing Planet Wiki ingestion (scrape → parse → load); see [Wiki dataset](#wiki-dataset)
 
 ## Seeding
 
@@ -56,6 +60,37 @@ script:
 parses the per-fish pages in `data/fish/` and upserts one `biting_preferences`
 row per fish, matched to `Fish` by the file's `# <commonName>` heading. It fills
 only the best bait, best lure, and bait hook size from each page's prose.
+
+### FP-Collective structured import
+
+Beyond the scraped markdown, the bulk of the game data comes from FP-Collective's
+structured JSON (vendored in `data/fp/*.json`). Three idempotent, order-dependent
+seeds populate it:
+
+1. `pnpm seed:gear` — the tackle catalog (baits, boilies, lure types, lures,
+   hooks, jigheads, sinkers, keepnets, addons), upserted on the FP-Collective id.
+2. `pnpm seed:fp` — enriches the existing fish/locations, rebuilds `fish_locations`
+   presence, and links fish to baits/lure-types (**run `seed:gear` first**, since
+   the links resolve gear by id).
+3. `pnpm seed:spots` — geo spots and per-location weather (**run `seed:fp` first**,
+   which backfills the `Location.fpId` each row matches on).
+
+### Wiki dataset
+
+A second, standalone dataset is scraped from the [Fishing Planet
+Wiki](https://wiki.fishingplanet.com) into separate `wiki_*` tables, kept apart
+from the FP-Collective models. It covers species, every tackle/gear category,
+consumables, equipment, transport, rigs, and brands/technologies. Three decoupled,
+re-runnable stages, each reading the previous one's output:
+
+1. `pnpm wiki:crawl` — scrape pages to an on-disk cache (`.cache/wiki/`,
+   git-ignored) via Firecrawl (`FIRECRAWL_API_KEY` in `.env`); resumable, so a
+   cached URL is never re-fetched.
+2. `pnpm wiki:parse` — parse the cache to `.cache/wiki/parsed.json` (pure — no
+   network or database).
+3. `pnpm wiki:load` — upsert `parsed.json` into the database.
+
+The wiki data is exposed read-only under `/api/wiki` (see [Wiki API](#wiki-api)).
 
 ## Database config (Prisma 7)
 
@@ -124,12 +159,18 @@ See [`docs/deployment.md`](docs/deployment.md) for the full deployment guide.
 data/
   locations/         FP-Collective place pages (markdown) — source for pnpm seed
   fish/              FP-Collective per-fish pages (markdown) — source for pnpm seed:biting
+  fp/                FP-Collective structured JSON — source for seed:gear/seed:fp/seed:spots
 prisma/
-  schema.prisma      models: Fish, Location, FishLocation, BitingPreference
+  schema.prisma      FP-Collective models (Fish, Location, tackle catalog, spots,
+                     weather) + the standalone wiki_* models
 prisma.config.ts     Prisma CLI config (schema path, migrations, datasource url)
 scripts/
   seed.ts            parse data/locations/*.md → upsert locations/fish/fish-locations
   seed-biting-preferences.ts  parse data/fish/*.md → upsert biting_preferences
+  seed-gear.ts       data/fp/*.json → upsert the tackle catalog
+  seed-fp.ts         data/fp/*.json → enrich fish/locations, rebuild links
+  seed-spots.ts      data/fp/*.json → upsert geo spots + per-location weather
+  wiki/              Fishing Planet Wiki ingestion (crawl → parse → load)
   stats.ts           print row counts by table and waterway type
 src/
   index.ts           entry point — starts the Node server
@@ -138,10 +179,11 @@ src/
   generated/prisma/  generated Prisma client (git-ignored)
   routes/
     index.ts         mounts resource routes under /api
-    fish.ts          /api/fish
-    locations.ts     /api/locations
-    fishLocations.ts /api/fish-locations
-    bitingPreferences.ts  /api/biting-preferences
+    fish.ts, locations.ts, fishLocations.ts, bitingPreferences.ts   core resources
+    baits.ts, boilies.ts, lureTypes.ts, lures.ts, hooks.ts, …       tackle catalog
+    spots.ts, weathers.ts   geo spots + per-location weather
+    crud.ts          shared id-in-path CRUD factory for the uniform resources
+    wiki/            read-only /api/wiki API (read.ts list+detail, search.ts)
     helpers.ts       shared field-picking / error helpers
 ```
 
@@ -157,8 +199,46 @@ during any request returns `503`, not `500`.
 | Locations | `/api/locations` | list, get `:id`, get `by-name/:name`, create, update `:id`, delete `:id` |
 | Biting preferences | `/api/biting-preferences` | list, get `:fishId`, create, update `:fishId`, delete `:fishId` |
 | Fish ↔ Location | `/api/fish-locations` | list (filter `?fishId=&locationId=`), create, update / delete via `?fishId=&locationId=&specificSpot=` |
+| Tackle catalog | `/api/baits`, `/api/boilies`, `/api/lure-types`, `/api/lures`, `/api/hooks`, `/api/jigheads`, `/api/sinkers`, `/api/keepnets`, `/api/addons` | list, get `:id`, create, update `:id`, delete `:id` (each — uniform id-in-path CRUD) |
+| Geo spots | `/api/spots` | list, get `:id`, create, update `:id`, delete `:id` |
+| Weather | `/api/weathers` | list, get `:id`, create, update `:id`, delete `:id` |
 
 The `fish_locations` join has a composite key `(fishId, locationId, specificSpot)`, so update and delete take those three as query params rather than a path id.
+
+### Wiki API
+
+A second, **read-only** dataset scraped from the [Fishing Planet
+Wiki](https://wiki.fishingplanet.com) (see [Wiki dataset](#wiki-dataset)) is
+served under `/api/wiki`, kept separate from the FP-Collective resources above.
+Each category exposes a **list** (`GET /api/wiki/<category>`) and a **by-slug
+detail** (`GET /api/wiki/<category>/:slug`, `404` if unknown) — there are no
+writes, since the tables are populated only by `wiki:load`. Note that detail is
+keyed by `slug`, not a numeric id.
+
+| Group | Categories |
+| --- | --- |
+| Species | `species` |
+| Gear | `reels`, `rods`, `lines`, `hooks`, `sinkers`, `bobbers`, `lures` |
+| Consumables | `baits`, `boilies`, `groundbaits` |
+| Other kit | `equipment`, `transport`, `other`, `rigs` |
+| Reference | `brands`, `technologies` |
+
+The list endpoints share the pagination, filtering, and sorting conventions
+below: each filters on `?q=` (name substring) plus category-specific params
+(`subtype`, `kind`, `family`, `category`) and sorts on `id`/`name`.
+
+**Cross-category search** — `GET /api/wiki/search?q=<term>` fans the name match
+out across every category and returns one flat, category-tagged list, each hit
+carrying the `slug` to reach its detail route. Narrow it with `?category=`
+(comma-separated). A true cross-category count would mean a full scan per
+category, so the response reports `hasMore` instead of a `total`:
+
+```json
+{
+  "query": "carp", "limit": 50, "offset": 0, "hasMore": false,
+  "results": [ { "category": "species", "name": "Common Carp", "slug": "common-carp" } ]
+}
+```
 
 ### Pagination
 
@@ -189,6 +269,10 @@ filter returns `400`.
 
 Example: `GET /api/fish?q=bass&isMonster=true&limit=10`.
 
+The tackle catalog, `spots`/`weathers`, and `/api/wiki/*` list endpoints each add
+their own filter whitelist (always at least `q`); the exact params per endpoint
+are in [`/docs`](https://fishing-planet-api.vercel.app/docs) and `openapi.yaml`.
+
 ### Sorting
 
 `list` endpoints accept `?sort=<field>&order=asc|desc` (`order` defaults to
@@ -203,6 +287,9 @@ whitelisted column, and `order` must be `asc`/`desc`, else `400`.
 | `/api/fish-locations` | `fishId`, `locationId`, `specificSpot` | `fishId`, `locationId` asc |
 
 Example: `GET /api/fish?sort=commonName&order=desc`.
+
+Likewise, the tackle catalog, `spots`/`weathers`, and `/api/wiki/*` list endpoints
+each declare their own sortable columns (see [`/docs`](https://fishing-planet-api.vercel.app/docs)).
 
 ### Auth
 

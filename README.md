@@ -116,6 +116,8 @@ Migrations don't run on deploy; apply them with `prisma migrate deploy` against 
 `/metrics` are per-instance. Live at <https://fishing-planet-api.vercel.app>
 (Swagger UI at `/docs`).
 
+See [`docs/deployment.md`](docs/deployment.md) for the full deployment guide.
+
 ## Structure
 
 ```text

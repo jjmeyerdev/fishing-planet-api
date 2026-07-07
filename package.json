@@ -18,6 +18,7 @@
     "seed:fp": "tsx scripts/seed-fp.ts",
     "seed:spots": "tsx scripts/seed-spots.ts",
     "seed:fish-curated": "tsx scripts/seed-fish-curated.ts",
+    "wiki:enrich-species": "tsx scripts/wiki/enrich-species.ts",
     "wiki:crawl": "tsx scripts/wiki/crawl.ts",
     "wiki:parse": "tsx scripts/wiki/parse.ts",
     "wiki:load": "tsx scripts/wiki/load.ts",

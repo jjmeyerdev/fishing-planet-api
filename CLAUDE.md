@@ -387,6 +387,22 @@ re-runnable stages:
 - `pnpm wiki:load` — `parsed.json` → Neon. Idempotent upserts on `slug`; child
   rows (variants, links) replaced per parent; brand/technology resolved by slug;
   a final pass resolves species→bait/lure links to FKs by name.
+- `pnpm wiki:enrich-species` (`scripts/wiki/enrich-species.ts`) — a **supplement**
+  to the crawl, not part of it: species are discovered only from 19 hardcoded family
+  pages, so fish in other families (Amazonian, sharks, `Fish Monsters`, …) are never
+  fetched. This scrapes each `Fish` row with no `wiki_species` match by its
+  wiki URL — `/<Name>/en`, falling back to `/<Name>` for untranslated pages (most
+  saltwater fish only exist there) — reusing the Firecrawl SDK + cache + `parseSpecies`
+  + the load's upsert, adding **+125** species (148 → 273). A small `ALIASES` map
+  handles fish whose wiki title differs from `Fish.commonName` (e.g. `Black Bullhead`
+  → `Black_Bullhead_Catfish`), storing the row under our name so the backfill matches;
+  an `OWN_SLUG` set stores an alias under our own slug when the wiki slug already
+  belongs to a matched species (Volga Zander vs the real Zander). Idempotent (cache +
+  upsert on `slug`); the ~7 fish with no wiki page yet are skipped and not cached. `parse-species.ts`
+  gained a family fallback for these (their family link, e.g. `Amazonian Others`,
+  lacks the ` family` suffix the primary regex needs). Run before re-running
+  `seed:fish-curated`. Follow-up: a full `wiki:load` resolves the new species'
+  bait/lure link FKs (left raw here).
 
 Each gear category is a parent table (`wiki_rods`, `wiki_lines`, …) plus a
 per-variant child (`wiki_rod_variants`, …) where a model spans variants; hooks and
@@ -409,7 +425,9 @@ context; structural analysis of a new category is best done in a subagent.
 Backfills the curated `Fish` columns that no other seed sources — the FP-Collective
 JSON never carried them, so they were all null. The **only** in-repo source is the
 standalone `wiki_species` dataset, so this is a cross-dataset enrich: **run
-`pnpm wiki:load` first**. Matches `Fish.commonName == WikiSpecies.name`
+`pnpm wiki:load` then `pnpm wiki:enrich-species` first** (the latter adds the fish
+the family-discovery crawl misses — see the wiki section). Matches
+`Fish.commonName == WikiSpecies.name`
 (case-insensitive, trimmed). `pnpm seed:fish-curated` applies; `--dry` previews the
 counts and writes nothing. Notes:
 
@@ -421,6 +439,7 @@ counts and writes nothing. Notes:
 - **Left null — no source:** weight *mins*, `weightYoung*`, `monsterTargetWeight`,
   the trophy *max* (Fish has no such column, though wiki has `trophyWeightMaxKg`),
   and the farming/xp meta (`xpCurveNotes`/`farmingMetaTier`/`notesFarming`).
-- **Coverage:** only fish whose name matches a wiki species — 141 of 279 at time of
-  writing (the other 138, mostly exotics, aren't in the 148-species wiki set).
+- **Coverage:** only fish whose name matches a wiki species — **272 of 279** after
+  `wiki:enrich-species` (was 141 from the family-crawl alone). The remaining 7 have
+  no wiki page yet (new fish), so they stay null.
 - Data-only (no schema change); apply to Neon out-of-band like the other seeds.

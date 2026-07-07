@@ -350,11 +350,16 @@ model WikiSpeciesBait {
   speciesId Int    @map("species_id")
   name      String @db.VarChar(120)
   slug      String @db.VarChar(160)
+  // Resolved to wiki_baits by name at load (null when the raw name has no match —
+  // e.g. category refs like "Boilies", or a bait not in the catalog).
+  baitId    Int?   @map("bait_id")
 
   species WikiSpecies @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  bait    WikiBait?   @relation(fields: [baitId], references: [id], onDelete: SetNull)
 
   @@unique([speciesId, name])
   @@index([speciesId])
+  @@index([baitId])
   @@map("wiki_species_baits")
 }
 
@@ -363,11 +368,16 @@ model WikiSpeciesLure {
   speciesId Int    @map("species_id")
   name      String @db.VarChar(120)
   slug      String @db.VarChar(160)
+  // Resolved to wiki_lures by name at load; often null — species pages cite lure
+  // types/sizes ("Medium Spoon", "Shads") that aren't specific catalog models.
+  lureId    Int?   @map("lure_id")
 
   species WikiSpecies @relation(fields: [speciesId], references: [id], onDelete: Cascade)
+  lure    WikiLure?   @relation(fields: [lureId], references: [id], onDelete: SetNull)
 
   @@unique([speciesId, name])
   @@index([speciesId])
+  @@index([lureId])
   @@map("wiki_species_lures")
 }
 
@@ -705,7 +715,8 @@ model WikiLure {
   contentHash String   @map("content_hash") @db.VarChar(64)
   scrapedAt   DateTime @map("scraped_at")
 
-  variants WikiLureVariant[]
+  variants     WikiLureVariant[]
+  speciesLinks WikiSpeciesLure[]
 
   @@map("wiki_lures")
 }
@@ -756,6 +767,8 @@ model WikiBait {
   sourceUrl      String   @map("source_url") @db.Text
   contentHash    String   @map("content_hash") @db.VarChar(64)
   scrapedAt      DateTime @map("scraped_at")
+
+  speciesLinks WikiSpeciesBait[]
 
   @@map("wiki_baits")
 }

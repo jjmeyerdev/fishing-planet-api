@@ -359,7 +359,8 @@ re-runnable stages:
   Ranges/fractions (`1/32 - 1/4`, `3 + 3`, `6'6" NE`) stay strings.
   A final `uniqueSlugs` pass suffixes genuinely-distinct slug collisions.
 - `pnpm wiki:load` — `parsed.json` → Neon. Idempotent upserts on `slug`; child
-  rows (variants, links) replaced per parent; brand/technology resolved by slug.
+  rows (variants, links) replaced per parent; brand/technology resolved by slug;
+  a final pass resolves species→bait/lure links to FKs by name.
 
 Each gear category is a parent table (`wiki_rods`, `wiki_lines`, …) plus a
 per-variant child (`wiki_rod_variants`, …) where a model spans variants; hooks and
@@ -367,9 +368,11 @@ sinkers use a `kind` discriminator (hook/jighead, sinker/feeder); bobbers, baits
 boilies, groundbaits, equipment, transport, and other are flat (`wiki_bobbers`/
 `wiki_baits`/`wiki_boilies`/`wiki_groundbaits`/`wiki_equipment`/`wiki_transport`/
 `wiki_other`, one row per item, no child; buoys out of scope). A species'
-cross-category links
-(baits/lures/locations) point at categories not modeled here, so they stay raw
-name+slug in `wiki_species_*` and FK-resolve later. `scripts/wiki/lib/` holds the
+cross-category links keep their raw `name`+`slug` in `wiki_species_*` and also
+FK-resolve at load by name: `wiki_species_baits.baitId` → `wiki_baits` (~90% of
+rows) and `wiki_species_lures.lureId` → `wiki_lures` (~73%; species cite lure
+types/sizes, so the rest stay unresolved). Locations stay raw (no `wiki_locations`
+dataset). `scripts/wiki/lib/` holds the
 cache, markdown helpers, the shared `gear.ts` primitives, the per-category parsers,
 and the parse↔load type contract. Big pages (reel/rod sub-type pages run
 ~130–400 KB) are only ever handled in the script — never read into an agent's

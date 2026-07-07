@@ -235,13 +235,40 @@ async function main() {
     await prisma.wikiOther.upsert({ where: { slug: o.slug }, create: { slug: o.slug, ...fields }, update: fields })
   }
 
+  // 16. Resolve species→bait/lure cross-links to FKs by name (they were stored raw
+  // because the target tables didn't exist yet). Match on a normalized name with a
+  // plural fallback; baits resolve well, lures partially (species cite lure types,
+  // not catalog models). updateMany per distinct name also clears stale FKs to null.
+  const nm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '')
+  const singular = (s: string) => (s.length > 3 && s.endsWith('s') ? s.slice(0, -1) : s)
+  const baitByName = new Map<string, number>()
+  for (const b of await prisma.wikiBait.findMany({ select: { id: true, name: true } })) baitByName.set(nm(b.name), b.id)
+  for (const b of await prisma.wikiBoilie.findMany({ select: { id: true, name: true } })) if (!baitByName.has(nm(b.name))) baitByName.set(nm(b.name), b.id)
+  const lureByName = new Map<string, number>()
+  for (const l of await prisma.wikiLure.findMany({ select: { id: true, name: true } })) lureByName.set(nm(l.name), l.id)
+  const resolve = (map: Map<string, number>, name: string): number | null => map.get(nm(name)) ?? map.get(singular(nm(name))) ?? null
+
+  let baitLinks = 0
+  let lureLinks = 0
+  for (const name of new Set((await prisma.wikiSpeciesBait.findMany({ select: { name: true } })).map((r) => r.name))) {
+    const id = resolve(baitByName, name)
+    const res = await prisma.wikiSpeciesBait.updateMany({ where: { name }, data: { baitId: id } })
+    if (id != null) baitLinks += res.count
+  }
+  for (const name of new Set((await prisma.wikiSpeciesLure.findMany({ select: { name: true } })).map((r) => r.name))) {
+    const id = resolve(lureByName, name)
+    const res = await prisma.wikiSpeciesLure.updateMany({ where: { name }, data: { lureId: id } })
+    if (id != null) lureLinks += res.count
+  }
+
   console.log(
     `✓ loaded: ${data.species.length} species, ${data.reels.length} reels, ${data.rods.length} rods, ${data.lines.length} lines, ` +
       `${data.hooks.length} hooks, ${data.sinkers.length} sinkers, ${data.bobbers.length} bobbers, ${data.lures.length} lures, ` +
       `${data.baits.length} baits, ${data.boilies.length} boilies, ${data.groundbaits.length} groundbaits, ${data.equipment.length} equipment, ` +
       `${data.transport.length} transport, ${data.other.length} other, ` +
       `${data.brands.length} brands, ${data.technologies.length} technologies` +
-      (unresolvedTech ? ` (${unresolvedTech} rod/reel→tech links unresolved)` : ''),
+      ` (species→FK: ${baitLinks} bait, ${lureLinks} lure links resolved` +
+      (unresolvedTech ? `; ${unresolvedTech} rod/reel→tech unresolved` : '') + ')',
   )
   await prisma.$disconnect()
 }

@@ -91,6 +91,8 @@ services:
 
   # Smoke test that runs only once the app reports healthy. Not started by a
   # normal `up` (test profile). Exercises the DB via a /api/fish CRUD round-trip
+  # plus a /api/wiki/search read — the wiki tables are empty without the seed
+  # profile, so it asserts the 200 + paginated envelope, not specific hits
   # (self-cleaning, so it needs no seed and is rerun-safe). Run it — the exit
   # code is the test's — with:
   #   docker compose --profile test run --build --rm test
@@ -131,7 +133,11 @@ services:
           if (r.status !== 200) throw new Error('get ' + r.status)
           r = await fetch(base + '/api/fish/' + created.id, { method: 'DELETE', headers: auth })
           if (r.status !== 204) throw new Error('delete ' + r.status)
-          console.log('smoke tests passed: health + /api/fish CRUD round-trip (auth enforced, ' + page.total + ' fish total)')
+          r = await fetch(base + '/api/wiki/search?q=bass&limit=3')
+          if (r.status !== 200) throw new Error('wiki search ' + r.status)
+          const search = await r.json()
+          if (!Array.isArray(search.results) || typeof search.hasMore !== 'boolean') throw new Error('wiki search is not a paginated envelope')
+          console.log('smoke tests passed: health + /api/fish CRUD round-trip (auth enforced, ' + page.total + ' fish total) + /api/wiki/search')
         })().catch((e) => { console.error('FAIL', e.message); process.exit(1) })
 
 volumes:

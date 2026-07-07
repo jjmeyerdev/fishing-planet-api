@@ -49,9 +49,16 @@ const GEAR_CATEGORIES: Array<{ category: CacheEntry['category']; slugs: string[]
     category: 'lures',
     slugs: ['Bass_Jigs', 'Soft_plastic_baits', 'Spoons', 'Spinners', 'Plugs', 'Saltwater_lures'],
   },
+  {
+    // Consumable baits. Common/Worms/Fresh/Saltwater/Event are flat one-row tables;
+    // Boilies_&_Pellets (and the boilie sub-section of Event) is block-per-model.
+    // Literal `&` slugs → clean subtypes (worms-insects-baits); encoded at fetch.
+    category: 'baits',
+    slugs: ['Common_Baits', 'Worms_&_Insects_Baits', 'Fresh_Baits', 'Saltwater_Baits', 'Boilies_&_Pellets_Baits', 'Event_Baits'],
+  },
 ]
 const GEAR_PAGES: Array<{ url: string; category: CacheEntry['category']; subtype: string }> = GEAR_CATEGORIES.flatMap((g) =>
-  g.slugs.map((slug) => ({ url: `${WIKI}/${slug}`, category: g.category, subtype: slugify(readable(slug)) })),
+  g.slugs.map((slug) => ({ url: `${WIKI}/${encodeURIComponent(slug)}`, category: g.category, subtype: slugify(readable(slug)) })),
 )
 // The FP species taxonomy (the wiki's Species sidebar). Each family page lists
 // its resident species as image links in its main content — a small, stable set,

@@ -8,9 +8,13 @@ import { parseHooks } from './lib/parse-hooks.js'
 import { parseSinkers } from './lib/parse-sinkers.js'
 import { parseBobbers } from './lib/parse-bobbers.js'
 import { parseLures } from './lib/parse-lures.js'
+import { parseBaits } from './lib/parse-baits.js'
+import { parseBoilies } from './lib/parse-boilies.js'
 import { parseSpecies } from './lib/parse-species.js'
 import type {
+  ParsedBait,
   ParsedBobber,
+  ParsedBoilie,
   ParsedBrand,
   ParsedDataset,
   ParsedHook,
@@ -55,6 +59,8 @@ function main() {
   const sinkers: ParsedSinker[] = []
   const bobbers: ParsedBobber[] = []
   const lures: ParsedLure[] = []
+  const baits: ParsedBait[] = []
+  const boilies: ParsedBoilie[] = []
 
   for (const p of allPages()) {
     if (p.status !== 200) continue
@@ -67,6 +73,12 @@ function main() {
     else if (p.category === 'sinkers') sinkers.push(...parseSinkers(p.markdown, p.url, sub))
     else if (p.category === 'bobbers') bobbers.push(...parseBobbers(p.markdown, p.url, sub))
     else if (p.category === 'lures') lures.push(...parseLures(p.markdown, p.url, sub))
+    // Baits pages carry both layouts (flat one-row items + block-per-model boilies,
+    // mixed on Event_Baits), so run each parser — the other's rows never match.
+    else if (p.category === 'baits') {
+      baits.push(...parseBaits(p.markdown, p.url, sub))
+      boilies.push(...parseBoilies(p.markdown, p.url, sub))
+    }
   }
 
   // Brands (reels/rods/lines/hooks/sinkers) + technologies (reels/rods) are derived
@@ -100,6 +112,8 @@ function main() {
     sinkers: uniqueSlugs(sinkers),
     bobbers: uniqueSlugs(bobbers),
     lures: uniqueSlugs(lures),
+    baits: uniqueSlugs(baits),
+    boilies: uniqueSlugs(boilies),
     brands: [...brands.values()],
     technologies: [...technologies.values()],
   }
@@ -111,6 +125,7 @@ function main() {
     `✓ parsed: ${species.length} species, ${reels.length} reels, ${rods.length} rods (${variants(rods)} variants), ` +
       `${lines.length} lines (${variants(lines)} variants), ${hooks.length} hooks (${variants(hooks)} variants), ` +
       `${sinkers.length} sinkers (${variants(sinkers)} variants), ${bobbers.length} bobbers, ${lures.length} lures (${variants(lures)} variants), ` +
+      `${baits.length} baits, ${boilies.length} boilies, ` +
       `${dataset.brands.length} brands, ${dataset.technologies.length} technologies → ${out}`,
   )
 }

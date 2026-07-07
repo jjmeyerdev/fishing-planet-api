@@ -319,17 +319,18 @@ first**: each row resolves its `Location` by matching the source `placeId` to
 
 A **standalone** dataset scraped from the Fishing Planet Wiki
 (`wiki.fishingplanet.com`), kept entirely separate from the FP-Collective models
-in `wiki_*` tables. Covers **species + the tackle "gear" categories** — reels,
-rods, lines, hooks, sinkers/feeders, bobbers, lures (plus brands and technologies
-derived from reels + rods). Three decoupled, re-runnable stages:
+in `wiki_*` tables. Covers **species, the tackle "gear" categories** (reels,
+rods, lines, hooks, sinkers/feeders, bobbers, lures) **and consumable baits**
+(flat baits + boilies/pellets), plus brands and technologies derived from reels +
+rods. Three decoupled, re-runnable stages:
 
 - `pnpm wiki:crawl` — scrape → disk cache (`.cache/wiki/pages/`, git-ignored) via
   the Firecrawl SDK (`FIRECRAWL_API_KEY` in `.env`). Throttled (`p-limit` 2 +
   exponential backoff) and **resumable** — a cached URL is never re-fetched.
   Species are discovered by scraping the 19 family pages and taking their
   resident-species links; the gear categories are seeded from a hardcoded list of
-  their sub-type pages (`GEAR_CATEGORIES` in `crawl.ts`: 3 reel + 37 gear pages),
-  each tagged with a `category` + `subtype` the parse stage routes on.
+  their sub-type pages (`GEAR_CATEGORIES` in `crawl.ts`: 3 reel + 37 gear + 6 baits
+  pages), each tagged with a `category` + `subtype` the parse stage routes on.
 - `pnpm wiki:parse` — cache → `.cache/wiki/parsed.json`. **Pure** (no network/DB),
   so parsers iterate freely. Deterministic markdown parsing, no per-page LLM. One
   parser per category (`lib/parse-*.ts`) over shared primitives in `lib/gear.ts`
@@ -339,16 +340,19 @@ derived from reels + rods). Three decoupled, re-runnable stages:
   sinkers/plain-hooks are block-per-model with per-variant value columns; rods key
   variants off the `Length`/`Name` row (shared vs per-variant rows) and reuse
   brand + technologies; lines are a 2-D (diameter × spool-size) grid split into
-  `Regular`/`Exclusive`; jig-heads/bobbers/lures are one-row-per-item (lures ×
-  color × size). Ranges/fractions (`1/32 - 1/4`, `3 + 3`, `6'6" NE`) stay strings.
+  `Regular`/`Exclusive`; jig-heads/bobbers/lures/flat-baits are one-row-per-item
+  (lures × color × size); boilies/pellets reuse the block-per-model layout but
+  flatten each variant column to its own row (baits pages carry no brand/tech).
+  Ranges/fractions (`1/32 - 1/4`, `3 + 3`, `6'6" NE`) stay strings.
   A final `uniqueSlugs` pass suffixes genuinely-distinct slug collisions.
 - `pnpm wiki:load` — `parsed.json` → Neon. Idempotent upserts on `slug`; child
   rows (variants, links) replaced per parent; brand/technology resolved by slug.
 
 Each gear category is a parent table (`wiki_rods`, `wiki_lines`, …) plus a
 per-variant child (`wiki_rod_variants`, …) where a model spans variants; hooks and
-sinkers use a `kind` discriminator (hook/jighead, sinker/feeder); bobbers are flat
-(one row per item, no child; buoys out of scope). A species' cross-category links
+sinkers use a `kind` discriminator (hook/jighead, sinker/feeder); bobbers, baits,
+and boilies are flat (`wiki_bobbers`/`wiki_baits`/`wiki_boilies`, one row per item,
+no child; buoys out of scope). A species' cross-category links
 (baits/lures/locations) point at categories not modeled here, so they stay raw
 name+slug in `wiki_species_*` and FK-resolve later. `scripts/wiki/lib/` holds the
 cache, markdown helpers, the shared `gear.ts` primitives, the per-category parsers,

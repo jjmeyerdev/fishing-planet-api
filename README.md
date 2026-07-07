@@ -336,6 +336,18 @@ with `RATE_LIMIT_MAX` / `RATE_LIMIT_WINDOW_MS` (`RATE_LIMIT_MAX=0` disables it).
 so each replica limits independently (use a shared store to limit across a
 horizontally-scaled fleet).
 
+### Caching
+
+Successful `GET` reads under `/api/*` are tagged `Cache-Control: public,
+max-age=0, s-maxage=3600, stale-while-revalidate=86400`, so a shared/CDN cache
+(e.g. Vercel's edge) serves them for up to an hour and refreshes in the
+background for a day — the data is static game data that only changes on a
+reseed. Only `200` reads are tagged: writes and error responses are never
+cached, and the meta endpoints (`/health`, `/ready`, `/metrics`) sit outside
+`/api`, so they're exempt. On a cache hit the function isn't invoked, so cached
+reads also bypass the rate limiter. After an out-of-band reseed, redeploy (or
+wait out the TTL) to refresh the edge cache.
+
 ## API specification
 
 The full API — every endpoint, query param, request/response schema, and error

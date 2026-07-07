@@ -22,6 +22,12 @@ info:
 
     Every response carries an `X-Request-Id` header (echoed if the client sends
     one) that ties it to the server's structured JSON logs.
+
+
+    Successful `GET` reads under `/api/*` are cacheable: they carry a
+    `Cache-Control` with `s-maxage=3600, stale-while-revalidate=86400`, so a
+    shared/CDN cache serves the (static) game data and refreshes in the
+    background. Writes, error responses, and the meta endpoints are not cached.
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT

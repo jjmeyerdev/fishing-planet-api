@@ -177,6 +177,10 @@ script sets it so the suite isn't throttled). `src/auth.ts` gates writes
 (POST/PATCH/DELETE) on `/api/*` behind an API key (`Authorization: Bearer`, keys
 from the comma-separated `API_KEYS`); reads are public and an empty `API_KEYS`
 disables it (the `pnpm test` script clears it, so write tests aren't blocked).
+`src/cache.ts` tags successful `/api/*` GET `200`s with a shared-cache
+`Cache-Control` (`s-maxage`/`stale-while-revalidate`) so a CDN can serve the
+static game data without hitting the pooled connection; writes, error responses,
+and the meta endpoints (outside `/api`) are never tagged.
 
 Every resource file follows the same CRUD shape and shares helpers in
 `routes/helpers.ts`. The nine tackle resources are uniform id-in-path CRUD, so

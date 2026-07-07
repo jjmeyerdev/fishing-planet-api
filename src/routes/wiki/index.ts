@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { prisma } from '../../db.js'
 import { readResource } from './read.js'
+import { wikiSearch } from './search.js'
 import type { FilterSpec } from '../helpers.js'
 
 // Read-only API over the standalone wiki_* dataset, mounted under /api/wiki so it
@@ -16,6 +17,9 @@ const gearTech = { brand: true, variants: true, technologies: { include: { techn
 const gearBrand = { brand: true, variants: true }
 
 export const wiki = new Hono()
+
+// Cross-category search (distinct path, so it never shadows a resource mount).
+wiki.get('/search', wikiSearch)
 
 wiki.route(
   '/species',

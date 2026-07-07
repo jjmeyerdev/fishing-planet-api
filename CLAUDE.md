@@ -323,7 +323,9 @@ in `wiki_*` tables. Covers **species, the tackle "gear" categories** (reels,
 rods, lines, hooks, sinkers/feeders, bobbers, lures), **consumables** (baits +
 boilies/pellets, groundbaits), **equipment** (apparel/storage/stringers-keepnets),
 **transport** (boats/kayaks), **and other** (fireworks/mission-items), plus brands
-and technologies derived from reels + rods. Three decoupled, re-runnable stages:
+and technologies (derived name-only from reels/rods, then enriched with description
++ imageUrl from the dedicated `/Brands` + `/*_technologies` pages). Three decoupled,
+re-runnable stages:
 
 - `pnpm wiki:crawl` — scrape → disk cache (`.cache/wiki/pages/`, git-ignored) via
   the Firecrawl SDK (`FIRECRAWL_API_KEY` in `.env`). Throttled (`p-limit` 2 +
@@ -331,8 +333,9 @@ and technologies derived from reels + rods. Three decoupled, re-runnable stages:
   Species are discovered by scraping the 19 family pages and taking their
   resident-species links; the gear categories are seeded from a hardcoded list of
   their sub-type pages (`GEAR_CATEGORIES` in `crawl.ts`: 3 reel + 37 gear + 6 baits
-  + 5 groundbait + 7 equipment + 4 transport + 3 other pages), each tagged
-  `category` + `subtype` parse routes on.
+  + 5 groundbait + 7 equipment + 4 transport + 3 other pages), plus the dedicated
+  `/Brands` + `/*_technologies` enrichment pages, each tagged `category` + `subtype`
+  parse routes on.
 - `pnpm wiki:parse` — cache → `.cache/wiki/parsed.json`. **Pure** (no network/DB),
   so parsers iterate freely. Deterministic markdown parsing, no per-page LLM. One
   parser per category (`lib/parse-*.ts`) over shared primitives in `lib/gear.ts`

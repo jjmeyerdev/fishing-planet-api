@@ -790,7 +790,10 @@ describe('wiki cross-category search', () => {
     'wikiBait', 'wikiBoilie', 'wikiGroundbait', 'wikiEquipment', 'wikiTransport', 'wikiOther', 'wikiRig', 'wikiBrand', 'wikiTechnology',
   ] as const
   beforeEach(() => {
-    for (const k of WIKI_MODELS) prisma[k].findMany.mockResolvedValue([])
+    for (const k of WIKI_MODELS) {
+      prisma[k].findMany.mockResolvedValue([])
+      prisma[k].count.mockResolvedValue(0)
+    }
   })
 
   it('requires q (400 without it)', async () => {
@@ -799,35 +802,63 @@ describe('wiki cross-category search', () => {
   })
 
   it('fans out across categories and returns tagged hits grouped by category', async () => {
+    prisma.wikiSpecies.count.mockResolvedValue(1)
     prisma.wikiSpecies.findMany.mockResolvedValue([{ name: 'Largemouth Bass', slug: 'lmb', imageUrl: 'i' }])
+    prisma.wikiReel.count.mockResolvedValue(1)
     prisma.wikiReel.findMany.mockResolvedValue([{ name: 'BassShooter', slug: 'bs', subtype: 'casting' }])
     const res = await app.request('/api/wiki/search?q=bass')
     expect(res.status).toBe(200)
     const body = await res.json()
     expect(body).toEqual({
       query: 'bass',
-      limit: 8,
       total: 2,
+      limit: 50,
+      offset: 0,
       results: [
         { category: 'species', name: 'Largemouth Bass', slug: 'lmb', imageUrl: 'i' },
         { category: 'reels', name: 'BassShooter', slug: 'bs', subtype: 'casting' },
       ],
     })
-    expect(prisma.wikiBait.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({ where: { name: { contains: 'bass', mode: 'insensitive' } }, take: 8 }),
-    )
+    expect(prisma.wikiSpecies.count).toHaveBeenCalledWith({
+      where: { name: { contains: 'bass', mode: 'insensitive' } },
+    })
   })
 
-  it('rejects out-of-range limit and unknown category with 400', async () => {
-    expect((await app.request('/api/wiki/search?q=x&limit=99')).status).toBe(400)
+  it('paginates the merged list with limit/offset and a true total', async () => {
+    // Two species precede two reels in the flat list; total counts all four.
+    prisma.wikiSpecies.count.mockResolvedValue(2)
+    prisma.wikiSpecies.findMany.mockResolvedValue([{ name: 'Bass Two', slug: 'b2' }])
+    prisma.wikiReel.count.mockResolvedValue(2)
+    prisma.wikiReel.findMany.mockResolvedValue([{ name: 'Reel One', slug: 'r1', subtype: 'casting' }])
+    const res = await app.request('/api/wiki/search?q=x&limit=2&offset=1')
+    expect(res.status).toBe(200)
+    const body = await res.json()
+    expect(body.total).toBe(4)
+    expect(body.limit).toBe(2)
+    expect(body.offset).toBe(1)
+    expect(body.results).toEqual([
+      { category: 'species', name: 'Bass Two', slug: 'b2' },
+      { category: 'reels', name: 'Reel One', slug: 'r1', subtype: 'casting' },
+    ])
+    // Window starts at absolute index 1: skip the first species, take one.
+    expect(prisma.wikiSpecies.findMany).toHaveBeenCalledWith(
+      expect.objectContaining({ skip: 1, take: 2 }),
+    )
+    // Page still needs one more; the reels category starts fresh (skip 0).
+    expect(prisma.wikiReel.findMany).toHaveBeenCalledWith(expect.objectContaining({ skip: 0, take: 1 }))
+  })
+
+  it('rejects out-of-range limit/offset and unknown category with 400', async () => {
+    expect((await app.request('/api/wiki/search?q=x&limit=101')).status).toBe(400)
+    expect((await app.request('/api/wiki/search?q=x&offset=-1')).status).toBe(400)
     expect((await app.request('/api/wiki/search?q=x&category=bogus')).status).toBe(400)
     expect(prisma.wikiReel.findMany).not.toHaveBeenCalled()
   })
 
   it('category= narrows the fan-out to the named categories', async () => {
     await app.request('/api/wiki/search?q=carp&category=species,baits')
-    expect(prisma.wikiSpecies.findMany).toHaveBeenCalled()
-    expect(prisma.wikiBait.findMany).toHaveBeenCalled()
-    expect(prisma.wikiReel.findMany).not.toHaveBeenCalled()
+    expect(prisma.wikiSpecies.count).toHaveBeenCalled()
+    expect(prisma.wikiBait.count).toHaveBeenCalled()
+    expect(prisma.wikiReel.count).not.toHaveBeenCalled()
   })
 })

@@ -1710,14 +1710,16 @@ paths:
       summary: Search across all wiki categories by name
       description: >-
         Case-insensitive substring match on name, fanned out across every wiki
-        category. Returns one flat list of category-tagged hits (grouped by
-        category); each hit links to its detail route /api/wiki/{category}/{slug}.
-        Capped per category — query a category's list endpoint with ?q= for the full set.
+        category. Returns one paginated flat list of category-tagged hits (ordered
+        by category, then name); each hit links to its detail route
+        /api/wiki/{category}/{slug}. Page through the merged result set with
+        limit/offset; total is the full match count across all categories.
       operationId: searchWiki
       tags: [wiki]
       parameters:
         - { name: q, in: query, required: true, description: Search term (substring match on name), schema: { type: string } }
-        - { name: limit, in: query, description: Max hits per category, schema: { type: integer, minimum: 1, maximum: 25, default: 8 } }
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
         - { name: category, in: query, description: 'Comma-separated categories to restrict to (e.g. reels,baits)', schema: { type: string } }
       responses:
         '200':
@@ -3233,10 +3235,11 @@ components:
       type: object
       properties:
         query: { type: string }
-        limit: { type: integer, description: The per-category cap applied. }
-        total: { type: integer }
+        total: { type: integer, description: Total matches across all searched categories. }
+        limit: { type: integer, description: Page size applied. }
+        offset: { type: integer, description: Rows skipped into the merged result set. }
         results: { type: array, items: { $ref: '#/components/schemas/WikiSearchHit' } }
-      required: [query, limit, total, results]
+      required: [query, total, limit, offset, results]
 
 tags:
   - name: meta

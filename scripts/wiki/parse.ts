@@ -14,6 +14,8 @@ import { parseGroundbaits, parseGroundbaitMixes } from './lib/parse-groundbaits.
 import { parseEquipment, parseStringersKeepnets } from './lib/parse-equipment.js'
 import { parseTransport } from './lib/parse-transport.js'
 import { parseOther } from './lib/parse-other.js'
+import { parseBrands } from './lib/parse-brands.js'
+import { parseTechnologies } from './lib/parse-technologies.js'
 import { parseSpecies } from './lib/parse-species.js'
 import type {
   ParsedBait,
@@ -73,6 +75,8 @@ function main() {
   const equipment: ParsedEquipment[] = []
   const transport: ParsedTransport[] = []
   const other: ParsedOther[] = []
+  const pageBrands: ParsedBrand[] = []
+  const pageTechs: ParsedTechnology[] = []
 
   for (const p of allPages()) {
     if (p.status !== 200) continue
@@ -104,10 +108,14 @@ function main() {
     }
     else if (p.category === 'transport') transport.push(...parseTransport(p.markdown, p.url, sub))
     else if (p.category === 'other') other.push(...parseOther(p.markdown, p.url, sub))
+    // Dedicated Brands / Technologies index pages enrich the derived rows below.
+    else if (p.category === 'brands') pageBrands.push(...parseBrands(p.markdown, p.url))
+    else if (p.category === 'technologies') pageTechs.push(...parseTechnologies(p.markdown, /Rods_technologies/.test(p.url) ? 'rod' : 'reel'))
   }
 
   // Brands (reels/rods/lines/hooks/sinkers) + technologies (reels/rods) are derived
-  // from the items that reference them; dedicated pages enrich these rows later.
+  // (name-only) from the items that reference them, then enriched with description/
+  // imageUrl from the dedicated /Brands + /*_technologies pages (overlay below).
   const brands = new Map<string, ParsedBrand>()
   const technologies = new Map<string, ParsedTechnology>()
   const addBrand = (b: WikiLink | null) => {
@@ -127,6 +135,21 @@ function main() {
   for (const l of lines) addBrand(l.brand)
   for (const h of hooks) addBrand(h.brand)
   for (const s of sinkers) addBrand(s.brand)
+
+  // Overlay the dedicated /Brands + /*_technologies pages onto the name-only rows
+  // derived above (fill description/imageUrl); add any brand/tech only on those pages.
+  for (const b of pageBrands) {
+    const existing = brands.get(b.slug)
+    if (existing) Object.assign(existing, { description: b.description, imageUrl: b.imageUrl, sourceUrl: b.sourceUrl, contentHash: b.contentHash })
+    else brands.set(b.slug, b)
+  }
+  for (const t of pageTechs) {
+    const existing = technologies.get(t.slug)
+    // The dedicated page carries the proper tech name (e.g. "MicroLite® Frame Alloy");
+    // the gear-derived name is a truncated icon-alt description, so prefer the page's.
+    if (existing) Object.assign(existing, { name: t.name || existing.name, description: t.description, category: t.category })
+    else technologies.set(t.slug, { slug: t.slug, name: t.name || t.slug, description: t.description, category: t.category })
+  }
 
   const dataset: ParsedDataset = {
     species,

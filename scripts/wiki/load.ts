@@ -14,12 +14,14 @@ import type { ParsedDataset } from './lib/types.js'
 async function main() {
   const data: ParsedDataset = JSON.parse(readFileSync(join(CACHE_DIR, 'parsed.json'), 'utf8'))
 
-  // 1. Brands / technologies (derived from reels; dedicated pages enrich later)
+  // 1. Brands / technologies — names derived from gear, description/imageUrl enriched
+  // from the dedicated pages. Update fills those fields but never clobbers an
+  // existing value with null (only writes when the parsed value is present).
   for (const b of data.brands) {
     await prisma.wikiBrand.upsert({
       where: { slug: b.slug },
       create: { slug: b.slug, name: b.name, description: b.description, imageUrl: b.imageUrl },
-      update: { name: b.name },
+      update: { name: b.name, ...(b.description != null && { description: b.description }), ...(b.imageUrl != null && { imageUrl: b.imageUrl }) },
     })
   }
   const brandId = new Map((await prisma.wikiBrand.findMany({ select: { id: true, slug: true } })).map((b) => [b.slug, b.id]))
@@ -28,7 +30,7 @@ async function main() {
     await prisma.wikiTechnology.upsert({
       where: { slug: t.slug },
       create: { slug: t.slug, name: t.name, description: t.description, category: t.category },
-      update: { name: t.name },
+      update: { name: t.name, category: t.category, ...(t.description != null && { description: t.description }) },
     })
   }
   const techId = new Map((await prisma.wikiTechnology.findMany({ select: { id: true, slug: true } })).map((t) => [t.slug, t.id]))

@@ -20,6 +20,14 @@ const REEL_PAGES: Array<{ url: string; subtype: string }> = [
   { url: `${WIKI}/Casting_reels`, subtype: 'casting' },
   { url: `${WIKI}/Saltwater_reels`, subtype: 'saltwater' },
 ]
+// The dedicated Brands / Technologies index pages — used to enrich the brand and
+// technology rows that are otherwise derived (name-only) from reels/rods.
+const BRAND_TECH_PAGES: Array<{ url: string; category: CacheEntry['category'] }> = [
+  { url: `${WIKI}/Brands`, category: 'brands' },
+  { url: `${WIKI}/Technologies`, category: 'technologies' },
+  { url: `${WIKI}/Reels_technologies`, category: 'technologies' },
+  { url: `${WIKI}/Rods_technologies`, category: 'technologies' },
+]
 // The remaining tackle categories, each a set of sub-type pages under a parent
 // (e.g. /Rods → /Spinning_rods …). The sub-type slug is stable, so — like the
 // reel pages — we seed the list directly rather than re-discover it each run.
@@ -160,9 +168,10 @@ async function main() {
   const targets: Array<{ url: string; category: CacheEntry['category']; subtype?: string }> = [
     ...REEL_PAGES.map((r) => ({ url: r.url, category: 'reels' as const, subtype: r.subtype })),
     ...GEAR_PAGES,
+    ...BRAND_TECH_PAGES,
     ...species.map((u) => ({ url: u, category: 'species' as const })),
   ]
-  console.log(`targets: ${species.length} species + ${REEL_PAGES.length} reel pages + ${GEAR_PAGES.length} gear pages`)
+  console.log(`targets: ${species.length} species + ${REEL_PAGES.length} reel pages + ${GEAR_PAGES.length} gear pages + ${BRAND_TECH_PAGES.length} brand/tech pages`)
 
   let fetched = 0
   let cached = 0

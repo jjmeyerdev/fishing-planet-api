@@ -466,6 +466,30 @@ describe('list sorting', () => {
   })
 })
 
+describe('API version namespace', () => {
+  it('serves resources under /api/v1 (the canonical version)', async () => {
+    prisma.fish.findMany.mockResolvedValue([{ id: 1 }])
+    prisma.fish.count.mockResolvedValue(1)
+    const res = await app.request('/api/v1/fish')
+    expect(res.status).toBe(200)
+    expect(await res.json()).toMatchObject({ data: [{ id: 1 }], total: 1 })
+  })
+
+  it('keeps /api as a backward-compatible alias', async () => {
+    prisma.fish.findMany.mockResolvedValue([{ id: 1 }])
+    prisma.fish.count.mockResolvedValue(1)
+    const res = await app.request('/api/fish')
+    expect(res.status).toBe(200)
+  })
+
+  it('applies the /api/* middleware (cache header) to /api/v1 reads too', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    const res = await app.request('/api/v1/fish')
+    expect(res.headers.get('Cache-Control')).toMatch(/s-maxage=\d+/)
+  })
+})
+
 describe('cache headers', () => {
   it('tags a successful GET read with a shared-cache Cache-Control', async () => {
     prisma.fish.findMany.mockResolvedValue([])

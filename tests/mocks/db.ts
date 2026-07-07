@@ -39,4 +39,13 @@ export const prisma = {
   wikiSinker: model(),
   wikiBobber: model(),
   wikiLure: model(),
+  wikiBait: model(),
+  wikiBoilie: model(),
+  wikiGroundbait: model(),
+  wikiEquipment: model(),
+  wikiTransport: model(),
+  wikiOther: model(),
+  wikiRig: model(),
+  wikiBrand: model(),
+  wikiTechnology: model(),
 }

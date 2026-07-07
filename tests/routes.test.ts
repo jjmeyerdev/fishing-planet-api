@@ -758,4 +758,28 @@ describe('wiki read routes', () => {
     expect(res.status).toBe(404)
     expect(reel().create).not.toHaveBeenCalled()
   })
+
+  it('flat consumable resources list + fetch by slug', async () => {
+    prisma.wikiBait.findMany.mockResolvedValue([{ id: 1, slug: 'b' }])
+    prisma.wikiBait.count.mockResolvedValue(1)
+    const list = await app.request('/api/wiki/baits')
+    expect(list.status).toBe(200)
+    expect((await list.json()).total).toBe(1)
+    prisma.wikiBait.findUnique.mockResolvedValue({ id: 1, slug: 'common-baits-bread' })
+    const one = await app.request('/api/wiki/baits/common-baits-bread')
+    expect(one.status).toBe(200)
+    expect(prisma.wikiBait.findUnique).toHaveBeenCalledWith({ where: { slug: 'common-baits-bread' } })
+  })
+
+  it('technologies list filters by category; brands sort has no subtype', async () => {
+    prisma.wikiTechnology.findMany.mockResolvedValue([])
+    prisma.wikiTechnology.count.mockResolvedValue(0)
+    await app.request('/api/wiki/technologies?category=rod')
+    expect(prisma.wikiTechnology.findMany).toHaveBeenCalledWith(expect.objectContaining({ where: { category: 'rod' } }))
+    // `subtype` isn't a brands filter, so it's ignored (coexists with pagination)
+    prisma.wikiBrand.findMany.mockResolvedValue([])
+    prisma.wikiBrand.count.mockResolvedValue(0)
+    await app.request('/api/wiki/brands?subtype=whatever')
+    expect(prisma.wikiBrand.findMany).toHaveBeenCalledWith(expect.objectContaining({ where: {} }))
+  })
 })

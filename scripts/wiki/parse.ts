@@ -16,6 +16,7 @@ import { parseTransport } from './lib/parse-transport.js'
 import { parseOther } from './lib/parse-other.js'
 import { parseBrands } from './lib/parse-brands.js'
 import { parseTechnologies } from './lib/parse-technologies.js'
+import { parseRig } from './lib/parse-rig.js'
 import { parseSpecies } from './lib/parse-species.js'
 import type {
   ParsedBait,
@@ -30,6 +31,7 @@ import type {
   ParsedLure,
   ParsedOther,
   ParsedReel,
+  ParsedRig,
   ParsedRod,
   ParsedSinker,
   ParsedSpecies,
@@ -75,6 +77,7 @@ function main() {
   const equipment: ParsedEquipment[] = []
   const transport: ParsedTransport[] = []
   const other: ParsedOther[] = []
+  const rigs: ParsedRig[] = []
   const pageBrands: ParsedBrand[] = []
   const pageTechs: ParsedTechnology[] = []
 
@@ -108,6 +111,7 @@ function main() {
     }
     else if (p.category === 'transport') transport.push(...parseTransport(p.markdown, p.url, sub))
     else if (p.category === 'other') other.push(...parseOther(p.markdown, p.url, sub))
+    else if (p.category === 'rig') rigs.push(...parseRig(p.markdown, p.url, sub))
     // Dedicated Brands / Technologies index pages enrich the derived rows below.
     else if (p.category === 'brands') pageBrands.push(...parseBrands(p.markdown, p.url))
     else if (p.category === 'technologies') pageTechs.push(...parseTechnologies(p.markdown, /Rods_technologies/.test(p.url) ? 'rod' : 'reel'))
@@ -166,6 +170,7 @@ function main() {
     equipment: uniqueSlugs(equipment),
     transport: uniqueSlugs(transport),
     other: uniqueSlugs(other),
+    rigs: uniqueSlugs(rigs),
     brands: [...brands.values()],
     technologies: [...technologies.values()],
   }
@@ -178,7 +183,7 @@ function main() {
       `${lines.length} lines (${variants(lines)} variants), ${hooks.length} hooks (${variants(hooks)} variants), ` +
       `${sinkers.length} sinkers (${variants(sinkers)} variants), ${bobbers.length} bobbers, ${lures.length} lures (${variants(lures)} variants), ` +
       `${baits.length} baits, ${boilies.length} boilies, ${groundbaits.length} groundbaits, ${equipment.length} equipment, ` +
-      `${transport.length} transport, ${other.length} other, ` +
+      `${transport.length} transport, ${other.length} other, ${rigs.length} rigs, ` +
       `${dataset.brands.length} brands, ${dataset.technologies.length} technologies → ${out}`,
   )
 }

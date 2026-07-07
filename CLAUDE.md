@@ -322,7 +322,8 @@ A **standalone** dataset scraped from the Fishing Planet Wiki
 in `wiki_*` tables. Covers **species, the tackle "gear" categories** (reels,
 rods, lines, hooks, sinkers/feeders, bobbers, lures), **consumables** (baits +
 boilies/pellets, groundbaits), **equipment** (apparel/storage/stringers-keepnets),
-**transport** (boats/kayaks), **and other** (fireworks/mission-items), plus brands
+**transport** (boats/kayaks), **other** (fireworks/mission-items), **and rig**
+(leaders + pre-tied rigs), plus brands
 and technologies (derived name-only from reels/rods, then enriched with description
 + imageUrl from the dedicated `/Brands` + `/*_technologies` pages). Three decoupled,
 re-runnable stages:
@@ -333,7 +334,7 @@ re-runnable stages:
   Species are discovered by scraping the 19 family pages and taking their
   resident-species links; the gear categories are seeded from a hardcoded list of
   their sub-type pages (`GEAR_CATEGORIES` in `crawl.ts`: 3 reel + 37 gear + 6 baits
-  + 5 groundbait + 7 equipment + 4 transport + 3 other pages), plus the dedicated
+  + 5 groundbait + 7 equipment + 4 transport + 3 other + 4 rig pages), plus the dedicated
   `/Brands` + `/*_technologies` enrichment pages, each tagged `category` + `subtype`
   parse routes on.
 - `pnpm wiki:parse` — cache → `.cache/wiki/parsed.json`. **Pure** (no network/DB),
@@ -355,7 +356,9 @@ re-runnable stages:
   line, size weights folded to a range), all into one `wiki_equipment` table.
   Transport is block-per-model vehicles (`Model` axis; the photo sits *before* its
   Model row) → `wiki_transport`; other is one-row-per-item (fireworks + mission
-  items; repair-kits is prose-only) → `wiki_other`.
+  items; repair-kits is prose-only) → `wiki_other`. Rig (leaders + pre-tied rigs)
+  is a misaligned model×variant grid, so each `**Name**` product line is summarised
+  one-row-per-line with specs collapsed to ranges/lists → `wiki_rigs` (lossy).
   Ranges/fractions (`1/32 - 1/4`, `3 + 3`, `6'6" NE`) stay strings.
   A final `uniqueSlugs` pass suffixes genuinely-distinct slug collisions.
 - `pnpm wiki:load` — `parsed.json` → Neon. Idempotent upserts on `slug`; child
@@ -365,9 +368,9 @@ re-runnable stages:
 Each gear category is a parent table (`wiki_rods`, `wiki_lines`, …) plus a
 per-variant child (`wiki_rod_variants`, …) where a model spans variants; hooks and
 sinkers use a `kind` discriminator (hook/jighead, sinker/feeder); bobbers, baits,
-boilies, groundbaits, equipment, transport, and other are flat (`wiki_bobbers`/
+boilies, groundbaits, equipment, transport, other, and rig are flat (`wiki_bobbers`/
 `wiki_baits`/`wiki_boilies`/`wiki_groundbaits`/`wiki_equipment`/`wiki_transport`/
-`wiki_other`, one row per item, no child; buoys out of scope). A species'
+`wiki_other`/`wiki_rigs`, one row per item, no child; buoys out of scope). A species'
 cross-category links keep their raw `name`+`slug` in `wiki_species_*` and also
 FK-resolve at load by name: `wiki_species_baits.baitId` → `wiki_baits` (~90% of
 rows) and `wiki_species_lures.lureId` → `wiki_lures` (~73%; species cite lure

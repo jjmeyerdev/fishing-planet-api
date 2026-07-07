@@ -395,6 +395,28 @@ export interface ParsedOther {
   contentHash: string
 }
 
+// Rig — leaders + pre-tied rigs. The source tables are misaligned model×variant
+// grids, so each product line (a `**Name**` block) is summarised into one row with
+// its specs collapsed to ranges/lists (per-variant detail is intentionally dropped).
+export interface ParsedRig {
+  slug: string
+  name: string
+  subtype: string // leaders | carolina-rigs | texas-rigs | three-way-rigs
+  fpId: number | null
+  imageUrl: string | null
+  brand: string | null
+  diameterMm: string | null // min–max across the line's variants
+  testLb: string | null
+  testKg: string | null
+  length: string | null // distinct lengths (m)
+  colors: string | null // distinct colors
+  count: string | null // distinct pack counts
+  unlockLevel: string | null // level range
+  price: string | null // price range / note (lossy)
+  sourceUrl: string
+  contentHash: string
+}
+
 export interface ParsedBrand {
   slug: string
   name: string
@@ -427,6 +449,7 @@ export interface ParsedDataset {
   equipment: ParsedEquipment[]
   transport: ParsedTransport[]
   other: ParsedOther[]
+  rigs: ParsedRig[]
   brands: ParsedBrand[]
   technologies: ParsedTechnology[]
 }

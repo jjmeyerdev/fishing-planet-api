@@ -17,6 +17,9 @@
     "seed:gear": "tsx scripts/seed-gear.ts",
     "seed:fp": "tsx scripts/seed-fp.ts",
     "seed:spots": "tsx scripts/seed-spots.ts",
+    "wiki:crawl": "tsx scripts/wiki/crawl.ts",
+    "wiki:parse": "tsx scripts/wiki/parse.ts",
+    "wiki:load": "tsx scripts/wiki/load.ts",
     "postinstall": "prisma generate",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
@@ -27,10 +30,12 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
+    "@mendable/firecrawl-js": "^4.29.2",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "dotenv": "^17.4.2",
     "hono": "^4.6.14",
+    "p-limit": "^7.3.0",
     "pg": "^8.22.0",
     "prom-client": "^15.1.3"
   },

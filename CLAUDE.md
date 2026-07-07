@@ -391,9 +391,10 @@ re-runnable stages:
   to the crawl, not part of it: species are discovered only from 19 hardcoded family
   pages, so fish in other families (Amazonian, sharks, `Fish Monsters`, …) are never
   fetched. This scrapes each `Fish` row with no `wiki_species` match by its
-  predictable `/<Name>/en` URL (reusing the Firecrawl SDK + cache + `parseSpecies` +
-  the load's upsert), adding **+81** species (148 → 229). Idempotent (cache + upsert
-  on `slug`); the ~57 fish with a genuine 404 are skipped and not cached. `parse-species.ts`
+  wiki URL — `/<Name>/en`, falling back to `/<Name>` for untranslated pages (most
+  saltwater fish only exist there) — reusing the Firecrawl SDK + cache + `parseSpecies`
+  + the load's upsert, adding **+123** species (148 → 271). Idempotent (cache + upsert
+  on `slug`); the ~15 fish with a genuine 404 at both URLs are skipped and not cached. `parse-species.ts`
   gained a family fallback for these (their family link, e.g. `Amazonian Others`,
   lacks the ` family` suffix the primary regex needs). Run before re-running
   `seed:fish-curated`. Follow-up: a full `wiki:load` resolves the new species'
@@ -434,7 +435,8 @@ counts and writes nothing. Notes:
 - **Left null — no source:** weight *mins*, `weightYoung*`, `monsterTargetWeight`,
   the trophy *max* (Fish has no such column, though wiki has `trophyWeightMaxKg`),
   and the farming/xp meta (`xpCurveNotes`/`farmingMetaTier`/`notesFarming`).
-- **Coverage:** only fish whose name matches a wiki species — **222 of 279** after
-  `wiki:enrich-species` (was 141 from the family-crawl alone). The remaining ~57
-  have no wiki page at all (a genuine `/<Name>/en` 404), so they stay null.
+- **Coverage:** only fish whose name matches a wiki species — **264 of 279** after
+  `wiki:enrich-species` (was 141 from the family-crawl alone). The remaining ~15
+  have no wiki page (a genuine 404 at both `/<Name>/en` and `/<Name>`) or sit under
+  a different title, so they stay null.
 - Data-only (no schema change); apply to Neon out-of-band like the other seeds.

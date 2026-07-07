@@ -8,8 +8,9 @@ import { readCache, writeCache } from './lib/cache.js'
 // Species are discovered only from a hardcoded list of 19 family pages, so fish in
 // other families (Amazonian, sharks, …) were never fetched — ~half the Fish rows
 // had no wiki_species match, and the curated backfill (seed:fish-curated) couldn't
-// reach them. This scrapes each Fish that has no wiki_species row by its predictable
-// wiki URL (/<Name>/en), reusing parseSpecies + the same upsert shape as load.ts.
+// reach them. This scrapes each Fish that has no wiki_species row by its wiki URL —
+// /<Name>/en, falling back to /<Name> for untranslated pages (most saltwater fish) —
+// reusing parseSpecies + the same upsert shape as load.ts.
 // Idempotent (cache + upsert on slug). Run after wiki:load + seed:fp, then follow
 // with `pnpm seed:fish-curated`. A future full wiki:load resolves the new species'
 // bait/lure link FKs (stored raw name+slug here).
@@ -25,7 +26,14 @@ if (!apiKey) throw new Error('FIRECRAWL_API_KEY is not set (add it to .env)')
 const fc = new Firecrawl({ apiKey })
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
-const urlFor = (name: string) => `${WIKI}/${encodeURIComponent(name.replace(/ /g, '_'))}/en`
+const slugFor = (name: string) => encodeURIComponent(name.replace(/ /g, '_'))
+// Try the translated page first, then the base URL: untranslated pages (most of the
+// saltwater / Norway fish) exist only at /<Name>, not /<Name>/en.
+const variantsFor = (name: string) => [`${WIKI}/${slugFor(name)}/en`, `${WIKI}/${slugFor(name)}`]
+// A real fish infobox carries a weight, credit, or family; "no article" pages don't.
+const hasData = (s: ReturnType<typeof parseSpecies>) =>
+  s.family != null ||
+  [s.commonWeightMaxKg, s.trophyWeightMaxKg, s.uniqueWeightMaxKg, s.commonCreditsPerKg, s.trophyCreditsPerKg, s.uniqueCreditsPerKg].some((v) => v != null)
 
 // Scrape to markdown, cache-aware (a cached URL is never re-fetched), with backoff.
 async function scrapeMarkdown(url: string): Promise<{ status: number; markdown: string }> {
@@ -58,27 +66,31 @@ async function main() {
   let noPage = 0
   let failed = 0
   for (const name of targets) {
-    const url = urlFor(name)
-    let res: { status: number; markdown: string }
-    try {
-      res = await scrapeMarkdown(url)
-    } catch (e) {
-      console.warn(`✗ ${name}: ${(e as Error).message}`)
-      failed++
+    let found: { url: string; markdown: string; s: ReturnType<typeof parseSpecies> } | null = null
+    let errored = false
+    for (const url of variantsFor(name)) {
+      try {
+        const res = await scrapeMarkdown(url)
+        if (res.status === 200 && res.markdown) {
+          const s = parseSpecies(res.markdown, url)
+          if (hasData(s)) {
+            found = { url, markdown: res.markdown, s }
+            break
+          }
+        }
+      } catch (e) {
+        errored = true
+        console.warn(`✗ ${name} (${url}): ${(e as Error).message}`)
+      }
+    }
+    if (!found) {
+      if (errored) failed++
+      else noPage++
       continue
     }
-    if (res.status !== 200 || !res.markdown) {
-      noPage++
-      continue
-    }
-    const s = parseSpecies(res.markdown, url)
-    // Only a real fish infobox carries a weight/credit/family; skip "no article" pages.
-    if (s.commonWeightMaxKg == null && s.commonCreditsPerKg == null && s.family == null) {
-      noPage++
-      continue
-    }
+    const { url, markdown, s } = found
     // Cache the real page so future full pipeline runs (wiki:parse/load) include it too.
-    writeCache({ url, category: 'species', fetchedAt: new Date().toISOString(), status: 200, markdown: res.markdown })
+    writeCache({ url, category: 'species', fetchedAt: new Date().toISOString(), status: 200, markdown })
     const fields = {
       name: s.name,
       latinName: s.latinName,

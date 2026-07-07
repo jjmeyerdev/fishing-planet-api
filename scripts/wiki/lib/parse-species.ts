@@ -56,6 +56,13 @@ export function parseSpecies(markdown: string, sourceUrl: string): ParsedSpecies
   const tackle = sec.get('Recommended fishing methods and tackle') ?? ''
   const fam = tackle.match(/\[\*?\*?([^\]*]+?family)\*?\*?\]/i)
   if (fam) family = fam[1].trim()
+  // Exotic families lack the "family" suffix (e.g. "Amazonian Others"); fall back to
+  // the bold link in the tackle section. Only runs when the primary match misses, so
+  // it can't change species whose family link already carries "family".
+  if (!family) {
+    const bold = tackle.match(/\[\*\*([^\]]+?)\*\*\]/)
+    if (bold) family = bold[1].trim()
+  }
   const hook = tackle.match(/(#[\dA-Za-z/]+)\s*[-–]\s*(#[\dA-Za-z/]+)/)
   if (hook) {
     hookSizeMin = hook[1]

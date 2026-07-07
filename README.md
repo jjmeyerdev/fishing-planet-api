@@ -193,6 +193,10 @@ Base: `GET /` (info), `GET /health` (liveness — process is up), `GET /ready`
 (readiness — pings the DB; `503` when unreachable). A DB connection failure
 during any request returns `503`, not `500`.
 
+Every resource path is served under both **`/api/v1/*`** (the canonical, versioned
+base) and **`/api/*`** (a backward-compatible alias to the current version). The
+tables below use the shorter `/api/*` form — prefer `/api/v1/*` in new clients.
+
 | Resource | Base path | Operations |
 | --- | --- | --- |
 | Fish | `/api/fish` | list, get `:id` (includes biting preference), get `by-name/:name`, create, update `:id`, delete `:id` |

@@ -147,7 +147,8 @@ embed the biting preference plus these `baits` / `lureTypes` relations.
 
 ## Route layer (`src/routes/`)
 
-`app.ts` mounts `routes` under `/api`; `routes/index.ts` mounts each resource
+`app.ts` mounts `routes` under both `/api/v1` (the canonical, versioned base) and `/api`
+(a backward-compatible alias to the current version); `routes/index.ts` mounts each resource
 (`/fish`, `/locations`, `/fish-locations`, `/biting-preferences`, plus the tackle
 catalog: `/baits`, `/boilies`, `/lure-types`, `/lures`, `/hooks`, `/jigheads`,
 `/sinkers`, `/keepnets`, `/addons`; plus geo `/spots` and per-location

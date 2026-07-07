@@ -55,7 +55,11 @@ app.get('/metrics', async (c) => {
   return c.body(await registry.metrics())
 })
 
+// `/api/v1` is the canonical, versioned base; `/api` stays as a backward-compatible
+// alias to the current version so existing clients keep working. The `/api/*`
+// middleware above (rate limit, auth, cache) glob-matches both.
 app.route('/api', routes)
+app.route('/api/v1', routes)
 
 app.onError((err, c) => {
   const base = { requestId: c.get('requestId'), method: c.req.method, path: c.req.path }

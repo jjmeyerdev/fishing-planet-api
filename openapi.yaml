@@ -9,6 +9,11 @@ info:
     `{ data, total, limit, offset }` envelope.
 
 
+    Every path below is served under both `/api/v1/*` (the canonical, versioned
+    base) and `/api/*` (a backward-compatible alias to the current version); the
+    paths are written in the `/api/*` form.
+
+
     All `/api/*` endpoints are rate limited per client IP (default 100 requests
     per 60s window). Responses carry `RateLimit-Limit`, `RateLimit-Remaining`,
     and `RateLimit-Reset`; exceeding the limit returns `429` with a `Retry-After`

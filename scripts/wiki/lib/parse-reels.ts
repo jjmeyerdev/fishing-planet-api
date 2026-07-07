@@ -93,9 +93,16 @@ function parseVariants(lines: string[]): ParsedReelVariant[] {
   const n = spools.length
   if (n === 0) return []
 
+  // Value cells for a spec row, aligned to the n spool columns. A single value
+  // broadcasts to every spool (identical DLC "Edition" reels list one shared
+  // value per row); a full row maps 1:1; a longer row (stray leading unit cell)
+  // keeps its last n. Broadcasting first avoids reading the label cell as a value.
   const cells = (pred: RegExp): string[] | null => {
     const row = rows.find((c) => pred.test(norm(c[0])))
-    return row ? row.slice(-n) : null
+    if (!row) return null
+    const values = row.slice(1)
+    if (values.length === 1) return Array(n).fill(values[0])
+    return values.length > n ? values.slice(-n) : values
   }
   const gear = cells(/^Gear Ratio$/i)
   const retrieve = cells(/^\(cm\)$/i)
@@ -107,8 +114,13 @@ function parseVariants(lines: string[]): ParsedReelVariant[] {
   const price = cells(/^Price$/i)
 
   return spools.map((spool, j): ParsedReelVariant => {
+    // Currency by icon, like gear.ts priceOf: a bare number only counts as a
+    // price when the cell carries the Credits/Baitcoins icon. DLC-pack and reward
+    // notes (no icon) are dropped so stray digits in their text/URLs
+    // (e.g. St.Patrick%27s → 27) don't become a bogus Credits price.
     const priceCell = price?.[j] ?? ''
     const baitcoins = /Baitcoins/i.test(priceCell)
+    const credits = /Credits/i.test(priceCell)
     return {
       spoolSize: spool || null,
       gearRatio: gear?.[j] ? norm(gear[j]) : null,
@@ -117,7 +129,7 @@ function parseVariants(lines: string[]): ParsedReelVariant[] {
       ballBearings: bearings?.[j] ? norm(bearings[j]) : null,
       weightG: num(weight?.[j]),
       lineCapacity: lineCap?.[j] ? stripMd(lineCap[j]) : null,
-      priceCredits: baitcoins ? null : num(priceCell),
+      priceCredits: credits ? num(priceCell) : null,
       priceBaitcoins: baitcoins ? num(priceCell) : null,
       unlockLevel: num(level?.[j]),
     }

@@ -5,6 +5,7 @@ import { prisma } from './db.js'
 import { docs } from './docs.js'
 import { rateLimit } from './rateLimit.js'
 import { apiKeyAuth } from './auth.js'
+import { cacheControl } from './cache.js'
 import { log, requestLogger, type LogEnv } from './logger.js'
 import { registry, metricsMiddleware } from './metrics.js'
 import { isConnectionError } from './routes/helpers.js'
@@ -25,6 +26,9 @@ app.use('/api/*', rateLimit({ max: RATE_LIMIT_MAX, windowMs: RATE_LIMIT_WINDOW_M
 
 // API-key auth on the data API: reads are public, writes require a key.
 app.use('/api/*', apiKeyAuth({ keys: API_KEYS }))
+
+// Tag successful reads for the CDN — the data is static game data (see cache.ts).
+app.use('/api/*', cacheControl())
 
 app.get('/', (c) => c.json({ name: 'fishing-planet-api', status: 'ok' }))
 

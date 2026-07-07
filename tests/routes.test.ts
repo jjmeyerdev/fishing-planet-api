@@ -466,6 +466,35 @@ describe('list sorting', () => {
   })
 })
 
+describe('cache headers', () => {
+  it('tags a successful GET read with a shared-cache Cache-Control', async () => {
+    prisma.fish.findMany.mockResolvedValue([])
+    prisma.fish.count.mockResolvedValue(0)
+    const res = await app.request('/api/fish')
+    expect(res.status).toBe(200)
+    expect(res.headers.get('Cache-Control')).toMatch(/s-maxage=\d+/)
+  })
+
+  it('does not cache writes', async () => {
+    prisma.fish.create.mockResolvedValue({ id: 1, commonName: 'Largemouth Bass' })
+    const res = await app.request('/api/fish', json({ commonName: 'Largemouth Bass' }))
+    expect(res.status).toBe(201)
+    expect(res.headers.get('Cache-Control')).toBeNull()
+  })
+
+  it('does not cache an error response', async () => {
+    const res = await app.request('/api/fish?isMonster=maybe')
+    expect(res.status).toBe(400)
+    expect(res.headers.get('Cache-Control')).toBeNull()
+  })
+
+  it('does not cache the liveness probe (outside /api)', async () => {
+    const res = await app.request('/health')
+    expect(res.status).toBe(200)
+    expect(res.headers.get('Cache-Control')).toBeNull()
+  })
+})
+
 describe('readiness and DB resilience', () => {
   it('GET /ready returns 200 when the DB responds', async () => {
     prisma.$queryRaw.mockResolvedValue([{ ok: 1 }])

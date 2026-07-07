@@ -91,10 +91,82 @@ async function main() {
       prisma.wikiReelTechnology.createMany({ data: techLinks, skipDuplicates: true }),
     ])
   }
+  const brandOf = (b: { slug: string } | null) => (b ? (brandId.get(b.slug) ?? null) : null)
+
+  // 4. Rods — parent + variants + technology links (brand/tech resolved by slug).
+  for (const r of data.rods) {
+    const fields = {
+      name: r.name, subtype: r.subtype, brandId: brandOf(r.brand), description: r.description, imageUrl: r.imageUrl,
+      power: r.power, action: r.action, lineWeightLb: r.lineWeightLb, lineWeightKg: r.lineWeightKg,
+      electric: r.electric, quiverTips: r.quiverTips, sourceUrl: r.sourceUrl, contentHash: r.contentHash, scrapedAt: new Date(),
+    }
+    const row = await prisma.wikiRod.upsert({ where: { slug: r.slug }, create: { slug: r.slug, ...fields }, update: fields })
+    const techLinks = r.technologies.map((t) => techId.get(t.slug)).filter((id): id is number => id != null).map((technologyId) => ({ rodId: row.id, technologyId }))
+    unresolvedTech += r.technologies.length - techLinks.length
+    await prisma.$transaction([
+      prisma.wikiRodVariant.deleteMany({ where: { rodId: row.id } }),
+      prisma.wikiRodVariant.createMany({ data: r.variants.map((v) => ({ rodId: row.id, ...v })) }),
+      prisma.wikiRodTechnology.deleteMany({ where: { rodId: row.id } }),
+      prisma.wikiRodTechnology.createMany({ data: techLinks, skipDuplicates: true }),
+    ])
+  }
+
+  // 5. Lines — parent + (diameter × spool) variants.
+  for (const l of data.lines) {
+    const fields = { name: l.name, subtype: l.subtype, kind: l.kind, brandId: brandOf(l.brand), description: l.description, color: l.color, sourceUrl: l.sourceUrl, contentHash: l.contentHash, scrapedAt: new Date() }
+    const row = await prisma.wikiLine.upsert({ where: { slug: l.slug }, create: { slug: l.slug, ...fields }, update: fields })
+    await prisma.$transaction([
+      prisma.wikiLineVariant.deleteMany({ where: { lineId: row.id } }),
+      prisma.wikiLineVariant.createMany({ data: l.variants.map((v) => ({ lineId: row.id, ...v })) }),
+    ])
+  }
+
+  // 6. Hooks — parent + variants (plain hooks + jig heads, kind discriminator).
+  for (const h of data.hooks) {
+    const fields = { name: h.name, kind: h.kind, subtype: h.subtype, brandId: brandOf(h.brand), type: h.type, color: h.color, sharpening: h.sharpening, count: h.count, description: h.description, imageUrl: h.imageUrl, sourceUrl: h.sourceUrl, contentHash: h.contentHash, scrapedAt: new Date() }
+    const row = await prisma.wikiHook.upsert({ where: { slug: h.slug }, create: { slug: h.slug, ...fields }, update: fields })
+    await prisma.$transaction([
+      prisma.wikiHookVariant.deleteMany({ where: { hookId: row.id } }),
+      prisma.wikiHookVariant.createMany({ data: h.variants.map((v) => ({ hookId: row.id, ...v })) }),
+    ])
+  }
+
+  // 7. Sinkers & feeders — parent + variants (kind discriminator).
+  for (const s of data.sinkers) {
+    const fields = { name: s.name, kind: s.kind, subtype: s.subtype, brandId: brandOf(s.brand), description: s.description, imageUrl: s.imageUrl, sourceUrl: s.sourceUrl, contentHash: s.contentHash, scrapedAt: new Date() }
+    const row = await prisma.wikiSinker.upsert({ where: { slug: s.slug }, create: { slug: s.slug, ...fields }, update: fields })
+    await prisma.$transaction([
+      prisma.wikiSinkerVariant.deleteMany({ where: { sinkerId: row.id } }),
+      prisma.wikiSinkerVariant.createMany({ data: s.variants.map((v) => ({ sinkerId: row.id, ...v })) }),
+    ])
+  }
+
+  // 8. Bobbers — one row per item (no variant child).
+  for (const b of data.bobbers) {
+    const fields = {
+      name: b.name, subtype: b.subtype, section: b.section, fpId: b.fpId, imageUrl: b.imageUrl, description: b.description,
+      color: b.color, size: b.size, shape: b.shape, maxFloatingWeight: b.maxFloatingWeight, sensitivity: b.sensitivity, material: b.material,
+      unlockLevel: b.unlockLevel, priceCredits: b.priceCredits, priceBaitcoins: b.priceBaitcoins, priceNote: b.priceNote,
+      sourceUrl: b.sourceUrl, contentHash: b.contentHash, scrapedAt: new Date(),
+    }
+    await prisma.wikiBobber.upsert({ where: { slug: b.slug }, create: { slug: b.slug, ...fields }, update: fields })
+  }
+
+  // 9. Lures — parent + (color × size) variants.
+  for (const l of data.lures) {
+    const fields = { name: l.name, subtype: l.subtype, description: l.description, sourceUrl: l.sourceUrl, contentHash: l.contentHash, scrapedAt: new Date() }
+    const row = await prisma.wikiLure.upsert({ where: { slug: l.slug }, create: { slug: l.slug, ...fields }, update: fields })
+    await prisma.$transaction([
+      prisma.wikiLureVariant.deleteMany({ where: { lureId: row.id } }),
+      prisma.wikiLureVariant.createMany({ data: l.variants.map((v) => ({ lureId: row.id, ...v })) }),
+    ])
+  }
 
   console.log(
-    `✓ loaded: ${data.species.length} species, ${data.reels.length} reels, ${data.brands.length} brands, ${data.technologies.length} technologies` +
-      (unresolvedTech ? ` (${unresolvedTech} reel→tech links unresolved)` : ''),
+    `✓ loaded: ${data.species.length} species, ${data.reels.length} reels, ${data.rods.length} rods, ${data.lines.length} lines, ` +
+      `${data.hooks.length} hooks, ${data.sinkers.length} sinkers, ${data.bobbers.length} bobbers, ${data.lures.length} lures, ` +
+      `${data.brands.length} brands, ${data.technologies.length} technologies` +
+      (unresolvedTech ? ` (${unresolvedTech} rod/reel→tech links unresolved)` : ''),
   )
   await prisma.$disconnect()
 }

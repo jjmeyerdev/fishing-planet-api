@@ -2,7 +2,7 @@ import 'dotenv/config'
 import Firecrawl from '@mendable/firecrawl-js'
 import pLimit from 'p-limit'
 import { readCache, writeCache, type CacheEntry } from './lib/cache.js'
-import { targetLinks } from './lib/markdown.js'
+import { readable, slugify, targetLinks } from './lib/markdown.js'
 
 // Stage 1: scrape the wiki into the disk cache (.cache/wiki/pages). Throttled,
 // retried, and resumable — a cached URL is never re-fetched, so a crash/​stop
@@ -10,8 +10,9 @@ import { targetLinks } from './lib/markdown.js'
 //
 //   pnpm wiki:crawl
 //
-// Slice targets: the 3 reel sub-type pages, and species discovered by walking
-// /MediaWiki:Species → family pages → species links.
+// Slice targets: the reel + gear sub-type pages (rods/lines/hooks/sinkers/bobbers/
+// lures), and species discovered by walking /MediaWiki:Species → family pages →
+// species links.
 
 const WIKI = 'https://wiki.fishingplanet.com'
 const REEL_PAGES: Array<{ url: string; subtype: string }> = [
@@ -19,6 +20,39 @@ const REEL_PAGES: Array<{ url: string; subtype: string }> = [
   { url: `${WIKI}/Casting_reels`, subtype: 'casting' },
   { url: `${WIKI}/Saltwater_reels`, subtype: 'saltwater' },
 ]
+// The remaining tackle categories, each a set of sub-type pages under a parent
+// (e.g. /Rods → /Spinning_rods …). The sub-type slug is stable, so — like the
+// reel pages — we seed the list directly rather than re-discover it each run.
+// subtype = slugify(readable(slug)), e.g. "Spinning_rods" → "spinning-rods".
+const GEAR_CATEGORIES: Array<{ category: CacheEntry['category']; slugs: string[] }> = [
+  {
+    category: 'rods',
+    slugs: ['Bottom_rods', 'Carp_rods', 'Casting_rods', 'Feeder_rods', 'Match_rods', 'Saltwater_rods', 'Spinning_rods', 'Spod_rods', 'Telescopic_rods'],
+  },
+  {
+    category: 'lines',
+    slugs: ['Monofilament_fishing_lines', 'Fluorocarbon_fishing_lines', 'Braided_fishing_lines', 'Saltwater_lines'],
+  },
+  {
+    category: 'hooks',
+    slugs: ['Carp_Hooks', 'Common_Jig_Heads', 'Offset_Hooks', 'Saltwater_Hooks', 'Common_Saltwater_Jig_Heads', 'Simple_Hooks'],
+  },
+  {
+    category: 'sinkers',
+    slugs: ['Cage_Feeders', 'Catapults', 'Flat_Feeders', 'PVA_Feeders', 'Saltwater_Sinkers', 'Sinkers', 'Spod_Feeders'],
+  },
+  {
+    category: 'bobbers',
+    slugs: ['Buoys', 'Classic_Bobbers', 'Fishing_Alarm', 'Sliders', 'Wagglers'],
+  },
+  {
+    category: 'lures',
+    slugs: ['Bass_Jigs', 'Soft_plastic_baits', 'Spoons', 'Spinners', 'Plugs', 'Saltwater_lures'],
+  },
+]
+const GEAR_PAGES: Array<{ url: string; category: CacheEntry['category']; subtype: string }> = GEAR_CATEGORIES.flatMap((g) =>
+  g.slugs.map((slug) => ({ url: `${WIKI}/${slug}`, category: g.category, subtype: slugify(readable(slug)) })),
+)
 // The FP species taxonomy (the wiki's Species sidebar). Each family page lists
 // its resident species as image links in its main content — a small, stable set,
 // so we seed from it directly (the /MediaWiki:Species index hides these in nav).
@@ -97,9 +131,10 @@ async function main() {
   const species = await speciesUrls()
   const targets: Array<{ url: string; category: CacheEntry['category']; subtype?: string }> = [
     ...REEL_PAGES.map((r) => ({ url: r.url, category: 'reels' as const, subtype: r.subtype })),
+    ...GEAR_PAGES,
     ...species.map((u) => ({ url: u, category: 'species' as const })),
   ]
-  console.log(`targets: ${species.length} species + ${REEL_PAGES.length} reel pages`)
+  console.log(`targets: ${species.length} species + ${REEL_PAGES.length} reel pages + ${GEAR_PAGES.length} gear pages`)
 
   let fetched = 0
   let cached = 0

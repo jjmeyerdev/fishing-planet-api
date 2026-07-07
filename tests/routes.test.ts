@@ -690,3 +690,72 @@ describe('API docs', () => {
     expect(body).toContain('fishing-planet-api')
   })
 })
+
+// The wiki_* read routes are a separate read-only factory (list + by-slug detail,
+// no writes), mounted under /api/wiki.
+describe('wiki read routes', () => {
+  const reel = () => prisma.wikiReel
+
+  it('GET list returns a paginated envelope and forwards where/orderBy', async () => {
+    reel().findMany.mockResolvedValue([{ id: 1, slug: 'x' }])
+    reel().count.mockResolvedValue(1)
+    const res = await app.request('/api/wiki/reels?q=magfin&subtype=casting&sort=name&order=desc&limit=5')
+    expect(res.status).toBe(200)
+    expect(await res.json()).toEqual({ data: [{ id: 1, slug: 'x' }], total: 1, limit: 5, offset: 0 })
+    expect(reel().findMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: { name: { contains: 'magfin', mode: 'insensitive' }, subtype: 'casting' },
+        orderBy: { name: 'desc' },
+        skip: 0,
+        take: 5,
+      }),
+    )
+  })
+
+  it('GET list defaults to id asc with no filters', async () => {
+    reel().findMany.mockResolvedValue([])
+    reel().count.mockResolvedValue(0)
+    await app.request('/api/wiki/reels')
+    expect(reel().findMany).toHaveBeenCalledWith(expect.objectContaining({ where: {}, orderBy: { id: 'asc' } }))
+  })
+
+  it('GET by-slug returns the row with its configured include', async () => {
+    reel().findUnique.mockResolvedValue({ id: 1, slug: 'casting-x' })
+    const res = await app.request('/api/wiki/reels/casting-x')
+    expect(res.status).toBe(200)
+    expect(await res.json()).toEqual({ id: 1, slug: 'casting-x' })
+    expect(reel().findUnique).toHaveBeenCalledWith({
+      where: { slug: 'casting-x' },
+      include: { brand: true, variants: true, technologies: { include: { technology: true } } },
+    })
+  })
+
+  it('GET by-slug returns 404 when missing', async () => {
+    reel().findUnique.mockResolvedValue(null)
+    expect((await app.request('/api/wiki/reels/nope')).status).toBe(404)
+  })
+
+  it('rejects a bad sort field with 400 before querying', async () => {
+    expect((await app.request('/api/wiki/reels?sort=bogus')).status).toBe(400)
+    expect(reel().findMany).not.toHaveBeenCalled()
+  })
+
+  it('bobbers detail passes no include (flat table)', async () => {
+    prisma.wikiBobber.findUnique.mockResolvedValue({ id: 1 })
+    await app.request('/api/wiki/bobbers/some-slug')
+    expect(prisma.wikiBobber.findUnique).toHaveBeenCalledWith({ where: { slug: 'some-slug' } })
+  })
+
+  it('species list filters by family', async () => {
+    prisma.wikiSpecies.findMany.mockResolvedValue([])
+    prisma.wikiSpecies.count.mockResolvedValue(0)
+    await app.request('/api/wiki/species?family=Carp')
+    expect(prisma.wikiSpecies.findMany).toHaveBeenCalledWith(expect.objectContaining({ where: { family: 'Carp' } }))
+  })
+
+  it('exposes no write routes (POST is unmatched → 404)', async () => {
+    const res = await app.request('/api/wiki/reels', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' })
+    expect(res.status).toBe(404)
+    expect(reel().create).not.toHaveBeenCalled()
+  })
+})

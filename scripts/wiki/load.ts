@@ -185,10 +185,22 @@ async function main() {
     await prisma.wikiBoilie.upsert({ where: { slug: b.slug }, create: { slug: b.slug, ...fields }, update: fields })
   }
 
+  // 12. Groundbaits — flat catalogs + flattened mixes (one table, nullable off-subtype).
+  for (const g of data.groundbaits) {
+    const fields = {
+      name: g.name, subtype: g.subtype, fpId: g.fpId, imageUrl: g.imageUrl, brand: g.brand, description: g.description,
+      targetFish: g.targetFish, temperature: g.temperature, aroma: g.aroma, effect: g.effect, contains: g.contains,
+      flavour: g.flavour, color: g.color, grain: g.grain, density: g.density, ponds: g.ponds, nutritionValue: g.nutritionValue,
+      sizeMm: g.sizeMm, weight: g.weight, priceCredits: g.priceCredits, priceBaitcoins: g.priceBaitcoins, priceNote: g.priceNote,
+      unlockLevel: g.unlockLevel, sourceUrl: g.sourceUrl, contentHash: g.contentHash, scrapedAt: new Date(),
+    }
+    await prisma.wikiGroundbait.upsert({ where: { slug: g.slug }, create: { slug: g.slug, ...fields }, update: fields })
+  }
+
   console.log(
     `✓ loaded: ${data.species.length} species, ${data.reels.length} reels, ${data.rods.length} rods, ${data.lines.length} lines, ` +
       `${data.hooks.length} hooks, ${data.sinkers.length} sinkers, ${data.bobbers.length} bobbers, ${data.lures.length} lures, ` +
-      `${data.baits.length} baits, ${data.boilies.length} boilies, ` +
+      `${data.baits.length} baits, ${data.boilies.length} boilies, ${data.groundbaits.length} groundbaits, ` +
       `${data.brands.length} brands, ${data.technologies.length} technologies` +
       (unresolvedTech ? ` (${unresolvedTech} rod/reel→tech links unresolved)` : ''),
   )

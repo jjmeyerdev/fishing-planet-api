@@ -790,3 +790,41 @@ model WikiBoilie {
 
   @@map("wiki_boilies")
 }
+
+// Groundbaits — feed/attractant consumables. One table over both page layouts:
+// flat catalogs (aromas, particles) and the flattened block-per-model mixes
+// (carp/base/method-mix). Subtype-specific columns are null off-subtype (same
+// shape as wiki_bobbers). No brand FK — the flat pages' brand is kept as a raw
+// name (FK-resolve later); mix pages carry none.
+model WikiGroundbait {
+  id             Int      @id @default(autoincrement())
+  slug           String   @unique @db.VarChar(200)
+  name           String   @db.VarChar(150)
+  subtype        String   @db.VarChar(40) // aromas | particles | carp-groundbaits | groundbait-base | method-mix-groundbaits
+  fpId           Int?     @map("fp_id")
+  imageUrl       String?  @map("image_url") @db.Text
+  brand          String?  @db.VarChar(80) // flat pages only (raw name)
+  description    String?  @db.Text // flat pages only
+  targetFish     String[] @map("target_fish")
+  temperature    String?  @db.VarChar(80) // flat "Weather Conditions" (can be a phrase) / mix "Temperature"
+  aroma          String?  @db.VarChar(120) // aromas + base
+  effect         String?  @db.VarChar(60) // aromas only
+  contains       String?  @db.VarChar(120) // particles only
+  flavour        String?  @db.VarChar(80) // carp/method only
+  color          String?  @db.VarChar(80) // carp/method only
+  grain          String?  @db.VarChar(40) // base only
+  density        String?  @db.VarChar(40) // base only
+  ponds          String?  @db.VarChar(120) // mix pages
+  nutritionValue String?  @map("nutrition_value") @db.VarChar(40) // mix pages
+  sizeMm         String?  @map("size_mm") @db.VarChar(20) // carp only
+  weight         String?  @db.VarChar(30) // raw ("2.2 / 1.0" lb/kg flat, or kg on mixes)
+  priceCredits   Int?     @map("price_credits")
+  priceBaitcoins Int?     @map("price_baitcoins")
+  priceNote      String?  @map("price_note") @db.Text
+  unlockLevel    Int?     @map("unlock_level")
+  sourceUrl      String   @map("source_url") @db.Text
+  contentHash    String   @map("content_hash") @db.VarChar(64)
+  scrapedAt      DateTime @map("scraped_at")
+
+  @@map("wiki_groundbaits")
+}

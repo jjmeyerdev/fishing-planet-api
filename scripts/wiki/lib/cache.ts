@@ -10,7 +10,7 @@ export const PAGES_DIR = join(CACHE_DIR, 'pages')
 export interface CacheEntry {
   url: string
   // 'index' = discovery pages (species families) scraped only for their links.
-  category: 'species' | 'reels' | 'rods' | 'lines' | 'hooks' | 'sinkers' | 'bobbers' | 'lures' | 'baits' | 'brands' | 'technologies' | 'index'
+  category: 'species' | 'reels' | 'rods' | 'lines' | 'hooks' | 'sinkers' | 'bobbers' | 'lures' | 'baits' | 'groundbaits' | 'brands' | 'technologies' | 'index'
   subtype?: string // sub-type page slug, e.g. reels: spinning | casting | saltwater
   fetchedAt: string
   status: number

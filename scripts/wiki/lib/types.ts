@@ -280,6 +280,39 @@ export interface ParsedBoilie {
   contentHash: string
 }
 
+// Groundbaits — feed/attractant consumables. One flat shape covers both the flat
+// catalog pages (aromas, particles) and the flattened block-per-model mix pages
+// (carp/base/method-mix); subtype-specific columns are null off-subtype (same
+// shape as ParsedBobber's float-vs-alarm columns).
+export interface ParsedGroundbait {
+  slug: string
+  name: string
+  subtype: string // aromas | particles | carp-groundbaits | groundbait-base | method-mix-groundbaits
+  fpId: number | null
+  imageUrl: string | null
+  brand: string | null // flat pages only (raw brand name; FK-resolve later)
+  description: string | null // flat pages only
+  targetFish: string[]
+  temperature: string | null // flat "Weather Conditions" / block "Temperature" (Warm/Cold)
+  aroma: string | null // aromas + base
+  effect: string | null // aromas only
+  contains: string | null // particles only
+  flavour: string | null // carp/method only
+  color: string | null // carp/method only
+  grain: string | null // base only
+  density: string | null // base only
+  ponds: string | null // block pages
+  nutritionValue: string | null // block pages
+  sizeMm: string | null // carp only
+  weight: string | null // raw ("2.2 / 1.0" lb/kg flat, or the kg value on mixes)
+  priceCredits: number | null
+  priceBaitcoins: number | null
+  priceNote: string | null
+  unlockLevel: number | null
+  sourceUrl: string
+  contentHash: string
+}
+
 export interface ParsedBrand {
   slug: string
   name: string
@@ -308,6 +341,7 @@ export interface ParsedDataset {
   lures: ParsedLure[]
   baits: ParsedBait[]
   boilies: ParsedBoilie[]
+  groundbaits: ParsedGroundbait[]
   brands: ParsedBrand[]
   technologies: ParsedTechnology[]
 }

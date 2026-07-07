@@ -235,7 +235,18 @@ async function main() {
     await prisma.wikiOther.upsert({ where: { slug: o.slug }, create: { slug: o.slug, ...fields }, update: fields })
   }
 
-  // 16. Resolve species→bait/lure cross-links to FKs by name (they were stored raw
+  // 16. Rig — leaders + rigs, one summarised row per product line.
+  for (const r of data.rigs) {
+    const fields = {
+      name: r.name, subtype: r.subtype, fpId: r.fpId, imageUrl: r.imageUrl, brand: r.brand,
+      diameterMm: r.diameterMm, testLb: r.testLb, testKg: r.testKg, length: r.length, colors: r.colors,
+      count: r.count, unlockLevel: r.unlockLevel, price: r.price,
+      sourceUrl: r.sourceUrl, contentHash: r.contentHash, scrapedAt: new Date(),
+    }
+    await prisma.wikiRig.upsert({ where: { slug: r.slug }, create: { slug: r.slug, ...fields }, update: fields })
+  }
+
+  // 17. Resolve species→bait/lure cross-links to FKs by name (they were stored raw
   // because the target tables didn't exist yet). Match on a normalized name with a
   // plural fallback; baits resolve well, lures partially (species cite lure types,
   // not catalog models). updateMany per distinct name also clears stale FKs to null.
@@ -265,7 +276,7 @@ async function main() {
     `✓ loaded: ${data.species.length} species, ${data.reels.length} reels, ${data.rods.length} rods, ${data.lines.length} lines, ` +
       `${data.hooks.length} hooks, ${data.sinkers.length} sinkers, ${data.bobbers.length} bobbers, ${data.lures.length} lures, ` +
       `${data.baits.length} baits, ${data.boilies.length} boilies, ${data.groundbaits.length} groundbaits, ${data.equipment.length} equipment, ` +
-      `${data.transport.length} transport, ${data.other.length} other, ` +
+      `${data.transport.length} transport, ${data.other.length} other, ${data.rigs.length} rigs, ` +
       `${data.brands.length} brands, ${data.technologies.length} technologies` +
       ` (species→FK: ${baitLinks} bait, ${lureLinks} lure links resolved` +
       (unresolvedTech ? `; ${unresolvedTech} rod/reel→tech unresolved` : '') + ')',

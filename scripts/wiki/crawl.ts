@@ -85,6 +85,11 @@ const GEAR_CATEGORIES: Array<{ category: CacheEntry['category']; slugs: string[]
     category: 'other',
     slugs: ['Fireworks', 'Mission_Items', 'Repair_kits'],
   },
+  {
+    // Rig — only Leaders is a product catalog; the *_Rigs pages are how-to guides.
+    category: 'rig',
+    slugs: ['Leaders', 'Carolina_Rigs', 'Texas_Rigs', 'Three-way_Rigs'],
+  },
 ]
 const GEAR_PAGES: Array<{ url: string; category: CacheEntry['category']; subtype: string }> = GEAR_CATEGORIES.flatMap((g) =>
   g.slugs.map((slug) => ({ url: `${WIKI}/${encodeURIComponent(slug)}`, category: g.category, subtype: slugify(readable(slug)) })),

@@ -936,3 +936,30 @@ model WikiOther {
 
   @@map("wiki_other")
 }
+
+// Rig — leaders + pre-tied rigs (leaders, carolina/texas/three-way rigs). The
+// source is a transposed, misaligned model×variant grid, so each product line is
+// summarised into one row with specs collapsed to min–max ranges / distinct lists
+// (per-variant detail intentionally dropped). All spec fields are raw strings.
+model WikiRig {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique @db.VarChar(200)
+  name        String   @db.VarChar(150)
+  subtype     String   @db.VarChar(40) // leaders | carolina-rigs | texas-rigs | three-way-rigs
+  fpId        Int?     @map("fp_id")
+  imageUrl    String?  @map("image_url") @db.Text
+  brand       String?  @db.VarChar(80)
+  diameterMm  String?  @map("diameter_mm") @db.VarChar(40) // range
+  testLb      String?  @map("test_lb") @db.VarChar(40) // range
+  testKg      String?  @map("test_kg") @db.VarChar(40) // range
+  length      String?  @db.VarChar(80) // distinct
+  colors      String?  @db.VarChar(80) // distinct
+  count       String?  @db.VarChar(40) // distinct
+  unlockLevel String?  @map("unlock_level") @db.VarChar(40) // range
+  price       String?  @db.Text // range or reward note
+  sourceUrl   String   @map("source_url") @db.Text
+  contentHash String   @map("content_hash") @db.VarChar(64)
+  scrapedAt   DateTime @map("scraped_at")
+
+  @@map("wiki_rigs")
+}

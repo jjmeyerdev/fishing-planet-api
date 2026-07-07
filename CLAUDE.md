@@ -151,7 +151,7 @@ embed the biting preference plus these `baits` / `lureTypes` relations.
 (`/fish`, `/locations`, `/fish-locations`, `/biting-preferences`, plus the tackle
 catalog: `/baits`, `/boilies`, `/lure-types`, `/lures`, `/hooks`, `/jigheads`,
 `/sinkers`, `/keepnets`, `/addons`; plus geo `/spots` and per-location
-`/weathers`). `app.ts` also
+`/weathers`; plus the read-only `/wiki` sub-API — see below). `app.ts` also
 exposes `GET /health` (liveness, DB-free) and `GET /ready`
 (readiness — runs `SELECT 1`, `503` when the DB is unreachable); the Compose
 healthcheck targets `/ready`. `src/db.ts` sizes the pg pool (`max`, idle /
@@ -221,6 +221,23 @@ don't fit: no auth, meta endpoints without 4xx, the 3.0 nullable-`$ref` idiom).
 `fish-locations` is the exception to id-in-path CRUD: because its PK is composite,
 `PATCH`/`DELETE` identify the row via `?fishId=&locationId=&specificSpot=` query
 params (see `keyFromQuery`), and `GET` filters by optional `fishId`/`locationId`.
+
+`routes/wiki/` is a **read-only** API over the standalone `wiki_*` dataset,
+mounted under `/api/wiki` so it never collides with the FP-Collective resources
+(e.g. `/api/wiki/baits` vs `/api/baits`). `routes/wiki/index.ts` mounts one
+sub-resource per category (`/species`, the gear categories, consumables, `/rigs`,
+`/brands`, `/technologies`, …) via `routes/wiki/read.ts`'s
+`readResource({ model, filters, sortable, include })` — the read-only counterpart
+to `crudResource`: a paginated/filtered/sorted **list** plus a **by-slug** detail
+(`GET /:slug`, keyed on `slug`, **not** a numeric id). There are no write routes —
+the tables are populated only by `wiki:load`, so `POST`/`PATCH`/`DELETE` would be
+meaningless. `routes/wiki/search.ts` adds a cross-category
+`GET /api/wiki/search?q=` (optional `?category=`, comma-separated) that fans a
+name substring match across every category and returns one flat, category-tagged
+list of hits (each carrying the `slug` to reach its detail route). It reports
+`hasMore` rather than a `total`: a per-category `count()` over the unindexed
+`name ILIKE '%q%'` full-scans, and 17 of them in parallel exhausted the serverless
+pool (connection-timeout `500`s in production), so the count fan-out was dropped.
 
 ## Seed pipeline (`scripts/seed.ts`)
 

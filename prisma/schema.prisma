@@ -828,3 +828,42 @@ model WikiGroundbait {
 
   @@map("wiki_groundbaits")
 }
+
+// Equipment — apparel (glasses/hats/waistcoats), storage (rod-cases/tackle-boxes),
+// rod-holders, and stringers/keepnets. One table over all 7 pages; columns vary a
+// lot per subtype and are null off-subtype (wiki_bobbers pattern). Flat pages are
+// one-row-per-item; the stringers-keepnets page's merged model×size grid is
+// captured one-row-per-product-line, with the size weights folded to a range.
+model WikiEquipment {
+  id                    Int      @id @default(autoincrement())
+  slug                  String   @unique @db.VarChar(200)
+  name                  String   @db.VarChar(150)
+  subtype               String   @db.VarChar(40) // glasses-and-flashlights | hats | rod-cases | tackle-boxes | waist-coats | rod-holders | stringers-keepnets
+  fpId                  Int?     @map("fp_id")
+  imageUrl              String?  @map("image_url") @db.Text
+  brand                 String?  @db.VarChar(80) // explicit Brand column / block header (raw name)
+  description           String?  @db.Text
+  material              String?  @db.VarChar(150)
+  color                 String?  @db.VarChar(60) // glasses
+  tackles               String?  @db.VarChar(20) // hats — tackle-slot capacity
+  flashlight            String?  @db.VarChar(20) // hats
+  flashlightSlot        String?  @map("flashlight_slot") @db.VarChar(20) // hats
+  storageCapacity       String?  @map("storage_capacity") @db.VarChar(150) // cases/boxes/waistcoats
+  rodSlot               String?  @map("rod_slot") @db.VarChar(20) // rod-holders
+  standCount            String?  @map("stand_count") @db.VarChar(20) // rod-holders
+  biteAlarm             String?  @map("bite_alarm") @db.VarChar(20) // rod-holders
+  weight                String?  @db.VarChar(30) // rod-holders (raw "lb / kg")
+  maxSingleFishWeightKg String?  @map("max_single_fish_weight_kg") @db.VarChar(30) // stringers-keepnets (range)
+  maxTotalFishWeightKg  String?  @map("max_total_fish_weight_kg") @db.VarChar(30) // stringers-keepnets (range)
+  fishFriendly          String?  @map("fish_friendly") @db.VarChar(20) // stringers-keepnets
+  durability            String?  @db.VarChar(40) // stringers-keepnets
+  priceCredits          Int?     @map("price_credits")
+  priceBaitcoins        Int?     @map("price_baitcoins")
+  priceNote             String?  @map("price_note") @db.Text // reward/DLC unlock text (most cosmetics)
+  unlockLevel           Int?     @map("unlock_level")
+  sourceUrl             String   @map("source_url") @db.Text
+  contentHash           String   @map("content_hash") @db.VarChar(64)
+  scrapedAt             DateTime @map("scraped_at")
+
+  @@map("wiki_equipment")
+}

@@ -11,6 +11,7 @@ import { parseLures } from './lib/parse-lures.js'
 import { parseBaits } from './lib/parse-baits.js'
 import { parseBoilies } from './lib/parse-boilies.js'
 import { parseGroundbaits, parseGroundbaitMixes } from './lib/parse-groundbaits.js'
+import { parseEquipment, parseStringersKeepnets } from './lib/parse-equipment.js'
 import { parseSpecies } from './lib/parse-species.js'
 import type {
   ParsedBait,
@@ -18,6 +19,7 @@ import type {
   ParsedBoilie,
   ParsedBrand,
   ParsedDataset,
+  ParsedEquipment,
   ParsedGroundbait,
   ParsedHook,
   ParsedLine,
@@ -64,6 +66,7 @@ function main() {
   const baits: ParsedBait[] = []
   const boilies: ParsedBoilie[] = []
   const groundbaits: ParsedGroundbait[] = []
+  const equipment: ParsedEquipment[] = []
 
   for (const p of allPages()) {
     if (p.status !== 200) continue
@@ -87,6 +90,11 @@ function main() {
     else if (p.category === 'groundbaits') {
       groundbaits.push(...parseGroundbaits(p.markdown, p.url, sub))
       groundbaits.push(...parseGroundbaitMixes(p.markdown, p.url, sub))
+    }
+    // Equipment: 6 flat catalog pages + the stringers-and-keepnets block page.
+    else if (p.category === 'equipment') {
+      equipment.push(...parseEquipment(p.markdown, p.url, sub))
+      if (sub === 'stringers-and-keepnets') equipment.push(...parseStringersKeepnets(p.markdown, p.url, 'stringers-keepnets'))
     }
   }
 
@@ -124,6 +132,7 @@ function main() {
     baits: uniqueSlugs(baits),
     boilies: uniqueSlugs(boilies),
     groundbaits: uniqueSlugs(groundbaits),
+    equipment: uniqueSlugs(equipment),
     brands: [...brands.values()],
     technologies: [...technologies.values()],
   }
@@ -135,7 +144,7 @@ function main() {
     `✓ parsed: ${species.length} species, ${reels.length} reels, ${rods.length} rods (${variants(rods)} variants), ` +
       `${lines.length} lines (${variants(lines)} variants), ${hooks.length} hooks (${variants(hooks)} variants), ` +
       `${sinkers.length} sinkers (${variants(sinkers)} variants), ${bobbers.length} bobbers, ${lures.length} lures (${variants(lures)} variants), ` +
-      `${baits.length} baits, ${boilies.length} boilies, ${groundbaits.length} groundbaits, ` +
+      `${baits.length} baits, ${boilies.length} boilies, ${groundbaits.length} groundbaits, ${equipment.length} equipment, ` +
       `${dataset.brands.length} brands, ${dataset.technologies.length} technologies → ${out}`,
   )
 }

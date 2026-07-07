@@ -162,9 +162,33 @@ async function main() {
     ])
   }
 
+  // 10. Baits — flat consumable catalog (no variants/links).
+  for (const b of data.baits) {
+    const fields = {
+      name: b.name, subtype: b.subtype, fpId: b.fpId, imageUrl: b.imageUrl, description: b.description,
+      targetFish: b.targetFish, quantity: b.quantity, weightClass: b.weightClass, unlockLevel: b.unlockLevel, hookSize: b.hookSize,
+      priceCredits: b.priceCredits, priceBaitcoins: b.priceBaitcoins, priceNote: b.priceNote,
+      sourceUrl: b.sourceUrl, contentHash: b.contentHash, scrapedAt: new Date(),
+    }
+    await prisma.wikiBait.upsert({ where: { slug: b.slug }, create: { slug: b.slug, ...fields }, update: fields })
+  }
+
+  // 11. Boilies & pellets — flattened block-per-model items.
+  for (const b of data.boilies) {
+    const fields = {
+      name: b.name, subtype: b.subtype, fpId: b.fpId, imageUrl: b.imageUrl, boilImageUrl: b.boilImageUrl, description: b.description,
+      sizeIn: b.sizeIn, sizeMm: b.sizeMm, targetFish: b.targetFish, flavour: b.flavour, color: b.color, buoyancy: b.buoyancy,
+      weightClass: b.weightClass, quantity: b.quantity, unlockLevel: b.unlockLevel,
+      priceCredits: b.priceCredits, priceBaitcoins: b.priceBaitcoins, priceNote: b.priceNote,
+      sourceUrl: b.sourceUrl, contentHash: b.contentHash, scrapedAt: new Date(),
+    }
+    await prisma.wikiBoilie.upsert({ where: { slug: b.slug }, create: { slug: b.slug, ...fields }, update: fields })
+  }
+
   console.log(
     `✓ loaded: ${data.species.length} species, ${data.reels.length} reels, ${data.rods.length} rods, ${data.lines.length} lines, ` +
       `${data.hooks.length} hooks, ${data.sinkers.length} sinkers, ${data.bobbers.length} bobbers, ${data.lures.length} lures, ` +
+      `${data.baits.length} baits, ${data.boilies.length} boilies, ` +
       `${data.brands.length} brands, ${data.technologies.length} technologies` +
       (unresolvedTech ? ` (${unresolvedTech} rod/reel→tech links unresolved)` : ''),
   )

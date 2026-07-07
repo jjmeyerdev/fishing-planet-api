@@ -235,6 +235,51 @@ export interface ParsedLure {
   contentHash: string
 }
 
+// Flat consumable bait (Common/Worms/Fresh/Saltwater + the flat rows of Event).
+export interface ParsedBait {
+  slug: string
+  name: string
+  subtype: string // common-baits | worms-insects-baits | fresh-baits | saltwater-baits | event-baits
+  fpId: number | null // NNN.png image id (named files like Bread.png → null)
+  imageUrl: string | null
+  description: string | null
+  targetFish: string[] // raw species names (the comma-separated cell); FK-resolve later
+  quantity: number | null // pack size
+  weightClass: string | null // Light | Med-Light | Medium | Med-Heavy | Heavy | X Heavy
+  unlockLevel: number | null
+  hookSize: string | null // "#10 - #6", often null
+  priceCredits: number | null
+  priceBaitcoins: number | null
+  priceNote: string | null // reward/DLC text when Price isn't a plain currency amount
+  sourceUrl: string
+  contentHash: string
+}
+
+// One boilie (flattened from a block-per-model column on Boilies&Pellets / Event).
+export interface ParsedBoilie {
+  slug: string
+  name: string
+  subtype: string // boilies-pellets-baits | event-baits
+  fpId: number | null
+  imageUrl: string | null // the "Boilies" image
+  boilImageUrl: string | null // the "Boil" hookbait image
+  description: string | null // event boilies only
+  sizeIn: string | null
+  sizeMm: string | null
+  targetFish: string[]
+  flavour: string | null
+  color: string | null
+  buoyancy: string | null // Sinking | Pop-Up
+  weightClass: string | null
+  quantity: number | null
+  unlockLevel: number | null
+  priceCredits: number | null
+  priceBaitcoins: number | null
+  priceNote: string | null
+  sourceUrl: string
+  contentHash: string
+}
+
 export interface ParsedBrand {
   slug: string
   name: string
@@ -261,6 +306,8 @@ export interface ParsedDataset {
   sinkers: ParsedSinker[]
   bobbers: ParsedBobber[]
   lures: ParsedLure[]
+  baits: ParsedBait[]
+  boilies: ParsedBoilie[]
   brands: ParsedBrand[]
   technologies: ParsedTechnology[]
 }

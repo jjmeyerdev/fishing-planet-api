@@ -732,3 +732,61 @@ model WikiLureVariant {
   @@index([lureId])
   @@map("wiki_lure_variants")
 }
+
+// Flat consumable baits (/Common_Baits, /Worms_&_Insects_Baits, /Fresh_Baits,
+// /Saltwater_Baits, and the flat rows of /Event_Baits). One row per item; no
+// brand/technology links (baits pages carry none). targetFish is raw species
+// names (FK-resolve later, like the wiki_species_* cross-links).
+model WikiBait {
+  id             Int      @id @default(autoincrement())
+  slug           String   @unique @db.VarChar(200)
+  name           String   @db.VarChar(150)
+  subtype        String   @db.VarChar(40) // common-baits | worms-insects-baits | fresh-baits | saltwater-baits | event-baits
+  fpId           Int?     @map("fp_id") // NNN.png image id (named files like Bread.png → null)
+  imageUrl       String?  @map("image_url") @db.Text
+  description    String?  @db.Text
+  targetFish     String[] @map("target_fish")
+  quantity       Int? // pack size
+  weightClass    String?  @map("weight_class") @db.VarChar(20) // Light | Med-Light | Medium | Med-Heavy | Heavy | X Heavy
+  unlockLevel    Int?     @map("unlock_level")
+  hookSize       String?  @map("hook_size") @db.VarChar(40) // "#10 - #6", often null
+  priceCredits   Int?     @map("price_credits")
+  priceBaitcoins Int?     @map("price_baitcoins")
+  priceNote      String?  @map("price_note") @db.Text // reward/DLC text when Price isn't a plain amount
+  sourceUrl      String   @map("source_url") @db.Text
+  contentHash    String   @map("content_hash") @db.VarChar(64)
+  scrapedAt      DateTime @map("scraped_at")
+
+  @@map("wiki_baits")
+}
+
+// Boilies and pellets (/Boilies_&_Pellets_Baits + the boilie sub-section of
+// /Event_Baits). One row per item, flattened from the block-per-model columns
+// (each variant column is its own purchasable item; the block has no title).
+model WikiBoilie {
+  id             Int      @id @default(autoincrement())
+  slug           String   @unique @db.VarChar(200)
+  name           String   @db.VarChar(150)
+  subtype        String   @db.VarChar(40) // boilies-pellets-baits | event-baits
+  fpId           Int?     @map("fp_id")
+  imageUrl       String?  @map("image_url") @db.Text // main Boilies/Pellets image
+  boilImageUrl   String?  @map("boil_image_url") @db.Text // Boil hookbait image (boilies only)
+  description    String?  @db.Text // event boilies only
+  sizeIn         String?  @map("size_in") @db.VarChar(20)
+  sizeMm         String?  @map("size_mm") @db.VarChar(20)
+  targetFish     String[] @map("target_fish")
+  flavour        String?  @db.VarChar(80)
+  color          String?  @db.VarChar(80)
+  buoyancy       String?  @db.VarChar(20) // Sinking | Pop-Up
+  weightClass    String?  @map("weight_class") @db.VarChar(20)
+  quantity       Int?
+  unlockLevel    Int?     @map("unlock_level")
+  priceCredits   Int?     @map("price_credits")
+  priceBaitcoins Int?     @map("price_baitcoins")
+  priceNote      String?  @map("price_note") @db.Text
+  sourceUrl      String   @map("source_url") @db.Text
+  contentHash    String   @map("content_hash") @db.VarChar(64)
+  scrapedAt      DateTime @map("scraped_at")
+
+  @@map("wiki_boilies")
+}

@@ -102,7 +102,7 @@ from the `wiki_species` dataset above, matching by name — additive (fills only
 empty fields) and idempotent. Run `pnpm wiki:load` then `pnpm wiki:enrich-species`
 first: the crawl only discovers species from a fixed list of family pages, so
 `wiki:enrich-species` scrapes the fish it misses (Amazonian, sharks, saltwater, …)
-by URL, lifting coverage to **264 of 279** fish. The rest have no wiki page, and the fields
+by URL, lifting coverage to **268 of 279** fish. The rest have no wiki page, and the fields
 the wiki can't source (weight mins, young/monster weights, farming meta) stay null.
 Pass `--dry` to preview the counts without writing.
 

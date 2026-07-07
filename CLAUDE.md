@@ -393,8 +393,11 @@ re-runnable stages:
   fetched. This scrapes each `Fish` row with no `wiki_species` match by its
   wiki URL — `/<Name>/en`, falling back to `/<Name>` for untranslated pages (most
   saltwater fish only exist there) — reusing the Firecrawl SDK + cache + `parseSpecies`
-  + the load's upsert, adding **+123** species (148 → 271). Idempotent (cache + upsert
-  on `slug`); the ~15 fish with a genuine 404 at both URLs are skipped and not cached. `parse-species.ts`
+  + the load's upsert, adding **+127** species (148 → 275). A small `ALIASES` map
+  handles fish whose wiki title differs from `Fish.commonName` (e.g. `Black Bullhead`
+  → `Black_Bullhead_Catfish`), storing the row under our name so the backfill matches.
+  Idempotent (cache + upsert on `slug`); the ~11 fish with a genuine 404 at both URLs
+  (or an unknown title) are skipped and not cached. `parse-species.ts`
   gained a family fallback for these (their family link, e.g. `Amazonian Others`,
   lacks the ` family` suffix the primary regex needs). Run before re-running
   `seed:fish-curated`. Follow-up: a full `wiki:load` resolves the new species'
@@ -435,8 +438,8 @@ counts and writes nothing. Notes:
 - **Left null — no source:** weight *mins*, `weightYoung*`, `monsterTargetWeight`,
   the trophy *max* (Fish has no such column, though wiki has `trophyWeightMaxKg`),
   and the farming/xp meta (`xpCurveNotes`/`farmingMetaTier`/`notesFarming`).
-- **Coverage:** only fish whose name matches a wiki species — **264 of 279** after
-  `wiki:enrich-species` (was 141 from the family-crawl alone). The remaining ~15
+- **Coverage:** only fish whose name matches a wiki species — **268 of 279** after
+  `wiki:enrich-species` (was 141 from the family-crawl alone). The remaining ~11
   have no wiki page (a genuine 404 at both `/<Name>/en` and `/<Name>`) or sit under
   a different title, so they stay null.
 - Data-only (no schema change); apply to Neon out-of-band like the other seeds.

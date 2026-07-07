@@ -26,10 +26,18 @@ if (!apiKey) throw new Error('FIRECRAWL_API_KEY is not set (add it to .env)')
 const fc = new Firecrawl({ apiKey })
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
-const slugFor = (name: string) => encodeURIComponent(name.replace(/ /g, '_'))
+// Fish whose wiki page sits under a different title than Fish.commonName (our name →
+// wiki slug). The row is stored under our name below, so seed:fish-curated still matches.
+const ALIASES: Record<string, string> = {
+  'Black Bullhead': 'Black_Bullhead_Catfish',
+  'Brown Bullhead': 'Brown_Bullhead_Catfish',
+  'Flag-tailed Prochilodus': 'Flag-Tailed_Prochilodus',
+  Sorubim: 'Sorubim_Catfish',
+}
+const wikiSlug = (name: string) => encodeURIComponent(ALIASES[name] ?? name.replace(/ /g, '_'))
 // Try the translated page first, then the base URL: untranslated pages (most of the
 // saltwater / Norway fish) exist only at /<Name>, not /<Name>/en.
-const variantsFor = (name: string) => [`${WIKI}/${slugFor(name)}/en`, `${WIKI}/${slugFor(name)}`]
+const variantsFor = (name: string) => [`${WIKI}/${wikiSlug(name)}/en`, `${WIKI}/${wikiSlug(name)}`]
 // A real fish infobox carries a weight, credit, or family; "no article" pages don't.
 const hasData = (s: ReturnType<typeof parseSpecies>) =>
   s.family != null ||
@@ -92,7 +100,7 @@ async function main() {
     // Cache the real page so future full pipeline runs (wiki:parse/load) include it too.
     writeCache({ url, category: 'species', fetchedAt: new Date().toISOString(), status: 200, markdown })
     const fields = {
-      name: s.name,
+      name: ALIASES[name] ? name : s.name,
       latinName: s.latinName,
       family: s.family,
       description: s.description,

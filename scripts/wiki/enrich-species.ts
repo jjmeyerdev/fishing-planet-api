@@ -33,7 +33,15 @@ const ALIASES: Record<string, string> = {
   'Brown Bullhead': 'Brown_Bullhead_Catfish',
   'Flag-tailed Prochilodus': 'Flag-Tailed_Prochilodus',
   Sorubim: 'Sorubim_Catfish',
+  'European Chub': 'Chub',
+  Muskie: 'Muskellunge',
+  'Steelhead Trout': 'Steelhead',
+  'Volga Zander': 'Zander',
 }
+// Aliases whose wiki slug already belongs to a different, already-matched species
+// (`Zander` is Fish "Zander"): store the row under our own slug so the upsert can't
+// clobber it. The data is the base page's — Volga Zander has no page, so it ≈ Zander.
+const OWN_SLUG = new Set(['Volga Zander'])
 const wikiSlug = (name: string) => encodeURIComponent(ALIASES[name] ?? name.replace(/ /g, '_'))
 // Try the translated page first, then the base URL: untranslated pages (most of the
 // saltwater / Norway fish) exist only at /<Name>, not /<Name>/en.
@@ -118,7 +126,8 @@ async function main() {
       contentHash: s.contentHash,
       scrapedAt: new Date(),
     }
-    const row = await prisma.wikiSpecies.upsert({ where: { slug: s.slug }, create: { slug: s.slug, ...fields }, update: fields })
+    const slug = OWN_SLUG.has(name) ? name.replace(/ /g, '_') : s.slug
+    const row = await prisma.wikiSpecies.upsert({ where: { slug }, create: { slug, ...fields }, update: fields })
     await prisma.$transaction([
       prisma.wikiSpeciesBait.deleteMany({ where: { speciesId: row.id } }),
       prisma.wikiSpeciesBait.createMany({ data: s.baits.map((l) => ({ speciesId: row.id, name: l.name, slug: l.slug })), skipDuplicates: true }),

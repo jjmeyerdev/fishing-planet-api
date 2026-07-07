@@ -10,6 +10,7 @@ import { parseBobbers } from './lib/parse-bobbers.js'
 import { parseLures } from './lib/parse-lures.js'
 import { parseBaits } from './lib/parse-baits.js'
 import { parseBoilies } from './lib/parse-boilies.js'
+import { parseGroundbaits, parseGroundbaitMixes } from './lib/parse-groundbaits.js'
 import { parseSpecies } from './lib/parse-species.js'
 import type {
   ParsedBait,
@@ -17,6 +18,7 @@ import type {
   ParsedBoilie,
   ParsedBrand,
   ParsedDataset,
+  ParsedGroundbait,
   ParsedHook,
   ParsedLine,
   ParsedLure,
@@ -61,6 +63,7 @@ function main() {
   const lures: ParsedLure[] = []
   const baits: ParsedBait[] = []
   const boilies: ParsedBoilie[] = []
+  const groundbaits: ParsedGroundbait[] = []
 
   for (const p of allPages()) {
     if (p.status !== 200) continue
@@ -78,6 +81,12 @@ function main() {
     else if (p.category === 'baits') {
       baits.push(...parseBaits(p.markdown, p.url, sub))
       boilies.push(...parseBoilies(p.markdown, p.url, sub))
+    }
+    // Groundbaits also mix layouts: flat catalogs (aromas/particles) + block-per-
+    // model mixes (carp/base/method-mix). Each parser matches only its own shape.
+    else if (p.category === 'groundbaits') {
+      groundbaits.push(...parseGroundbaits(p.markdown, p.url, sub))
+      groundbaits.push(...parseGroundbaitMixes(p.markdown, p.url, sub))
     }
   }
 
@@ -114,6 +123,7 @@ function main() {
     lures: uniqueSlugs(lures),
     baits: uniqueSlugs(baits),
     boilies: uniqueSlugs(boilies),
+    groundbaits: uniqueSlugs(groundbaits),
     brands: [...brands.values()],
     technologies: [...technologies.values()],
   }
@@ -125,7 +135,7 @@ function main() {
     `✓ parsed: ${species.length} species, ${reels.length} reels, ${rods.length} rods (${variants(rods)} variants), ` +
       `${lines.length} lines (${variants(lines)} variants), ${hooks.length} hooks (${variants(hooks)} variants), ` +
       `${sinkers.length} sinkers (${variants(sinkers)} variants), ${bobbers.length} bobbers, ${lures.length} lures (${variants(lures)} variants), ` +
-      `${baits.length} baits, ${boilies.length} boilies, ` +
+      `${baits.length} baits, ${boilies.length} boilies, ${groundbaits.length} groundbaits, ` +
       `${dataset.brands.length} brands, ${dataset.technologies.length} technologies → ${out}`,
   )
 }

@@ -56,6 +56,11 @@ const GEAR_CATEGORIES: Array<{ category: CacheEntry['category']; slugs: string[]
     category: 'baits',
     slugs: ['Common_Baits', 'Worms_&_Insects_Baits', 'Fresh_Baits', 'Saltwater_Baits', 'Boilies_&_Pellets_Baits', 'Event_Baits'],
   },
+  {
+    // Groundbaits — feed/attractant consumables (mostly flat catalogs).
+    category: 'groundbaits',
+    slugs: ['Aromas', 'Carp_Groundbaits', 'Groundbait-base', 'Method_Mix_Groundbaits', 'Particles'],
+  },
 ]
 const GEAR_PAGES: Array<{ url: string; category: CacheEntry['category']; subtype: string }> = GEAR_CATEGORIES.flatMap((g) =>
   g.slugs.map((slug) => ({ url: `${WIKI}/${encodeURIComponent(slug)}`, category: g.category, subtype: slugify(readable(slug)) })),

@@ -313,6 +313,42 @@ export interface ParsedGroundbait {
   contentHash: string
 }
 
+// Equipment — apparel + storage + stringers/keepnets. One table over all 7 pages;
+// columns vary a lot per subtype (glasses: color/material; hats: tackles/flashlight;
+// cases/boxes/waistcoats: storageCapacity; rod-holders: rodSlot/standCount/biteAlarm;
+// stringers-keepnets: fish-weight limits/durability). Null off-subtype (wiki_bobbers
+// pattern). Flat pages are one-row-per-item; the stringers-keepnets page is header +
+// Name-block (flattened per variant).
+export interface ParsedEquipment {
+  slug: string
+  name: string
+  subtype: string // glasses-and-flashlights | hats | rod-cases | tackle-boxes | waist-coats | rod-holders | stringers-keepnets
+  fpId: number | null
+  imageUrl: string | null
+  brand: string | null // explicit Brand column / block header (raw name)
+  description: string | null
+  material: string | null
+  color: string | null // glasses
+  tackles: string | null // hats — tackle-slot capacity
+  flashlight: string | null // hats
+  flashlightSlot: string | null // hats
+  storageCapacity: string | null // cases/boxes/waistcoats ("Rods: 2; Reels: 2; Lines: 2")
+  rodSlot: string | null // rod-holders
+  standCount: string | null // rod-holders
+  biteAlarm: string | null // rod-holders
+  weight: string | null // rod-holders (raw "lb / kg")
+  maxSingleFishWeightKg: string | null // stringers-keepnets (min–max range across the line's sizes)
+  maxTotalFishWeightKg: string | null // stringers-keepnets
+  fishFriendly: string | null // stringers-keepnets
+  durability: string | null // stringers-keepnets
+  priceCredits: number | null
+  priceBaitcoins: number | null
+  priceNote: string | null
+  unlockLevel: number | null
+  sourceUrl: string
+  contentHash: string
+}
+
 export interface ParsedBrand {
   slug: string
   name: string
@@ -342,6 +378,7 @@ export interface ParsedDataset {
   baits: ParsedBait[]
   boilies: ParsedBoilie[]
   groundbaits: ParsedGroundbait[]
+  equipment: ParsedEquipment[]
   brands: ParsedBrand[]
   technologies: ParsedTechnology[]
 }

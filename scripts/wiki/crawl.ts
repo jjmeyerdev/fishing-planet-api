@@ -61,6 +61,12 @@ const GEAR_CATEGORIES: Array<{ category: CacheEntry['category']; slugs: string[]
     category: 'groundbaits',
     slugs: ['Aromas', 'Carp_Groundbaits', 'Groundbait-base', 'Method_Mix_Groundbaits', 'Particles'],
   },
+  {
+    // Equipment — apparel (glasses/hats/waistcoats) + storage (rod holders/cases/
+    // tackle boxes/keepnets). Two shapes; scoped in the parser.
+    category: 'equipment',
+    slugs: ['Glasses_and_Flashlights', 'Hats', 'Waist_Coats', 'Rod_Holders', 'Rod_Cases', 'Tackle_Boxes', 'Stringers_and_Keepnets'],
+  },
 ]
 const GEAR_PAGES: Array<{ url: string; category: CacheEntry['category']; subtype: string }> = GEAR_CATEGORIES.flatMap((g) =>
   g.slugs.map((slug) => ({ url: `${WIKI}/${encodeURIComponent(slug)}`, category: g.category, subtype: slugify(readable(slug)) })),

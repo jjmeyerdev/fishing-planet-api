@@ -197,10 +197,23 @@ async function main() {
     await prisma.wikiGroundbait.upsert({ where: { slug: g.slug }, create: { slug: g.slug, ...fields }, update: fields })
   }
 
+  // 13. Equipment — apparel/storage/rod-holders (flat) + stringers/keepnets (one table).
+  for (const e of data.equipment) {
+    const fields = {
+      name: e.name, subtype: e.subtype, fpId: e.fpId, imageUrl: e.imageUrl, brand: e.brand, description: e.description,
+      material: e.material, color: e.color, tackles: e.tackles, flashlight: e.flashlight, flashlightSlot: e.flashlightSlot,
+      storageCapacity: e.storageCapacity, rodSlot: e.rodSlot, standCount: e.standCount, biteAlarm: e.biteAlarm, weight: e.weight,
+      maxSingleFishWeightKg: e.maxSingleFishWeightKg, maxTotalFishWeightKg: e.maxTotalFishWeightKg, fishFriendly: e.fishFriendly,
+      durability: e.durability, priceCredits: e.priceCredits, priceBaitcoins: e.priceBaitcoins, priceNote: e.priceNote,
+      unlockLevel: e.unlockLevel, sourceUrl: e.sourceUrl, contentHash: e.contentHash, scrapedAt: new Date(),
+    }
+    await prisma.wikiEquipment.upsert({ where: { slug: e.slug }, create: { slug: e.slug, ...fields }, update: fields })
+  }
+
   console.log(
     `✓ loaded: ${data.species.length} species, ${data.reels.length} reels, ${data.rods.length} rods, ${data.lines.length} lines, ` +
       `${data.hooks.length} hooks, ${data.sinkers.length} sinkers, ${data.bobbers.length} bobbers, ${data.lures.length} lures, ` +
-      `${data.baits.length} baits, ${data.boilies.length} boilies, ${data.groundbaits.length} groundbaits, ` +
+      `${data.baits.length} baits, ${data.boilies.length} boilies, ${data.groundbaits.length} groundbaits, ${data.equipment.length} equipment, ` +
       `${data.brands.length} brands, ${data.technologies.length} technologies` +
       (unresolvedTech ? ` (${unresolvedTech} rod/reel→tech links unresolved)` : ''),
   )
